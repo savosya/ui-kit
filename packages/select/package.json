@@ -1,6 +1,6 @@
 {
   "name": "@savosya-myuikit/select",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "> TODO: description",
   "author": "",
   "homepage": "",
@@ -13,7 +13,7 @@
     "build"
   ],
   "dependencies": {
-    "@savosya-myuikit/button": "*"
+    "@savosya-myuikit/button": "^0.0.8"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
