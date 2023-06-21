@@ -1,6 +1,6 @@
 {
   "name": "myuikit",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "workspaces": [
     "packages/*"

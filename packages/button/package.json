@@ -5,7 +5,7 @@
   "description": "> TODO: description",
   "author": "",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
@@ -25,5 +25,5 @@
     "tsc": "tsc",
     "build": "rollup -c ../../rollup.config.js"
   },
-  "gitHead": "afb212f6e56763888a130dc74a5c34e4e7c3b668"
+  "gitHead": "26fefa79b4bbc59a432985ae42e7844d8e250497"
 }
