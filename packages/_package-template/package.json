@@ -25,5 +25,5 @@
     "build": "rollup -c ../../rollup.config.js",
     "test": "node ./__tests__/package-template.test.js"
   },
-  "gitHead": "11784138aeb8167c61ef41d60690ab7d3d9d56b3"
+  "gitHead": "5ff92f0c80eb62ca7eb24c24a9d92b6129341ec0"
 }
