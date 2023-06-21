@@ -13,7 +13,10 @@
     "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh",
     "build": "yarn clean && lerna run build --skip-nx-cache && bin/build.sh",
     "build:cache": "lerna run build",
-    "clean": "rm -rf packages/*/build && rm -rf build"
+    "clean": "rm -rf packages/*/build && rm -rf build",
+    "pub:patch": "RELEASE_TYPE=\"patch\" ./bin/publish.sh",
+    "pub:minor": "RELEASE_TYPE=\"minor\" ./bin/publish.sh",
+    "pub:major": "RELEASE_TYPE=\"major\" ./bin/publish.sh"
   },
   "dependencies": {
     "react": "^18.2.0",

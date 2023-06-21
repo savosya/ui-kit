@@ -9,7 +9,6 @@ import typescript from "@rollup/plugin-typescript";
 import babel from '@rollup/plugin-babel';
 import {terser} from "rollup-plugin-terser";
 import copy from 'rollup-plugin-cpy'
-import mv from "rollup-plugin-mv";
 
 /** tools */
 import createPackageJson from "./tools/rollup/create-package-json.js";
