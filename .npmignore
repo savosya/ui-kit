@@ -12,3 +12,5 @@ rollup.config.js
 .git
 tsconfig.json
 yarn.lock
+tools
+*.log

@@ -24,5 +24,6 @@
     "tsc": "tsc",
     "build": "rollup -c ../../rollup.config.js",
     "test": "node ./__tests__/package-template.test.js"
-  }
+  },
+  "gitHead": "bfbf1ed4d0d5e68615892aa1b70e2973d6fb2a96"
 }
