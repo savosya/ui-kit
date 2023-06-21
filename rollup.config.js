@@ -8,7 +8,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from "@rollup/plugin-typescript";
 import babel from '@rollup/plugin-babel';
 import {terser} from "rollup-plugin-terser";
-import copy from 'rollup-plugin-copy';
+import copy from 'rollup-plugin-cpy'
+import mv from "rollup-plugin-mv";
 
 /** tools */
 import createPackageJson from "./tools/rollup/create-package-json.js";
@@ -27,7 +28,8 @@ const currentComponentName = pkg.name.replace(KIT_NAME, '');
 const rootDir = `../../build/${currentComponentName}`;
 const excludedPackages = ['package-template']
 
-console.log('@#!#!@#@!#@!#!@#!@!@', currentComponentName    )
+console.log('rootDirrootDirrootDirrootDir, rootDir', rootDir)
+
 
 /** config */
 export default {
@@ -55,7 +57,6 @@ export default {
             preferBuiltins: false,
             extensions,
         }),
-
         typescript({compilerOptions: {lib: ["es6", "dom"], target: "es6"}}),
         babel({
             presets: [
@@ -70,18 +71,31 @@ export default {
             extensions,
         }),
         // terser(),
+        // (!excludedPackages.includes(currentComponentName)
+        //     ? copy({
+        //         targets: [
+        //             {src: `${pkgPath}/build/cjs`, dest: rootDir},
+        //             {src: `${pkgPath}/build/esm`, dest: rootDir},
+        //             {
+        //                 src: 'package.json',
+        //                 dest: rootDir,
+        //                 transform: () => createPackageJson('./esm/index.js'),
+        //             },
+        //         ]
+        //     })
+        //     : undefined)
         (!excludedPackages.includes(currentComponentName)
-            ? copy({
-                targets: [
-                    {src: `${pkgPath}/build/cjs`, dest: rootDir},
-                    {src: `${pkgPath}/build/esm`, dest: rootDir},
+            ? copy(
+                [
+                    {files: `${pkgPath}/build/cjs`, dest: `${rootDir}/cjs`},
+                    {files: `${pkgPath}/build/esm`, dest: `${rootDir}/esm`},
                     {
-                        src: 'package.json',
+                        files: 'package.json',
                         dest: rootDir,
-                        transform: () => createPackageJson('./esm/index.js'),
+                        // transform: () => createPackageJson('./esm/index.js'),
                     },
                 ]
-            })
+            )
             : undefined)
     ],
 };
