@@ -13,7 +13,7 @@
     "build"
   ],
   "dependencies": {
-    "@myuikit/button": "^0.0.4"
+    "@savosya-myuikit/button": "*"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
@@ -27,5 +27,5 @@
     "access": "public",
     "directory": "build"
   },
-  "gitHead": "52879f02d25a9ae50afb438d90ebeb2b3276e15c"
+  "gitHead": "ae546c6bc87eeb8fba553dec8febab8e2649c8b3"
 }

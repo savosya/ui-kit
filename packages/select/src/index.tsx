@@ -1,5 +1,5 @@
 import React, {HTMLProps, useState}  from 'react'
-import {Button} from '@myuikit/button'
+import {Button} from '@savosya-myuikit/button'
 
 interface Props extends HTMLProps<HTMLSelectElement> {
   options?: { text: string, value: string | number }[]

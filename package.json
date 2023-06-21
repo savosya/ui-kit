@@ -1,6 +1,7 @@
 {
   "name": "savosya-myuikit",
   "version": "0.0.1",
+  "private": true,
   "license": "ISC",
   "type": "module",
   "workspaces": [
@@ -18,10 +19,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.3.0",
-    "@types/react": "^18.2.11",
-    "@types/react-dom": "^18.2.4",
     "@babel/core": "^7.22.5",
+    "@babel/plugin-external-helpers": "^7.22.5",
     "@babel/plugin-transform-runtime": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
@@ -30,13 +29,16 @@
     "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-typescript": "^11.1.1",
+    "@types/node": "^20.3.0",
+    "@types/react": "^18.2.11",
+    "@types/react-dom": "^18.2.4",
+    "cross-env": "^7.0.3",
+    "lerna": "^7.0.0",
+    "read-pkg-up": "^9.1.0",
     "rollup": "^3.25.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
-    "lerna": "^7.0.0",
-    "cross-env": "^7.0.3",
-    "read-pkg-up": "^9.1.0",
     "typescript": "^5.1.3"
   }
 }

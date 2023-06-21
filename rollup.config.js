@@ -15,7 +15,7 @@ import createPackageJson from "./tools/rollup/create-package-json.js";
 
 
 /** vars */
-const KIT_NAME = '@savosya-myuikit'
+const KIT_NAME = '@savosya-myuikit/'
 
 const currentPackageDir = process.cwd()
 const excludePath = 'node_modules/**';
@@ -27,10 +27,12 @@ const currentComponentName = pkg.name.replace(KIT_NAME, '');
 const rootDir = `../../build/${currentComponentName}`;
 const excludedPackages = ['package-template']
 
+console.log('@#!#!@#@!#@!#!@#!@!@', currentComponentName    )
+
 /** config */
 export default {
     input: 'src/index.tsx',
-    external: ['react', 'react-dom', /@babel\/runtime/, (id) => excludedPackages.includes(id)],
+    external: ['react', 'react-dom', id => /@babel\/runtime/.test(id)],
     output: [
         {
             ...defaultOptions,
@@ -54,8 +56,7 @@ export default {
             extensions,
         }),
 
-        // typescript({compilerOptions: {lib: ["es6", "dom"], target: "es6"}}),
-        typescript(),
+        typescript({compilerOptions: {lib: ["es6", "dom"], target: "es6"}}),
         babel({
             presets: [
                 '@babel/env',
