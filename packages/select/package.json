@@ -1,6 +1,6 @@
 {
   "name": "@myuikit/select",
-  "version": "0.0.3-alpha.0",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "author": "",
   "homepage": "",
@@ -13,7 +13,7 @@
     "build"
   ],
   "dependencies": {
-    "@myuikit/button": "^0.0.3-alpha.0"
+    "@myuikit/button": "^0.0.3"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
