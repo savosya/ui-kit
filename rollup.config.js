@@ -15,13 +15,15 @@ import createPackageJson from "./tools/rollup/create-package-json.js";
 
 
 /** vars */
+const KIT_NAME = '@savosya-myuikit'
+
 const currentPackageDir = process.cwd()
 const excludePath = 'node_modules/**';
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 const pkgPath = fs.realpathSync(currentPackageDir)
 const {packageJson: pkg} = readPackageUpSync({cwd: pkgPath});
 const defaultOptions = {sourcemap: true, exports: 'named'}
-const currentComponentName = pkg.name.replace('@myuikit/', '');
+const currentComponentName = pkg.name.replace(KIT_NAME, '');
 const rootDir = `../../build/${currentComponentName}`;
 const excludedPackages = ['package-template']
 
@@ -52,7 +54,8 @@ export default {
             extensions,
         }),
 
-        typescript({compilerOptions: {lib: ["es6", "dom"], target: "es6"}}),
+        // typescript({compilerOptions: {lib: ["es6", "dom"], target: "es6"}}),
+        typescript(),
         babel({
             presets: [
                 '@babel/env',
