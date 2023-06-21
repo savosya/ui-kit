@@ -1,6 +1,6 @@
 {
   "name": "myuikit",
-  "private": true,
+  "license": "ISC",
   "type": "module",
   "workspaces": [
     "packages/*"
