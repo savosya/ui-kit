@@ -1,0 +1,14 @@
+.idea/
+bin/
+node_modules
+packages/
+.gitignore
+.npmignore
+lerna.json
+LICENCE.md
+nx.json
+package.json
+rollup.config.js
+.git
+tsconfig.json
+yarn.lock

@@ -5,6 +5,7 @@
   "workspaces": [
     "packages/*"
   ],
+  "repository": "https://github.com/savosya/lerna-storybook-uikit-starter.git",
   "scripts": {
     "new": "bin/copy-folder.sh",
     "prepareWork": "chmod +x copy-folder.sh",
