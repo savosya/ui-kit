@@ -1,6 +1,6 @@
 {
   "name": "@myuikit/select",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "private": true,
   "description": "> TODO: description",
   "author": "",
@@ -14,7 +14,7 @@
     "build"
   ],
   "dependencies": {
-    "@myuikit/button": "*"
+    "@myuikit/button": "^0.0.1-alpha.0"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
