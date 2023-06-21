@@ -1,5 +1,6 @@
 {
   "name": "myuikit",
+  "version": "0.0.1",
   "license": "ISC",
   "type": "module",
   "workspaces": [

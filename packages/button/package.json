@@ -25,5 +25,5 @@
     "tsc": "tsc",
     "build": "rollup -c ../../rollup.config.js"
   },
-  "gitHead": "167e54db3c0e93e3545fe36683421b5c0f3bc42c"
+  "gitHead": "82b0a9045bfdcf62116f8cf41781b6a48ad0a742"
 }
