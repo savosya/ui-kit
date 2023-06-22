@@ -12,6 +12,7 @@ import copy from 'rollup-plugin-cpy'
 
 /** tools */
 import createPackageJson from "./tools/rollup/create-package-json.js";
+import {coreComponentsResolver} from "./tools/rollup/resolvers.js";
 
 
 /** vars */
@@ -31,7 +32,8 @@ const excludedPackages = ['package-template']
 /** config */
 export default {
     input: 'src/index.tsx',
-    external: ['react', 'react-dom', id => /@babel\/runtime/.test(id)],
+    // external: ['react', 'react-dom', id => /@babel\/runtime/.test(id)],
+    external: ['react', 'react-dom'],
     output: [
         {
             ...defaultOptions,
@@ -46,27 +48,27 @@ export default {
     ],
     plugins: [
         peerDepsExternal(),
-        commonjs({
-            include: /node_modules/,
-            // requireReturnsDefault: true
-        }),
-        resolve({
-            preferBuiltins: false,
-            extensions,
-        }),
-        typescript({compilerOptions: {lib: ["es6", "dom"], target: "es6"}}),
-        babel({
-            presets: [
-                '@babel/env',
-                '@babel/preset-typescript',
-            ],
-            plugins: [
-                '@babel/plugin-transform-runtime',
-            ],
-            babelHelpers: 'runtime',
-            exclude: excludePath,
-            extensions,
-        }),
+        // commonjs({
+        //     include: /node_modules/,
+        //     // requireReturnsDefault: true
+        // }),
+        // resolve({
+        //     preferBuiltins: false,
+        //     extensions,
+        // }),
+        typescript({tsconfig: './tsconfig.json', compilerOptions: {lib: ["es5", "dom"], target: "es5"}}),
+        // babel({
+        //     presets: [
+        //         '@babel/env',
+        //         '@babel/preset-typescript',
+        //     ],
+        //     plugins: [
+        //         '@babel/plugin-transform-runtime',
+        //     ],
+        //     babelHelpers: 'runtime',
+        //     exclude: excludePath,
+        //     extensions,
+        // }),
         // terser(),
         (!excludedPackages.includes(currentComponentName)
             ? copy(

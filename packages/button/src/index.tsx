@@ -6,7 +6,7 @@ interface Props extends HTMLProps<HTMLButtonElement> {
   children: React.ReactNode
 }
 
-export function Button({onClick, children, red, type = 'button', ...rest}: Props) {
+function Button({onClick, children, red, type = 'button', ...rest}: Props) {
   return <button
     type={type}
     style={{border: red ? '1px solid red' : undefined}}
@@ -15,3 +15,5 @@ export function Button({onClick, children, red, type = 'button', ...rest}: Props
     {children}
   </button>;
 }
+
+export default Button
