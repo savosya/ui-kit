@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-package-template",
-  "version": "0.0.8",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "",
   "homepage": "",
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "build": "rollup -c ../../rollup.config.js",
-    "test": "node ./__tests__/package-template.test.js"
+    "build": "rollup -c ../../../rollup.config.js",
+    "test": "node __tests__/package-template.test.js"
   },
-  "gitHead": "770c04e35a7b87e1807a520783193d30a4a4ad7a"
+  "gitHead": "777cc031fbadedd25bc8930f91c83fa18e2536f5"
 }

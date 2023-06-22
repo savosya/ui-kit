@@ -1,6 +1,7 @@
 {
   "name": "@savosya/savosya-myuikit",
-  "version": "0.0.2",
+  "version": "0.0.1",
+  "private": true,
   "license": "ISC",
   "type": "module",
   "workspaces": [
@@ -45,6 +46,7 @@
     "read-pkg-up": "^9.1.0",
     "rollup": "^3.25.1",
     "rollup-plugin-cpy": "^2.0.1",
+    "rollup-plugin-multi-input": "^1.4.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^5.1.3"

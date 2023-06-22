@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-select",
-  "version": "0.0.12",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "",
   "homepage": "",
@@ -13,7 +13,7 @@
     "build"
   ],
   "dependencies": {
-    "@savosya-myuikit/button": "^0.0.11"
+    "@savosya/savosya-myuikit-select": "*"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
@@ -26,6 +26,5 @@
   "publishConfig": {
     "access": "public",
     "directory": "build"
-  },
-  "gitHead": "770c04e35a7b87e1807a520783193d30a4a4ad7a"
+  }
 }

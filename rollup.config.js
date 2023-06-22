@@ -3,6 +3,7 @@ import {readPackageUpSync} from 'read-pkg-up';
 
 /** plugins */
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import multiInput from 'rollup-plugin-multi-input';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from "@rollup/plugin-typescript";
@@ -31,7 +32,7 @@ const excludedPackages = ['package-template']
 
 /** config */
 export default {
-    input: 'src/index.tsx',
+    input: ['src/index.tsx'],
     // external: ['react', 'react-dom', id => /@babel\/runtime/.test(id)],
     external: ['react', 'react-dom'],
     output: [
@@ -47,6 +48,7 @@ export default {
         }
     ],
     plugins: [
+        // multiInput(),
         peerDepsExternal(),
         // commonjs({
         //     include: /node_modules/,
