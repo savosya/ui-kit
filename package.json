@@ -18,6 +18,10 @@
     "pub:minor": "RELEASE_TYPE=\"minor\" ./bin/publish.sh",
     "pub:major": "RELEASE_TYPE=\"major\" ./bin/publish.sh"
   },
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
