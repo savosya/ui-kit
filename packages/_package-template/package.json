@@ -1,5 +1,5 @@
 {
-  "name": "@savosya-myuikit/package-template",
+  "name": "@savosya/savosya-myuikit-package-template",
   "version": "0.0.7",
   "description": "> TODO: description",
   "author": "",
@@ -25,5 +25,5 @@
     "build": "rollup -c ../../rollup.config.js",
     "test": "node ./__tests__/package-template.test.js"
   },
-  "gitHead": "eef5a82168ce53dff530fe0b97f028e2f62240ec"
+  "gitHead": "770c04e35a7b87e1807a520783193d30a4a4ad7a"
 }

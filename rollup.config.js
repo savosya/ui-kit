@@ -15,7 +15,7 @@ import createPackageJson from "./tools/rollup/create-package-json.js";
 
 
 /** vars */
-const KIT_NAME = '@savosya-myuikit/'
+const KIT_NAME = '@savosya/savosya-myuikit-'
 
 const currentPackageDir = process.cwd()
 const excludePath = 'node_modules/**';
@@ -26,8 +26,6 @@ const defaultOptions = {sourcemap: true, exports: 'named'}
 const currentComponentName = pkg.name.replace(KIT_NAME, '');
 const rootDir = `../../build/${currentComponentName}`;
 const excludedPackages = ['package-template']
-
-console.log('rootDirrootDirrootDirrootDir, rootDir', rootDir)
 
 
 /** config */
@@ -70,19 +68,6 @@ export default {
             extensions,
         }),
         // terser(),
-        // (!excludedPackages.includes(currentComponentName)
-        //     ? copy({
-        //         targets: [
-        //             {src: `${pkgPath}/build/cjs`, dest: rootDir},
-        //             {src: `${pkgPath}/build/esm`, dest: rootDir},
-        //             {
-        //                 src: 'package.json',
-        //                 dest: rootDir,
-        //                 transform: () => createPackageJson('./esm/index.js'),
-        //             },
-        //         ]
-        //     })
-        //     : undefined)
         (!excludedPackages.includes(currentComponentName)
             ? copy(
                 [
