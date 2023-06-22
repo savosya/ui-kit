@@ -8,7 +8,7 @@ lerna version --no-push --no-commit-hooks
 # собираю корневой проект
 yarn build
 # публикую все подпакеты
-lerna publish from-git
+lerna publish from-package
 # публикую корневой проект
 npm publish build --no-git-tag-version
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
