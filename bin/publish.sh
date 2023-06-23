@@ -8,7 +8,7 @@ lerna version --no-push --no-commit-hooks
 # собираю корневой проект
 yarn build
 # публикую все подпакеты
-lerna publish from-git
+lerna publish from-package
 # публикую корневой проект
 cd build
 
