@@ -1,33 +1,25 @@
 {
   "compilerOptions": {
-    "outDir": "build",
-    "module": "ESNext",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
     "skipLibCheck": true,
+    "target": "ES5",
+    "module": "commonjs",
+    "jsx": "react",
+    "rootDir": ".",
+    "outDir": "build",
+    "allowJs": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
+    "typeRoots": ["./typings", "./node_modules/@types"],
+    "composite": true,
     "declaration": true,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true
+    "baseUrl": ".",
+    "paths": {
+      "@alfalab/core-components-*": ["packages/*/src"]
+    }
   },
-  "exclude": [
-    "dist",
-    "build",
-    "node_modules",
-    "src/**/*.test.tsx",
-    "src/**/*.stories.tsx"
-  ]
+  "exclude": ["node_modules", "build", "**/*.stories*", "**/*.test*"],
 }

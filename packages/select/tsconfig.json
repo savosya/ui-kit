@@ -5,5 +5,9 @@
     "outDir": "build",
     "rootDirs": ["src"],
     "baseUrl": ".",
-  }
+    "paths": {
+      "@savosya/savosya-myuikit-*": ["../*/src"]
+    }
+  },
+  "references": [{ "path": "../button" }]
 }

@@ -30,3 +30,5 @@ build
 
 .out
 .cache
+
+*.tsbuildinfo

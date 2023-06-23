@@ -1,5 +1,5 @@
 import React, {HTMLProps, useState}  from 'react'
-import {Button} from '@savosya-myuikit/button'
+import {Button} from '@savosya/savosya-myuikit-button'
 
 interface Props extends HTMLProps<HTMLSelectElement> {
   options?: { text: string, value: string | number }[]
@@ -22,3 +22,5 @@ export function Select({options, ...rest}: Props) {
     </div>
   );
 }
+
+export default Select

@@ -18,8 +18,6 @@ export const coreComponentsResolver = ({ importFrom }) => ({
             bundles[bundleName].code = code;
         });
 
-        console.log(bundles)
-
         return bundles;
     },
 });
