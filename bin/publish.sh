@@ -13,7 +13,7 @@ lerna publish from-package
 cd build
 
 #npm publish --no-git-tag-version
-npm publish --access=public
+npm publish --userconfig "../.npmrc" --tag
 
 cd ../
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
