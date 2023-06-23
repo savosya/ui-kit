@@ -10,7 +10,11 @@ yarn build
 # публикую все подпакеты
 lerna publish from-package
 # публикую корневой проект
+cd build
+
 npm publish build --no-git-tag-version
+
+cd ../
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 npm release --release-as $RELEASE_TYPE
 # отправляю изменения на github
