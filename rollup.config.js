@@ -11,9 +11,7 @@ import copy from 'rollup-plugin-copy';
 
 /** tools */
 import createPackageJson from "./tools/rollup/create-package-json.js";
-import {
-    coreComponentsRootPackageResolver
-} from "./tools/rollup/resolve-root.js";
+import {coreComponentsRootPackageResolver} from "./tools/rollup/resolve-root.js";
 import {coreComponentsTypingsResolver} from "./tools/rollup/resolve-typings.js";
 import {coreComponentsResolver} from "./tools/rollup/resolve-package.js";
 
@@ -31,7 +29,7 @@ const rootDir = `../../build/${currentComponentName}`;
 const copyPlugin = (dest) =>
     copy({
         flatten: false,
-        targets: [{ src: ['src/**/*.{png,svg,jpg,jpeg}', '!**/__image_snapshots__/**'], dest }],
+        targets: [{src: ['src/**/*.{png,svg,jpg,jpeg}', '!**/__image_snapshots__/**'], dest}],
     });
 
 const baseConfig = {
@@ -63,14 +61,11 @@ const cjs = {
             ...defaultOptions,
             dir: 'build',
             format: "cjs",
-            // interop: 'compat',
-            // esModule: true,
         },
     ],
     plugins: [
         ...plugins,
         typescript({
-            // tsconfig: './tsconfig.json'
             tsconfig: resolvedConfig => ({
                 ...resolvedConfig,
                 tsBuildInfoFile: 'tsconfig.tsbuildinfo',
@@ -78,7 +73,7 @@ const cjs = {
         }),
         json(),
         copyPlugin('build'),
-        copy({ targets: [{ src: ['package.json'], dest: 'build' }] }),
+        copy({targets: [{src: ['package.json'], dest: 'build'}]}),
     ],
 }
 
@@ -96,7 +91,6 @@ const esm = {
         ...plugins,
         typescript({
             outDir: 'build/esm',
-            // tsconfig: './tsconfig.json'
             tsconfig: (resolvedConfig) => ({
                 ...resolvedConfig,
                 tsBuildInfoFile: 'tsconfig.tsbuildinfo',
@@ -117,7 +111,7 @@ const root = {
         copy({
             flatten: false,
             targets: [
-                { src: ['build/**/*', '!**/*.js'], dest: rootDir },
+                {src: ['build/**/*', '!**/*.js'], dest: rootDir},
                 {
                     src: 'package.json',
                     dest: `../../build/${currentComponentName}`,
