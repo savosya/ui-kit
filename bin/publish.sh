@@ -16,7 +16,6 @@ while true; do
     echo "Ошибка: Введенный номер версии не соответствует формату x.x.x"
   fi
 done
-
 json -I -f package.json -e "this.version=\"${NEW_ROOT_PACKAGE_VERSION}\""
 
 ## поднимаю версию во всех подпакетах
@@ -33,10 +32,11 @@ cd build
 npm publish
 cd ../
 
-## обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
+# обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 #npm release --release-as $RELEASE_TYPE
-## отправляю изменения на github
-git push --follow-tags
+# отправляю изменения на github
+git commit -m "v${NEW_ROOT_PACKAGE_VERSION}"
+git push origin "${NEW_ROOT_PACKAGE_VERSION}" --tags
 
 
 
