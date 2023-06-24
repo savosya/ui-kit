@@ -20,16 +20,15 @@ json -I -f package.json -e "this.version=\"${NEW_ROOT_PACKAGE_VERSION}\""
 
 echo "-1"
 ## поднимаю версию во всех подпакетах
-lerna version --no-push --no-commit-hooks
+#lerna version --no-push --no-commit-hooks
 
-git add .
-git commit -m "v${NEW_ROOT_PACKAGE_VERSION}"
+git commit -a -m "v${NEW_ROOT_PACKAGE_VERSION}"
 echo "-2"
 ## собираю корневой проект
 yarn build
 echo "-3"
 ## публикую все подпакеты
-lerna publish from-package
+lerna publish from-package --no-push --no-commit-hooks
 
 
 #git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" -m "v${NEW_ROOT_PACKAGE_VERSION}" && git push origin --tags
