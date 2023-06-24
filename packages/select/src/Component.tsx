@@ -8,7 +8,7 @@ interface Props extends HTMLProps<HTMLSelectElement> {
 export function Select({options, ...rest}: Props) {
   const [open, setOpen] = useState(false)
 
-  console.log('im change in ')
+  console.log('im change in  ')
   return (
     <div>
       <Button onClick={() => setOpen(!open)}>{open ? 'Закрыть' : 'Открыть'}</Button>
