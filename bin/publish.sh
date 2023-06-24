@@ -26,7 +26,7 @@ lerna version --no-push --no-commit-hooks
 ## собираю корневой проект
 yarn build
 ## публикую все подпакеты
-lerna publish from-package --no-push --no-commit-hooks
+lerna publish from-package --no-push --no-commit-hooks --no-git-tag-version
 
 
 #git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" -m "v${NEW_ROOT_PACKAGE_VERSION}" && git push origin --tags
