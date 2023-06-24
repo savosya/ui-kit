@@ -3,32 +3,32 @@
 # выхожу, если одна из команд завершилась неудачно
 set -e
 
-# поднимаю версию во всех подпакетах
+VALID_VERSION_REGEX="^[0-9]+\.[0-9]+\.[0-9]+$"
+CURRENT_ROOT_PACKAGE_VERSION=$(node -p "require('./package.json').version")
+
+# Обновляем версию рут пакета
+echo "Новая версия рут пакета (текущая: ${CURRENT_ROOT_PACKAGE_VERSION}):"
+while true; do
+  read -p "Введите новую версию: " NEW_ROOT_PACKAGE_VERSION
+  if [[ $NEW_ROOT_PACKAGE_VERSION =~ $VALID_VERSION_REGEX ]]; then
+    break
+  else
+    echo "Ошибка: Введенный номер версии не соответствует формату x.x.x"
+  fi
+done
+
+json -I -f package.json -e "this.version=\"${NEW_ROOT_PACKAGE_VERSION}\""
+
+## поднимаю версию во всех подпакетах
 lerna version --no-push --no-commit-hooks
-# собираю корневой проект
+## собираю корневой проект
 yarn build
-# публикую все подпакеты
+## публикую все подпакеты
 lerna publish from-package
 
 # публикую корневой проект
-#cd build
+npm publish --no-git-tag-version
 
-#npm publish --no-git-tag-version
-#npm publish --userconfig "../.npmrc" --tag
-
-#options=("patch" "minor" "major")
-#echo "Новая версия рут пакета: "
-#select ROOT_OPT in "${options[@]}"
-#do
-#    case $ROOT_OPT in
-#        "patch")break;;
-#        "minor")break;;
-#        "major")break;;
-#        *)echo "Invalid option";;
-#    esac
-#done
-#
-#echo $ROOT_OPT
 cd build
 npm publish
 cd ../
@@ -36,7 +36,7 @@ cd ../
 ## обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 #npm release --release-as $RELEASE_TYPE
 ## отправляю изменения на github
-#git push --follow-tags
+git push --follow-tags
 
 
 
