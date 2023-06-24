@@ -18,7 +18,7 @@ jobs:
       - run: yarn install
       - run: |
           git config user.name savosya
-          git config user.email savosapple@mail.ru
+          git config user.email svstnv.dm@gmail.com
           npm version ${{ github.event.inputs.version }}
           git push origin main
           git push origin v${{ github.event.inputs.version }}
