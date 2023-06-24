@@ -48,7 +48,7 @@ echo "3"
 #npm release --release-as $RELEASE_TYPE
 # отправляю изменения на github
 #git commit -m "v${NEW_ROOT_PACKAGE_VERSION}"
-git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" && git push origin "${NEW_ROOT_PACKAGE_VERSION}" --tags
+git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" && git push --tags
 echo "4"
 
 
