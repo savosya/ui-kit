@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-button",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "> TODO: description",
   "author": "",
   "homepage": "",
@@ -18,5 +18,6 @@
   "scripts": {
     "tsc": "tsc",
     "build": "rollup -c ../../rollup.config.js"
-  }
+  },
+  "gitHead": "3b0f2d26a0749f75a9476833ca6e0af1f0a2912b"
 }

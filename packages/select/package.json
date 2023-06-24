@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-select",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "> TODO: description",
   "author": "",
   "homepage": "",
@@ -8,7 +8,7 @@
   "main": "index.js",
   "module": "./esm/index.js",
   "dependencies": {
-    "@savosya/savosya-myuikit-select": "*"
+    "@savosya/savosya-myuikit-button": "^0.0.12"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
@@ -21,5 +21,6 @@
   "scripts": {
     "tsc": "tsc",
     "build": "rollup -c ../../rollup.config.js"
-  }
+  },
+  "gitHead": "3b0f2d26a0749f75a9476833ca6e0af1f0a2912b"
 }
