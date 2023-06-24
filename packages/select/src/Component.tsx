@@ -22,5 +22,3 @@ export function Select({options, ...rest}: Props) {
     </div>
   );
 }
-
-export default Select

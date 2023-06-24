@@ -16,5 +16,3 @@ export function Button({onClick, children, red, type = 'button', ...rest}: Props
     {children}
   </button>;
 }
-
-export default Button

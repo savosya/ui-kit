@@ -33,7 +33,6 @@ const copyPlugin = (dest) =>
     });
 
 const baseConfig = {
-    // input: 'src/index.ts',
     input: [
         'src/**/*.{ts,tsx}',
         '!src/**/*.{test,stories}.{ts,tsx}',
