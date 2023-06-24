@@ -18,29 +18,23 @@ while true; do
 done
 json -I -f package.json -e "this.version=\"${NEW_ROOT_PACKAGE_VERSION}\""
 
-git commit -a -m "root: v${NEW_ROOT_PACKAGE_VERSION}"
 
-## поднимаю версию во всех подпакетах
+# поднимаю версию во всех подпакетах
 lerna version --no-push --no-commit-hooks --no-git-tag-version
 
-## собираю корневой проект
+# commit new tag
+git commit -a -m "root: v${NEW_ROOT_PACKAGE_VERSION}"
+
+# собираю корневой проект
 yarn build
 ## публикую все подпакеты
 lerna publish from-package --no-push --no-commit-hooks
 
-
-#git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" -m "v${NEW_ROOT_PACKAGE_VERSION}" && git push origin --tags
-
 # публикую корневой проект
-#npm publish --no-git-tag-version
-
 cd build && npm publish && cd ../
-
 
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 #npm release --release-as $RELEASE_TYPE
-# отправляю изменения на github
-#git commit -m "v${NEW_ROOT_PACKAGE_VERSION}"
 git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" -m "v${NEW_ROOT_PACKAGE_VERSION}" && git push --tags
 
 
