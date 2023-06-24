@@ -1,10 +1,8 @@
 #!/bin/bash
 
-#CONCURRENCY=${BUILD_CONCURRENCY:=10}
 
-## собираю все подпакеты с компонентами
-#lerna exec --concurrency $CONCURRENCY \
-#    -- $(pwd)/bin/rollup.sh
+# копирую файл для удобного экспорта из библиотеки
+cp packages/index.js build/
 
 # копирую package.json в сборку корневого пакета
 cp package.json build/package.json

@@ -27,7 +27,7 @@ git commit -a -m "root: v${NEW_ROOT_PACKAGE_VERSION}"
 
 # собираю корневой проект
 yarn build
-## публикую все подпакеты
+# публикую все подпакеты
 lerna publish from-package --no-push --no-commit-hooks
 
 # публикую корневой проект

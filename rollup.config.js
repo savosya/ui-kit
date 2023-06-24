@@ -6,11 +6,11 @@ import multiEntry from 'rollup-plugin-multi-input';
 import wildcardExternal from '@oat-sa/rollup-plugin-wildcard-external';
 import typescript from "rollup-plugin-ts";
 import json from '@rollup/plugin-json';
-import {terser} from "rollup-plugin-terser";
+// import {terser} from "rollup-plugin-terser";
 import copy from 'rollup-plugin-copy';
 
 /** tools */
-import createPackageJson from "./tools/rollup/create-package-json.js";
+import {createPackageJson} from "./tools/rollup/create-package-json.js";
 import {coreComponentsRootPackageResolver} from "./tools/rollup/resolve-root.js";
 import {coreComponentsTypingsResolver} from "./tools/rollup/resolve-typings.js";
 import {coreComponentsResolver} from "./tools/rollup/resolve-package.js";
@@ -115,7 +115,7 @@ const root = {
                     src: 'package.json',
                     dest: `../../build/${currentComponentName}`,
                     transform: () => createPackageJson('./esm/index.js'),
-                },
+                }
             ],
         }),
         coreComponentsRootPackageResolver({currentPackageDir}),
