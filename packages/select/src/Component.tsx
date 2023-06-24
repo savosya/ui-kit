@@ -1,4 +1,5 @@
-import React, {HTMLProps, useState}  from 'react'
+import * as React from 'react'
+import type {HTMLProps}  from 'react'
 import {Button} from '@savosya/savosya-myuikit-button'
 
 interface Props extends HTMLProps<HTMLSelectElement> {
@@ -6,9 +7,7 @@ interface Props extends HTMLProps<HTMLSelectElement> {
 }
 
 export function Select({options, ...rest}: Props) {
-  const [open, setOpen] = useState(false)
-
-  console.log('im change in 2 2 3')
+  const [open, setOpen] = React.useState(false)
   return (
     <div>
       <Button onClick={() => setOpen(!open)}>{open ? 'Закрыть' : 'Открыть'}</Button>

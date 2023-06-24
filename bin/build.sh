@@ -1,9 +1,5 @@
 #!/bin/bash
 
-
-# копирую файл для удобного экспорта из библиотеки
-cp packages/index.js build/
-
 # копирую package.json в сборку корневого пакета
 cp package.json build/package.json
 

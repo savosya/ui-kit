@@ -23,7 +23,7 @@ const currentPackageDir = process.cwd()
 const pkgPath = fs.realpathSync(currentPackageDir)
 const {packageJson: pkg} = readPackageUpSync({cwd: pkgPath});
 const currentComponentName = pkg.name.replace(KIT_NAME, '');
-const rootDir = `../../build/${currentComponentName}`;
+const componentBuildDir = `../../build/${currentComponentName}`;
 
 
 const copyPlugin = (dest) =>
@@ -41,6 +41,7 @@ const baseConfig = {
     ],
     external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
 };
+
 const defaultOptions = {
     sourcemap: true,
     exports: 'named',
@@ -60,15 +61,15 @@ const cjs = {
             ...defaultOptions,
             dir: 'build',
             format: "cjs",
+            interop: 'compat',
+            esModule: true,
         },
     ],
     plugins: [
         ...plugins,
         typescript({
-            tsconfig: resolvedConfig => ({
-                ...resolvedConfig,
-                tsBuildInfoFile: 'tsconfig.tsbuildinfo',
-            }),
+            tsconfig: `${currentPackageDir}/tsconfig.json`,
+            tsBuildInfoFile: 'tsconfig.tsbuildinfo',
         }),
         json(),
         copyPlugin('build'),
@@ -90,10 +91,8 @@ const esm = {
         ...plugins,
         typescript({
             outDir: 'build/esm',
-            tsconfig: (resolvedConfig) => ({
-                ...resolvedConfig,
-                tsBuildInfoFile: 'tsconfig.tsbuildinfo',
-            }),
+            tsconfig: `${currentPackageDir}/tsconfig.json`,
+            tsBuildInfoFile: 'tsconfig.tsbuildinfo',
         }),
         json(),
         copyPlugin('build/esm'),
@@ -110,7 +109,7 @@ const root = {
         copy({
             flatten: false,
             targets: [
-                {src: ['build/**/*', '!**/*.js'], dest: rootDir},
+                {src: ['build/**/*', '!**/*.js'], dest: componentBuildDir},
                 {
                     src: 'package.json',
                     dest: `../../build/${currentComponentName}`,
@@ -122,11 +121,10 @@ const root = {
     ],
     output: [
         {
-            dir: rootDir,
-            plugins: [coreComponentsTypingsResolver({rootDir})],
+            dir: componentBuildDir,
+            plugins: [coreComponentsTypingsResolver({componentBuildDir})],
         },
     ],
 };
-
 
 export default [cjs, esm, root].filter(Boolean);
