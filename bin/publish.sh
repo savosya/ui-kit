@@ -19,7 +19,7 @@ done
 json -I -f package.json -e "this.version=\"${NEW_ROOT_PACKAGE_VERSION}\""
 
 ## поднимаю версию во всех подпакетах
-#lerna version --no-push --no-commit-hooks
+lerna version --no-push --no-commit-hooks
 
 git commit -a -m "v${NEW_ROOT_PACKAGE_VERSION}"
 ## собираю корневой проект
