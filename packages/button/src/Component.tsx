@@ -7,7 +7,7 @@ interface Props extends HTMLProps<HTMLButtonElement> {
 }
 
 export function Button({onClick, children, red, type = 'button', ...rest}: Props) {
-  console.log('im change in button')
+  console.log('im change in button 1')
   return <button
     type={type}
     style={{border: red ? '1px solid red' : undefined}}
