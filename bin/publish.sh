@@ -16,22 +16,23 @@ lerna publish from-package
 #npm publish --no-git-tag-version
 #npm publish --userconfig "../.npmrc" --tag
 
-options=("patch" "minor" "major")
-echo "Новая версия рут пакета: "
-select ROOT_OPT in "${options[@]}"
-do
-    case $ROOT_OPT in
-        "patch")break;;
-        "minor")break;;
-        "major")break;;
-        *)echo "Invalid option";;
-    esac
-done
-
-echo $ROOT_OPT
+#options=("patch" "minor" "major")
+#echo "Новая версия рут пакета: "
+#select ROOT_OPT in "${options[@]}"
+#do
+#    case $ROOT_OPT in
+#        "patch")break;;
+#        "minor")break;;
+#        "major")break;;
+#        *)echo "Invalid option";;
+#    esac
+#done
+#
+#echo $ROOT_OPT
 cd build
 npm publish
 cd ../
+
 ## обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 #npm release --release-as $RELEASE_TYPE
 ## отправляю изменения на github
