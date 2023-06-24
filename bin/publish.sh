@@ -48,7 +48,7 @@ echo "3"
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 #npm release --release-as $RELEASE_TYPE
 # отправляю изменения на github
-git commit -m "v${NEW_ROOT_PACKAGE_VERSION}"
+#git commit -m "v${NEW_ROOT_PACKAGE_VERSION}"
 git push origin "${NEW_ROOT_PACKAGE_VERSION}" --tags
 echo "4"
 
