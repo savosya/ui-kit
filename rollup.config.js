@@ -61,8 +61,8 @@ const cjs = {
             ...defaultOptions,
             dir: 'build',
             format: "cjs",
-            interop: 'compat',
-            esModule: true,
+            // interop: 'compat',
+            // esModule: true,
         },
     ],
     plugins: [
