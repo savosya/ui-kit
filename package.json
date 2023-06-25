@@ -9,8 +9,8 @@
   "repository": "https://github.com/savosya/lerna-storybook-uikit-starter.git",
   "scripts": {
     "new": "bin/copy-folder.sh",
-    "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh bin/generateRootExporterFile.sh",
-    "build": "yarn clean && lerna run build --skip-nx-cache && bin/build.sh && bin/generateRootExporterFile.sh",
+    "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh bin/create-root-exporter-file.sh.sh",
+    "build": "yarn clean && lerna run build --skip-nx-cache && bin/build.sh && bin/create-root-exporter-file.sh.sh",
     "build:cache": "lerna run build",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf build",
     "pub:root": "./bin/publish.sh"

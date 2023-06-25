@@ -1,13 +1,12 @@
 {
-  "include": [
-    "src"
-  ],
-  "extends": "../../../tsconfig.json",
+  "include": ["src"],
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "build",
-    "rootDirs": [
-      "src"
-    ],
-    "baseUrl": "./"
+    "rootDirs": ["src"],
+    "baseUrl": ".",
+    "paths": {
+      "@savosya/savosya-myuikit-*": ["../*/src"]
+    }
   }
 }
