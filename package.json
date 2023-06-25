@@ -1,6 +1,7 @@
 {
   "name": "@savosya/savosya-myuikit",
   "version": "0.0.20",
+  "private": true,
   "license": "ISC",
   "type": "module",
   "workspaces": [
@@ -9,8 +10,8 @@
   "repository": "https://github.com/savosya/lerna-storybook-uikit-starter.git",
   "scripts": {
     "new": "bin/copy-folder.sh",
-    "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh bin/create-root-exporter-file.sh.sh",
-    "build": "yarn clean && lerna run build --skip-nx-cache && bin/build.sh && bin/create-root-exporter-file.sh.sh",
+    "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh bin/create-root-exporter-file.sh",
+    "build": "yarn clean && lerna run build --skip-nx-cache && bin/build.sh && bin/create-root-exporter-file.sh",
     "build:cache": "lerna run build",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf build",
     "pub:root": "./bin/publish.sh"
@@ -20,12 +21,6 @@
     "react-dom": "^17 || ^18"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/plugin-external-helpers": "^7.22.5",
-    "@babel/plugin-transform-runtime": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "@babel/preset-typescript": "^7.22.5",
-    "@babel/runtime": "^7.22.5",
     "@oat-sa/rollup-plugin-wildcard-external": "^1.0.0",
     "@rollup/plugin-json": "^6.0.0",
     "@types/node": "^20.3.0",
