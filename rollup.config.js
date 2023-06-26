@@ -67,10 +67,7 @@ const cjs = {
     ],
     plugins: [
         ...plugins,
-        typescript({
-            tsconfig: `${currentPackageDir}/tsconfig.json`,
-            tsBuildInfoFile: 'tsconfig.tsbuildinfo',
-        }),
+        typescript({tsconfig: `${currentPackageDir}/tsconfig.json`}),
         json(),
         copyPlugin('build'),
         copy({targets: [{src: ['package.json'], dest: 'build'}]}),
@@ -89,11 +86,7 @@ const esm = {
     ],
     plugins: [
         ...plugins,
-        typescript({
-            outDir: 'build/esm',
-            tsconfig: `${currentPackageDir}/tsconfig.json`,
-            tsBuildInfoFile: 'tsconfig.tsbuildinfo',
-        }),
+        typescript({outDir: 'build/esm', tsconfig: `${currentPackageDir}/tsconfig.json`}),
         json(),
         copyPlugin('build/esm'),
     ],
