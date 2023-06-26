@@ -16,3 +16,4 @@ tools
 *.log
 *.tsbuildinfo
 .github
+.storybook

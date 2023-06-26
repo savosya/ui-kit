@@ -13,9 +13,9 @@
     "new": "bin/copy-folder.sh",
     "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh bin/create-root-exporter-file.sh",
     "build": "yarn clean && lerna run build --skip-nx-cache && bin/build.sh && bin/create-root-exporter-file.sh",
-    "build:sb": "storybook build",
+    "build:sb": "yarn build && storybook build",
     "build:cache": "lerna run build",
-    "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf build",
+    "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
     "pub:root": "./bin/publish.sh"
   },
   "peerDependencies": {
