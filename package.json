@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "private": true,
   "license": "ISC",
   "type": "module",
@@ -44,6 +44,8 @@
     "json": "^11.0.0",
     "lerna": "^7.0.0",
     "prettier": "^2.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "read-pkg-up": "^9.1.0",
     "rollup": "^3.25.1",
     "rollup-plugin-copy": "^3.4.0",
