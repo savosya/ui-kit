@@ -44,7 +44,6 @@
     "json": "^11.0.0",
     "lerna": "^7.0.0",
     "prettier": "^2.6.2",
-    "prop-types": "^15.8.1",
     "read-pkg-up": "^9.1.0",
     "rollup": "^3.25.1",
     "rollup-plugin-copy": "^3.4.0",
