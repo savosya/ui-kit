@@ -5,6 +5,8 @@
     "outDir": "build",
     "rootDirs": ["src"],
     "baseUrl": ".",
+    "tsBuildInfoFile": "tsconfig.tsbuildinfo",
+    "allowImportingTsExtensions": true,
     "paths": {
       "@savosya/savosya-myuikit-*": ["../*/src"]
     }

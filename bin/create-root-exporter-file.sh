@@ -14,5 +14,5 @@ for pkg in $PACKAGES; do
   echo "export * from './$CLEAN_PKG';" >> $OUTPUT_FILE
 done
 
-tsc build/index.ts
+tsc build/index.ts --strict
 
