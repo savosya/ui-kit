@@ -6,10 +6,8 @@ import {readPackageUpSync} from 'read-pkg-up';
 import multiEntry from 'rollup-plugin-multi-input';
 import wildcardExternal from '@oat-sa/rollup-plugin-wildcard-external';
 import typescript from "rollup-plugin-ts";
-import sass from 'node-sass'
 import autoprefixer from 'autoprefixer'
 import postcss from 'rollup-plugin-postcss'
-import postcssValues from 'postcss-modules-values';
 import json from '@rollup/plugin-json';
 // import {terser} from "rollup-plugin-terser";
 import copy from 'rollup-plugin-copy';
@@ -31,8 +29,7 @@ const currentComponentName = pkg.name.replace(KIT_NAME, '');
 const componentBuildDir = `../../build/${currentComponentName}`;
 
 
-const copyPlugin = (dest) =>
-    copy({
+const copyPlugin = (dest) => copy({
         flatten: false,
         targets: [{src: ['src/**/*.{png,svg,jpg,jpeg}', '!**/__image_snapshots__/**'], dest}],
     });
@@ -52,26 +49,15 @@ const defaultOptions = {
     exports: 'named',
     preserveModules: true,
 }
-
 const postcssPlugin = (cssPath) => {
     return postcss({
-        preprocessor: (content, id) => new Promise(resolve => {
-            const result = sass.renderSync({ file: id })
-            resolve({ code: result.css.toString() })
-        }),
         modules: {
             generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`,
-            getJSON(id, exportedTokens) {
-                const jsonExport = {};
-                Object.keys(exportedTokens).forEach((token) => {
-                    jsonExport[token] = token;
-                });
-            },
         },
-        plugins: [autoprefixer, postcssValues()],
+        plugins: [autoprefixer],
         sourceMap: true,
         extract: path.resolve(cssPath),
-        extensions: ['.sass','.css']
+        extensions: ['.scss','.css'],
     })
 }
 
@@ -87,15 +73,13 @@ const cjs = {
             ...defaultOptions,
             dir: 'build',
             format: "cjs",
-            // interop: 'compat',
-            // esModule: true,
         },
     ],
     plugins: [
         ...plugins,
-        postcssPlugin('build/index.css'),
         typescript({tsconfig: `${currentPackageDir}/tsconfig.json`}),
         json(),
+        postcssPlugin('build/styles.css'),
         copyPlugin('build'),
         copy({targets: [{src: ['package.json'], dest: 'build'}]}),
     ],
@@ -113,9 +97,9 @@ const esm = {
     ],
     plugins: [
         ...plugins,
-        postcssPlugin('build/esm/index.css'),
         typescript({outDir: 'build/esm', tsconfig: `${currentPackageDir}/tsconfig.json`}),
         json(),
+        postcssPlugin('build/esm/styles.css'),
         copyPlugin('build/esm'),
     ],
 }
