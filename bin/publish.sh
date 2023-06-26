@@ -23,7 +23,7 @@ json -I -f package.json -e "this.version=\"${NEW_ROOT_PACKAGE_VERSION}\""
 lerna version --no-push --no-commit-hooks --no-git-tag-version
 
 # commit new tag
-git commit -a -m "root: v${NEW_ROOT_PACKAGE_VERSION}"
+git commit -a -m "Publish root package: v${NEW_ROOT_PACKAGE_VERSION}"
 
 # собираю корневой проект
 yarn build
@@ -36,6 +36,7 @@ cd build && npm publish && cd ../
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 #npm release --release-as $RELEASE_TYPE
 git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" -m "v${NEW_ROOT_PACKAGE_VERSION}" && git push --tags
+#git push origin main
 
 
 
