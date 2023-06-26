@@ -1,4 +1,5 @@
 const content = `{
+    "main": "index.js",
     "module": "%path%"
 }
 `;
