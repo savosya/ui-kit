@@ -1,10 +1,15 @@
 import fs from 'fs';
+import path from 'path';
 import {readPackageUpSync} from 'read-pkg-up';
 
 /** plugins */
 import multiEntry from 'rollup-plugin-multi-input';
 import wildcardExternal from '@oat-sa/rollup-plugin-wildcard-external';
 import typescript from "rollup-plugin-ts";
+import sass from 'node-sass'
+import autoprefixer from 'autoprefixer'
+import postcss from 'rollup-plugin-postcss'
+import postcssValues from 'postcss-modules-values';
 import json from '@rollup/plugin-json';
 // import {terser} from "rollup-plugin-terser";
 import copy from 'rollup-plugin-copy';
@@ -48,10 +53,31 @@ const defaultOptions = {
     preserveModules: true,
 }
 
+const postcssPlugin = (cssPath) => {
+    return postcss({
+        preprocessor: (content, id) => new Promise(resolve => {
+            const result = sass.renderSync({ file: id })
+            resolve({ code: result.css.toString() })
+        }),
+        modules: {
+            generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`,
+            getJSON(id, exportedTokens) {
+                const jsonExport = {};
+                Object.keys(exportedTokens).forEach((token) => {
+                    jsonExport[token] = token;
+                });
+            },
+        },
+        plugins: [autoprefixer, postcssValues()],
+        sourceMap: true,
+        extract: path.resolve(cssPath),
+        extensions: ['.sass','.css']
+    })
+}
+
 const plugins = [
     wildcardExternal(['@savosya/savosya-myuikit-*']),
     multiEntry.default(),
-    // terser(),
 ]
 
 const cjs = {
@@ -67,6 +93,7 @@ const cjs = {
     ],
     plugins: [
         ...plugins,
+        postcssPlugin('build/index.css'),
         typescript({tsconfig: `${currentPackageDir}/tsconfig.json`}),
         json(),
         copyPlugin('build'),
@@ -86,6 +113,7 @@ const esm = {
     ],
     plugins: [
         ...plugins,
+        postcssPlugin('build/esm/index.css'),
         typescript({outDir: 'build/esm', tsconfig: `${currentPackageDir}/tsconfig.json`}),
         json(),
         copyPlugin('build/esm'),

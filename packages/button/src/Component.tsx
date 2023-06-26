@@ -1,5 +1,6 @@
 import * as React from "react";
 import type {HTMLProps, ReactNode} from "react"
+import cls from './default.module.scss'
 
 interface Props extends HTMLProps<HTMLButtonElement> {
   red?: boolean
@@ -9,6 +10,7 @@ interface Props extends HTMLProps<HTMLButtonElement> {
 
 export function Button({onClick, children, red, type = 'button', ...rest}: Props) {
   return <button
+    className={`${cls.button} ${cls.blue}`}
     type={type}
     style={{border: red ? '1px solid red' : undefined}}
     onClick={onClick} {...rest}
