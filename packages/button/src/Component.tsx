@@ -1,6 +1,6 @@
 import * as React from "react";
 import type {HTMLProps, ReactNode} from "react"
-import cls from './default.module.scss'
+import cls from './index.module.scss'
 
 interface Props extends HTMLProps<HTMLButtonElement> {
   red?: boolean

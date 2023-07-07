@@ -1,0 +1,38 @@
+:root {
+    /*  brand  */
+    --brand-rubin: #E1056D;
+    --brand-blue: #1D3F88;
+    --brand-gray: #8B8B8C;
+    --brand-black: #000;
+
+    /*  background  */
+    --bg-primary: #F4F6F8;        /*  - Основной цвет фона  */
+    --bg-secondary: #FFF;         /*  - Доп. цвет для модальных окон и UI-элементов  */
+    --bg-info: #E5E8ED;           /*  - Цвет info block и не кликабельных элементов на сером фоне  */
+    --bg-header: #21272E;         /*  - Цвет шапки  */
+
+    /*  typography-main  */
+    --text-primary: #29313A;
+    --text-secondary: #67707C;
+    --text-tertiary: #848D98;
+    --text-placeholder: #848D98;
+    --text-gray: #FFF;
+    --text-white: #B8BEC6;
+
+    /*  typography-addons  */
+    --text-error-primary: #D44040;
+    --text-error-secondary: #F96262;
+    --text-attention: #EDA147;
+    --text-success-primary: #50A33B;
+
+    /*  typography-links  */
+    --text-link-default: #4693C8;
+    --text-link-hover: #6B9CD3;
+    --text-link-pressed: #90B5DE;
+    --text-link-visited: #3869A0;
+    --text-link-default-alternative: #677007C;
+    --text-link-hover-alternative: #525A63;
+
+
+    /*  background  */
+}

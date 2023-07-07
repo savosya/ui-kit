@@ -1,0 +1,11 @@
+{
+  "name": "@savosya/savosya-myuikit-variables",
+  "version": "0.0.1",
+  "description": "Design System Variables",
+  "license": "ISC",
+  "style": "index.css",
+  "publishConfig": {
+    "access": "public",
+    "directory": "build"
+  }
+}
