@@ -9,5 +9,8 @@
     "access": "public",
     "directory": "build"
   },
-  "gitHead": "a7393de9a156a5e3e2874013727261027c97d2cd"
+  "scripts": {
+    "build": "mkdir build && cp -R src/. build/"
+  },
+  "gitHead": "3b6562a68b432b7129f28f17656936fd63671632"
 }
