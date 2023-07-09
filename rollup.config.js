@@ -9,11 +9,11 @@ import typescript from "rollup-plugin-ts"
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
-import postcssPresetEnv from 'postcss-preset-env'
 import discardComments from 'postcss-discard-comments'
 import discardEmpty from 'postcss-discard-empty'
 import json from '@rollup/plugin-json'
 import copy from 'rollup-plugin-copy'
+// import postcssPresetEnv from 'postcss-preset-env'
 
 
 /** tools */
@@ -51,7 +51,7 @@ const defaultOutputOptions = {
 const postcssPlugin = (cssPath) => {
     return postcss({
         modules: {
-            generateScopedName: `d-savosya-${currentComponentName}_[local]__[hash:base64:4]`,
+            generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`,
         },
         plugins: [
             postcssImport(),
@@ -60,7 +60,7 @@ const postcssPlugin = (cssPath) => {
             discardEmpty(),
             discardComments(),
         ],
-        sourceMap: true,
+        sourceMap: 'inline',
         extract: path.resolve(cssPath),
         extensions: ['.scss', '.css'],
     })
@@ -72,8 +72,8 @@ const plugins = ({isEsm}) => {
         multiEntry.default(),
         typescript({outDir: isEsm ? 'build/esm' : 'build', tsconfig: `${currentPackageDir}/tsconfig.json`}),
         json(),
-        purgecssAfterBuildPlugin({pkgPath}),
         postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/styles.css'),
+        purgecssAfterBuildPlugin({pkgPath}),
         copy({targets: [{src: ['package.json'], dest: 'build'}]}),
     ]
 }
