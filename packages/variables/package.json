@@ -3,9 +3,11 @@
   "version": "0.0.2",
   "description": "Design System Variables",
   "license": "ISC",
+  "main": "index.css",
   "style": "index.css",
   "publishConfig": {
     "access": "public",
     "directory": "build"
-  }
+  },
+  "gitHead": "a7393de9a156a5e3e2874013727261027c97d2cd"
 }
