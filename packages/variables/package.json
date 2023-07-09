@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-variables",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Design System Variables",
   "license": "ISC",
   "main": "index.css",
@@ -10,7 +10,7 @@
     "directory": "build"
   },
   "scripts": {
-    "build": "mkdir build && cp -R src/. build/"
+    "build": "mkdir build && cp -R src/. build/ && cp package.json build/"
   },
-  "gitHead": "3b6562a68b432b7129f28f17656936fd63671632"
+  "gitHead": "aff80937cf490794ad311ed8c4787ea5dec7af94"
 }
