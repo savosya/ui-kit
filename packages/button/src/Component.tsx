@@ -12,7 +12,7 @@ export function Button({onClick, children, red, type = 'button', ...rest}: Props
   return <button
     className={`${cls.button} ${cls.blue}`}
     type={type}
-    style={{border: red ? '1px solid blue' : undefined}}
+    style={{border: red ? '1px solid green' : undefined}}
     onClick={onClick}
     {...rest}
   >
