@@ -19,6 +19,7 @@ import copy from 'rollup-plugin-copy'
 import {createPackageJson} from "./tools/rollup/create-package-json.js";
 import {purgecssAfterBuildPlugin} from "./tools/rollup/purgecss-after-build.js";
 import addCssImports from "./tools/css/add-css-imports.js";
+import resolvePackageJsonImports from "./tools/rollup/resolve-packagejson-import.js";
 
 /** vars */
 const KIT_NAME = '@savosya/savosya-myuikit-'
@@ -56,7 +57,6 @@ const postcssPlugin = (cssPath) => {
         plugins: [
             postcssImport({}),
             autoprefixer(),
-            // postcssPresetEnv({stage: 3, features: {'nesting-rules': true}}),
             discardEmpty(),
             discardComments(),
         ],
@@ -73,17 +73,6 @@ const plugins = ({isEsm}) => {
         postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/styles.css'),
         purgecssAfterBuildPlugin({pkgPath}),
         typescript({outDir: isEsm ? 'build/esm' : 'build', tsconfig: `${currentPackageDir}/tsconfig.json`}),
-        copy({
-            flatten: false,
-            targets: [
-                {src: ['package.json'], dest: 'build'},
-                {
-                    src: 'package.json',
-                    dest: `build`,
-                    transform: () => createPackageJson('./esm/index.js'),
-                }
-            ],
-        })
     ]
 }
 
@@ -94,7 +83,7 @@ const cjs = {
             ...defaultOutputOptions,
             dir: 'build',
             format: "cjs",
-            plugins: [addCssImports({extensions: ['.css']})]
+            plugins: [addCssImports({extensions: ['.css']}), resolvePackageJsonImports({})]
         },
     ],
     plugins: [...plugins({isEsm: false})]
