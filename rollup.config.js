@@ -73,7 +73,18 @@ const plugins = ({isEsm}) => {
         postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/styles.css'),
         purgecssAfterBuildPlugin({pkgPath}),
         typescript({outDir: isEsm ? 'build/esm' : 'build', tsconfig: `${currentPackageDir}/tsconfig.json`}),
-        copy({targets: [{src: ['package.json'], dest: 'build'}]}),
+        // copy({targets: [{src: ['package.json'], dest: 'build'}]}),
+        copy({
+            flatten: false,
+            targets: [
+                {src: ['build/**/*', '!**/*.js'], dest: componentBuildDir},
+                {
+                    src: 'package.json',
+                    dest: `../../build/${currentComponentName}`,
+                    transform: () => createPackageJson('./esm/index.js'),
+                }
+            ],
+        })
     ]
 }
 
