@@ -26,12 +26,14 @@ export function addCssImports(options = {}) {
             );
 
             for (const jsFileName of jsFiles) {
-                const jsFile = bundle[jsFileName];
-                const importStatement = isEsm
-                    ? `import '${cssFileName}';\n`
-                    : `require('${cssFileName}');\n`;
+                if (jsFileName === 'Component.js') {
+                    const jsFile = bundle[jsFileName];
+                    const importStatement = isEsm
+                        ? `import '${cssFileName}';\n`
+                        : `require('${cssFileName}');\n`;
 
-                jsFile.code = importStatement + jsFile.code;
+                    jsFile.code = importStatement + jsFile.code;
+                }
             }
 
             // delete bundle['styles.css'];
