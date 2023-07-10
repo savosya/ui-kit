@@ -1,5 +1,6 @@
 import fs from 'fs'
 import * as path from 'path'
+import sass from 'sass'
 import {readPackageUpSync} from 'read-pkg-up'
 
 /** plugins */
@@ -11,17 +12,14 @@ import postcssImport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
 import discardComments from 'postcss-discard-comments'
 import discardEmpty from 'postcss-discard-empty'
-import json from '@rollup/plugin-json'
 import copy from 'rollup-plugin-copy'
+// import json from '@rollup/plugin-json'
 // import postcssPresetEnv from 'postcss-preset-env'
-
 
 /** tools */
 import {createPackageJson} from "./tools/rollup/create-package-json.js";
-import {coreComponentsRootPackageResolver} from "./tools/rollup/resolve-root.js";
-import {coreComponentsResolver} from "./tools/rollup/resolve-package.js";
 import {purgecssAfterBuildPlugin} from "./tools/rollup/purgecss-after-build.js";
-
+import {addCssImports} from "./tools/css/add-css-imports.js";
 
 /** vars */
 const KIT_NAME = '@savosya/savosya-myuikit-'
@@ -35,6 +33,7 @@ const componentBuildDir = path.resolve(currentPackageDir, `../../build/${current
 const baseConfig = {
     input: [
         'src/**/*.{ts,tsx}',
+        'src/**/*.{css,scss}',
         '!src/**/*.{test,stories}.{ts,tsx}',
         '!src/**/*.mdx',
         '!src/**/*.d.ts',
@@ -53,16 +52,18 @@ const postcssPlugin = (cssPath) => {
         modules: {
             generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`,
         },
+        autoModules: false,
+        include: ["src/**/*.scss"],
         plugins: [
-            postcssImport(),
+            postcssImport({}),
             autoprefixer(),
             // postcssPresetEnv({stage: 3, features: {'nesting-rules': true}}),
             discardEmpty(),
             discardComments(),
         ],
-        sourceMap: 'inline',
+        sourceMap: false,
         extract: path.resolve(cssPath),
-        extensions: ['.scss', '.css'],
+        extensions: ['.scss'],
     })
 }
 
@@ -70,10 +71,10 @@ const plugins = ({isEsm}) => {
     return [
         wildcardExternal(['@savosya/savosya-myuikit-*']),
         multiEntry.default(),
-        typescript({outDir: isEsm ? 'build/esm' : 'build', tsconfig: `${currentPackageDir}/tsconfig.json`}),
-        json(),
         postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/styles.css'),
         purgecssAfterBuildPlugin({pkgPath}),
+        typescript({outDir: isEsm ? 'build/esm' : 'build', tsconfig: `${currentPackageDir}/tsconfig.json`}),
+        // addCssImports({isEsm, extensions: ['.css']}),
         copy({targets: [{src: ['package.json'], dest: 'build'}]}),
     ]
 }
@@ -85,6 +86,7 @@ const cjs = {
             ...defaultOutputOptions,
             dir: 'build',
             format: "cjs",
+            plugins: [addCssImports({isEsm: false, extensions: ['.css']})]
         },
     ],
     plugins: [...plugins({isEsm: false})]
@@ -97,7 +99,8 @@ const esm = {
             ...defaultOutputOptions,
             dir: 'build/esm',
             format: "esm",
-            plugins: [coreComponentsResolver({importFrom: 'esm'})]
+            generatedCode: 'es2015',
+            plugins: [addCssImports({isEsm: true, extensions: ['.css']})]
         },
     ],
     plugins: [...plugins({isEsm: true})]
@@ -106,16 +109,9 @@ const esm = {
 const root = {
     input: ['build/**/*.js'],
     external: baseConfig.external,
-    output: [
-        {
-            dir: componentBuildDir,
-            // plugins: [coreComponentsTypingsResolver({componentBuildDir})],
-        },
-    ],
+    output: [{dir: componentBuildDir}],
     plugins: [
-        multiEntry.default({
-            relative: 'build',
-        }),
+        multiEntry.default({relative: 'build'}),
         copy({
             flatten: false,
             targets: [
@@ -127,7 +123,6 @@ const root = {
                 }
             ],
         }),
-        coreComponentsRootPackageResolver({currentPackageDir}),
     ],
 };
 
