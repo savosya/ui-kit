@@ -1,12 +1,12 @@
 {
   "name": "@savosya/savosya-myuikit-select",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Select",
   "license": "ISC",
   "main": "index.js",
   "module": "/esm/index.js",
   "dependencies": {
-    "@savosya/savosya-myuikit-button": "^0.1.6"
+    "@savosya/savosya-myuikit-button": "^0.1.7"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
