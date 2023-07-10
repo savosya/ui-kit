@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type {HTMLProps}  from 'react'
-import {Button} from '@savosya/savosya-myuikit-button'
+import Button from '@savosya/savosya-myuikit-button'
 
 interface Props extends HTMLProps<HTMLSelectElement> {
   options?: { text: string, value: string | number }[]
