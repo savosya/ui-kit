@@ -79,7 +79,7 @@ const plugins = ({isEsm}) => {
                 {src: ['package.json'], dest: 'build'},
                 {
                     src: 'package.json',
-                    dest: `../../build/${currentComponentName}`,
+                    dest: `build`,
                     transform: () => createPackageJson('./esm/index.js'),
                 }
             ],
