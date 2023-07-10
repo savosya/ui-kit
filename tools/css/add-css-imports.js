@@ -29,8 +29,8 @@ export function addCssImports(options = {}) {
                 if (jsFileName === 'Component.js') {
                     const jsFile = bundle[jsFileName];
                     const importStatement = isEsm
-                        ? `import '${cssFileName}';\n`
-                        : `require('${cssFileName}');\n`;
+                        ? `import './${cssFileName}';\n`
+                        : `require(./'${cssFileName}');\n`;
 
                     jsFile.code = importStatement + jsFile.code;
                 }
