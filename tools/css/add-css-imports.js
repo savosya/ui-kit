@@ -6,38 +6,36 @@ function hasCssImport(code) {
     return CSS_FILE_EXTENSIONS.some(ext => code.includes(`.css`))
 }
 
-export function addCssImports(options = {}) {
-    const {extensions = CSS_FILE_EXTENSIONS, isEsm = true} = options;
+const addCssImports = (options = {}) => {
+    const {extensions = CSS_FILE_EXTENSIONS} = options;
     return {
         name: 'add-css-imports',
-        generateBundle(outputOptions, bundle) {
+        // sequential: true,
+        // order: 'pre',
+        generateBundle: async (options, bundle) => {
             const hasStyles = Object.keys(bundle).some(fileName =>
                 extensions.includes(path.extname(fileName)),
             );
 
-            if (!hasStyles) {
-                return;
-            }
+            if (!hasStyles) return;
+
+            const jsFileName = 'Component.js';
 
             const cssFile = bundle['styles.css'];
             const cssFileName = cssFile.fileName;
-            const jsFiles = Object.keys(bundle).filter(fileName =>
-                /\.js$/.test(fileName),
-            );
 
-            for (const jsFileName of jsFiles) {
-                if (jsFileName === 'Component.js') {
-                    const jsFile = bundle[jsFileName];
-                    const importStatement = isEsm
-                        ? `import './${cssFileName}';\n`
-                        : `require(./'${cssFileName}');\n`;
+            const chunkWithImport = bundle[jsFileName]
 
-                    jsFile.code = importStatement + jsFile.code;
-                }
+            if (chunkWithImport) {
+                chunkWithImport.imports.push(cssFileName)
+
+                const importStatement = `require('./${cssFileName}');\n`;
+                chunkWithImport.code = importStatement + chunkWithImport.code;
+
             }
-
-            // delete bundle['styles.css'];
         },
     };
 }
+
+export default addCssImports
 

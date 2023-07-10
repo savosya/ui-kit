@@ -1,6 +1,5 @@
 import fs from 'fs'
 import * as path from 'path'
-import sass from 'sass'
 import {readPackageUpSync} from 'read-pkg-up'
 
 /** plugins */
@@ -19,7 +18,7 @@ import copy from 'rollup-plugin-copy'
 /** tools */
 import {createPackageJson} from "./tools/rollup/create-package-json.js";
 import {purgecssAfterBuildPlugin} from "./tools/rollup/purgecss-after-build.js";
-import {addCssImports} from "./tools/css/add-css-imports.js";
+import addCssImports from "./tools/css/add-css-imports.js";
 
 /** vars */
 const KIT_NAME = '@savosya/savosya-myuikit-'
@@ -86,7 +85,7 @@ const cjs = {
             ...defaultOutputOptions,
             dir: 'build',
             format: "cjs",
-            plugins: [addCssImports({isEsm: false, extensions: ['.css']})]
+            plugins: [addCssImports({extensions: ['.css']})]
         },
     ],
     plugins: [...plugins({isEsm: false})]
@@ -100,7 +99,7 @@ const esm = {
             dir: 'build/esm',
             format: "esm",
             generatedCode: 'es2015',
-            plugins: [addCssImports({isEsm: true, extensions: ['.css']})]
+            plugins: [addCssImports({extensions: ['.css']})]
         },
     ],
     plugins: [...plugins({isEsm: true})]
