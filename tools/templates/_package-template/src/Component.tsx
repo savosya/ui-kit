@@ -1,4 +1,4 @@
-// export * as React from 'react'
+// import * as React from 'react'
 // import type {HTMLProps, ReactNode} from "react"
 
 export function PackageTemplate() {
