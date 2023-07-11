@@ -18,5 +18,6 @@ for pkg in $PACKAGES; do
   fi
 done
 
-tsc build/index.ts --strict
+tsc build/index.ts --declaration --declarationDir build --outDir build --esModuleInterop --forceConsistentCasingInFileNames --module commonjs --target es5 --skipLibCheck
+rm -rf build/index.ts
 
