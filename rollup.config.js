@@ -12,7 +12,6 @@ import autoprefixer from 'autoprefixer'
 import discardComments from 'postcss-discard-comments'
 import discardEmpty from 'postcss-discard-empty'
 import copy from 'rollup-plugin-copy'
-// import json from '@rollup/plugin-json'
 // import postcssPresetEnv from 'postcss-preset-env'
 
 /** tools */
@@ -30,6 +29,8 @@ const {packageJson: pkg} = readPackageUpSync({cwd: pkgPath});
 const currentComponentName = pkg.name.replace(KIT_NAME, '');
 const componentBuildDir = path.resolve(currentPackageDir, `../../build/${currentComponentName}`);
 
+
+/** configuration */
 const baseConfig = {
     input: [
         'src/**/*.{ts,tsx}',
@@ -76,6 +77,7 @@ const plugins = ({isEsm}) => {
     ]
 }
 
+/** Всего создается 2 версии пакетов. Commonjs и ESModules */
 const cjs = {
     ...baseConfig,
     output: [
@@ -83,7 +85,11 @@ const cjs = {
             ...defaultOutputOptions,
             dir: 'build',
             format: "cjs",
-            plugins: [addCssImports({extensions: ['.css']}), resolvePackageJsonImports({})]
+            /**
+             *  resolvePackageJsonImports - резолвит package.json для всего пакета компонента.
+             *  Нужно при импорте чтобы модуль брал es версию компонента.
+             * */
+            plugins: [addCssImports(), resolvePackageJsonImports({module: 'esm/index.js'})]
         },
     ],
     plugins: [...plugins({isEsm: false})]
@@ -97,7 +103,7 @@ const esm = {
             dir: 'build/esm',
             format: "esm",
             generatedCode: 'es2015',
-            plugins: [addCssImports({extensions: ['.css']})]
+            plugins: [addCssImports()]
         },
     ],
     plugins: [...plugins({isEsm: true})]
@@ -113,6 +119,8 @@ const root = {
             flatten: false,
             targets: [
                 {src: ['build/**/*', '!**/*.js'], dest: componentBuildDir},
+
+                /** Создает package.json для каждого пакета в root сборке */
                 {
                     src: 'package.json',
                     dest: `../../build/${currentComponentName}`,

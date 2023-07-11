@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Создет index.js и index.d.ts для root пакета.
+#
+# Пример создаваемого файла (index.js):
+# export { default as Button } from './button';
+# export { default as Select } from './select';
+
 set -e
 
 OUTPUT_FILE="./build/index.ts"
@@ -18,6 +24,7 @@ for pkg in $PACKAGES; do
   fi
 done
 
+# Компилирует index.ts с помощью ts и удаляет index.ts
 tsc build/index.ts --declaration --declarationDir build --outDir build --forceConsistentCasingInFileNames --module es2020 --target es5 --skipLibCheck --moduleResolution node
 rm -rf build/index.ts
 

@@ -1,20 +1,23 @@
 import path from 'path';
 
-const CSS_FILE_EXTENSIONS = ['.css', '.scss'];
-
-function hasCssImport(code) {
-    return CSS_FILE_EXTENSIONS.some(ext => code.includes(`.css`))
-}
+/**
+ *  Плагин расчитан на работу после обработки postcss.
+ *  Проверяет есть ли в билде файлы с расширением .css,
+ *  если есть, то добавляет require('./styles.css') в начало Component.tsx.
+ *
+ *  note: Добавление import './styles.css' приводит к ошибке, т.к. rollup начинает парсить css файл.
+ *
+ *  TODO: добавить кастомизацию плагина через options
+ * */
 
 const addCssImports = (options = {}) => {
-    const {extensions = CSS_FILE_EXTENSIONS} = options;
+    const {} = options;
+
     return {
         name: 'add-css-imports',
-        // sequential: true,
-        // order: 'pre',
         generateBundle: async (options, bundle) => {
             const hasStyles = Object.keys(bundle).some(fileName =>
-                extensions.includes(path.extname(fileName)),
+                '.css'.includes(path.extname(fileName)),
             );
 
             if (!hasStyles) return;
@@ -38,4 +41,3 @@ const addCssImports = (options = {}) => {
 }
 
 export default addCssImports
-
