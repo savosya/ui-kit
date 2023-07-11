@@ -2,6 +2,8 @@
 
 :root {
   --badge-border-radius: 24px;
+  --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica,
+  sans-serif;
 
   // colors:
   --badge-color-typography: var(--text-primary);
@@ -21,6 +23,7 @@
   color: var(--badge-color-typography);
   border-radius: var(--badge-border-radius);
   background-color: var(--badge-color-default);
+  font-family: var(--font-family);
 
   // colors
   &.primary {
@@ -42,14 +45,14 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: -0.2px;
-    padding: 4px 8px 4px 8px;
+    padding: 4px 8px;
   }
 
   &.s {
     font-weight: 500;
     font-size: 10px;
     line-height: 14px;
-    padding: 2px 4px 2px 4px;
+    padding: 2px 4px;
   }
 }
 
@@ -57,16 +60,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 18px;
-  min-width: 18px;
 
   color: white;
   background-color: var(--badge_number-color-bg);
-  border-radius: 50%;
-  padding: 4px 5px;
+  border-radius: 20px;
 
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 11px;
-  letter-spacing: -0.2px;
+  &.m {
+    padding: 4px 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 10px;
+    letter-spacing: -0.2px;
+  }
+
+  &.s {
+    padding: 1px 3px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: -0.2px;
+  }
 }

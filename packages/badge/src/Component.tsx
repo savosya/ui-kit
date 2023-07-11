@@ -38,7 +38,7 @@ export function Badge(props: BadgeProps) {
       {...rest}
       style={{backgroundColor: color, ...rest?.style }}
     >
-      {number && <span className={clsx(cls.number, classes.number)}>{number}</span>}
+      {number && <span className={clsx(cls.number, cls[size], classes.number)}>{number}</span>}
 
       <span className={classes.text}>{children}</span>
     </div>
