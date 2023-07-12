@@ -9,6 +9,7 @@ export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, "size">{
   size?: 'm' | 's'
   number?: number | string
   children?: ReactNode
+  className?: string
   classes?: {
     root?: string
     number?: string
@@ -18,7 +19,7 @@ export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, "size">{
 
 
 export function Badge(props: BadgeProps) {
-  const {color, type = '', size = 'm', number, children, classes = {}, ...rest} = props;
+  const {color, type = '', size = 'm', number, children, classes = {}, className, ...rest} = props;
 
   return (
     <div
@@ -26,6 +27,7 @@ export function Badge(props: BadgeProps) {
         cls.badge,
         type && cls[type],
         cls[size],
+        className,
         classes.root
       )}
       {...rest}
