@@ -1,1 +1,3 @@
-// export * from './Component'
+// import {} from './Component'
+
+// export default
