@@ -10,7 +10,7 @@ export function Select({options, ...rest}: Props) {
   const [open, setOpen] = React.useState(false)
   return (
     <div>
-      <Button onClick={() => setOpen(!open)} red>{open ? 'Закрыть' : 'Открыть'}</Button>
+      <Button onClick={() => setOpen(!open)}>{open ? 'Закрыть' : 'Открыть'}</Button>
 
       {
         open && (

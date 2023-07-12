@@ -1,16 +1,13 @@
 {
-  "name": "@savosya/savosya-myuikit-button",
-  "version": "0.1.14",
-  "description": "Button",
+  "name": "@savosya/savosya-myuikit-loader",
+  "version": "0.0.1",
+  "description": "Loader",
   "license": "ISC",
   "main": "index.js",
   "module": "build/esm/index.js",
   "peerDependencies": {
     "react": "^17 || ^18",
     "react-dom": "^17 || ^18"
-  },
-  "dependencies": {
-    "@savosya/savosya-myuikit-loader": "*"
   },
   "publishConfig": {
     "access": "public",
@@ -20,5 +17,7 @@
     "tsc": "tsc",
     "build": "rollup -c ../../rollup.config.js"
   },
-  "gitHead": "0d27256b584b403e43ea6ce472563eda8aa35cdd"
+  "dependencies": {
+    "clsx": "^1.2.1"
+  }
 }
