@@ -9,5 +9,6 @@
     "paths": {
       "@savosya/savosya-myuikit-*": ["../*/src"]
     }
-  }
+  },
+  "references": [{ "path": "../loader" }]
 }

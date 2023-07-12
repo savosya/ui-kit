@@ -24,7 +24,7 @@ export function Badge(props: BadgeProps) {
   return (
     <div
       className={clsx(
-        cls.badge,
+        cls.root,
         type && cls[type],
         cls[size],
         className,

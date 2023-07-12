@@ -23,7 +23,8 @@ export const Loader = (props: LoaderProps) => {
     height={size}
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    className={clsx(cls.loader, classes?.loader)}
+    className={clsx(cls.root, classes?.loader)}
+    style={{width: size, height: size}}
     {...rest}
   >
     <path
