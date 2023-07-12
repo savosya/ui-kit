@@ -23,6 +23,7 @@
     "react-dom": "^17 || ^18"
   },
   "devDependencies": {
+    "@fontsource/inter": "^5.0.5",
     "@oat-sa/rollup-plugin-wildcard-external": "^1.0.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@storybook/addon-essentials": "7.0.23",

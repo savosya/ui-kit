@@ -20,13 +20,6 @@ export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, "size">{
 export function Badge(props: BadgeProps) {
   const {color, type = '', size = 'm', number, children, classes = {}, ...rest} = props;
 
-  console.log(clsx(
-    cls.badge,
-    type && cls[type],
-    cls[size],
-    classes.root
-  ))
-
   return (
     <div
       className={clsx(
