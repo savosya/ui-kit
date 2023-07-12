@@ -17,6 +17,10 @@ export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'type' |
   loaderSize?: number
   leftIcon?: ReactNode
   rightIcon?: ReactNode
+  classes?: {
+    root?: string
+    loader?: string
+  }
 }
 
 const loaderSizeConfig = {
@@ -40,6 +44,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
     className,
     href,
     onClick,
+    classes = {},
     ...rest
   } = props
 
@@ -72,12 +77,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
           [cls.loading]: loading,
           [cls.onlyIcon]: isOnlyIcon
         },
-        className
+        className,
+        classes?.root
       )}
       onClick={handleClick}
       {...rest}
     >
-      {loading && <Loader fill={false} size={loaderSize ?? loaderSizeConfig[size]}/>}
+      {loading && <Loader fill={false} size={loaderSize ?? loaderSizeConfig[size]} className={classes?.loader}/>}
       {!loading && leftIcon || null}
       {children}
       {rightIcon}
