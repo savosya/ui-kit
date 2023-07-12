@@ -5,3 +5,5 @@ cp package.json build/package.json
 
 # делаю корневой пакет публичным
 yarn json -f build/package.json -I -e "delete this.private" -e "delete this.workspaces"
+
+echo '[FINISHED]: build.sh'

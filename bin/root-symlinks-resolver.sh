@@ -18,3 +18,5 @@ for FILE in $FILES; do
   # Записать содержимое с заменой в файл
   echo "$CONTENTS" > "$FILE"
 done
+
+echo '[FINISHED]: root-symlinks-resolver.sh'

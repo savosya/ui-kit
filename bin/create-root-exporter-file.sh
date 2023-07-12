@@ -28,3 +28,4 @@ done
 tsc build/index.ts --declaration --declarationDir build --outDir build --forceConsistentCasingInFileNames --module es2020 --target es5 --skipLibCheck --moduleResolution node
 rm -rf build/index.ts
 
+echo '[FINISHED]: create-root-exporter-file.sh'
