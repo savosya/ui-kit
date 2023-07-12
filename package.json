@@ -10,9 +10,9 @@
   "repository": "https://github.com/savosya/lerna-storybook-uikit-starter.git",
   "scripts": {
     "new": "bin/copy-folder.sh",
-    "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh bin/create-root-exporter-file.sh",
+    "prepareSh": "chmod +x bin/copy-folder.sh bin/build.sh bin/create-root-exporter-file.sh bin/root-symlinks-resolver.sh",
     "sb": "storybook dev -p 6006",
-    "build": "yarn clean && lerna run build --skip-nx-cache --stream && bin/build.sh && bin/create-root-exporter-file.sh",
+    "build": "yarn clean && lerna run build --skip-nx-cache --stream && bin/build.sh && bin/create-root-exporter-file.sh && bin/root-symlinks-resolver.sh",
     "build:sb": "yarn build && storybook build",
     "build:cache": "yarn clean && lerna run build && bin/build.sh && bin/create-root-exporter-file.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
