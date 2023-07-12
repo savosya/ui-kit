@@ -1,17 +1,20 @@
 #!/bin/bash
 
+# Заменяет все импорты c @savosya/savosya-myuikit- на @savosya/savosya-myuikit/
+
 SEARCH="@savosya/savosya-myuikit-"
 REPLACE="@savosya/savosya-myuikit/"
 
+# Поиск всех файлов с .js расширением в папке build (root-пакет)
 FILES=$(find build -type f -name "*.js")
 
 for FILE in $FILES; do
-  # Read the contents of the file into a variable
+  # Записать содержимое файла в переменную
   CONTENTS=$(<"$FILE")
 
-  # Replace the import statements in the variable
+  # Произвести замену
   CONTENTS="${CONTENTS//$SEARCH/$REPLACE}"
 
-  # Write the modified contents back to the file
+  # Записать содержимое с заменой в файл
   echo "$CONTENTS" > "$FILE"
 done
