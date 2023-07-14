@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-checkbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Checkbox",
   "license": "ISC",
   "main": "index.js",
