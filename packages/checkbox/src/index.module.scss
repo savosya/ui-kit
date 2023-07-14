@@ -1,0 +1,157 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
+
+:root {
+  --checkbox-font-family: 'Inter', sans-serif;
+
+  --checkbox-default: #B8BEC6;
+  --checkbox-hover: #1C2229;
+  --checkbox-focused: #191D23;
+  --checkbox-active: #29313A;
+  --checkbox-disabled: #E5E8ED;
+}
+
+.root {
+  font-family: var(--checkbox-font-family);
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+  color: var(--checkbox-default);
+
+  &:hover {
+    color: var(--checkbox-hover);
+  }
+
+  &:active {
+    color: var(--checkbox-focused);
+  }
+
+  &.checked, &.indeterminate {
+    color: var(--checkbox-active);
+  }
+
+  &.disabled {
+    color: var(--checkbox-disabled);
+    cursor: not-allowed;
+  }
+
+  input[type="checkbox"] {
+    //appearance: none;
+    //visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    left: 4px;
+
+    &:focus + .box, &:focus + .indeterminateBox {
+      outline: 2px solid var(--default-outline-color);
+    }
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  tab-index: 0;
+
+  &.s {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid currentColor;
+  }
+
+  &.m {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid currentColor;
+  }
+
+  &.l {
+    width: 24px;
+    height: 24px;
+    border: 1.8px solid currentColor;
+  }
+
+  &:hover {
+    color: var(--checkbox-hover);
+  }
+
+  &:focus {
+    color: var(--checkbox-focused);
+  }
+
+  &.checked {
+    color: #fff;
+    background-color: var(--checkbox-active);
+    border: 1.5px solid var(--checkbox-active);
+  }
+
+  &.disabled {
+    color: var(--checkbox-disabled);
+  }
+}
+
+.indeterminateBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--checkbox-active);
+  border-radius: 2px;
+
+  &.disabled {
+    background-color: var(--checkbox-disabled);
+  }
+
+  &.s {
+    width: 8px;
+    height: 8px;
+  }
+
+  &.m {
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid currentColor;
+  }
+
+  &.l {
+    width: 14px;
+    height: 14px;
+    border: 1.8px solid currentColor;
+  }
+}
+
+.content {
+  display: inline-block;
+  position: relative;
+
+  user-select: none;
+
+  &.s {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.2px;
+    padding-left: 26px;
+  }
+
+  &.m {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+  }
+
+  &.l {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+  }
+}
