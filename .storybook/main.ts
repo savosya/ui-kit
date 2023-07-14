@@ -31,21 +31,25 @@ const config: StorybookConfig = {
         return;
       }
 
+      /** Названия всех компонентов в папке packages */
       const cmpNames = files.filter((file) => {
         return fs.statSync(`${packagesFolder}/${file}`).isDirectory();
       });
 
+      /**
+       * Алиасы на все компоненты в папке packages/.../src
+       * Пример:
+       *    config.resolve.alias = {
+       *      ...config.resolve.alias,
+       *      '@savosya/savosya-myuikit-button': path.resolve(__dirname, '../packages/button/src'),
+       *    };
+       * */
       cmpNames.forEach(cmp => Object.assign(config.resolve.alias, {
         [`@savosya/savosya-myuikit-${cmp}`]: path.resolve(__dirname, `../packages/${cmp}/src`)
       }))
     })
 
-    // config.resolve.alias = {
-    //   ...config.resolve.alias,
-    //   '@savosya/savosya-myuikit-button': path.resolve(__dirname, '../packages/button/src'),
-    // };
     config.resolve.mainFields = ['module', 'main'];
-
 
     return config
   },

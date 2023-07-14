@@ -1,0 +1,5 @@
+@import './colors.css';
+
+:root {
+    --default-outline-color: var(--brand-blue);
+}

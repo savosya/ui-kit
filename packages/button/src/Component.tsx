@@ -52,7 +52,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent> &
-      React.MouseEvent<HTMLButtonElement, MouseEvent>,
+      React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     if (rest.disabled || loading) {
       e.preventDefault();
