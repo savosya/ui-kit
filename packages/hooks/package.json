@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-hooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hooks",
   "license": "ISC",
   "main": "index.js",
@@ -16,6 +16,5 @@
   "scripts": {
     "tsc": "tsc",
     "build": "rollup -c ../../rollup.config.js"
-  },
-  "dependencies": {}
+  }
 }

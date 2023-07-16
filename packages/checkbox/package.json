@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-checkbox",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Checkbox",
   "license": "ISC",
   "main": "index.js",
@@ -18,8 +18,8 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "clsx": "^1.2.1",
-    "@savosya/savosya-myuikit-utils": "*",
-    "@savosya/savosya-myuikit-hooks": "*"
+    "@savosya/savosya-myuikit-hooks": "^0.0.2",
+    "@savosya/savosya-myuikit-utils": "^0.0.2",
+    "clsx": "^1.2.1"
   }
 }

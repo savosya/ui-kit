@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-tooltip",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tooltip",
   "license": "ISC",
   "main": "index.js",
@@ -18,8 +18,8 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
+    "@savosya/savosya-myuikit-utils": "^0.0.2",
     "clsx": "^1.2.1",
-    "react-tooltip": "^5.18.0",
-    "@savosya/savosya-myuikit-utils": "*"
+    "react-tooltip": "^5.18.0"
   }
 }
