@@ -1,0 +1,135 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
+
+:root {
+  --input-font-family: 'Inter', sans-serif;
+
+  --input-bg: #FFF;
+  --input-bg_disabled: #E5E8ED;
+
+  --input-active-blue: #4683C8;
+
+  --input-color: var(--text-primary);
+  --input-color_disabled: var(--text-secondary);
+
+  --input-label-color: var(--text-tertiary);
+  --input-placeholder-color: var(--text-gray);
+
+  --input-hint-color: var(--text-secondary);
+  --input-error-color: var(--text-error-primary);
+}
+
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--input-font-family);
+}
+
+.input_root {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid transparent;
+
+  // sizes:
+  padding: 8px 16px;
+
+  &.disabled {
+    background-color: var(--input-bg_disabled);
+  }
+
+  &.error {
+    border: 1px solid var(--input-error-color);
+  }
+}
+
+.root_core {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.label {
+  order: 0;
+  display: inline-block;
+  height: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  color: var(--input-label-color);
+  vertical-align: center;
+}
+
+.input {
+  order: 1;
+  appearance: none;
+  outline: none;
+  border: 0 solid transparent;
+  caret-color: var(--input-active-blue);
+
+  display: inline-block;
+  height: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+
+  &:focus {
+    & ~ .label {
+      color: var(--input-active-blue);
+    }
+
+    & ~ .label.error {
+      color: var(--input-error-color);
+    }
+  }
+
+  &::placeholder {
+    color: var(--input-placeholder-color);
+  }
+
+  &:disabled {
+    color: var(--input-color_disabled);
+  }
+
+  &::after {
+    content: 'kg';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}
+
+.extra {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  color: var(--input-hint-color);
+  padding: 0 18px;
+
+  & > span {
+    display: block;
+  }
+}
+
+.error {
+  color: var(--input-error-color);
+}
+
+.addons_left {
+  margin-right: 6px;
+}
+
+.addons_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  gap: 4px;
+}

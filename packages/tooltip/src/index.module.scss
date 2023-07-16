@@ -1,0 +1,73 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
+
+:root {
+  --tooltip-font-family: 'Inter', sans-serif;
+
+  --light-bg: var(--bg-info);
+  --light-color: var(--text-primary);
+  --dark-bg: var(--text-primary);
+  --dark-color: #FFF;
+
+  --light-content_w_title-color: var(--text-secondary);
+  --dark-content_w_title-color: var(--text-gray);
+}
+
+.root {
+  z-index: 100;
+  padding: 12px 16px;
+  border-radius: 6px;
+  max-width: 200px;
+  font-family: var(--tooltip-font-family);
+
+  &.dark {
+    color: var(--dark-color);
+    background-color: var(--dark-bg);
+  }
+
+  &.light {
+    color: var(--light-color);
+    background-color: var(--light-bg);
+  }
+
+  &.small_padding {
+    padding: 8px 16px;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+}
+
+.content {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+
+  &.withTitle {
+    font-weight: 400;
+
+    &.dark {
+      color: var(--dark-content_w_title-color);
+    }
+
+    &.light {
+      color: var(--light-content_w_title-color);
+    }
+  }
+}
+
+.arrow {
+  border-radius: 2px;
+}
+
+.anchor {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
