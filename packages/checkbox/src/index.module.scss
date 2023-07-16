@@ -41,16 +41,11 @@
   }
 
   input[type="checkbox"] {
-    //appearance: none;
-    //visibility: hidden;
+    appearance: none;
     opacity: 0;
     position: absolute;
     margin: 0;
     left: 4px;
-
-    &:focus + .box, &:focus + .indeterminateBox {
-      outline: 2px solid var(--default-outline-color);
-    }
   }
 }
 
@@ -95,6 +90,11 @@
 
   &.disabled {
     color: var(--checkbox-disabled);
+  }
+
+  &.focus {
+    outline-offset: 2px;
+    outline: 2px solid var(--default-outline-color);
   }
 }
 

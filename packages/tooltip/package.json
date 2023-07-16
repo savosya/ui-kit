@@ -1,7 +1,7 @@
 {
-  "name": "@savosya/savosya-myuikit-checkbox",
-  "version": "0.0.2",
-  "description": "Checkbox",
+  "name": "@savosya/savosya-myuikit-tooltip",
+  "version": "0.0.1",
+  "description": "Tooltip",
   "license": "ISC",
   "main": "index.js",
   "module": "build/esm/index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "@savosya/savosya-myuikit-utils": "*",
-    "@savosya/savosya-myuikit-hooks": "*"
+    "react-tooltip": "^5.18.0",
+    "@savosya/savosya-myuikit-utils": "*"
   }
 }
