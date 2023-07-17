@@ -1,0 +1,24 @@
+{
+  "name": "@savosya/savosya-myuikit-tag",
+  "version": "0.0.1",
+  "description": "Tag",
+  "license": "ISC",
+  "main": "index.js",
+  "module": "build/esm/index.js",
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "build"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "build": "rollup -c ../../rollup.config.js",
+    "test": "node __tests__/package-template.test.js"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1"
+  }
+}
