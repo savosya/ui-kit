@@ -19,10 +19,10 @@ export const Default = () => {
 
   return (
     <div style={canvasStyles}>
-      <Input label={'123'} placeholder={'placeholder pooo'}/>
+      <Input label={'123'} placeholder={'placeholder'}/>
       <Input placeholder={'placeholder pooo'}/>
-      <Input label={'123'} placeholder={'placeholder pooo'} showTooltip tooltipProps={{title: 'hello'}}/>
-      <Input label={'123'} placeholder={'placeholder pooo'} showTooltip tooltipProps={{title: 'hello'}} disabled/>
+      <Input label={'123'} placeholder={'placeholder'} showTooltip tooltipProps={{title: 'hello'}}/>
+      <Input label={'123'} placeholder={'placeholder'} showTooltip tooltipProps={{title: 'hello'}} disabled/>
     </div>
   )
 };

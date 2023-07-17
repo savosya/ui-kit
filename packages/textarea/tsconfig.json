@@ -9,5 +9,13 @@
     "paths": {
       "@savosya/savosya-myuikit-*": ["../*/src"]
     }
-  }
+  },
+  "references": [
+    {
+      "path": "../hooks"
+    },
+    {
+      "path": "../utils"
+    }
+  ]
 }
