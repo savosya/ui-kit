@@ -1,12 +1,13 @@
 import * as React from "react"
 import type {HTMLProps, ReactNode} from "react"
+import {useRef} from "react"
 import clsx from 'clsx'
 
+import {useFocus} from "@savosya/savosya-myuikit-hooks"
+import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 import Loader from '@savosya/savosya-myuikit-loader'
 import cls from './index.module.scss'
-import {useRef} from "react";
-import {useFocus} from "@savosya/savosya-myuikit-hooks";
-import {mergeRefs} from "@savosya/savosya-myuikit-utils";
+
 
 export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'type' | 'size'> {
   className?: string

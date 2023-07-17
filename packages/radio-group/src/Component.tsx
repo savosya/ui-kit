@@ -1,9 +1,10 @@
-import * as React from 'react';
+import * as React from 'react'
 import type {ReactNode} from "react"
 import clsx from 'clsx'
 
-import Radio from "@savosya/savosya-myuikit-radio";
-import type {RadioProps} from "@savosya/savosya-myuikit-radio";
+import Radio from "@savosya/savosya-myuikit-radio"
+import type {RadioProps} from "@savosya/savosya-myuikit-radio"
+
 import cls from './index.module.scss'
 
 export type RadioOption = { label: ReactNode, value: string, disabled?: boolean }

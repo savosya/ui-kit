@@ -2,9 +2,11 @@ import * as React from 'react'
 import {useRef} from "react";
 import type {HTMLProps, ReactNode} from "react"
 import clsx from 'clsx'
-import {useFocus} from "@savosya/savosya-myuikit-hooks";
-import {mergeRefs} from "@savosya/savosya-myuikit-utils";
-import {GrabberIcon} from "./components/grabber-icon";
+
+import {useFocus} from "@savosya/savosya-myuikit-hooks"
+import {mergeRefs} from "@savosya/savosya-myuikit-utils"
+
+import {GrabberIcon} from "./components/grabber-icon"
 import cls from './index.module.scss'
 
 
