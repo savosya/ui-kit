@@ -1,0 +1,77 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
+
+:root {
+  --tag-font-family: 'Inter', sans-serif;
+
+  --tag-bg_default: #FFF;
+  --tag-color_default: var(--text-primary);
+
+  --tag-bg_hover: #EFF1F4;
+  --tag-color_hover: #1C2229;
+
+  --tag-bg_active: #191D23;
+  --tag-color_active: #FFF;
+
+  --tag-bg_disabled: #FFF;
+  --tag-color_disabled: var(--text-gray);
+}
+
+.root {
+  font-family: var(--tag-font-family);
+  background-color: var(--tag-bg_default);
+  color: var(--tag-color_default);
+  border: 1px solid var(--tag-color_default);
+  border-radius: 36px;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+  transition: 0.1s;
+
+  &:hover {
+    background-color: var(--tag-bg_hover);
+    color: var(--tag-color_hover);
+    border: 1px solid var(--tag-color_hover);
+  }
+
+  &:active {
+    background-color: var(--tag-bg_active);
+    color: var(--tag-color_active);
+    border: 1px solid var(--tag-bg_active);
+  }
+
+  &.disabled {
+    background-color: var(--tag-bg_disabled);
+    color: var(--tag-color_disabled);
+    border: 1px solid var(--tag-color_disabled);
+    cursor: not-allowed;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+
+  &.s {
+    padding: 4px 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.2px;
+  }
+
+  &.m {
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.2px;
+  }
+
+  &.l {
+    padding: 12px 36px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.2px;
+  }
+}

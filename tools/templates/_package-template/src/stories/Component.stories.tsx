@@ -4,13 +4,8 @@ import * as React from 'react';
 
 // export default {
 //   title: 'Components/',
-//   component: ,
+//   component: < />,
 // };
 
-// export const Default = () => </>;
-// export const WithOptions = () => <Select options={[
-//   {text: 'A', value: 'A'},
-//   {text: 'B', value: 'B'},
-//   {text: 'C', value: 'C'},
-// ]}/>;
+// export const Default = () => < />;
 
