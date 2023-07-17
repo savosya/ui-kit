@@ -1,5 +1,3 @@
-@import './colors.css';
-
 :root {
-    --default-outline-color: var(--brand-blue);
+    --default-outline-color: #2764CD;
 }

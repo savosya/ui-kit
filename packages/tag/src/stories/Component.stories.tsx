@@ -6,5 +6,14 @@ export default {
   component: <Tag />,
 };
 
-export const Default = () => <Tag size='l'>Пример тэга</Tag>;
+export const Default = () => {
+
+  return (
+    <div>
+      <Tag size='s'>Пример тэга S</Tag>
+      <Tag>Пример тэга M</Tag>
+      <Tag size='l'>Пример тэга L</Tag>
+    </div>
+  )
+};
 

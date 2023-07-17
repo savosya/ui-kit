@@ -1,12 +1,12 @@
 import * as React from 'react'
 import type {ReactNode} from "react"
-import {useCallback, useState} from "react";
+import {useCallback, useState} from "react"
 import {Tooltip as ReactTooltip} from 'react-tooltip'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import {generateRandomHash} from "@savosya/savosya-myuikit-utils";
+import {generateRandomHash} from "@savosya/savosya-myuikit-utils"
 
-import cls from './index.module.scss';
+import cls from './index.module.scss'
 
 export type TooltipPlacement =
   'top'

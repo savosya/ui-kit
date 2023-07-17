@@ -14,11 +14,28 @@ export default {
   component: Button,
 };
 
-export const Default = () => <Button size='l' leftIcon={<SampleIcon/>} onClick={action('clicked')}/>;
-export const GhostDark = () => <Button type='ghost' size='l' onClick={action('clicked')}>long long text</Button>;
-export const OutlineDark = () => <Button type='outline' onClick={action('clicked')}>long long text</Button>;
-export const Link = () => <Button type='link' onClick={action('clicked')}>long long text</Button>;
-export const Light = () => <Button type='primary' mode='light' onClick={action('clicked')}>long long text</Button>;
-export const GhostLight = () => <Button type='ghost' loading mode='light' onClick={action('clicked')}>long long text</Button>;
-export const OutlineLight = () => <Button type='outline' loading mode='light' onClick={action('clicked')}>long long text</Button>;
+const canvasStyle = {
+  padding: 16,
+  backgroundColor: '#CCCCCC'
+}
 
+export const Default = () => {
+
+  return (
+    <div style={canvasStyle}>
+      <Button size='l' leftIcon={<SampleIcon/>} onClick={action('clicked')}/>
+
+      <Button type='ghost' size='l' onClick={action('clicked')}>Ghost Dark</Button>
+
+      <Button type='outline' onClick={action('clicked')}>Outline Dark</Button>
+
+      <Button type='link' onClick={action('clicked')}>Link</Button>
+
+      <Button type='primary' mode='light' onClick={action('clicked')}>Light</Button>
+
+      <Button type='ghost' loading mode='light' onClick={action('clicked')}>Ghost Light</Button>
+
+      <Button type='outline' loading mode='light' onClick={action('clicked')}>Outline Light</Button>
+    </div>
+  )
+};

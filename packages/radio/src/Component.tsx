@@ -2,8 +2,9 @@ import * as React from 'react'
 import {useRef} from "react";
 import type {ChangeEvent, InputHTMLAttributes, ReactNode} from "react"
 import clsx from 'clsx'
-import {useFocus} from "@savosya/savosya-myuikit-hooks";
-import {mergeRefs} from "@savosya/savosya-myuikit-utils";
+
+import {useFocus} from "@savosya/savosya-myuikit-hooks"
+import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 
 import {CheckIcon} from './components/check-icon'
 import cls from './index.module.scss'

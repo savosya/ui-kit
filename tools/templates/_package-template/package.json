@@ -1,7 +1,7 @@
 {
-  "name": "@savosya/savosya-myuikit-package-template",
+  "name": "@savosya/savosya-myuikit-component",
   "version": "0.0.0",
-  "description": "> TODO: description",
+  "description": "Component",
   "license": "ISC",
   "main": "index.js",
   "module": "build/esm/index.js",
@@ -19,6 +19,8 @@
     "test": "node __tests__/package-template.test.js"
   },
   "dependencies": {
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "@savosya/savosya-myuikit-hooks": "*",
+    "@savosya/savosya-myuikit-utils": "*"
   }
 }

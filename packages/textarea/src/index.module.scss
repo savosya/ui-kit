@@ -1,0 +1,133 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
+
+:root {
+  --textarea-font-family: 'Inter', sans-serif;
+
+  --textarea-bg: #FFF;
+  --textarea-active-blue: #4683C8;
+
+  --textarea-bg_disabled: #E5E8ED;
+  --textarea-color_disabled: var(--text-secondary);
+
+  --textarea-color: var(--text-primary);
+  --textarea-label-color: var(--text-tertiary);
+
+  --textarea-placeholder-color: var(--text-gray);
+  --textarea-hint-color: var(--text-secondary);
+  --textarea-error-color: var(--text-error-primary);
+}
+
+.wrapper {
+  display: inline-block;
+  font-family: var(--textarea-font-family);
+}
+
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 16px 0 0;
+  border: 1px solid transparent;
+  overflow: hidden;
+
+  &.focus {
+    outline: 2px solid var(--default-outline-color);
+    outline-offset: 2px;
+  }
+
+  &.disabled {
+    background-color: var(--textarea-bg_disabled);
+  }
+
+  &.error {
+    border: 1px solid var(--textarea-error-color);
+  }
+}
+
+.label {
+  order: 0;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  padding: 0 16px;
+  color: var(--textarea-label-color);
+
+  &.error {
+    color: var(--textarea-error-color) !important;
+  }
+}
+
+.area {
+  order: 1;
+  border: 0 solid transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  padding: 6px 16px 16px;
+  border-radius: 10px;
+  color: var(--textarea-color);
+  caret-color: var(--textarea-active-blue);
+  resize: none;
+
+  &::placeholder {
+    color: var(--textarea-placeholder-color);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    color: var(--textarea-color_disabled);
+    background-color: var(--textarea-bg_disabled);
+  }
+
+  &:focus + .label {
+    color: var(--textarea-active-blue);
+  }
+
+  &.resizable {
+    min-width: 80px;
+    resize: both;
+  }
+
+  &::-webkit-resizer {
+    visibility: hidden;
+    border-radius: 10px;
+  }
+}
+
+.grabber {
+  position: absolute;
+  pointer-events: none;
+  bottom: 2px;
+  right: 1px;
+}
+
+.extra {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+}
+
+.hint {
+  color: var(--textarea-hint-color);
+}
+
+.errorMsg {
+  color: var(--textarea-error-color);
+}

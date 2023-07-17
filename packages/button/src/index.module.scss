@@ -130,7 +130,7 @@
   border-radius: 10px;
   cursor: pointer;
   font-family: var(--badge-font-family);
-  transition: 0.3s;
+  transition: 0.15s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,6 +359,16 @@
       color: var(--button-link-color_loading);
       border: 1px solid var(--button-link-bg);
     }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.focus {
+    transition: 0s;
+    outline: 2px solid var(--default-outline-color);
+    outline-offset: 2px;
   }
 }
 

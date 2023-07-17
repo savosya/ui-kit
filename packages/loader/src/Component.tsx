@@ -1,6 +1,7 @@
 import * as React from 'react'
 import type {HTMLProps} from "react"
 import clsx from 'clsx'
+
 import cls from './index.module.scss'
 
 export interface LoaderProps extends HTMLProps<SVGSVGElement> {
