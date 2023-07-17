@@ -6,5 +6,9 @@ export default {
   component: <Checkbox/>,
 };
 
-export const Default = () => <Checkbox name='name1' label={'Label'}/>;
+export const Default = () => (
+  <div style={{width: 100}}>
+    <Checkbox name='name1' label={'Подтвердить согласие'}/>
+  </div>
+);
 

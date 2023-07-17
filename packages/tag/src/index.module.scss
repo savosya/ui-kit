@@ -18,6 +18,7 @@
 }
 
 .root {
+  display: inline-block;
   font-family: var(--tag-font-family);
   background-color: var(--tag-bg_default);
   color: var(--tag-color_default);

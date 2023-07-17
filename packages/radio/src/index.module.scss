@@ -16,6 +16,7 @@
   font-family: var(--checkbox-font-family);
   position: relative;
   display: flex;
+  align-items: center;
   width: fit-content;
   gap: 8px;
   cursor: pointer;
@@ -51,6 +52,7 @@
 
 .box {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
