@@ -19,8 +19,8 @@ for pkg in $PACKAGES; do
   CAMEL_CASE_PKG=$(echo $CLEAN_PKG | tr '-' ' ' | awk '{ for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2); print }' | tr -d ' ')
 
   if [ "$CLEAN_PKG" != "variables" ] && [ "$CLEAN_PKG" != "utils" ] && [ "$CLEAN_PKG" != "hooks" ]; then
-#    echo "export * from './$CLEAN_PKG';" >> $OUTPUT_FILE
-    echo "export { default as ${CAMEL_CASE_PKG} } from './${CLEAN_PKG}';" >> $OUTPUT_FILE
+    echo "export * from './$CLEAN_PKG';" >> $OUTPUT_FILE
+#    echo "export { default as ${CAMEL_CASE_PKG} } from './${CLEAN_PKG}';" >> $OUTPUT_FILE
   fi
 done
 
@@ -28,4 +28,4 @@ done
 tsc build/index.ts --declaration --declarationDir build --outDir build --forceConsistentCasingInFileNames --module es2020 --target es5 --skipLibCheck --moduleResolution node
 rm -rf build/index.ts
 
-echo '[FINISHED]: create-root-exporter-file.sh'
+echo 'create-root-exporter-file.sh finished... '
