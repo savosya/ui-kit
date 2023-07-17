@@ -1,11 +1,13 @@
-import * as React from 'react';
-// import {action} from '@storybook/addon-actions';
-// import {} from '../Component';
-
+// import * as React from 'react';
+// import {Component} from '../Component';
+//
 // export default {
-//   title: 'Components/',
-//   component: < />,
+//   title: 'Components/Component',
+//   component: <Component />,
 // };
-
-// export const Default = () => < />;
-
+//
+// export const Default = () => {
+//
+//   return <Component />
+// };
+//

@@ -1,3 +1,4 @@
-// import {} from './Component'
-
-// export default
+// import {Component} from './Component'
+// export type {ComponentProps} from './Component'
+//
+// export default Component
