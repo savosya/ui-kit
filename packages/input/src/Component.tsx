@@ -81,7 +81,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
             {...rest}
           />
 
-          <label className={clsx(cls.label, {[cls.error]: error}, classes?.label)}>{label}</label>
+          {label && <label className={clsx(cls.label, {[cls.error]: error}, classes?.label)}>{label}</label>}
         </div>
 
         <div className={clsx(cls.addons_right, classes?.addons_right)}>

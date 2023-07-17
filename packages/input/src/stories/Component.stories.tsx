@@ -6,7 +6,26 @@ export default {
   component: <Input/>,
 };
 
-export const Default = () => <Input label={'123'} placeholder={'placeholder pooo'}/>;
+const canvasStyles = {
+  backgroundColor: 'lightgray',
+  height: 500,
+  padding: 16,
+  display: 'flex',
+  gap: 16
+}
+
+export const Default = () => {
+
+
+  return (
+    <div style={canvasStyles}>
+      <Input label={'123'} placeholder={'placeholder pooo'}/>
+      <Input placeholder={'placeholder pooo'}/>
+      <Input label={'123'} placeholder={'placeholder pooo'} showTooltip tooltipProps={{title: 'hello'}}/>
+      <Input label={'123'} placeholder={'placeholder pooo'} showTooltip tooltipProps={{title: 'hello'}} disabled/>
+    </div>
+  )
+};
 export const Error = () => <Input
   label='ФИО'
   placeholder='placeholder pooo'
