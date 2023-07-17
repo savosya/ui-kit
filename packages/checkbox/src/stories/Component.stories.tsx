@@ -6,5 +6,5 @@ export default {
   component: <Checkbox/>,
 };
 
-export const Default = () => <Checkbox size='m' label={'Label'}/>;
+export const Default = () => <Checkbox name='name1' label={'Label'}/>;
 
