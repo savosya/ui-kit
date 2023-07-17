@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@savosya/savosya-myuikit-tooltip": "^0.0.2",
+    "@savosya/savosya-myuikit-hooks": "^0.0.2",
+    "@savosya/savosya-myuikit-utils": "^0.0.2",
     "clsx": "^1.2.1"
   }
 }

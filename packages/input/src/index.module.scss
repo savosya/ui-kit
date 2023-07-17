@@ -37,6 +37,11 @@
   // sizes:
   padding: 8px 16px;
 
+  &.focus {
+    outline: 2px solid var(--default-outline-color);
+    outline-offset: 2px;
+  }
+
   &.disabled {
     background-color: var(--input-bg_disabled);
   }
@@ -85,6 +90,7 @@
 
     & ~ .label.error {
       color: var(--input-error-color);
+
     }
   }
 
@@ -132,4 +138,17 @@
   justify-content: center;
   margin-left: 6px;
   gap: 4px;
+}
+
+.clean {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #848D98;
+  transition: 0.15s;
+
+  &:hover {
+    color: var(--text-primary);
+  }
 }

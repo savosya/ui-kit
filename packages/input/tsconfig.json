@@ -17,5 +17,15 @@
       ]
     }
   },
-  "references": [{"path": "../tooltip"}]
+  "references": [
+    {
+      "path": "../tooltip"
+    },
+    {
+      "path": "../hooks"
+    },
+    {
+      "path": "../utils"
+    }
+  ]
 }

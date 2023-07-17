@@ -41,6 +41,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
     <div className={clsx(cls.group, className)}>
       {options?.map(option =>
         <Radio
+          key={option.value}
           name={name}
           label={option.label}
           value={option.value}

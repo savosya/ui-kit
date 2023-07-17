@@ -4,9 +4,13 @@ import type {HTMLProps, ReactNode} from "react"
 import clsx from 'clsx'
 
 import Tooltip, {TooltipProps} from '@savosya/savosya-myuikit-tooltip'
+import {useFocus} from "@savosya/savosya-myuikit-hooks"
+import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 
 import {ExclamationMarkIcon} from './components/exclamation-mark-icon'
+import {CrossIcon} from "./components/cross-icon"
 import cls from './index.module.scss'
+import {useRef} from "react";
 
 export interface InputProps extends HTMLProps<HTMLInputElement> {
   type?: 'text' | 'password'
@@ -20,6 +24,10 @@ export interface InputProps extends HTMLProps<HTMLInputElement> {
   showTooltip?: boolean
   tooltipIcon?: ReactNode
   tooltipProps?: TooltipProps
+  cleanable?: boolean
+  cleanIcon?: ReactNode
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onClean?: () => void
   classes?: {
     root?: string
     input_root?: string
@@ -30,6 +38,7 @@ export interface InputProps extends HTMLProps<HTMLInputElement> {
     error?: string
     addons_left?: string
     addons_right?: string
+    cleanIcon?: string
   }
 }
 
@@ -45,6 +54,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
     classes,
     addonsLeft,
     addonsRight,
+    cleanable,
+    onChange,
+    onClean,
+    cleanIcon,
 
     /** tooltip */
     showTooltip,
@@ -55,11 +68,27 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
     ...rest
   } = props
 
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [focus] = useFocus(inputRef, 'keyboard');
+
+  const handleClean = React.useCallback(() => {
+    if(onClean) onClean()
+
+    if(inputRef.current && !rest.value) {
+      inputRef.current.value = ''
+    }
+  }, [inputRef.current, ref])
+
+  const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    if(onChange) onChange(event)
+  }, [])
+
   return (
     <div className={clsx(cls.root, classes?.root)}>
       <div className={clsx(
         cls.input_root,
         {
+          [cls.focus]: focus,
           [cls.disabled]: disabled,
           [cls.error]: error
         },
@@ -74,11 +103,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
 
         <div className={cls.root_core}>
           <input
-            ref={ref}
             type={type}
             className={clsx(cls.input, classes?.input)}
             disabled={disabled}
+            ref={mergeRefs([ref, inputRef])}
             {...rest}
+            onChange={handleChange}
           />
 
           {label && <label className={clsx(cls.label, {[cls.error]: error}, classes?.label)}>{label}</label>}
@@ -94,6 +124,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
               </Tooltip>
             )
           }
+
+          {cleanable && <span onClick={handleClean} className={clsx(cls.clean, classes?.cleanIcon)}>
+            {cleanIcon || <CrossIcon/>}
+          </span>}
         </div>
       </div>
 
