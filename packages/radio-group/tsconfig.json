@@ -1,0 +1,18 @@
+{
+  "include": ["src", "../../typings"],
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "build",
+    "rootDirs": ["src"],
+    "baseUrl": ".",
+    "tsBuildInfoFile": "tsconfig.tsbuildinfo",
+    "paths": {
+      "@savosya/savosya-myuikit-*": ["../*/src"]
+    }
+  },
+  "references": [
+    {
+      "path": "../radio"
+    }
+  ]
+}
