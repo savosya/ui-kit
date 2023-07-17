@@ -10,9 +10,11 @@ import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 import {ExclamationMarkIcon} from './components/exclamation-mark-icon'
 import {CrossIcon} from "./components/cross-icon"
 import cls from './index.module.scss'
+import {SearchIcon} from "./components/search-icon";
+import {PasswordIcon} from "./components/password-icon";
 
 export interface InputProps extends HTMLProps<HTMLInputElement> {
-  type?: 'text' | 'password'
+  type?: 'text' | 'password' | 'search'
   label?: string
   hint?: ReactNode
   errorMsg?: ReactNode
@@ -68,7 +70,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
   } = props
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const [focus] = useFocus(inputRef, 'keyboard');
+  const [keyboardFocus] = useFocus(inputRef, 'keyboard');
+  const [mouseFocus] = useFocus(inputRef, 'mouse');
 
   const handleClean = React.useCallback(() => {
     if(onClean) onClean()
@@ -87,15 +90,28 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
       <div className={clsx(
         cls.input_root,
         {
-          [cls.focus]: focus,
+          [cls.focus]: keyboardFocus,
           [cls.disabled]: disabled,
           [cls.error]: error
         },
         className,
         classes?.input_root
       )}>
-        {addonsLeft && (
-          <div className={clsx(cls.addons_left, classes?.addons_left)}>
+
+        {type === 'search' && (
+          <div className={clsx(cls.addons_left, {[cls.addon_focused]: mouseFocus, [cls.addon_error]: error}, classes?.addons_left)}>
+            <SearchIcon/>
+          </div>
+        )}
+
+        {type === 'password' && (
+          <div className={clsx(cls.addons_left, {[cls.addon_focused]: mouseFocus, [cls.addon_error]: error}, classes?.addons_left)}>
+            <PasswordIcon/>
+          </div>
+        )}
+
+        {type === 'text' && addonsLeft && (
+          <div className={clsx(cls.addons_left, {[cls.addon_focused]: mouseFocus, [cls.addon_error]: error}, classes?.addons_left)}>
             {addonsLeft}
           </div>
         )}

@@ -11,13 +11,13 @@ const canvasStyles = {
   height: 300,
   padding: 16,
   display: 'flex',
+  flexWrap: 'wrap',
   gap: 16
 }
 
 export const Default = () => {
-
-
   return (
+    //@ts-ignore
     <div style={canvasStyles}>
       <Input label={'123'} placeholder={'placeholder'}/>
       <Input placeholder={'placeholder pooo'} cleanable/>
@@ -35,6 +35,12 @@ export const Default = () => {
         addonsRight={<div>456</div>}
         cleanable
       />
+
+      {/*@ts-ignore*/}
+      <div style={canvasStyles}>
+        <Input type={'search'} placeholder={'Search'} cleanable/>
+        <Input type='password' cleanable error placeholder={'Password'}/>
+      </div>
     </div>
   )
 };

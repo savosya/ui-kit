@@ -75,13 +75,13 @@
   outline: none;
   border: 0 solid transparent;
   caret-color: var(--input-active-blue);
-
   display: inline-block;
   height: 20px;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.3px;
+  margin-top: 2px;
 
   &:focus {
     & ~ .label {
@@ -109,6 +109,11 @@
     right: 10px;
     transform: translateY(-50%);
   }
+
+  /** type='search' */
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
 }
 
 .extra {
@@ -129,7 +134,11 @@
 }
 
 .addons_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 6px;
+  color: var(--input-label-color);
 }
 
 .addons_right {
@@ -138,6 +147,7 @@
   justify-content: center;
   margin-left: 6px;
   gap: 4px;
+  color: var(--input-label-color);
 }
 
 .clean {
@@ -151,4 +161,12 @@
   &:hover {
     color: var(--text-primary);
   }
+}
+
+.addon_focused {
+  color: var(--input-active-blue);
+}
+
+.addon_error {
+  color: var(--input-error-color);
 }
