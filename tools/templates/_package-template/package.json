@@ -19,6 +19,8 @@
     "test": "node __tests__/package-template.test.js"
   },
   "dependencies": {
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "@savosya/savosya-myuikit-hooks": "*",
+    "@savosya/savosya-myuikit-utils": "*"
   }
 }
