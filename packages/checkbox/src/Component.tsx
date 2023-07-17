@@ -53,7 +53,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
   const [innerChecked, setChecked] = useState<boolean | undefined>(checked || false)
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if(disabled) return;
+    if (disabled) return;
 
     if (onChange) {
       onChange(event, {checked: event.target.checked, name});
