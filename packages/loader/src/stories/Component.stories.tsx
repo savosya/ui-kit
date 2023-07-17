@@ -6,8 +6,15 @@ export default {
   component: <Loader/>,
 };
 
-export const Default = () => <Loader size={48} fill={false}/>;
+export const Default = () => {
 
-export const WrappedLoader = () => <Loader/>
+  return (
+    <div>
+      <Loader size={48} fill={false}/>
 
-
+      <div>
+        <Loader/>
+      </div>
+    </div>
+  )
+};

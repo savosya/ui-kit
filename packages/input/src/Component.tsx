@@ -1,16 +1,13 @@
 import * as React from 'react'
+import {useRef} from "react";
 import type {HTMLProps, ReactNode} from "react"
-
 import clsx from 'clsx'
-
 import Tooltip, {TooltipProps} from '@savosya/savosya-myuikit-tooltip'
 import {useFocus} from "@savosya/savosya-myuikit-hooks"
 import {mergeRefs} from "@savosya/savosya-myuikit-utils"
-
 import {ExclamationMarkIcon} from './components/exclamation-mark-icon'
 import {CrossIcon} from "./components/cross-icon"
 import cls from './index.module.scss'
-import {useRef} from "react";
 
 export interface InputProps extends HTMLProps<HTMLInputElement> {
   type?: 'text' | 'password'

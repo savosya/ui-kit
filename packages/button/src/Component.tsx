@@ -4,6 +4,9 @@ import clsx from 'clsx'
 
 import Loader from '@savosya/savosya-myuikit-loader'
 import cls from './index.module.scss'
+import {useRef} from "react";
+import {useFocus} from "@savosya/savosya-myuikit-hooks";
+import {mergeRefs} from "@savosya/savosya-myuikit-utils";
 
 export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'type' | 'size'> {
   className?: string
@@ -48,6 +51,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
     ...rest
   } = props
 
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [focus] = useFocus(buttonRef, 'keyboard');
+
   const isOnlyIcon = !children
 
   const handleClick = (
@@ -65,7 +71,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
 
   return (
     <button
-      ref={ref}
+      ref={mergeRefs([ref, buttonRef])}
       type={htmlType}
       className={clsx(
         cls.root,
@@ -73,6 +79,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: B
         cls[mode],
         cls[size],
         {
+          [cls.focus]: focus,
           [cls.fill]: fill,
           [cls.loading]: loading,
           [cls.onlyIcon]: isOnlyIcon
