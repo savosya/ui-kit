@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-button",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Button",
   "license": "ISC",
   "main": "index.js",
@@ -10,8 +10,8 @@
     "react-dom": "^17 || ^18"
   },
   "dependencies": {
-    "@savosya/savosya-myuikit-loader": "^0.0.3",
     "@savosya/savosya-myuikit-hooks": "^0.0.2",
+    "@savosya/savosya-myuikit-loader": "^0.0.4",
     "@savosya/savosya-myuikit-utils": "^0.0.2"
   },
   "publishConfig": {

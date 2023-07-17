@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-input",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Input",
   "license": "ISC",
   "main": "index.js",
@@ -18,8 +18,8 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "@savosya/savosya-myuikit-tooltip": "^0.0.2",
     "@savosya/savosya-myuikit-hooks": "^0.0.2",
+    "@savosya/savosya-myuikit-tooltip": "^0.0.3",
     "@savosya/savosya-myuikit-utils": "^0.0.2",
     "clsx": "^1.2.1"
   }
