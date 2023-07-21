@@ -11,7 +11,7 @@ import cls from './index.module.scss'
 
 type NativeProps = InputHTMLAttributes<HTMLInputElement>
 
-export interface RadioProps extends Omit<NativeProps, 'size' | 'onChange'> {
+export interface RadioProps extends Omit<NativeProps, 'size' | 'onChange' | 'type'> {
   className?: string
   label?: ReactNode
   hint?: ReactNode

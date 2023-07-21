@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import {action} from '@storybook/addon-actions';
 import {Select} from '../Component';
 
 export default {
@@ -7,10 +6,22 @@ export default {
   component: Select,
 };
 
-export const Default = () => <Select/>;
-export const WithOptions = () => <Select options={[
-  {text: 'A', value: 'A'},
-  {text: 'B', value: 'B'},
-  {text: 'C', value: 'C'},
-]}/>;
+const canvasStyles = {
+  backgroundColor: '#CCCCCC',
+  height: 300,
+  padding: 16,
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: 16
+}
 
+export const Default = () => {
+
+
+  return (
+    //@ts-ignore
+    <div style={canvasStyles}>
+      <Select/>
+    </div>
+  )
+};

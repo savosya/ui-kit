@@ -1,24 +1,27 @@
 import * as React from 'react'
 import type {HTMLProps}  from 'react'
-import Button from '@savosya/savosya-myuikit-button'
+// import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
+import { MenuItem } from 'rc-menu';
+// import '@szhsin/react-menu/dist/index.css';
+// import '@szhsin/react-menu/dist/transitions/slide.css';
+import Input from '@savosya/savosya-myuikit-input'
+import {ChevronIcon} from "./components/chevron-icon";
 
+
+export type MenuOption = { text: string, value: string | number }
 interface Props extends HTMLProps<HTMLSelectElement> {
-  options?: { text: string, value: string | number }[]
+  options?: MenuOption[]
 }
 
-export function Select({options, ...rest}: Props) {
-  const [open, setOpen] = React.useState(false)
+export const Select = ({options, ...rest}: Props) => {
   return (
     <div>
-      <Button onClick={() => setOpen(!open)}>{open ? 'Закрыть' : 'Открыть'}</Button>
 
-      {
-        open && (
-          <select {...rest}>
-            {options?.map(option => <option value={option.value}>{option.text}</option>)}
-          </select>
-        )
-      }
+      <Input addonsRight={<ChevronIcon />}/>
+
+      <select>
+
+      </select>
     </div>
   );
 }

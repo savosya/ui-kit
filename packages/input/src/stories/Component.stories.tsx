@@ -3,11 +3,11 @@ import {Input} from '../Component';
 
 export default {
   title: 'Components/Input',
-  component: <Input/>,
+  component: Input,
 };
 
 const canvasStyles = {
-  backgroundColor: '#CCCCCC',
+  // backgroundColor: '#CCCCCC',
   height: 300,
   padding: 16,
   display: 'flex',
@@ -37,7 +37,7 @@ export const Default = () => {
       />
 
       {/*@ts-ignore*/}
-      <div style={canvasStyles}>
+      <div style={{height: '100%', display: 'flex', gap: 16}}>
         <Input type={'search'} placeholder={'Search'} cleanable/>
         <Input type='password' cleanable error placeholder={'Password'}/>
       </div>
