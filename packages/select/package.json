@@ -1,13 +1,13 @@
 {
   "name": "@savosya/savosya-myuikit-select",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Select",
   "license": "ISC",
   "main": "index.js",
   "module": "build/esm/index.js",
   "dependencies": {
     "@savosya/savosya-myuikit-hooks": "*",
-    "@savosya/savosya-myuikit-input": "^0.0.4",
+    "@savosya/savosya-myuikit-input": "^0.0.5",
     "@savosya/savosya-myuikit-utils": "*"
   },
   "peerDependencies": {
