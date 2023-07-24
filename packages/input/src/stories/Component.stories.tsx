@@ -7,7 +7,7 @@ export default {
 };
 
 const canvasStyles = {
-  // backgroundColor: '#CCCCCC',
+  backgroundColor: '#CCCCCC',
   height: 300,
   padding: 16,
   display: 'flex',
@@ -37,9 +37,9 @@ export const Default = () => {
       />
 
       {/*@ts-ignore*/}
-      <div style={{height: '100%', display: 'flex', gap: 16}}>
+      <div style={{display: 'flex', gap: 16}}>
         <Input type={'search'} placeholder={'Search'} cleanable/>
-        <Input type='password' cleanable error placeholder={'Password'}/>
+        <Input type='password' cleanable error errorMsg={'213'} placeholder={'Password'}/>
       </div>
     </div>
   )

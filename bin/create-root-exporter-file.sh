@@ -20,7 +20,7 @@ for pkg in $PACKAGES; do
 
   if [ "$CLEAN_PKG" != "variables" ] && [ "$CLEAN_PKG" != "utils" ] && [ "$CLEAN_PKG" != "hooks" ]; then
     echo "export * from './$CLEAN_PKG';" >> $OUTPUT_FILE
-#    echo "export { default as ${CAMEL_CASE_PKG} } from './${CLEAN_PKG}';" >> $OUTPUT_FILE
+    echo "export { default as ${CAMEL_CASE_PKG} } from './${CLEAN_PKG}';" >> $OUTPUT_FILE
   fi
 done
 

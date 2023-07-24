@@ -21,7 +21,11 @@ export const Default = () => {
   return (
     //@ts-ignore
     <div style={canvasStyles}>
-      <Select/>
+      <Select options={[
+        {label: 'Яблоко', value: 'apple'},
+        {label: 'Арбуз', value: 'watermelon', disabled: true},
+        {label: 'Груша', value: 'pear'},
+      ]}/>
     </div>
   )
 };

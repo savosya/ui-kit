@@ -1,0 +1,43 @@
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: scaleY(0);
+  }
+}
+
+.rc-select-dropdown {
+  position: absolute;
+  border: 1px solid blue !important;
+  width: fit-content;
+  background-color: #FFF;
+  animation: slide-in;
+  opacity: 0;
+  transition: 0.2s;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  transform-origin: 0 0;
+
+  &.rc-select-dropdown-hidden, &.rc-select-dropdown-slide-up-leave, &.rc-select-dropdown-slide-up-leave-active {
+    animation: slide-out;
+    opacity: 0;
+  }
+}

@@ -21,6 +21,7 @@
 
 .root {
   display: inline-flex;
+  height: fit-content;
   flex-direction: column;
   gap: 4px;
   font-family: var(--input-font-family);
@@ -100,14 +101,6 @@
 
   &:disabled {
     color: var(--input-color_disabled);
-  }
-
-  &::after {
-    content: 'kg';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
   }
 
   /** type='search' */

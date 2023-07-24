@@ -24,7 +24,7 @@
   "dependencies": {
     "@szhsin/react-menu": "^4.0.1",
     "clsx": "^1.2.1",
-    "rc-menu": "^9.11.0",
+    "rc-select": "^14.6.0",
     "react-tooltip": "^5.18.0"
   },
   "devDependencies": {
