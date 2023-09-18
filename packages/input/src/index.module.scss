@@ -25,6 +25,10 @@
   flex-direction: column;
   gap: 4px;
   font-family: var(--input-font-family);
+
+  &.block {
+    width: 100%;
+  }
 }
 
 .input_root {
@@ -34,6 +38,15 @@
   border-radius: 10px;
   position: relative;
   border: 1px solid transparent;
+  box-sizing: border-box;
+  width: 100%;
+
+
+  // CURRENTLY NOT IN USE
+  &.small {
+    height: 36px;
+  }
+
 
   // sizes:
   padding: 8px 16px;
@@ -56,6 +69,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .label {
@@ -83,6 +97,8 @@
   line-height: 20px;
   letter-spacing: -0.3px;
   margin-top: 2px;
+  text-overflow: ellipsis;
+  width: 100%;
 
   &:focus {
     & ~ .label {

@@ -3,8 +3,10 @@
 # Создет index.js и index.d.ts для root пакета.
 #
 # Пример создаваемого файла (index.js):
+# export * from './badge';
+# export { default as Badge } from './badge';
+# export * from './button';
 # export { default as Button } from './button';
-# export { default as Select } from './select';
 
 set -e
 

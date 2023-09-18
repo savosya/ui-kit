@@ -8,6 +8,7 @@
   "dependencies": {
     "@savosya/savosya-myuikit-hooks": "*",
     "@savosya/savosya-myuikit-input": "^0.0.5",
+    "@savosya/savosya-myuikit-loader": "*",
     "@savosya/savosya-myuikit-utils": "*"
   },
   "peerDependencies": {

@@ -13,13 +13,16 @@ import cls from './index.module.scss'
 import {SearchIcon} from "./components/search-icon";
 import {PasswordIcon} from "./components/password-icon";
 
-export interface InputProps extends HTMLProps<HTMLInputElement> {
+export interface InputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
   type?: 'text' | 'password' | 'search'
   label?: string
   hint?: ReactNode
   errorMsg?: ReactNode
   error?: boolean
   className?: string
+  passedRef?: any
+  block?: boolean
+  // size?: 's' | 'm'
   addonsLeft?: ReactNode
   addonsRight?: ReactNode
   showTooltip?: boolean
@@ -52,6 +55,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
     error,
     errorMsg,
     className,
+    // size = 'm',
     classes,
     addonsLeft,
     addonsRight,
@@ -59,6 +63,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
     onChange,
     onClean,
     cleanIcon,
+    passedRef,
+    block,
 
     /** tooltip */
     showTooltip,
@@ -74,44 +80,54 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
   const [mouseFocus] = useFocus(inputRef, 'mouse');
 
   const handleClean = React.useCallback(() => {
-    if(onClean) onClean()
+    if (onClean) onClean()
 
-    if(inputRef.current && !rest.value) {
+    if (inputRef.current && !rest.value) {
       inputRef.current.value = ''
     }
   }, [inputRef.current, ref])
 
   const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    if(onChange) onChange(event)
+    if (onChange) onChange(event)
   }, [])
 
   return (
-    <div className={clsx(cls.root, classes?.root)}>
-      <div className={clsx(
-        cls.input_root,
-        {
-          [cls.focus]: keyboardFocus,
-          [cls.disabled]: disabled,
-          [cls.error]: error
-        },
-        className,
-        classes?.input_root
-      )}>
+    <div className={clsx(cls.root, classes?.root, {[cls.block]: block})}>
+      <div
+        className={clsx(
+          cls.input_root,
+          {
+            [cls.focus]: keyboardFocus,
+            [cls.disabled]: disabled,
+            [cls.error]: error
+          },
+          className,
+          classes?.input_root
+        )}>
 
         {type === 'search' && (
-          <div className={clsx(cls.addons_left, {[cls.addon_focused]: mouseFocus, [cls.addon_error]: error}, classes?.addons_left)}>
+          <div className={clsx(cls.addons_left, {
+            [cls.addon_focused]: mouseFocus,
+            [cls.addon_error]: error
+          }, classes?.addons_left)}>
             <SearchIcon/>
           </div>
         )}
 
         {type === 'password' && (
-          <div className={clsx(cls.addons_left, {[cls.addon_focused]: mouseFocus, [cls.addon_error]: error}, classes?.addons_left)}>
+          <div className={clsx(cls.addons_left, {
+            [cls.addon_focused]: mouseFocus,
+            [cls.addon_error]: error
+          }, classes?.addons_left)}>
             <PasswordIcon/>
           </div>
         )}
 
         {type === 'text' && addonsLeft && (
-          <div className={clsx(cls.addons_left, {[cls.addon_focused]: mouseFocus, [cls.addon_error]: error}, classes?.addons_left)}>
+          <div className={clsx(cls.addons_left, {
+            [cls.addon_focused]: mouseFocus,
+            [cls.addon_error]: error
+          }, classes?.addons_left)}>
             {addonsLeft}
           </div>
         )}
@@ -121,7 +137,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props: Inpu
             type={type}
             className={clsx(cls.input, classes?.input)}
             disabled={disabled}
-            ref={mergeRefs([ref, inputRef])}
+            ref={mergeRefs([ref, inputRef, passedRef])}
             {...rest}
             onChange={handleChange}
           />
