@@ -3,7 +3,7 @@ import {Radio} from '../Component';
 
 export default {
   title: 'Components/Radio',
-  component: <Radio/>,
+  component: Radio,
 };
 
 export const Default = () => (

@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-radio-group",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "RadioGroup",
   "license": "ISC",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "test": "node __tests__/package-template.test.js"
   },
   "dependencies": {
-    "@savosya/savosya-myuikit-radio": "^0.0.3",
+    "@savosya/savosya-myuikit-radio": "^0.0.4",
     "clsx": "^1.2.1"
   }
 }

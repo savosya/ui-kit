@@ -28,6 +28,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
     name,
     onChange,
     value,
+    radioProps,
   } = props
 
   const handleChange = React.useCallback((
@@ -49,6 +50,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
           disabled={option.disabled}
           checked={option.value === value}
           onChange={handleChange}
+          {...radioProps}
         />
       )}
     </div>

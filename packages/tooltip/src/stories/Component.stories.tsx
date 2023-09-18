@@ -3,7 +3,7 @@ import {Tooltip} from '../Component';
 
 export default {
   title: 'Components/Tooltip',
-  component: <Tooltip>Tooltip</Tooltip>,
+  component: Tooltip,
 };
 
 const canvasStyle = {

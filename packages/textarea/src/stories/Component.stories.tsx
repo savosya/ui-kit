@@ -3,7 +3,7 @@ import {TextArea} from '../Component';
 
 export default {
   title: 'Components/TextArea',
-  component: <TextArea/>,
+  component: TextArea,
 };
 
 const canvasStyle = {

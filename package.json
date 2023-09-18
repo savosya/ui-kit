@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit",
-  "version": "0.0.51",
+  "version": "0.0.54",
   "private": true,
   "license": "ISC",
   "type": "module",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "rc-select": "^14.8.1",
     "react-tooltip": "^5.18.0"
   },
   "devDependencies": {

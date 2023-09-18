@@ -1,24 +1,188 @@
 import * as React from 'react'
-import type {HTMLProps}  from 'react'
-import Button from '@savosya/savosya-myuikit-button'
+import {useCallback, useMemo, useRef, useState} from "react"
+import RCSelect, {Option as RCOption} from 'rc-select';
+import clsx from 'clsx'
+import Input from '@savosya/savosya-myuikit-input'
+import Loader from '@savosya/savosya-myuikit-loader'
+import {ChevronIcon} from "./components/chevron-icon"
+import {CheckIcon} from "./components/check-icon";
+import {CrossIcon} from "./components/cross-icon";
+import {getFilteredOptions, getInputValue, getOptionsMap, showCleanIcon} from "./select.utils";
+import type {InternalSelectState, PassedOption, SelectProps} from "./select.types";
+import cls from './index.module.scss'
+import './select.scss';
 
-interface Props extends HTMLProps<HTMLSelectElement> {
-  options?: { text: string, value: string | number }[]
-}
 
-export function Select({options, ...rest}: Props) {
-  const [open, setOpen] = React.useState(false)
+export const Select = (props: SelectProps) => {
+  const {
+    options = [],
+    open,
+    value,
+    loading,
+    label,
+    multiple = false,
+    showSearch,
+    disabled,
+    placeholder,
+    hint,
+    error,
+    errorMsg,
+    block,
+    listHeight,
+
+    onClose,
+    onOpen,
+    onSelect,
+    onDeselect,
+    onChange,
+    onClean,
+
+    withAnimation = true,
+    optionsSettings = {},
+    classes = {},
+  } = props
+
+  const {
+    ellipsisOptions = true,
+    wrapOptions = undefined,
+    showDivider = false
+  } = optionsSettings
+
+  const {input, option, label: labelCls, dropdown, input_wrapper, root} = classes
+
+
+  /** values */
+  const isControlledInput = typeof value !== 'undefined'
+  const isControlledOpen = typeof open === 'boolean'
+  const ValuesMap = useMemo(() => getOptionsMap(options), [options])
+  const inputRef = useRef<any>(null)
+
+  const [internalState, setInternalState] = useState<InternalSelectState>({
+    open: Boolean(open),
+    entered: false,
+    value: value || (multiple ? [] : null),
+    mode: 'value',
+    options: options,
+    search: ''
+  })
+
+  /** handlers */
+  const handleOpen = useCallback(() => {
+    if (onOpen) onOpen()
+    setInternalState(prev => ({...prev, open: isControlledOpen ? prev.open : true, mode: showSearch ? 'search' : 'value'}))
+  }, [onOpen])
+  const handleClose = useCallback(() => {
+    if (onClose) onClose()
+    setInternalState(prev => ({
+      ...prev,
+      open: isControlledOpen ? prev.open : false,
+      mode: 'value',
+      search: '',
+      options
+    }))
+  }, [onClose])
+  const handleSearch = (e: any) => {
+    const value = e.target.value || ''
+    setInternalState(prev => ({...prev, search: value, options: getFilteredOptions(value, options)}))
+  }
+  const handleChange = useCallback((newValue: string | string[], option: PassedOption | PassedOption[]) => {
+    if (onChange) onChange(newValue, option)
+    setInternalState(prev => ({
+      ...prev,
+      value: newValue,
+      open: multiple || isControlledOpen ? prev.open : false,
+      mode: showSearch && multiple ? 'search' : 'value'
+    }))
+    if (!multiple) inputRef?.current?.blur()
+  }, [onChange, multiple])
+  const handleClean = useCallback(() => {
+    if (onClean) onClean()
+    setInternalState(prev => ({...prev, value: multiple ? [] : null}))
+  }, [onClean])
+
+
+  /** render */
+  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered
   return (
-    <div>
-      <Button onClick={() => setOpen(!open)}>{open ? 'Закрыть' : 'Открыть'}</Button>
+    <div
+      className={clsx(cls.root, root)}
+      onMouseEnter={() => setInternalState(prev => ({...prev, entered: true}))}
+      onMouseLeave={() => setInternalState(prev => ({...prev, entered: false}))}
+    >
 
-      {
-        open && (
-          <select {...rest}>
-            {options?.map(option => <option value={option.value}>{option.text}</option>)}
-          </select>
-        )
-      }
+      <RCSelect
+        prefixCls='eub-select'
+        mode={multiple ? 'multiple' : undefined}
+        dropdownClassName={clsx(cls.menu, dropdown)}
+        animation={withAnimation ? 'slide-up' : undefined}
+        menuItemSelectedIcon={<CheckIcon/>}
+        style={{width: '100%'}}
+
+        open={internalState.open}
+        onSelect={onSelect}
+        onDeselect={onDeselect}
+        value={isControlledInput ? value : internalState.value}
+        onChange={handleChange}
+        notFoundContent={null}
+        listHeight={listHeight}
+
+        getRawInputElement={() =>
+          <Input
+            label={label}
+            passedRef={inputRef}
+            block={block}
+            addonsRight={
+              <div
+                className={clsx(cls.right_addon, {[cls.close]: showCloseIcon})}
+                onClick={showCloseIcon ? handleClean : undefined}
+              >
+                {loading
+                  ? <Loader size={16}/>
+                  : showCloseIcon
+                    ? <CrossIcon/>
+                    : <ChevronIcon className={clsx(cls.chevrone, {[cls.chevrone_open]: internalState.open})}/>
+                }
+              </div>
+            }
+            hint={hint}
+            error={error}
+            errorMsg={errorMsg}
+            cleanable={false}
+            onFocus={handleOpen}
+            onBlur={handleClose}
+            value={internalState.mode === 'search'
+              ? internalState.search
+              : getInputValue(isControlledInput ? value : internalState.value, ValuesMap)}
+            onChange={showSearch ? handleSearch : undefined}
+            placeholder={internalState.mode === 'search' ? 'Поиск' : placeholder}
+            disabled={disabled}
+            readOnly={!showSearch}
+            classes={{
+              root: input_wrapper,
+              input: input,
+              label: labelCls,
+            }}
+          />}
+      >
+        {internalState.options?.map(o => (
+          <RCOption
+            className={clsx(cls.menuItem, option, {
+              [cls.selected]: isControlledInput
+                ? multiple ? value?.includes(o.value) : o.value === value
+                : multiple ? internalState.value?.includes(o.value) : o.value === internalState.value,
+              [cls.ellipsis]: ellipsisOptions,
+              [cls.wrap]: wrapOptions,
+              [cls.border]: showDivider
+            })}
+            key={o.value}
+            value={o.value}
+            text={o.label}
+          >
+            {o.label}
+          </RCOption>
+        ))}
+      </RCSelect>
+
     </div>
   );
 }
