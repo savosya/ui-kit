@@ -10,6 +10,7 @@ export default {
 const canvasStyles = {
   backgroundColor: '#CCCCCC',
   height: 300,
+  width: 320,
   padding: 16,
   display: 'flex',
   flexWrap: 'wrap',

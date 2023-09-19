@@ -7,9 +7,10 @@ type Props = {
   onClick?: () => void
 }
 
-export const CrossIcon = ({className, size = 18}: Props) => {
+export const CrossIcon = ({className, size = 18, onClick}: Props) => {
   return (
     <svg
+      onClick={onClick}
       width={size}
       height={size}
       viewBox="0 0 24 24"

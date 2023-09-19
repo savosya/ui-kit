@@ -42,6 +42,13 @@
   transform: rotate(-180deg);
   transition: 0.2s;
 
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--select-item-border_default);
+  }
+
   &.chevrone_open {
     transform: rotate(0deg);
   }
