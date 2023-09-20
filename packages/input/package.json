@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-input",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Input",
   "license": "ISC",
   "main": "index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@savosya/savosya-myuikit-hooks": "^0.0.2",
-    "@savosya/savosya-myuikit-tooltip": "^0.0.5",
+    "@savosya/savosya-myuikit-tooltip": "^0.0.6",
     "@savosya/savosya-myuikit-utils": "^0.0.2",
     "clsx": "^1.2.1"
   }
