@@ -22,6 +22,7 @@ export const Select = (props: SelectProps) => {
     label,
     multiple = false,
     showSearch,
+    showClean = true,
     disabled,
     placeholder,
     hint,
@@ -115,7 +116,7 @@ export const Select = (props: SelectProps) => {
 
 
   /** render */
-  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered
+  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean
   return (
     <div
       className={clsx(cls.root, root)}
@@ -183,7 +184,8 @@ export const Select = (props: SelectProps) => {
                 : multiple ? internalState.value?.includes(o.value) : o.value === internalState.value,
               [cls.ellipsis]: ellipsisOptions,
               [cls.wrap]: wrapOptions,
-              [cls.border]: showDivider
+              [cls.border]: showDivider,
+              [cls.disabled]: o.disabled
             })}
             key={o.value}
             value={o.value}
