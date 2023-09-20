@@ -3,7 +3,7 @@
 //
 // export default {
 //   title: 'Components/Component',
-//   component: <Component />,
+//   component: Component,
 // };
 //
 // export const Default = () => {

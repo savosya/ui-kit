@@ -1,0 +1,142 @@
+.eub-modal {
+  box-sizing: border-box;
+  position: relative;
+  width: min(100%, 768px);
+}
+.eub-modal-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: bold;
+}
+.eub-modal-content {
+  position: relative;
+  background-color: #FFF;
+  border: none;
+  border-radius: 10px 10px;
+  background-clip: padding-box;
+}
+.eub-modal-close {
+  cursor: pointer;
+  border: 0;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  text-decoration: none;
+  transition: 0.16s;
+}
+
+.eub-modal-close:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-decoration: none;
+}
+//.eub-modal-close-x:after { content: '×'; }
+//.eub-modal-wrap
+//.eub-modal-header
+//.eub-modal-body
+//.eub-modal-footer
+//.eub-modal-mask
+.eub-modal-mask-hidden {
+  display: none;
+}
+
+.eub-modal-zoom-enter,
+.eub-modal-zoom-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+  animation-play-state: paused;
+}
+.eub-modal-zoom-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  animation-play-state: paused;
+}
+.eub-modal-zoom-enter.eub-modal-zoom-enter-active,
+.eub-modal-zoom-appear.eub-modal-zoom-appear-active {
+  animation-name: rcDialogZoomIn;
+  animation-play-state: running;
+}
+.eub-modal-zoom-leave.eub-modal-zoom-leave-active {
+  animation-name: rcDialogZoomOut;
+  animation-play-state: running;
+}
+@keyframes rcDialogZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+@keyframes rcDialogZoomOut {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}
+@media (min-width: 768px) {
+  .eub-modal {
+    width: 600px;
+    margin: 30px auto;
+  }
+}
+
+.eub-modal-fade-enter,
+.eub-modal-fade-appear {
+  opacity: 0;
+  animation-duration: 0.12s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.eub-modal-fade-leave {
+  animation-duration: 0.12s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.eub-modal-fade-enter.eub-modal-fade-enter-active,
+.eub-modal-fade-appear.eub-modal-fade-appear-active {
+  animation-name: rcDialogFadeIn;
+  animation-play-state: running;
+}
+.eub-modal-fade-leave.eub-modal-fade-leave-active {
+  animation-name: rcDialogFadeOut;
+  animation-play-state: running;
+}
+@keyframes rcDialogFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rcDialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

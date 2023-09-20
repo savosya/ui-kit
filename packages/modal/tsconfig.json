@@ -17,5 +17,12 @@
       ]
     }
   },
-  "references": []
+  "references": [
+    {
+      "path": "../hooks"
+    },
+    {
+      "path": "../utils"
+    }
+  ]
 }
