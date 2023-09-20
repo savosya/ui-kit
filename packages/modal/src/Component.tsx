@@ -3,8 +3,8 @@ import RcDialog from 'rc-dialog'
 
 import clsx from 'clsx'
 
-import {CloseIcon} from "./components/close-icon";
-import {ModalProps} from "./modal.types";
+import {CloseIcon} from "./components/close-icon"
+import {ModalProps} from "./modal.types"
 import cls from './index.module.scss'
 import './modal.scss'
 

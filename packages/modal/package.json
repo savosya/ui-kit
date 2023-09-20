@@ -19,8 +19,6 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "rc-dialog": "^9.3.0",
-    "@savosya/savosya-myuikit-hooks": "*",
-    "@savosya/savosya-myuikit-utils": "*"
+    "rc-dialog": "^9.3.0"
   }
 }
