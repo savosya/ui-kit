@@ -9,10 +9,7 @@
 //
 // }
 //
-// export const Component = (props: ComponentProps) => {
-//   const {
-//    
-//   } = props
+// export const Component = ({}: ComponentProps) => {
 //
 //   return (
 //     <div>Template Component</div>

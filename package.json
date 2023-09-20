@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "rc-dialog": "^9.3.0",
     "rc-dropdown": "^4.1.0",
     "rc-select": "^14.8.1",
     "react-tooltip": "^5.18.0"
