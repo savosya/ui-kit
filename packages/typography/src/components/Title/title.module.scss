@@ -1,0 +1,63 @@
+@import '../../../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap');
+
+:root {
+  --typography-font-family: var(--eub-font-family);
+}
+
+.root {
+  font-family: var(--typography-font-family);
+  display: inline-block;
+  font-weight: 400;
+  color: var(--text-primary);
+
+  &.h1 {
+    font-size: 72px;
+    line-height: 78px;
+    letter-spacing: -2.5px;
+  }
+  &.h2 {
+    font-size: 64px;
+    line-height: 70px;
+    letter-spacing: -2.3px;
+  }
+  &.h3 {
+    font-size: 48px;
+    line-height: 54px;
+    letter-spacing: -1.75px;
+  }
+  &.h4 {
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -1px;
+  }
+  &.h5 {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.5px;
+  }
+  &.h6 {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.4px;
+  }
+  &.div {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0;
+  }
+
+  &.shrink {
+    margin: 0;
+    padding: 0;
+  }
+  &.block {
+    display: block;
+  }
+  &.medium {
+    font-weight: 500;
+  }
+  &.bold {
+    font-weight: 700;
+  }
+}

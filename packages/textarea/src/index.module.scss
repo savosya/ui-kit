@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
 
 :root {
-  --textarea-font-family: 'Inter', sans-serif;
+  --textarea-font-family: var(--eub-font-family);
 
   --textarea-bg: #FFF;
   --textarea-active-blue: #4683C8;

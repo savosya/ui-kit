@@ -3,7 +3,7 @@
 
 :root {
   --badge-border-radius: 24px;
-  --badge-font-family: 'Inter', sans-serif;
+  --badge-font-family: var(--eub-font-family);
 
   // colors:
   --badge-color-typography: var(--text-primary);

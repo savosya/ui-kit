@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
 
 :root {
-  --checkbox-font-family: 'Inter', sans-serif;
+  --checkbox-font-family: var(--eub-font-family);
 
   --checkbox-default: #B8BEC6;
   --checkbox-hover: #1C2229;
