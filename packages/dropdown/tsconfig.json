@@ -17,12 +17,5 @@
       ]
     }
   },
-  "references": [
-    {
-      "path": "../input"
-    },
-    {
-      "path": "../loader"
-    }
-  ]
+  "references": []
 }

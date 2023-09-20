@@ -1,5 +1,5 @@
 @import '../../variables/src/index.css';
-@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inter:400&display=swap');
 
 :root {
   --select-font-family: 'Inter', sans-serif;
@@ -7,56 +7,25 @@
   --select-item-bg_default: #FFF;
   --select-item-color_default: var(--text-primary);
   --select-item-bg_hover: #FAFBFC;
-  --select-item-bg_active: #F0F5FC;
-  --select-item-bg_selected: #EDF3FA;
-  --select-item-color_selected: #4683C8;
-
   --select-item-border_default: #EFF1F4;
 }
 
 .root {
-  display: inline-block;
+
+}
+
+.childWrapper {
+  width: fit-content;
   height: fit-content;
-  font-family: var(--select-font-family);
-  width: 100%;
+  //border: 1px solid green;
 }
 
-.right_addon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &.close {
-    border-radius: 50%;
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--select-item-border_default);
-    }
-  }
-}
-
-.chevrone {
-  transform: rotate(-180deg);
-  transition: 0.2s;
-
-  border-radius: 50%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--select-item-border_default);
-  }
-
-  &.chevrone_open {
-    transform: rotate(0deg);
-  }
+.overlay {
 }
 
 .menu {
   font-family: var(--select-font-family);
-  position: absolute;
+  //position: absolute;
   border-radius: 10px;
   display: block;
   box-sizing: border-box;
@@ -87,6 +56,7 @@
   user-select: none;
   height: fit-content;
   transition: color, background-color 0.2s;
+  width: 100%;
 
   &:not(:last-child) {
 
@@ -136,16 +106,6 @@
 
   &:hover {
     background-color: var(--select-item-bg_hover);
-  }
-
-  &:active {
-    background-color: var(--select-item-bg_active);
-  }
-
-  &.selected {
-    background-color: var(--select-item-bg_selected);
-    color: var(--select-item-color_selected);
-    font-weight: 500;
   }
 
   &.disabled {

@@ -1,5 +1,3 @@
-import {CSSProperties} from "react";
-
 export type SelectMenuOption = { label: string, value: string, disabled?: boolean }
 
 export interface SelectProps {
@@ -10,6 +8,7 @@ export interface SelectProps {
   label?: string
   multiple?: boolean
   showSearch?: boolean
+  showClean?: boolean
   disabled?: boolean
   placeholder?: string
   hint?: string

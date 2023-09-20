@@ -10,6 +10,7 @@ export default {
 const canvasStyles = {
   backgroundColor: '#CCCCCC',
   height: 300,
+  width: 320,
   padding: 16,
   display: 'flex',
   flexWrap: 'wrap',
@@ -32,6 +33,7 @@ export const Default = () => {
         // showSearch
         // multiple
         block
+        // showClean={false}
         // error
         errorMsg={'FFFFF'}
         optionsSettings={{
@@ -43,7 +45,7 @@ export const Default = () => {
           {label: 'ЯблокоЯблокоЯблоко ЯблокоЯблок оЯблокоЯб локоЯблок оЯблоко', value: 'apple'},
           {label: 'Арбуз', value: 'watermelon', disabled: true},
           {label: 'Груша', value: 'pear'},
-          {label: 'Агуша', value: 'agusha'},
+          {label: 'Агуша', value: 'agusha', disabled: true},
           {label: 'Цветы', value: 'flowers'},
           {label: 'Ботинки', value: 'boots'},
           {label: 'Шляпа', value: 'hat'},

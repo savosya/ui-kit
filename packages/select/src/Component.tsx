@@ -22,6 +22,7 @@ export const Select = (props: SelectProps) => {
     label,
     multiple = false,
     showSearch,
+    showClean = true,
     disabled,
     placeholder,
     hint,
@@ -69,7 +70,11 @@ export const Select = (props: SelectProps) => {
   /** handlers */
   const handleOpen = useCallback(() => {
     if (onOpen) onOpen()
-    setInternalState(prev => ({...prev, open: isControlledOpen ? prev.open : true, mode: showSearch ? 'search' : 'value'}))
+    setInternalState(prev => ({
+      ...prev,
+      open: isControlledOpen ? prev.open : true,
+      mode: showSearch ? 'search' : 'value'
+    }))
   }, [onOpen])
   const handleClose = useCallback(() => {
     if (onClose) onClose()
@@ -100,9 +105,18 @@ export const Select = (props: SelectProps) => {
     setInternalState(prev => ({...prev, value: multiple ? [] : null}))
   }, [onClean])
 
+  const onChevroneClick = () => {
+    if (!internalState.open) {
+      handleOpen()
+    } else {
+      handleClose()
+      inputRef.current?.blur()
+    }
+  }
+
 
   /** render */
-  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered
+  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean
   return (
     <div
       className={clsx(cls.root, root)}
@@ -132,15 +146,13 @@ export const Select = (props: SelectProps) => {
             passedRef={inputRef}
             block={block}
             addonsRight={
-              <div
-                className={clsx(cls.right_addon, {[cls.close]: showCloseIcon})}
-                onClick={showCloseIcon ? handleClean : undefined}
-              >
+              <div className={clsx(cls.right_addon, {[cls.close]: showCloseIcon})}>
                 {loading
                   ? <Loader size={16}/>
                   : showCloseIcon
-                    ? <CrossIcon/>
-                    : <ChevronIcon className={clsx(cls.chevrone, {[cls.chevrone_open]: internalState.open})}/>
+                    ? <CrossIcon className={cls.chevrone} onClick={handleClean}/>
+                    : <ChevronIcon className={clsx(cls.chevrone, {[cls.chevrone_open]: internalState.open})}
+                                   onClick={onChevroneClick}/>
                 }
               </div>
             }
@@ -172,7 +184,8 @@ export const Select = (props: SelectProps) => {
                 : multiple ? internalState.value?.includes(o.value) : o.value === internalState.value,
               [cls.ellipsis]: ellipsisOptions,
               [cls.wrap]: wrapOptions,
-              [cls.border]: showDivider
+              [cls.border]: showDivider,
+              [cls.disabled]: o.disabled
             })}
             key={o.value}
             value={o.value}
