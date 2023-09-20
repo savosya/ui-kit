@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
 
 :root {
-  --tag-font-family: 'Inter', sans-serif;
+  --tag-font-family: var(--eub-font-family);
 
   --tag-bg_default: #FFF;
   --tag-color_default: var(--text-primary);

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:500,700&display=swap');
 
 :root {
-  --button-font-family: 'Inter', sans-serif;
+  --button-font-family: var(--eub-font-family);
 
   // primary-dark:
   --button-primary-dark-bg_default: var(--text-primary);

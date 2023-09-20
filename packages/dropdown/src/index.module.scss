@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:400&display=swap');
 
 :root {
-  --select-font-family: 'Inter', sans-serif;
+  --dropdown-font-family: var(--eub-font-family);
 
-  --select-item-bg_default: #FFF;
-  --select-item-color_default: var(--text-primary);
-  --select-item-bg_hover: #FAFBFC;
-  --select-item-border_default: #EFF1F4;
+  --dropdown-item-bg_default: #FFF;
+  --dropdown-item-color_default: var(--text-primary);
+  --dropdown-item-bg_hover: #FAFBFC;
+  --dropdown-item-border_default: #EFF1F4;
 }
 
 .root {
@@ -24,7 +24,7 @@
 }
 
 .menu {
-  font-family: var(--select-font-family);
+  font-family: var(--dropdown-font-family);
   //position: absolute;
   border-radius: 10px;
   display: block;
@@ -50,8 +50,8 @@
   line-height: 20px;
   letter-spacing: -0.3px;
   font-family: inherit;
-  background-color: var(--select-item-bg_default);
-  color: var(--select-item-color_default);
+  background-color: var(--dropdown-item-bg_default);
+  color: var(--dropdown-item-color_default);
   border-radius: 6px;
   user-select: none;
   height: fit-content;
@@ -100,12 +100,12 @@
       transform: translate(-50%, -50%);
       width: calc(100% - 16px);
       height: 1px;
-      background-color: var(--select-item-border_default);
+      background-color: var(--dropdown-item-border_default);
     }
   }
 
   &:hover {
-    background-color: var(--select-item-bg_hover);
+    background-color: var(--dropdown-item-bg_hover);
   }
 
   &.disabled {
