@@ -1,0 +1,50 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
+
+:root {
+  --breadcrumbs-font-family: var(--eub-font-family);
+
+  --breadcrumbs-color_default: #4683C8;
+  --breadcrumbs-color_alternative: #67707C;
+  --breadcrumbs-color_hover: #6B9CD3;
+  --breadcrumbs-color_active: #90B5DE;
+  --breadcrumbs-color_visited: #3869A0;
+  --breadcrumbs-color_disabled: #525A63;
+}
+
+.root {
+  font-family: var(--breadcrumbs-font-family);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.crumb {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  color: var(--breadcrumbs-color_default);
+
+  &.alternative {
+    color: var(--breadcrumbs-color_alternative);
+  }
+
+  &:hover {
+    color: var(--breadcrumbs-color_hover);
+  }
+
+  &:active {
+    color: var(--breadcrumbs-color_active);
+  }
+
+  &:visited {
+    color: var(--breadcrumbs-color_visited);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: var(--breadcrumbs-color_disabled);
+  }
+}
