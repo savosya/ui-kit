@@ -1,0 +1,50 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
+
+:root {
+  --dropzone-font-family: var(--eub-font-family);
+  --dropzone-active-bg: transparent;
+  --dropzone-border-radius: 4px;
+  --dropzone-border-color: var(--bg-header);
+}
+
+.root {
+  font-family: var(--dropzone-font-family);
+  display: inline-block;
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  overflow: hidden;
+  border-radius: 4px;
+  text-align:center;
+
+  /** dashed */
+  &:before {
+    border: 5px dashed var(--dropzone-border-color);
+    content: "";
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &:not(.disabled):hover {
+    background-color: var(--dropzone-active-bg);
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.dragOver {
+    background-color: var(--dropzone-active-bg);
+  }
+
+  &.error {
+    border-color: var(--text-error-primary);
+  }
+}
