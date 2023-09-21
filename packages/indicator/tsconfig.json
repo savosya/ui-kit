@@ -1,18 +1,21 @@
 {
-  "include": ["src", "../../typings"],
+  "include": [
+    "src",
+    "../../typings"
+  ],
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "build",
-    "rootDirs": ["src"],
+    "rootDirs": [
+      "src"
+    ],
     "baseUrl": ".",
     "tsBuildInfoFile": "tsconfig.tsbuildinfo",
     "paths": {
-      "@savosya/savosya-myuikit-*": ["../*/src"]
+      "@savosya/savosya-myuikit-*": [
+        "../*/src"
+      ]
     }
   },
-  "references": [
-    {
-      "path": "../indicator"
-    }
-  ]
+  "references": []
 }
