@@ -1,0 +1,11 @@
+.close {
+  border-radius: 50%;
+  background-color: #EFF1F4;
+  padding: 3px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
