@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {useCallback, useState} from "react";
-
-import clsx from 'clsx'
+import clsx from "clsx";
 
 import cls from './index.module.scss'
 import {PlusIcon} from "./components/plus-icon";
@@ -15,6 +14,14 @@ export interface CounterProps {
   min?: number
   max?: number
   width?: number
+
+  className?: string
+  classes?: {
+    root?: string
+    input?: string
+    plus?: string
+    minus?: string
+  }
 }
 
 export const Counter = React.forwardRef<HTMLInputElement, CounterProps>((
@@ -25,7 +32,9 @@ export const Counter = React.forwardRef<HTMLInputElement, CounterProps>((
     min = -Infinity,
     max = Infinity,
     onChange,
-    width = 100
+    width = 100,
+    classes,
+    className
   }, ref) => {
   const isControlled = value !== undefined
   const [internalState, setState] = useState<string>(value ? String(value) : '0')
@@ -63,19 +72,19 @@ export const Counter = React.forwardRef<HTMLInputElement, CounterProps>((
   };
 
   return (
-    <div className={cls.root}>
-      <MinusIcon onClick={handleSub}/>
+    <div className={clsx(cls.root, className, classes?.root)}>
+      <MinusIcon onClick={handleSub} className={classes?.minus}/>
 
       <input
         type='number'
-        className={cls.input}
+        className={clsx(cls.input, classes?.input)}
         value={internalState}
         onChange={handleChange}
         ref={ref}
         style={{width: width}}
       />
 
-      <PlusIcon onClick={handleAdd}/>
+      <PlusIcon onClick={handleAdd} className={classes?.plus}/>
     </div>
   );
 })

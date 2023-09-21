@@ -18,8 +18,6 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "clsx": "^1.2.1",
-    "@savosya/savosya-myuikit-hooks": "*",
-    "@savosya/savosya-myuikit-utils": "*"
+    "clsx": "^1.2.1"
   }
 }
