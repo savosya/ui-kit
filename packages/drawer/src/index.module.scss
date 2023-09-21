@@ -1,0 +1,18 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
+
+:root {
+  --drawer-font-family: var(--eub-font-family);
+}
+
+.root {
+  font-family: var(--drawer-font-family);
+}
+
+.mask {
+  &.blur {
+    backdrop-filter: blur(1px);
+  }
+}
+
+.wrapper {}
