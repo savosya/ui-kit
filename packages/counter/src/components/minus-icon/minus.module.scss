@@ -1,0 +1,16 @@
+.minus {
+  cursor: pointer;
+  transition: 0.15s;
+  border-radius: 5px;
+  color: #D44040;
+  flex: 0 0 fit-content;
+
+  &:hover {
+    background-color: #E9D1D4;
+  }
+
+  &:active {
+    color: #FFF;
+    background-color: #D44040;
+  }
+}
