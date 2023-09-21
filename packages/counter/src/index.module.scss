@@ -1,0 +1,41 @@
+@import '../../variables/src/index.css';
+@import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
+
+:root {
+  --counter-font-family: var(--eub-font-family);
+  --input-active-blue: #4683C8;
+}
+
+.root {
+  font-family: var(--counter-font-family);
+  background-color: var(--bg-info);
+  box-sizing: border-box;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.input {
+  padding: 10px 16px;
+  appearance: none;
+  outline: none;
+  border: 0 solid transparent;
+  caret-color: var(--input-active-blue);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  -moz-appearance: textfield;
+}

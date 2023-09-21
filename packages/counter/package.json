@@ -1,0 +1,23 @@
+{
+  "name": "@savosya/savosya-myuikit-counter",
+  "version": "0.0.0",
+  "description": "Counter",
+  "license": "ISC",
+  "main": "index.js",
+  "module": "build/esm/index.js",
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "build"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "build": "rollup -c ../../rollup.config.js"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1"
+  }
+}
