@@ -1,10 +1,11 @@
 import * as React from 'react'
 import type {HTMLProps, ReactNode} from 'react'
 import clsx from 'clsx'
+import Indicator from "@savosya/savosya-myuikit-indicator";
 
 import cls from './index.module.scss'
 
-export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, "size">{
+export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, "size"> {
   type?: 'primary' | 'error' | 'success' | 'warn'
   color?: string
   size?: 'm' | 's'
@@ -19,8 +20,17 @@ export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, "size">{
 }
 
 
-export function Badge(props: BadgeProps) {
-  const {color, type = '', size = 'm', number, children, classes = {}, className, ...rest} = props;
+export function Badge(
+  {
+    color,
+    type = 'primary',
+    size = 'm',
+    number,
+    children,
+    classes = {},
+    className,
+    ...rest
+  }: BadgeProps) {
 
   return (
     <div
@@ -32,9 +42,9 @@ export function Badge(props: BadgeProps) {
         classes.root
       )}
       {...rest}
-      style={{backgroundColor: color, ...rest?.style }}
+      style={{backgroundColor: color, ...rest?.style}}
     >
-      {number && <span className={clsx(cls.number, cls[size], classes.number)}>{number}</span>}
+      {number && <Indicator size={size} number={number} className={classes?.number}/>}
 
       <span className={classes.text}>{children}</span>
     </div>

@@ -7,7 +7,6 @@
 
   // colors:
   --badge-color-typography: var(--text-primary);
-  --badge_number-color-bg: var(--text-primary);
 
   --badge-color-default: #F2F2F2;
   --badge-color-primary: #CAE6FB;
@@ -53,32 +52,5 @@
     font-size: 10px;
     line-height: 14px;
     padding: 2px 5px 2px 4px;
-  }
-}
-
-.number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-family);
-
-  color: white;
-  background-color: var(--badge_number-color-bg);
-  border-radius: 20px;
-
-  &.m {
-    padding: 4px 5.5px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 10px;
-    letter-spacing: -0.2px;
-  }
-
-  &.s {
-    padding: 1px 3.5px;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 11px;
-    letter-spacing: -0.2px;
   }
 }
