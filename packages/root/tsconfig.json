@@ -1,0 +1,44 @@
+{
+  "include": [
+    "src",
+    "../../typings"
+  ],
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "build",
+    "rootDirs": [
+      "src"
+    ],
+    "baseUrl": ".",
+    "tsBuildInfoFile": "tsconfig.tsbuildinfo",
+    "paths": {
+      "@savosya/savosya-myuikit-*": [
+        "../*/src"
+      ]
+    }
+  },
+  "references": [
+    { "path": "../accordion" },
+    { "path": "../attach" },
+    { "path": "../badge" },
+    { "path": "../breadcrumbs" },
+    { "path": "../button" },
+    { "path": "../checkbox" },
+    { "path": "../counter" },
+    { "path": "../divider" },
+    { "path": "../drawer" },
+    { "path": "../dropdown" },
+    { "path": "../dropzone" },
+    { "path": "../indicator" },
+    { "path": "../input" },
+    { "path": "../loader" },
+    { "path": "../modal" },
+    { "path": "../radio" },
+    { "path": "../radio-group" },
+    { "path": "../select" },
+    { "path": "../tag" },
+    { "path": "../textarea" },
+    { "path": "../tooltip" },
+    { "path": "../typography" }
+  ]
+}

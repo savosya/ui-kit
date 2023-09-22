@@ -19,9 +19,7 @@ for pkg in $PACKAGES; do
   PGK_NAME=$(echo $pkg | sed 's/@.*\///' | tr '/' '-')
   CAMEL_CASE_PKG=$(echo $PGK_NAME | tr '-' ' ' | awk '{ for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2); print }' | tr -d ' ')
 
-  echo $CAMEL_CASE_PKG
-
-  if [ "$PGK_NAME" != "variables" ] && [ "$PGK_NAME" != "utils" ] && [ "$PGK_NAME" != "hooks" ]; then
+  if [ "$PGK_NAME" != "variables" ] && [ "$PGK_NAME" != "utils" ] && [ "$PGK_NAME" != "hooks" ] && [ "$PGK_NAME" != "root" ]; then
     echo "export {$CAMEL_CASE_PKG} from './$PGK_NAME';" >> $OUTPUT_FILE
 #    echo "export { default as ${CAMEL_CASE_PKG} } from './${PGK_NAME}';" >> $OUTPUT_FILE
   fi
