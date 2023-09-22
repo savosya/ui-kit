@@ -34,7 +34,7 @@ yarn build
 lerna publish from-package --no-push --no-commit-hooks
 
 # публикую корневой проект
-cd build && npm publish && cd ../
+#cd build && npm publish && cd ../
 
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 # npm release --release-as $RELEASE_TYPE
