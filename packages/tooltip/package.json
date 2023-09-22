@@ -21,5 +21,6 @@
     "@savosya/savosya-myuikit-utils": "^0.0.2",
     "clsx": "^1.2.1",
     "react-tooltip": "^5.18.0"
-  }
+  },
+  "gitHead": "31d48558bb3b557afd22f848178c9f85fed90b38"
 }

@@ -20,5 +20,6 @@
   "dependencies": {
     "@savosya/savosya-myuikit-radio": "^0.0.9",
     "clsx": "^1.2.1"
-  }
+  },
+  "gitHead": "31d48558bb3b557afd22f848178c9f85fed90b38"
 }

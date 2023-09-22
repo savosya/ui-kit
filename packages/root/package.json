@@ -40,5 +40,6 @@
     "@savosya/savosya-myuikit-textarea": "^0.0.7",
     "@savosya/savosya-myuikit-tooltip": "^0.0.9",
     "@savosya/savosya-myuikit-typography": "^0.0.4"
-  }
+  },
+  "gitHead": "31d48558bb3b557afd22f848178c9f85fed90b38"
 }
