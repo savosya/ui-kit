@@ -6,11 +6,11 @@ import {useFocus} from "@savosya/savosya-myuikit-hooks"
 import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 
 import {GrabberIcon} from "./components"
-import {TextAreaProps} from "./textarea.types"
+import {TextareaProps} from "./textarea.types"
 import cls from './index.module.scss'
 
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => {
+export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const {
     className,
     label,

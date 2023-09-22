@@ -1,6 +1,6 @@
 import {HTMLProps, ReactNode} from "react";
 
-export interface TextAreaProps extends HTMLProps<HTMLTextAreaElement> {
+export interface TextareaProps extends HTMLProps<HTMLTextAreaElement> {
   className?: string
   label?: string
   error?: boolean
