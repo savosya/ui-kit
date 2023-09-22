@@ -36,6 +36,8 @@ export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref)
     }
   };
 
+  console.log('render radio button')
+
   return (
     <label
       className={clsx(
