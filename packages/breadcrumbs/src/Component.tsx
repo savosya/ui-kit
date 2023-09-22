@@ -1,12 +1,11 @@
 import * as React from 'react'
-import type {HTMLProps, ReactNode} from "react"
+import {useMemo} from "react";
 
 import clsx from 'clsx'
 
-import cls from './index.module.scss'
+import {ChevroneLeft} from "./components";
 import {BreadcrumbsProps, Crumb} from "./breadcrumbs.types";
-import {ChevroneLeft} from "./components/chevrone-left";
-import {useMemo} from "react";
+import cls from './index.module.scss'
 
 
 export const Breadcrumbs = (

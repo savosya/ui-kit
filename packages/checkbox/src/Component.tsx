@@ -1,37 +1,14 @@
 import * as React from 'react'
 import {useRef, useState} from "react";
-import type {ChangeEvent, InputHTMLAttributes, ReactNode} from "react"
 import clsx from 'clsx'
 
 import {useFocus} from "@savosya/savosya-myuikit-hooks";
 import {mergeRefs} from "@savosya/savosya-myuikit-utils";
 
-import {CheckIcon} from './components/check-icon'
+import {CheckIcon} from './components'
+import {CheckboxProps} from "./checkbox.types";
 import cls from './index.module.scss'
 
-type NativeProps = InputHTMLAttributes<HTMLInputElement>
-
-export interface CheckboxProps extends Omit<NativeProps, 'size' | 'onChange'> {
-  className?: string
-  label?: ReactNode
-  hint?: ReactNode
-  size?: 's' | 'm' | 'l'
-  checked?: boolean
-  indeterminate?: boolean
-  onChange?: (
-    event: ChangeEvent<HTMLInputElement>,
-    payload: {
-      checked: boolean;
-      name?: string;
-    },
-  ) => void;
-
-  classes?: {
-    root?: string
-    input?: string
-    content?: string
-  }
-}
 
 export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
   const {
@@ -53,7 +30,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
 
   const [innerChecked, setChecked] = useState<boolean | undefined>(checked || false)
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
 
     if (onChange) {

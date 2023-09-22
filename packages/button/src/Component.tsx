@@ -1,31 +1,13 @@
 import * as React from "react"
-import type {HTMLProps, ReactNode} from "react"
 import {useRef} from "react"
 import clsx from 'clsx'
 
 import {useFocus} from "@savosya/savosya-myuikit-hooks"
 import {mergeRefs} from "@savosya/savosya-myuikit-utils"
-import Loader from '@savosya/savosya-myuikit-loader'
+import {Loader} from '@savosya/savosya-myuikit-loader'
 import cls from './index.module.scss'
+import {ButtonProps} from "./button.types";
 
-
-export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'type' | 'size'> {
-  className?: string
-  loading?: boolean
-  size?: 's' | 'm' | 'l'
-  mode?: 'dark' | 'light'
-  type?: 'primary' | 'ghost' | 'outline' | 'link'
-  fill?: boolean
-  htmlType?: 'button' | 'submit' | 'reset' | undefined
-  children?: ReactNode
-  loaderSize?: number
-  leftIcon?: ReactNode
-  rightIcon?: ReactNode
-  classes?: {
-    root?: string
-    loader?: string
-  }
-}
 
 const loaderSizeConfig = {
   s: 15,
@@ -33,7 +15,7 @@ const loaderSizeConfig = {
   l: 19,
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     loading,
     children,

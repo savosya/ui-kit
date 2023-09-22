@@ -1,33 +1,14 @@
 import * as React from 'react'
-import {useRef} from "react";
-import type {HTMLProps, ReactNode} from "react"
+import {useRef} from "react"
 import clsx from 'clsx'
 
 import {useFocus} from "@savosya/savosya-myuikit-hooks"
 import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 
-import {GrabberIcon} from "./components/grabber-icon"
+import {GrabberIcon} from "./components"
+import {TextAreaProps} from "./textarea.types"
 import cls from './index.module.scss'
 
-
-export interface TextAreaProps extends HTMLProps<HTMLTextAreaElement> {
-  className?: string
-  label?: string
-  error?: boolean
-  errorMsg?: ReactNode
-  hint?: ReactNode
-  disabled?: boolean
-  resizable?: 'both' | 'vertical' | 'horizontal'
-  classes?: {
-    wrapper?: string
-    root?: string
-    textarea?: string
-    label?: string
-    extra?: string
-    hint?: string
-    errorMsg?: string
-  }
-}
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => {
   const {

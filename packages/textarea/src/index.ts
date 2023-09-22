@@ -1,4 +1,2 @@
-import {TextArea} from './Component'
-export type {TextAreaProps} from './Component'
-
-export default TextArea
+export {TextArea} from './Component'
+export type {TextAreaProps} from './textarea.types'

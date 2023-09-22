@@ -11,7 +11,7 @@ yarn clean
 lerna run build --skip-nx-cache --stream
 
 # Подгатавливаем рут пакет: переносим туда package.json и модифицируем его
-bin/build.sh
+bin/prepare-root-package-json.sh
 
 # Создаем index.js для удобного импорта из либы
 bin/create-root-exporter-file.sh

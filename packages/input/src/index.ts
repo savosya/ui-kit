@@ -1,4 +1,2 @@
-import {Input} from './Component'
-export type {InputProps} from './Component'
-
-export default Input
+export {Input} from './Component'
+export type {InputProps} from './input.types'

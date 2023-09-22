@@ -11,20 +11,32 @@
 set -e
 
 OUTPUT_FILE="./build/index.ts"
-LERNAROOT="./"
 
 PACKAGES=$(ls packages)
 
 
 for pkg in $PACKAGES; do
-  CLEAN_PKG=$(echo $pkg | sed 's/@.*\///' | tr '/' '-')
-  CAMEL_CASE_PKG=$(echo $CLEAN_PKG | tr '-' ' ' | awk '{ for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2); print }' | tr -d ' ')
+  PGK_NAME=$(echo $pkg | sed 's/@.*\///' | tr '/' '-')
+  CAMEL_CASE_PKG=$(echo $PGK_NAME | tr '-' ' ' | awk '{ for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2); print }' | tr -d ' ')
 
-  if [ "$CLEAN_PKG" != "variables" ] && [ "$CLEAN_PKG" != "utils" ] && [ "$CLEAN_PKG" != "hooks" ]; then
-    echo "export * from './$CLEAN_PKG';" >> $OUTPUT_FILE
-    echo "export { default as ${CAMEL_CASE_PKG} } from './${CLEAN_PKG}';" >> $OUTPUT_FILE
+  if [ "$PGK_NAME" != "variables" ] && [ "$PGK_NAME" != "utils" ] && [ "$PGK_NAME" != "hooks" ]; then
+    echo "export * from './$PGK_NAME';" >> $OUTPUT_FILE
+#    echo "export { default as ${CAMEL_CASE_PKG} } from './${PGK_NAME}';" >> $OUTPUT_FILE
   fi
 done
+
+
+#for pkg in $PACKAGES; do
+#  PGK_NAME=$(echo $pkg | sed 's/@.*\///' | tr '/' '-')
+#
+#  if [ "$PGK_NAME" != "variables" ] && [ "$PGK_NAME" != "utils" ] && [ "$PGK_NAME" != "hooks" ]; then
+#    if [ -f "packages/$PGK_NAME/src/index.ts" ]; then
+#      echo "copy $PGK_NAME"
+#      cat "packages/$PGK_NAME/src/index.ts" >> $OUTPUT_FILE
+#    fi
+#  fi
+#done
+
 
 # Компилирует index.ts с помощью ts и удаляет index.ts
 tsc build/index.ts --declaration --declarationDir build --outDir build --forceConsistentCasingInFileNames --module es2020 --target es5 --skipLibCheck --moduleResolution node

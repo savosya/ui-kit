@@ -3,10 +3,10 @@ import RcDialog from 'rc-dialog'
 
 import clsx from 'clsx'
 
-import {CloseIcon} from "./components/close-icon"
+import {CloseIcon} from "./components"
 import {ModalProps} from "./modal.types"
 import cls from './index.module.scss'
-import './modal.scss'
+import './assets/modal.scss'
 
 export const Modal = (
   {

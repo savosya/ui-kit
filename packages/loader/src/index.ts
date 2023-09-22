@@ -1,4 +1,2 @@
-import {Loader} from './Component'
-
-export type {LoaderProps} from './Component'
-export default Loader
+export  {Loader} from './Component'
+export type {LoaderProps} from './loader.types'

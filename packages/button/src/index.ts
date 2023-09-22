@@ -1,3 +1,3 @@
-import {Button} from './Component'
+export {Button} from './Component'
+export {ButtonProps} from './button.types'
 
-export default Button

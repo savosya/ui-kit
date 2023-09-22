@@ -1,18 +1,9 @@
 import * as React from 'react'
-import type {CSSProperties} from "react";
 import clsx from 'clsx'
 import cls from './index.module.scss'
+import {DividerProps} from "./divider.types";
 
-export interface DividerProps {
-  className?: string;
-  noGap?: boolean
-  height?: number
-  margin?: CSSProperties['margin']
-  style?: CSSProperties
-  color?: CSSProperties['color']
-}
-
-export const Divider: React.FC<DividerProps> = (
+export const Divider = (
   {
     className,
     noGap,
@@ -20,7 +11,7 @@ export const Divider: React.FC<DividerProps> = (
     margin,
     style,
     color
-  }) => (
+  }: DividerProps) => (
   <div
     className={clsx(cls.root, className, {[cls.noGap]: noGap})}
     style={{

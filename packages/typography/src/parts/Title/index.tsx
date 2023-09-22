@@ -1,16 +1,8 @@
 import * as React from 'react'
-import type {HTMLProps} from "react"
 import clsx from 'clsx'
-import cls from './title.module.scss'
 
-export interface TitleProps extends HTMLProps<HTMLHeadingElement> {
-  children?: React.ReactNode
-  weight?: 'regular' | 'medium' | 'bold'
-  block?: boolean
-  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div'
-  defaultMargins?: boolean
-  className?: string;
-}
+import {TitleProps} from "./title.types"
+import cls from './title.module.scss'
 
 export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((
   {
@@ -38,4 +30,3 @@ export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((
     </Component>
   );
 })
-

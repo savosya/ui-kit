@@ -1,26 +1,13 @@
 import * as React from 'react'
 import {useCallback, useRef, useState} from "react";
-import type {ComponentType, ReactNode} from "react"
 
 import clsx from 'clsx'
 
-import {OverlayProps, Overlay as DefaultOverlay} from "./components/overlay";
+import {Overlay as DefaultOverlay} from "./components";
+import {DropzoneProps} from "./dropzone.types";
+import {preventAndStopEvent} from "./dropzone.utils";
 import cls from './index.module.scss'
-import {preventAndStopEvent} from "./utils";
 
-export interface DropzoneProps {
-  className?: string;
-  text?: string;
-  disabled?: boolean;
-  error?: boolean;
-  block?: boolean;
-  overlay?: ComponentType<OverlayProps>;
-  onDrop?: (files: FileList) => void;
-  onDragOver?: (event: React.DragEvent<HTMLElement>) => void;
-  onDragLeave?: (event: React.DragEvent<HTMLElement>) => void;
-  onDragEnter?: (event: React.DragEvent<HTMLElement>) => void;
-  children?: ReactNode;
-};
 
 export const Dropzone = (
   {

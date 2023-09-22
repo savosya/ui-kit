@@ -1,4 +1,2 @@
-import {Radio} from './Component'
-export type {RadioProps} from './Component'
-
-export default Radio
+export {Radio} from './Component'
+export type {RadioProps} from './radio.types'

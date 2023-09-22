@@ -1,4 +1,2 @@
-import {Dropdown} from './Component'
-export type {DropdownProps} from './dropdown.types'
-
-export default Dropdown
+export {Dropdown} from './Component'
+export type {DropdownProps, DropdownPlacement, DropdownOption, DropdownActionType} from './dropdown.types'

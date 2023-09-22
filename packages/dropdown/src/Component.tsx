@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 import type {DropdownProps} from "./dropdown.types";
 import cls from './index.module.scss'
-import './dropdown.scss'
+import './assets/dropdown.scss'
 
 
 export const Dropdown = (

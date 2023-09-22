@@ -1,21 +1,11 @@
 import * as React from 'react'
-import type {HTMLProps} from "react"
+
 import clsx from 'clsx'
 
+import {LoaderProps} from "./loader.types"
 import cls from './index.module.scss'
 
-export interface LoaderProps extends HTMLProps<SVGSVGElement> {
-  className?: string
-  size?: number
-  color?: string
-  secondaryColor?: string
-  spinner?: boolean
-  fill?: boolean
-  classes?: {
-    wrapper?: string
-    loader?: string
-  }
-}
+
 
 export const Loader = (props: LoaderProps) => {
   const {
