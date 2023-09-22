@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {TextArea} from '../Component';
+import {Textarea} from '../Component';
 
 export default {
-  title: 'Components/TextArea',
-  component: TextArea,
+  title: 'Components/Textarea',
+  component: Textarea,
 };
 
 const canvasStyle = {
@@ -16,7 +16,7 @@ export const Default = () => {
 
   return (
     <div style={canvasStyle}>
-      <TextArea
+      <Textarea
         label='Заголовок'
         placeholder={'i\'m placing holder'}
         error

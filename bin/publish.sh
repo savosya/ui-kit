@@ -6,36 +6,29 @@
 # выхожу, если одна из команд завершилась неудачно
 set -e
 
-VALID_VERSION_REGEX="^[0-9]+\.[0-9]+\.[0-9]+$"
-CURRENT_ROOT_PACKAGE_VERSION=$(node -p "require('./package.json').version")
+# беру текущую git ветку и кладу ее значение в current_branch
+current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-# Обновляем версию рут пакета
-#echo "Новая версия рут пакета (текущая: ${CURRENT_ROOT_PACKAGE_VERSION}):"
-#while true; do
-#  read -p "Введите новую версию: " NEW_ROOT_PACKAGE_VERSION
-#  if [[ $NEW_ROOT_PACKAGE_VERSION =~ $VALID_VERSION_REGEX ]]; then
-#    break
-#  else
-#    echo "Ошибка: Введенный номер версии не соответствует формату x.x.x"
-#  fi
-#done
-#json -I -f package.json -e "this.version=\"${NEW_ROOT_PACKAGE_VERSION}\""
+# если текущая ветка != main, выходим т.к. публиковать можно только с main ветки
+if [ "$current_branch" != "main" ]; then
+    echo "Error: Current branch is not 'main'. Exiting script."
+    exit 1
+fi
 
-
-# поднимаю версию во всех подпакетах
+# поднимаю версию во всех подпакетах (если есть изменения)
 lerna version --no-push --no-commit-hooks --no-git-tag-version
 
+# commit new tag (получаю новую версию рут пакета)
 NEW_ROOT_PACKAGE_VERSION=$(node -p "require('./packages/root/package.json').version")
-# commit new tag
+
+# Commit new tag. Создаю тег для гита (тег = версия рут пакета)
 git commit -a -m "Publish root package: v${NEW_ROOT_PACKAGE_VERSION}"
 
-# собираю корневой проект
+# сборка всех пакетов
 yarn build
-# публикую все подпакеты
-lerna publish from-package --no-push --no-commit-hooks
 
-# публикую корневой проект
-#cd build && npm publish && cd ../
+# публикую все пакеты, включая рут (если есть изменения)
+lerna publish from-package --no-push --no-commit-hooks
 
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 # npm release --release-as $RELEASE_TYPE
