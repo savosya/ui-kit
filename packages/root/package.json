@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-root",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Root",
   "license": "ISC",
   "main": "index.js",
@@ -33,8 +33,8 @@
     "@savosya/savosya-myuikit-input": "^0.0.11",
     "@savosya/savosya-myuikit-loader": "^0.0.9",
     "@savosya/savosya-myuikit-modal": "^0.0.3",
-    "@savosya/savosya-myuikit-radio": "^0.0.9",
-    "@savosya/savosya-myuikit-radio-group": "^0.0.10",
+    "@savosya/savosya-myuikit-radio": "^0.0.10",
+    "@savosya/savosya-myuikit-radio-group": "^0.0.11",
     "@savosya/savosya-myuikit-select": "^0.1.26",
     "@savosya/savosya-myuikit-tag": "^0.0.9",
     "@savosya/savosya-myuikit-textarea": "^0.0.7",

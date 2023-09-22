@@ -27,7 +27,7 @@ lerna version --no-push --no-commit-hooks --no-git-tag-version
 
 NEW_ROOT_PACKAGE_VERSION=$(node -p "require('./packages/root/package.json').version")
 # commit new tag
-#git commit -a -m "Publish root package: v${NEW_ROOT_PACKAGE_VERSION}"
+git commit -a -m "Publish root package: v${NEW_ROOT_PACKAGE_VERSION}"
 
 # собираю корневой проект
 yarn build
