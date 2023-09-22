@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-drawer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Drawer",
   "license": "ISC",
   "main": "index.js",
@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "tslib": "^2.6.2",
-    "rc-drawer": "^6.5.0"
+    "rc-drawer": "^6.5.0",
+    "tslib": "^2.6.2"
   },
   "gitHead": "31d48558bb3b557afd22f848178c9f85fed90b38"
 }

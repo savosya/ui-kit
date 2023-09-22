@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-dropdown",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Dropdown",
   "license": "ISC",
   "main": "index.js",
@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "tslib": "^2.6.2",
-    "rc-dropdown": "^4.1.0"
+    "rc-dropdown": "^4.1.0",
+    "tslib": "^2.6.2"
   },
   "gitHead": "31d48558bb3b557afd22f848178c9f85fed90b38"
 }
