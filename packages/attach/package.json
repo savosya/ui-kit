@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-attach",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Attach",
   "license": "ISC",
   "main": "index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@savosya/savosya-myuikit-hooks": "*",
-    "@savosya/savosya-myuikit-loader": "*",
+    "@savosya/savosya-myuikit-loader": "^0.0.8",
     "@savosya/savosya-myuikit-utils": "*",
     "clsx": "^1.2.1"
   }

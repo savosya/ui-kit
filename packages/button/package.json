@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-button",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "Button",
   "license": "ISC",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@savosya/savosya-myuikit-hooks": "^0.0.2",
-    "@savosya/savosya-myuikit-loader": "^0.0.7",
+    "@savosya/savosya-myuikit-loader": "^0.0.8",
     "@savosya/savosya-myuikit-utils": "^0.0.2"
   },
   "publishConfig": {

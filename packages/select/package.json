@@ -1,13 +1,13 @@
 {
   "name": "@savosya/savosya-myuikit-select",
-  "version": "0.1.24",
+  "version": "0.1.25",
   "description": "Select",
   "license": "ISC",
   "main": "index.js",
   "module": "build/esm/index.js",
   "dependencies": {
-    "@savosya/savosya-myuikit-input": "^0.0.9",
-    "@savosya/savosya-myuikit-loader": "^0.0.7",
+    "@savosya/savosya-myuikit-input": "^0.0.10",
+    "@savosya/savosya-myuikit-loader": "^0.0.8",
     "rc-select": "^14.8.1"
   },
   "peerDependencies": {
