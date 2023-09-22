@@ -6,7 +6,7 @@ import {useFocus} from "@savosya/savosya-myuikit-hooks"
 import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 
 import {CheckIcon} from './components'
-import {RadioProps} from "./radio.types";
+import {RadioProps} from "./radio.types"
 import cls from './index.module.scss'
 
 
