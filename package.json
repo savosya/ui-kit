@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit",
-  "version": "0.0.66",
+  "version": "0.0.67",
   "private": true,
   "license": "ISC",
   "type": "module",
@@ -16,7 +16,6 @@
     "build": "bin/create-root-build.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
     "pub:root": "./bin/publish.sh",
-
     "test": "./bin/create-root-exporter-file.sh"
   },
   "peerDependencies": {
