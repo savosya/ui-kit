@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-root",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Root",
   "license": "ISC",
   "main": "index.js",
