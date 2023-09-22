@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# DEPRICATED
 # Заменяет все импорты c @savosya/savosya-myuikit- на @savosya/savosya-myuikit/
 
 SEARCH="@savosya/savosya-myuikit-"

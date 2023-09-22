@@ -19,7 +19,8 @@
     "test": "node __tests__/package-template.test.js"
   },
   "dependencies": {
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "tslib": "^2.6.2"
   },
   "gitHead": "31d48558bb3b557afd22f848178c9f85fed90b38"
 }

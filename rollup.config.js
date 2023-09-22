@@ -15,7 +15,7 @@ import copy from 'rollup-plugin-copy'
 // import postcssPresetEnv from 'postcss-preset-env'
 
 /** tools */
-import {createPackageJson} from "./tools/rollup/create-package-json.js";
+// import {createPackageJson} from "./tools/rollup/create-package-json.js";
 import {purgecssAfterBuildPlugin} from "./tools/rollup/purgecss-after-build.js";
 import addCssImports from "./tools/css/add-css-imports.js";
 import resolvePackageJsonImports from "./tools/rollup/resolve-packagejson-import.js";
@@ -109,6 +109,8 @@ const esm = {
     plugins: [...plugins({isEsm: true})]
 }
 
+
+/** Создает Root Package в корне проекта */
 const root = {
     input: ['build/**/*.js'],
     external: baseConfig.external,
@@ -120,12 +122,12 @@ const root = {
             targets: [
                 {src: ['build/**/*', '!**/*.js'], dest: componentBuildDir},
 
-                /** Создает package.json для каждого пакета в root сборке */
-                {
-                    src: 'package.json',
-                    dest: `../../build/${currentComponentName}`,
-                    transform: () => createPackageJson('./esm/index.js'),
-                }
+                /** Переписать package.json для каждого пакета в root сборке */
+                // {
+                //     src: 'package.json',
+                //     dest: `../../build/${currentComponentName}`,
+                //     transform: () => createPackageJson('./esm/index.js'),
+                // }
             ],
         }),
     ],

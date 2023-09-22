@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit",
-  "version": "0.0.69",
+  "version": "0.0.1",
   "private": true,
   "license": "ISC",
   "type": "module",
@@ -15,8 +15,7 @@
     "build:sb": "yarn build && storybook build",
     "build": "bin/create-root-build.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
-    "pub:root": "./bin/publish.sh",
-    "test": "./bin/create-root-exporter-file.sh"
+    "pub:root": "./bin/publish.sh"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
@@ -24,6 +23,7 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "tslib": "^2.6.2",
     "rc-dialog": "^9.3.0",
     "rc-drawer": "^6.5.0",
     "rc-dropdown": "^4.1.0",

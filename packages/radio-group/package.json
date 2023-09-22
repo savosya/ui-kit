@@ -18,8 +18,9 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "@savosya/savosya-myuikit-radio": "^0.0.11",
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "tslib": "^2.6.2",
+    "@savosya/savosya-myuikit-radio": "^0.0.11"
   },
   "gitHead": "31d48558bb3b557afd22f848178c9f85fed90b38"
 }

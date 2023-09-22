@@ -6,6 +6,8 @@
   "main": "index.js",
   "module": "build/esm/index.js",
   "dependencies": {
+    "clsx": "^1.2.1",
+    "tslib": "^2.6.2",
     "@savosya/savosya-myuikit-input": "^0.0.11",
     "@savosya/savosya-myuikit-loader": "^0.0.9",
     "rc-select": "^14.8.1"

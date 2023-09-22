@@ -1,5 +1,5 @@
 // import '../../variables/src/index.css'
-// export * from "@savosya/savosya-myuikit-accordion";
+export * from "@savosya/savosya-myuikit-accordion";
 export * from "@savosya/savosya-myuikit-attach";
 export * from '@savosya/savosya-myuikit-badge';
 export * from '@savosya/savosya-myuikit-breadcrumbs';
