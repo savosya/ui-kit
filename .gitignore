@@ -33,3 +33,4 @@ build
 
 *.tsbuildinfo
 storybook-static
+package
