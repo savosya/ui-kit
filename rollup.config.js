@@ -71,9 +71,9 @@ const plugins = ({isEsm}) => {
     return [
         wildcardExternal(['@savosya/savosya-myuikit-*']),
         multiEntry.default(),
-        postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/styles.css'),
+        postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/cjs/styles.css'),
         purgecssAfterBuildPlugin({pkgPath}),
-        typescript({outDir: isEsm ? 'build/esm' : 'build', tsconfig: `${currentPackageDir}/tsconfig.json`}),
+        typescript({outDir: isEsm ? 'build/esm' : 'build/cjs', tsconfig: `${currentPackageDir}/tsconfig.json`}),
     ]
 }
 
@@ -83,13 +83,13 @@ const cjs = {
     output: [
         {
             ...defaultOutputOptions,
-            dir: 'build',
+            dir: 'build/cjs',
             format: "cjs",
             /**
              *  resolvePackageJsonImports - резолвит package.json для всего пакета компонента.
              *  Нужно при импорте чтобы модуль брал es версию компонента.
              * */
-            plugins: [addCssImports(), resolvePackageJsonImports({module: 'esm/index.js'})]
+            plugins: [addCssImports(), resolvePackageJsonImports({module: 'esm/index.js', main: 'cjs/index.js'})]
         },
     ],
     plugins: [...plugins({isEsm: false})]
@@ -110,7 +110,7 @@ const esm = {
 }
 
 
-/** Создает Root Package в корне проекта */
+/** DEPRECATED -- Создает Root Package в корне проекта -- DEPRECATED */
 const root = {
     input: ['build/**/*.js'],
     external: baseConfig.external,
@@ -133,4 +133,5 @@ const root = {
     ],
 };
 
-export default [cjs, esm, root].filter(Boolean);
+// export default [cjs, esm, root].filter(Boolean);
+export default [cjs, esm].filter(Boolean);
