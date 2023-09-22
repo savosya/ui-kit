@@ -1,4 +1,2 @@
-import {Drawer, DrawerProps} from './Component'
-export type {DrawerProps} from './Component'
-
-export default Drawer
+export {Drawer} from './Component'
+export type {DrawerProps} from './drawer.types'

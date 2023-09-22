@@ -2,15 +2,15 @@ import * as React from 'react'
 import {useCallback, useMemo, useRef, useState} from "react"
 import RCSelect, {Option as RCOption} from 'rc-select';
 import clsx from 'clsx'
-import Input from '@savosya/savosya-myuikit-input'
-import Loader from '@savosya/savosya-myuikit-loader'
-import {ChevronIcon} from "./components/chevron-icon"
-import {CheckIcon} from "./components/check-icon";
-import {CrossIcon} from "./components/cross-icon";
+
+import {Input} from '@savosya/savosya-myuikit-input'
+import {Loader} from '@savosya/savosya-myuikit-loader'
+
+import {ChevronIcon, CheckIcon, CrossIcon} from "./components"
 import {getFilteredOptions, getInputValue, getOptionsMap, showCleanIcon} from "./select.utils";
 import type {InternalSelectState, PassedOption, SelectProps} from "./select.types";
 import cls from './index.module.scss'
-import './select.scss';
+import './assets/select.scss';
 
 
 export const Select = (props: SelectProps) => {

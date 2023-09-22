@@ -1,12 +1,11 @@
 import * as React from 'react'
+
 import clsx from 'clsx'
+
+import {IndicatorProps} from "./indicator.types";
 import cls from './index.module.scss'
 
-export interface IndicatorProps {
-  size?: 'm' | 's' | 'l'
-  number?: number | string
-  className?: string
-}
+
 
 export const Indicator = (
   {

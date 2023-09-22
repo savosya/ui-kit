@@ -1,4 +1,2 @@
-import {Indicator} from './Component'
-export type {IndicatorProps} from './Component'
-
-export default Indicator
+export {Indicator} from './Component'
+export type {IndicatorProps} from './indicator.types'

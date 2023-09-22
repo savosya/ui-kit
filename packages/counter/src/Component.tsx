@@ -2,27 +2,10 @@ import * as React from 'react'
 import {useCallback, useState} from "react";
 import clsx from "clsx";
 
+import {PlusIcon, MinusIcon} from "./components";
+import {CounterProps} from "./counter.types";
 import cls from './index.module.scss'
-import {PlusIcon} from "./components/plus-icon";
-import {MinusIcon} from "./components/minus-icon";
 
-export interface CounterProps {
-  value?: number
-  onAdd?: (newValue: number) => void
-  onSub?: (newValue: number) => void
-  onChange?: (newValue: number) => void
-  min?: number
-  max?: number
-  width?: number
-
-  className?: string
-  classes?: {
-    root?: string
-    input?: string
-    plus?: string
-    minus?: string
-  }
-}
 
 export const Counter = React.forwardRef<HTMLInputElement, CounterProps>((
   {

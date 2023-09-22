@@ -1,4 +1,2 @@
-import {Tooltip} from './Component'
-export type {TooltipProps} from './Component'
-
-export default Tooltip
+export {Tooltip} from './Component'
+export type {TooltipProps, TooltipPlacement} from './tooltip.types'

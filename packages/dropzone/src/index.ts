@@ -1,4 +1,2 @@
-import {Dropzone} from './Component'
-export type {DropzoneProps} from './Component'
-
-export default Dropzone
+export {Dropzone} from './Component'
+export type {DropzoneProps} from './dropzone.types'

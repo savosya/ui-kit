@@ -1,4 +1,2 @@
-import {Breadcrumbs} from './Component'
-export type {BreadcrumbsProps} from './breadcrumbs.types'
-
-export default Breadcrumbs
+export {Breadcrumbs} from './Component'
+export type {BreadcrumbsProps, Crumb} from './breadcrumbs.types'

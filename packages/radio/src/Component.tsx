@@ -1,37 +1,14 @@
 import * as React from 'react'
 import {useRef} from "react";
-import type {ChangeEvent, InputHTMLAttributes, ReactNode} from "react"
 import clsx from 'clsx'
 
 import {useFocus} from "@savosya/savosya-myuikit-hooks"
 import {mergeRefs} from "@savosya/savosya-myuikit-utils"
 
-import {CheckIcon} from './components/check-icon'
+import {CheckIcon} from './components'
+import {RadioProps} from "./radio.types";
 import cls from './index.module.scss'
 
-type NativeProps = InputHTMLAttributes<HTMLInputElement>
-
-export interface RadioProps extends Omit<NativeProps, 'size' | 'onChange' | 'type'> {
-  className?: string
-  label?: ReactNode
-  hint?: ReactNode
-  size?: 's' | 'm' | 'l'
-  checked?: boolean
-  markType?: 'default' | 'check'
-  onChange?: (
-    event: ChangeEvent<HTMLInputElement>,
-    payload: {
-      checked: boolean;
-      name?: string;
-    },
-  ) => void;
-
-  classes?: {
-    root?: string
-    input?: string
-    content?: string
-  }
-}
 
 export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref) => {
   const {
@@ -51,7 +28,7 @@ export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref)
   const labelRef = useRef<HTMLLabelElement>(null);
   const [focused] = useFocus(labelRef, 'keyboard');
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
 
     if (onChange) {

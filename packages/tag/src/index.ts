@@ -1,4 +1,2 @@
-import {Tag} from './Component'
-export {TagProps} from './Component'
-
-export default Tag
+export {Tag} from './Component'
+export {TagProps} from './tag.types'

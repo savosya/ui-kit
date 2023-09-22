@@ -1,4 +1,2 @@
-import {Attach} from './Component'
-export type {AttachProps} from './Component'
-
-export default Attach
+export {Attach} from './Component'
+export type {AttachProps} from './attach.types'

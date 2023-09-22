@@ -1,4 +1,2 @@
-import {Counter} from './Component'
-export type {CounterProps} from './Component'
-
-export default Counter
+export {Counter} from './Component'
+export type {CounterProps} from './counter.types'

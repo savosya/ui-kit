@@ -2,44 +2,14 @@ import * as React from 'react'
 import {useEffect, useRef, useState} from "react";
 import clsx from 'clsx'
 
-import Loader from '@savosya/savosya-myuikit-loader'
+import {Loader} from '@savosya/savosya-myuikit-loader'
 import {mergeRefs} from "@savosya/savosya-myuikit-utils";
 import {useFocus} from "@savosya/savosya-myuikit-hooks";
 
-import {RightChevroneIcon} from "./components/right-chevrone-icon";
-import {FileIcon} from "./components/file-icon";
-import {CloseIcon} from "./components/close-icon";
+import {RightChevroneIcon, FileIcon, CloseIcon} from "./components";
+import {AttachProps} from "./attach.types";
 import cls from './index.module.scss'
 
-export interface AttachProps extends Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'size' | 'type' | 'value' | 'defaultValue' | 'onChange' | 'multiple' | 'enterKeyHint'
-> {
-  title?: string
-  description?: string
-  loading?: boolean
-  disabled?: boolean
-  success?: string
-  changeDescriptionForFilename?: boolean
-  maxWidth?: string | number
-  ellipsisTitle?: boolean
-  ellipsisDescription?: boolean
-
-  value?: File | null;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>, file: File | null) => void;
-  onClear?: (e: React.MouseEvent<any>) => void
-
-  className?: string
-  classes?: {
-    root?: string
-    body?: string
-    status?: string
-    title?: string
-    description?: string
-    leftIcon?: string
-    rightIcon?: string
-  }
-}
 
 export const Attach = React.forwardRef<HTMLInputElement, AttachProps>((
   {

@@ -1,18 +1,8 @@
 import * as React from 'react'
-import type {HTMLProps} from "react"
 import clsx from 'clsx'
-import cls from './text.module.scss'
 
-export type TextElementType = HTMLParagraphElement | HTMLSpanElement | HTMLDivElement;
-export interface TextProps extends HTMLProps<TextElementType> {
-  children?: React.ReactNode
-  weight?: 'regular' | 'medium' | 'bold'
-  block?: boolean
-  tag?: 'div' | 'span' | 'p'
-  defaultMargins?: boolean
-  className?: string;
-  level?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
-}
+import {TextElementType, TextProps} from "./text.types";
+import cls from './text.module.scss'
 
 export const Text = React.forwardRef<TextElementType, TextProps>((
   {

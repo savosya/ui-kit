@@ -1,4 +1,2 @@
-import {Divider} from './Component'
-export type {DividerProps} from './Component'
-
-export default Divider
+export {Divider} from './Component'
+export type {DividerProps} from './divider.types'

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import {Title} from './components/Title'
-import {Text} from './components/Text'
+import {Title} from './parts'
+import {Text} from './parts'
 
 
 export const Typography: {

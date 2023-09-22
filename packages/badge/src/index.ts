@@ -1,4 +1,2 @@
-import {Badge} from './Component'
-export type {BadgeProps} from './Component'
-
-export default Badge
+export {Badge} from './Component'
+export type {BadgeProps} from './badge.types'
