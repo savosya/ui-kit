@@ -10,7 +10,7 @@ import {ChevronIcon, CheckIcon, CrossIcon} from "./components"
 import {getFilteredOptions, getInputValue, getOptionsMap, showCleanIcon} from "./select.utils";
 import type {InternalSelectState, PassedOption, SelectProps} from "./select.types";
 import cls from './index.module.scss'
-import './assets/select.scss';
+import './assets/select.css';
 
 
 export const Select = (props: SelectProps) => {

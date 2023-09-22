@@ -6,6 +6,7 @@ import {readPackageUpSync} from 'read-pkg-up'
 import multiEntry from 'rollup-plugin-multi-input'
 import wildcardExternal from '@oat-sa/rollup-plugin-wildcard-external'
 import typescript from "rollup-plugin-ts"
+import css from "rollup-plugin-import-css";
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
@@ -15,7 +16,6 @@ import copy from 'rollup-plugin-copy'
 // import postcssPresetEnv from 'postcss-preset-env'
 
 /** tools */
-// import {createPackageJson} from "./tools/rollup/create-package-json.js";
 import {purgecssAfterBuildPlugin} from "./tools/rollup/purgecss-after-build.js";
 import addCssImports from "./tools/css/add-css-imports.js";
 import resolvePackageJsonImports from "./tools/rollup/resolve-packagejson-import.js";
@@ -54,16 +54,16 @@ const postcssPlugin = (cssPath) => {
             generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`,
         },
         autoModules: false,
-        include: ["src/**/*.scss"],
+        include: ["src/**/*.{css,scss}"],
         plugins: [
             postcssImport({}),
             autoprefixer(),
             discardEmpty(),
             discardComments(),
         ],
-        sourceMap: false,
+        sourceMap: true,
         extract: path.resolve(cssPath),
-        extensions: ['.scss'],
+        extensions: ['.scss', '.css'],
     })
 }
 
@@ -72,8 +72,9 @@ const plugins = ({isEsm}) => {
         wildcardExternal(['@savosya/savosya-myuikit-*']),
         multiEntry.default(),
         postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/cjs/styles.css'),
+        // css(),
         purgecssAfterBuildPlugin({pkgPath}),
-        typescript({outDir: isEsm ? 'build/esm' : 'build/cjs', tsconfig: `${currentPackageDir}/tsconfig.json`}),
+        typescript({tsconfig: `${currentPackageDir}/tsconfig.json`}),
     ]
 }
 
@@ -92,7 +93,8 @@ const cjs = {
             plugins: [addCssImports(), resolvePackageJsonImports({module: 'esm/index.js', main: 'cjs/index.js'})]
         },
     ],
-    plugins: [...plugins({isEsm: false})]
+    plugins: [...plugins({isEsm: false})],
+    // external: [/\.css$/],
 }
 
 const esm = {
@@ -106,7 +108,8 @@ const esm = {
             plugins: [addCssImports()]
         },
     ],
-    plugins: [...plugins({isEsm: true})]
+    plugins: [...plugins({isEsm: true})],
+    // external: [/\.css$/],
 }
 
 
