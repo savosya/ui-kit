@@ -8,6 +8,7 @@ set -e
 yarn clean
 
 # Проходимся по каждому пакету в папке packages и запускаем в них команду build
-lerna run build --skip-nx-cache --stream
+#lerna run build --skip-nx-cache --stream
+lerna run build
 
 echo 'Build successfully built.'
