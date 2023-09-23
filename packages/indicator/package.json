@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-indicator",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Indicator",
   "license": "ISC",
   "main": "index.js",
