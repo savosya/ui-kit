@@ -1,12 +1,8 @@
 @import '../../../../variables/src/index.css';
 @import url('https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap');
 
-:root {
-  --typography-font-family: var(--eub-font-family);
-}
-
 .root {
-  font-family: var(--typography-font-family);
+  font-family: var(--eub-font-family);
   display: inline-block;
   font-weight: 400;
   color: var(--text-primary);

@@ -1,5 +1,5 @@
 import type { DrawerProps } from 'rc-drawer';
-import './motion.scss';
+import './motion.css';
 
 const MASK_CLASSNAME = 'eub-drawer-mask-motion'
 const PANEL_CLASSNAME = 'eub-drawer-panel-motion'

@@ -3,7 +3,6 @@
 
 :root {
   --badge-border-radius: 24px;
-  --badge-font-family: var(--eub-font-family);
 
   // colors:
   --badge-color-typography: var(--text-primary);
@@ -22,7 +21,7 @@
   color: var(--badge-color-typography);
   border-radius: var(--badge-border-radius);
   background-color: var(--badge-color-default);
-  font-family: var(--badge-font-family);
+  font-family: var(--eub-font-family);
 
   // colors
   &.primary {

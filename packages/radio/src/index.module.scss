@@ -2,18 +2,16 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
 
 :root {
-  --checkbox-font-family: var(--eub-font-family);
-
-  --checkbox-default: #B8BEC6;
-  --checkbox-hover: #1C2229;
-  --checkbox-focused: #191D23;
-  --checkbox-active: #29313A;
-  --checkbox-disabled: #E5E8ED;
+  --radio-default: #B8BEC6;
+  --radio-hover: #1C2229;
+  --radio-focused: #191D23;
+  --radio-active: #29313A;
+  --radio-disabled: #E5E8ED;
 }
 
 .root {
   box-sizing: border-box;
-  font-family: var(--checkbox-font-family);
+  font-family: var(--eub-font-family);
   position: relative;
   display: flex;
   align-items: center;
@@ -22,22 +20,22 @@
   cursor: pointer;
   border-radius: 4px;
   transition: 0.2s;
-  color: var(--checkbox-default);
+  color: var(--radio-default);
 
   &:hover {
-    color: var(--checkbox-hover);
+    color: var(--radio-hover);
   }
 
   &:active {
-    color: var(--checkbox-focused);
+    color: var(--radio-focused);
   }
 
   &.checked, &.indeterminate {
-    color: var(--checkbox-active);
+    color: var(--radio-active);
   }
 
   &.disabled {
-    color: var(--checkbox-disabled);
+    color: var(--radio-disabled);
     cursor: not-allowed;
   }
 
@@ -76,17 +74,17 @@
   }
 
   &:hover {
-    color: var(--checkbox-hover);
+    color: var(--radio-hover);
   }
 
   &.checked {
     color: #fff;
-    background-color: var(--checkbox-active);
-    border: 1.5px solid var(--checkbox-active);
+    background-color: var(--radio-active);
+    border: 1.5px solid var(--radio-active);
   }
 
   &.disabled {
-    color: var(--checkbox-disabled);
+    color: var(--radio-disabled);
   }
 
   &.focus {
@@ -99,11 +97,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--checkbox-active);
+  background-color: var(--radio-active);
   border-radius: 50%;
 
   &.disabled {
-    background-color: var(--checkbox-disabled);
+    background-color: var(--radio-disabled);
   }
 
   &.s {

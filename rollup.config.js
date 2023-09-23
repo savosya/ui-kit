@@ -34,7 +34,7 @@ const componentBuildDir = path.resolve(currentPackageDir, `../../build/${current
 const baseConfig = {
     input: [
         'src/**/*.{ts,tsx}',
-        'src/**/*.{css,scss}',
+        // 'src/**/*.{scss}',
         '!src/**/*.{test,stories}.{ts,tsx}',
         '!src/**/*.mdx',
         '!src/**/*.d.ts',
@@ -51,10 +51,10 @@ const defaultOutputOptions = {
 const postcssPlugin = (cssPath) => {
     return postcss({
         modules: {
-            generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`,
+            generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`
         },
         autoModules: false,
-        include: ["src/**/*.{css,scss}"],
+        include: ["src/**/*.{scss}"],
         plugins: [
             postcssImport({}),
             autoprefixer(),
@@ -62,17 +62,19 @@ const postcssPlugin = (cssPath) => {
             discardComments(),
         ],
         sourceMap: true,
+        // extract: true,
         extract: path.resolve(cssPath),
-        extensions: ['.scss', '.css'],
+        extensions: ['.scss'],
     })
 }
 
 const plugins = ({isEsm}) => {
+    /** ORDER MATTERS */
     return [
         wildcardExternal(['@savosya/savosya-myuikit-*']),
         multiEntry.default(),
         postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/cjs/styles.css'),
-        // css(),
+        css(),
         purgecssAfterBuildPlugin({pkgPath}),
         typescript({tsconfig: `${currentPackageDir}/tsconfig.json`}),
     ]
@@ -94,7 +96,6 @@ const cjs = {
         },
     ],
     plugins: [...plugins({isEsm: false})],
-    // external: [/\.css$/],
 }
 
 const esm = {
@@ -109,7 +110,6 @@ const esm = {
         },
     ],
     plugins: [...plugins({isEsm: true})],
-    // external: [/\.css$/],
 }
 
 

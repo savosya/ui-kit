@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
 
 :root {
-  --tag-font-family: var(--eub-font-family);
-
   --tag-bg_default: #FFF;
   --tag-color_default: var(--text-primary);
 
@@ -19,7 +17,7 @@
 
 .root {
   display: inline-block;
-  font-family: var(--tag-font-family);
+  font-family: var(--eub-font-family);
   background-color: var(--tag-bg_default);
   color: var(--tag-color_default);
   border: 1px solid var(--tag-color_default);

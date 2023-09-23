@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
 
 :root {
-  --tooltip-font-family: var(--eub-font-family);
-
   --light-bg: var(--bg-info);
   --light-color: var(--text-primary);
   --dark-bg: var(--text-primary);
@@ -18,7 +16,7 @@
   padding: 12px 16px;
   border-radius: 6px;
   max-width: 200px;
-  font-family: var(--tooltip-font-family);
+  font-family: var(--eub-font-family);
 
   &.dark {
     color: var(--dark-color);

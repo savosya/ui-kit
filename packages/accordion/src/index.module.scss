@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
 
 :root {
-  --accordion-font-family: var(--eub-font-family);
   --accordion-divider-color: var(--bg-primary);
   --accordion-color_extra: #414141;
 
@@ -12,7 +11,7 @@
 
 .root {
   color: var(--text-primary);
-  font-family: var(--accordion-font-family);
+  font-family: var(--eub-font-family);
   background-color: var(--accrodion-bg);
   box-sizing: border-box;
   width: 100%;

@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
 
 :root {
-  --select-font-family: var(--eub-font-family);
-
   --select-item-bg_default: #FFF;
   --select-item-color_default: var(--text-primary);
   --select-item-bg_hover: #FAFBFC;
@@ -17,7 +15,7 @@
 .root {
   display: inline-block;
   height: fit-content;
-  font-family: var(--select-font-family);
+  font-family: var(--eub-font-family);
   width: 100%;
 }
 

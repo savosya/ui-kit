@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import {DrawerPanel} from "./components";
 import {DrawerProps} from "./drawer.types";
 import cls from './index.module.scss'
-import './assets/drawer.scss'
+import './assets/drawer.css'
 import motionProps from './assets/motion';
 
 

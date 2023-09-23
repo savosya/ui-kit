@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:400&display=swap');
 
 :root {
-  --dropdown-font-family: var(--eub-font-family);
-
   --dropdown-item-bg_default: #FFF;
   --dropdown-item-color_default: var(--text-primary);
   --dropdown-item-bg_hover: #FAFBFC;
@@ -24,7 +22,7 @@
 }
 
 .menu {
-  font-family: var(--dropdown-font-family);
+  font-family: var(--eub-font-family);
   //position: absolute;
   border-radius: 10px;
   display: block;

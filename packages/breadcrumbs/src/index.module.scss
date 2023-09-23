@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
 
 :root {
-  --breadcrumbs-font-family: var(--eub-font-family);
-
   --breadcrumbs-color_default: #4683C8;
   --breadcrumbs-color_alternative: #67707C;
   --breadcrumbs-color_hover: #6B9CD3;
@@ -13,7 +11,7 @@
 }
 
 .root {
-  font-family: var(--breadcrumbs-font-family);
+  font-family: var(--eub-font-family);
   display: flex;
   gap: 8px;
   align-items: center;

@@ -16,26 +16,26 @@ const addCssImports = (options = {}) => {
     return {
         name: 'add-css-imports',
         generateBundle: async (options, bundle) => {
-            const hasStyles = Object.keys(bundle).some(fileName =>
+            const cssStyles = Object.keys(bundle).filter(fileName =>
                 '.css'.includes(path.extname(fileName)),
             );
-
-            if (!hasStyles) return;
+            if (!cssStyles.length) return;
 
             const jsFileName = 'Component.js';
 
-            const cssFile = bundle['styles.css'];
-            const cssFileName = cssFile.fileName;
+            cssStyles.forEach(cssName => {
+                const cssFile = bundle[cssName]
+                const cssFileName = cssFile.fileName;
 
-            const chunkWithImport = bundle[jsFileName]
+                const chunkWithImport = bundle[jsFileName]
 
-            if (chunkWithImport) {
-                chunkWithImport.imports.push(cssFileName)
+                if (chunkWithImport) {
+                    chunkWithImport.imports.push(cssFileName)
 
-                const importStatement = `require('./${cssFileName}');\n`;
-                chunkWithImport.code = importStatement + chunkWithImport.code;
-
-            }
+                    const importStatement = `require('./${cssFileName}');\n`;
+                    chunkWithImport.code = importStatement + chunkWithImport.code;
+                }
+            })
         },
     };
 }

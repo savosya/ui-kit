@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import {CloseIcon} from "./components"
 import {ModalProps} from "./modal.types"
 import cls from './index.module.scss'
-import './assets/modal.scss'
+import './assets/modal.css'
 
 export const Modal = (
   {

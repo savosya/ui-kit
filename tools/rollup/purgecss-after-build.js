@@ -22,7 +22,9 @@ export const purgecssAfterBuildPlugin = ({pkgPath}) => {
 
                     const purgecssResult = await new PurgeCSS().purge({
                         content: [`${pkgPath}/build/**/*.js`],
-                        css: [`${pkgPath}/build/**/*.css`],
+                        // css: [`${pkgPath}/build/**/*.css`],
+                        /** Only go over TOP LEVEL CSS (Components.css) */
+                        css: [cssFilePath],
                         defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
                         // defaultExtractor: (content) => {
                         //     // search matches with /savosya-/
@@ -47,25 +49,3 @@ export const purgecssAfterBuildPlugin = ({pkgPath}) => {
         },
     }
 }
-
-// const purgecssPlugin = purgecss({
-//     content: [`${pkgPath}/build/**/*.js`],
-//     css: [`${pkgPath}/build/**/*.css`],
-//     defaultExtractor: content => {
-//         // search matches with /savosya-/
-//         return content.match(/savosya-[\w-]*/gm) || [];
-//     },
-//     variables: true,
-// })
-//
-// const purgerPlugin = (cssPath) => {
-//     return postcss({
-//         modules: {
-//             generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`,
-//         },
-//         plugins: [purgecssPlugin],
-//         sourceMap: true,
-//         extract: cssPath,
-//         extensions: ['.scss', '.css'],
-//     })
-// }

@@ -2,6 +2,7 @@ import fs, {readFileSync} from 'fs';
 
 /**
  *  Изменяет package.json для компонента, который будет скачан вне root сборки
+ *  принимает Partial<PackageJson> и модифицирует package.json
  * */
 
 const resolvePackageJsonImports = (newPackageJsonPartial = {}) => {

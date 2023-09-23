@@ -2,14 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
 
 :root {
-  --dropzone-font-family: var(--eub-font-family);
   --dropzone-active-bg: transparent;
   --dropzone-border-radius: 4px;
   --dropzone-border-color: var(--bg-header);
 }
 
 .root {
-  font-family: var(--dropzone-font-family);
+  font-family: var(--eub-font-family);
   display: inline-block;
   position: relative;
   transition: border-color 0.2s ease, background-color 0.2s ease;

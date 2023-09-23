@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:500&display=swap');
 
 :root {
-  --indicator-font-family: var(--eub-font-family);
   --indicator_number-color-bg: var(--text-primary);
 }
 
@@ -11,7 +10,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--indicator-font-family);
+  font-family: var(--eub-font-family);
 
   color: white;
   background-color: var(--indicator_number-color-bg);
