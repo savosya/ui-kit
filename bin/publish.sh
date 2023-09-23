@@ -34,16 +34,15 @@ if [ "$current_branch" != "main" ]; then
     exit 1
 fi
 
-
-# сборка всех пакетов
-yarn build
-
 # поднимаю версию во всех подпакетах (если есть изменения)
 if [ "$force" = true ]; then
   lerna version --force-publish --no-push --no-commit-hooks --no-git-tag-version
 else
   lerna version --no-push --no-commit-hooks --no-git-tag-version
 fi
+
+# сборка всех пакетов
+yarn build
 
 # commit new tag (получаю новую версию рут пакета)
 NEW_ROOT_PACKAGE_VERSION=$(node -p "require('./packages/root/package.json').version")
