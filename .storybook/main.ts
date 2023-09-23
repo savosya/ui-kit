@@ -1,30 +1,24 @@
-import type {StorybookConfig} from '@storybook/react-vite';
+import type { StorybookConfig } from '@storybook/react-vite';
 import * as path from 'path';
 import * as fs from 'fs';
-
 const config: StorybookConfig = {
   stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-actions',
-    '@storybook/addon-links',
-    // '@storybook/addon-styling',
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-actions', '@storybook/addon-links'
+  // '@storybook/addon-styling',
   ],
-  core: {
-    builder: '@storybook/builder-vite',
-  },
+
+  core: {},
   framework: {
     name: '@storybook/react-vite',
-    options: {},
+    options: {}
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: 'tag'
   },
-  viteFinal: async (config, {configType}) => {
-    const packagesFolder = path.resolve(__dirname, '../packages')
-
+  viteFinal: async (config, {
+    configType
+  }) => {
+    const packagesFolder = path.resolve(__dirname, '../packages');
     fs.readdir(packagesFolder, (err, files) => {
       if (err) {
         console.log(`Error reading directory: ${err}`);
@@ -32,7 +26,7 @@ const config: StorybookConfig = {
       }
 
       /** Названия всех компонентов в папке packages */
-      const cmpNames = files.filter((file) => {
+      const cmpNames = files.filter(file => {
         return fs.statSync(`${packagesFolder}/${file}`).isDirectory();
       });
 
@@ -46,13 +40,10 @@ const config: StorybookConfig = {
        * */
       cmpNames.forEach(cmp => Object.assign(config.resolve.alias, {
         [`@savosya/savosya-myuikit-${cmp}`]: path.resolve(__dirname, `../packages/${cmp}/src`)
-      }))
-    })
-
+      }));
+    });
     config.resolve.mainFields = ['module', 'main'];
-
-    return config
-  },
+    return config;
+  }
 };
-
 export default config;
