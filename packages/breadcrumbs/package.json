@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-breadcrumbs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Breadcrumbs",
   "license": "ISC",
   "main": "index.js",
