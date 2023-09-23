@@ -5,6 +5,6 @@
 chmod +x \
   bin/copy-folder.sh \
   bin/root-symlinks-resolver.sh \
-  bin/create-root-build.sh
+  bin/build.sh
 
 echo 'Successfully prepared.'
