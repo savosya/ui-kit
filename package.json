@@ -13,7 +13,7 @@
     "prepareSh": "chmod +x bin/prepare.sh && bin/prepare.sh",
     "sb": "storybook dev -p 6006",
     "build:sb": "yarn build && storybook build",
-    "build": "bin/create-root-build.sh",
+    "build": "bin/build.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
     "pub:root": "./bin/publish.sh"
   },
