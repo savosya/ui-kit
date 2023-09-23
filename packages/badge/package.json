@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-badge",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Badge",
   "license": "ISC",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "@savosya/savosya-myuikit-indicator": "^0.0.10",
+    "@savosya/savosya-myuikit-indicator": "^0.0.11",
     "clsx": "^1.2.1",
     "tslib": "^2.6.2"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-accordion",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Accordion",
   "license": "ISC",
   "main": "index.js",

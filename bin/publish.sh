@@ -56,7 +56,6 @@ git commit -a -m "Publish root package: v${NEW_ROOT_PACKAGE_VERSION}"
 # публикую все пакеты, включая рут (если есть изменения)
 lerna publish from-package --no-push --no-commit-hooks
 
-
 # обновляю версию в корневом пакете, генерирую CHANGELOG.MD, делаю коммит, создаю git-tag
 # npm release --release-as $RELEASE_TYPE
 git tag -a "v${NEW_ROOT_PACKAGE_VERSION}" -m "v${NEW_ROOT_PACKAGE_VERSION}" && git push --tags && git push origin main
