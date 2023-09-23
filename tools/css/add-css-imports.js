@@ -18,7 +18,7 @@ const addCssImports = (options = {}) => {
         generateBundle: async (options, bundle) => {
             const cssStyles = Object.keys(bundle).filter(fileName =>
                 '.css'.includes(path.extname(fileName)),
-            );
+            ).reverse();
             if (!cssStyles.length) return;
 
             const jsFileName = 'Component.js';
