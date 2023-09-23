@@ -62,7 +62,6 @@ const postcssPlugin = (cssPath) => {
             discardComments(),
         ],
         sourceMap: true,
-        // extract: true,
         extract: path.resolve(cssPath),
         extensions: ['.scss'],
     })
