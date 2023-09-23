@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-tooltip",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "Tooltip",
   "license": "ISC",
   "main": "index.js",
