@@ -6,13 +6,13 @@ import {readPackageUpSync} from 'read-pkg-up'
 import multiEntry from 'rollup-plugin-multi-input'
 import wildcardExternal from '@oat-sa/rollup-plugin-wildcard-external'
 import typescript from "rollup-plugin-ts"
-import css from "rollup-plugin-import-css";
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
 import discardComments from 'postcss-discard-comments'
 import discardEmpty from 'postcss-discard-empty'
 import copy from 'rollup-plugin-copy'
+// import css from "rollup-plugin-import-css";
 // import postcssPresetEnv from 'postcss-preset-env'
 
 /** tools */
@@ -34,7 +34,6 @@ const componentBuildDir = path.resolve(currentPackageDir, `../../build/${current
 const baseConfig = {
     input: [
         'src/**/*.{ts,tsx}',
-        // 'src/**/*.{scss}',
         '!src/**/*.{test,stories}.{ts,tsx}',
         '!src/**/*.mdx',
         '!src/**/*.d.ts',
@@ -48,7 +47,7 @@ const defaultOutputOptions = {
     preserveModules: true,
 }
 
-const postcssPlugin = (cssPath) => {
+const postcssPluginSCSS = (cssPath) => {
     return postcss({
         modules: {
             generateScopedName: `savosya-${currentComponentName}_[local]__[hash:base64:4]`
@@ -67,13 +66,26 @@ const postcssPlugin = (cssPath) => {
     })
 }
 
+
+const postcssPluginCSS = (cssPath) => {
+    return postcss({
+        modules: false,
+        autoModules: false,
+        include: ["src/**/*.{css}"],
+        plugins: [],
+        sourceMap: true,
+        extract: path.resolve(cssPath),
+        extensions: ['.css'],
+    })
+}
+
 const plugins = ({isEsm}) => {
     /** ORDER MATTERS */
     return [
         wildcardExternal(['@savosya/savosya-myuikit-*']),
         multiEntry.default(),
-        postcssPlugin(isEsm ? 'build/esm/styles.css' : 'build/cjs/styles.css'),
-        css(),
+        postcssPluginSCSS(isEsm ? 'build/esm/styles.css' : 'build/cjs/styles.css'),
+        postcssPluginCSS(isEsm ? `build/esm/assets/${currentComponentName}.css` : `build/cjs/assets/${currentComponentName}.css`),
         purgecssAfterBuildPlugin({pkgPath}),
         typescript({tsconfig: `${currentPackageDir}/tsconfig.json`}),
     ]
@@ -91,7 +103,10 @@ const cjs = {
              *  resolvePackageJsonImports - резолвит package.json для всего пакета компонента.
              *  Нужно при импорте чтобы модуль брал es версию компонента.
              * */
-            plugins: [addCssImports(), resolvePackageJsonImports({module: 'esm/index.js', main: 'cjs/index.js'})]
+            plugins: [
+                addCssImports({isEsm: false}),
+                resolvePackageJsonImports({module: 'esm/index.js', main: 'cjs/index.js'})
+            ]
         },
     ],
     plugins: [...plugins({isEsm: false})],
@@ -105,7 +120,9 @@ const esm = {
             dir: 'build/esm',
             format: "esm",
             generatedCode: 'es2015',
-            plugins: [addCssImports()]
+            plugins: [
+                addCssImports({isEsm: true})
+            ]
         },
     ],
     plugins: [...plugins({isEsm: true})],
