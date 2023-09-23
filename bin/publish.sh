@@ -16,7 +16,7 @@ if [ "$current_branch" != "main" ]; then
 fi
 
 # поднимаю версию во всех подпакетах (если есть изменения)
-#lerna version --no-push --no-commit-hooks --no-git-tag-version
+lerna version --no-push --no-commit-hooks --no-git-tag-version
 
 # commit new tag (получаю новую версию рут пакета)
 NEW_ROOT_PACKAGE_VERSION=$(node -p "require('./packages/root/package.json').version")
