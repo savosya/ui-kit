@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-attach",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Attach",
   "license": "ISC",
   "main": "index.js",
@@ -18,9 +18,9 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "@savosya/savosya-myuikit-hooks": "*",
-    "@savosya/savosya-myuikit-loader": "^0.0.10",
-    "@savosya/savosya-myuikit-utils": "*",
+    "@savosya/savosya-myuikit-hooks": "^0.0.3",
+    "@savosya/savosya-myuikit-loader": "^0.0.11",
+    "@savosya/savosya-myuikit-utils": "^0.0.3",
     "clsx": "^1.2.1",
     "tslib": "^2.6.2"
   },

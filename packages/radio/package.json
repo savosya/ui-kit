@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-radio",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Radio",
   "license": "ISC",
   "main": "index.js",
@@ -18,8 +18,8 @@
     "build": "rollup -c ../../rollup.config.js"
   },
   "dependencies": {
-    "@savosya/savosya-myuikit-hooks": "^0.0.2",
-    "@savosya/savosya-myuikit-utils": "^0.0.2",
+    "@savosya/savosya-myuikit-hooks": "^0.0.3",
+    "@savosya/savosya-myuikit-utils": "^0.0.3",
     "clsx": "^1.2.1",
     "tslib": "^2.6.2"
   },

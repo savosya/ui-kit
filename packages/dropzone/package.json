@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-dropzone",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Dropzone",
   "license": "ISC",
   "main": "index.js",
