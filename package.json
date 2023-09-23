@@ -15,8 +15,7 @@
     "build:sb": "yarn build && storybook build",
     "build": "bin/build.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
-    "pub:root": "./bin/publish.sh",
-    "pub:root-force": "./bin/publish.sh -f"
+    "pub:root": "./bin/publish.sh"
   },
   "peerDependencies": {
     "react": "^17 || ^18",
