@@ -19,6 +19,7 @@ export const Breadcrumbs = (
     withEnter = true,
     withSpace = false
   }: BreadcrumbsProps) => {
+  console.log('render bread')
 
   const RouterMap = useMemo(() => {
     return crumbs.reduce((acc: any, curr) => {
