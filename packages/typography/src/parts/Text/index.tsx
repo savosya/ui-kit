@@ -1,7 +1,7 @@
 import * as React from 'react'
 import clsx from 'clsx'
 
-import {TextElementType, TextProps} from "./text.types";
+import {TextElementType, TextProps} from "../../text.types";
 import cls from './text.module.scss'
 
 export const Text = React.forwardRef<TextElementType, TextProps>((

@@ -1,9 +1,8 @@
-import * as React from "react";
-import {HTMLProps} from "react";
+import type {HTMLProps, ReactNode} from "react";
 
 export type TextElementType = HTMLParagraphElement | HTMLSpanElement | HTMLDivElement;
 export interface TextProps extends HTMLProps<TextElementType> {
-  children?: React.ReactNode
+  children?: ReactNode
   weight?: 'regular' | 'medium' | 'bold'
   block?: boolean
   tag?: 'div' | 'span' | 'p'

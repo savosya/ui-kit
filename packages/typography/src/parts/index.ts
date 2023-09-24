@@ -1,5 +1,5 @@
 export {Title} from './Title'
-export {TitleProps} from './Title/title.types'
+export {TitleProps} from '../title.types'
 
 export {Text} from './Text'
-export {TextProps} from './Text/text.types'
+export {TextProps} from '../text.types'

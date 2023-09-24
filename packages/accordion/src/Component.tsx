@@ -42,8 +42,8 @@ export const Accordion = (
 
   const isOpen = isControlled ? open : internalOpen
   return (
-    <div className={clsx(cls.root, classes?.root, {[cls.disabled]: disabled})} onClick={toggleOpen}>
-      <div className={clsx(cls.header, classes?.header, {[cls.disabled]: disabled})}>
+    <div className={clsx(cls.root, classes?.root, {[cls.disabled]: disabled})}>
+      <div className={clsx(cls.header, classes?.header, {[cls.disabled]: disabled})} onClick={toggleOpen}>
         <div>
           <div className={clsx(cls.title, classes?.title)}>{title}</div>
           <div className={clsx(cls.description, classes?.description)}>{description}</div>

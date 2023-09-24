@@ -1,7 +1,7 @@
 import * as React from 'react'
 import clsx from 'clsx'
 
-import {TitleProps} from "./title.types"
+import {TitleProps} from "../../title.types"
 import cls from './title.module.scss'
 
 export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((
