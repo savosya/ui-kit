@@ -1,3 +1,5 @@
 export {Typography} from './Component'
-export {TextProps} from './parts/Text/text.types'
-export {TitleProps} from './parts/Title/title.types'
+import TitleProps from './parts/Title/title.types'
+import TextProps from './parts/Text/text.types'
+
+export {TitleProps, TextProps}

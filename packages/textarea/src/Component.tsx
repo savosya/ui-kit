@@ -9,7 +9,6 @@ import {GrabberIcon} from "./components"
 import {TextareaProps} from "./textarea.types"
 import cls from './index.module.scss'
 
-
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const {
     className,

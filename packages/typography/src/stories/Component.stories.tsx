@@ -7,7 +7,6 @@ export default {
 };
 
 const canvasStyles = {
-  // backgroundColor: '#CCCCCC',
   display: 'flex',
   gap: '64px',
   height: 300,

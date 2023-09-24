@@ -1,12 +1,13 @@
-import type { StorybookConfig } from '@storybook/react-vite';
+import type {StorybookConfig} from '@storybook/react-vite';
 import * as path from 'path';
 import * as fs from 'fs';
+
 const config: StorybookConfig = {
   stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-actions', '@storybook/addon-links'
-  // '@storybook/addon-styling',
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-actions'
+    // '@storybook/addon-styling',
   ],
-
+  staticDirs: ['./public'],
   core: {},
   framework: {
     name: '@storybook/react-vite',
