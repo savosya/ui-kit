@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-counter",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Counter",
   "license": "ISC",
   "main": "index.js",
