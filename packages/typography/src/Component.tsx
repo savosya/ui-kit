@@ -10,8 +10,3 @@ export const Typography: {
   Title,
   Text,
 };
-// export const Typography = () => {
-//   return null
-// }
-// Typography.Title = Title
-// Typography.Text = Text
