@@ -1,8 +1,7 @@
 import * as React from 'react'
 
-import {Title, TitleProps} from './parts'
-import {Text, TextProps} from './parts'
-export {TitleProps, TextProps}
+import {Title} from './parts'
+import {Text} from './parts'
 
 export const Typography: {
   Title: typeof Title;

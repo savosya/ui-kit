@@ -1,6 +1,6 @@
 import type {HTMLProps, ReactNode} from "react";
 
-export interface TitleProps extends HTMLProps<HTMLHeadingElement> {
+interface TitleProps extends HTMLProps<HTMLHeadingElement> {
   children?: ReactNode
   weight?: 'regular' | 'medium' | 'bold'
   block?: boolean
@@ -8,3 +8,5 @@ export interface TitleProps extends HTMLProps<HTMLHeadingElement> {
   defaultMargins?: boolean
   className?: string;
 }
+
+export default TitleProps
