@@ -6,16 +6,10 @@ export default {
   component: Textarea,
 };
 
-const canvasStyle = {
-  height: '100%',
-  backgroundColor: '#CCCCCC',
-  padding: 16,
-}
-
 export const Default = () => {
 
   return (
-    <div style={canvasStyle}>
+    <div>
       <Textarea
         label='Заголовок'
         placeholder={'i\'m placing holder'}

@@ -9,7 +9,7 @@ export default {
 export const Default = () => {
 
   return (
-    <div>
+    <div style={{display: 'flex', gap: '24px'}}>
       <div><Indicator /></div>
       <div><Indicator size={'s'} number={1} /></div>
       <div><Indicator number={2} /></div>

@@ -34,7 +34,7 @@
   filter: alpha(opacity=20);
   opacity: 0.2;
   text-decoration: none;
-  transition: 0.16s;
+  transition: 0.22s;
 }
 
 .eub-modal-close:hover {
@@ -104,13 +104,13 @@
 .eub-modal-fade-enter,
 .eub-modal-fade-appear {
   opacity: 0;
-  animation-duration: 0.12s;
+  animation-duration: 0.18s;
   animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
   animation-play-state: paused;
 }
 .eub-modal-fade-leave {
-  animation-duration: 0.12s;
+  animation-duration: 0.18s;
   animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
   animation-play-state: paused;

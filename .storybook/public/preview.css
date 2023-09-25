@@ -1,0 +1,393 @@
+:root {
+    --brand-blue: #1D3F88;
+
+    --bg-primary: #F4F6F8; /*  - Основной цвет фона  */
+    --bg-story: #f3f4f5;
+    --bg-info: #E5E8ED; /*  - Цвет info block и не кликабельных элементов на сером фоне  */
+    --bg-header: #21272E; /*  - Цвет шапки  */
+
+    /*  typography-main  */
+    --text-primary: #29313A;
+    --text-secondary: #67707C;
+    --text-tertiary: #848D98;
+    --text-placeholder: #848D98;
+    --text-white: #FFF;
+    --text-gray: #B8BEC6;
+
+
+    /*  typography-links  */
+
+    --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica,
+    sans-serif;
+    --disabled-cursor: not-allowed;
+    --arrow-transform: rotate(180deg);
+    --size-xxs-height: 32px;
+    --size-xs-height: 40px;
+    --size-s-height: 48px;
+    --size-m-height: 56px;
+    --size-l-height: 64px;
+    --size-xl-height: 72px;
+
+    --color-light-specialbg-tertiary-transparent: rgba(11, 31, 53, .01);
+    --color-light-specialbg-secondary-transparent: rgba(11, 31, 53, .05);
+    --color-light-graphic-secondary: #86868a;
+    --color-light-text-accent: #ef3124;
+    --color-light-border-secondary: #e9e9eb;
+    --color-light-border-underline-inverted: #464649;
+}
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--text-primary);
+}
+
+
+.sb-show-main.sb-main-padded {
+    padding: 0;
+    background-color: var(--bg-primary);
+}
+
+/*body.sb-show-main.sb-main-padded {*/
+/*    height: calc(100% - 2 * 8px);*/
+/*    margin: 8px;*/
+/*    padding: 0;*/
+/*    overflow-x: hidden;*/
+/*    box-sizing: border-box;*/
+/*    border: 1px solid red !important;*/
+/*}*/
+
+
+/*#root iframe[data-is-storybook='true'] {*/
+/*    box-sizing: border-box;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+#storybook-docs > .sbdocs-wrapper {
+    padding: 48px 20px;
+    /*background-color: var(--bg-primary);*/
+}
+
+.docs-story {
+    background-color: var(--bg-primary);
+}
+.docs-story > div:first-child {
+    padding: 8px 4px 24px;
+}
+
+/* _______________ */
+
+/*button.sidebar-item[aria-expanded='true'],*/
+/*button.sidebar-item[aria-expanded='true']:focus {*/
+/*    background: transparent !important;*/
+/*}*/
+
+/*button[data-action='collapse-root']:focus {*/
+/*    box-shadow: none;*/
+/*    color: inherit;*/
+/*}*/
+
+/*button[data-action='collapse-root']:focus span:first-of-type {*/
+/*    color: inherit;*/
+/*}*/
+
+/*select.select {*/
+/*    font-size: 14px;*/
+/*    background-color: var(--color-light-specialbg-tertiary-transparent);*/
+/*    border-radius: 6px;*/
+/*}*/
+
+/*select.select > option,*/
+/*select[name] > option {*/
+/*    background-color: var(--bg-primary);*/
+/*}*/
+
+/*select.select > option:hover,*/
+/*select[name] > option[selected] {*/
+/*    background-color: red !important;*/
+/*}*/
+
+/*select.select,*/
+/*select[name] {*/
+/*    position: relative;*/
+/*    padding-left: 8px;*/
+/*    padding-right: 36px;*/
+/*    -webkit-appearance: none;*/
+/*    appearance: none;*/
+/*    background-image: url(./images/chevron-down-compact.svg);*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: right 10px center;*/
+/*}*/
+
+/* Preview */
+/* Скелетон сторибука */
+/*.sb-show-preparing-docs {*/
+/*    height: auto;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.sb-show-preparing-docs .sb-wrapper {*/
+/*    padding: 0;*/
+/*}*/
+
+/*.sb-show-preparing-docs .sb-loader {*/
+/*    width: 28px;*/
+/*    height: 28px;*/
+/*}*/
+
+/*.sb-show-preparing-docs .sb-previewBlock_header,*/
+/*.sb-show-preparing-docs .sb-argstableBlock {*/
+/*    display: none;*/
+/*}*/
+
+/*.sb-show-preparing-docs .sb-previewBlock {*/
+/*    background: var(--bg-primary);*/
+/*    border: none;*/
+/*    width: 100%;*/
+/*    box-shadow: none;*/
+/*    margin: 0 auto;*/
+/*}*/
+
+/*.sb-show-preparing-docs .sb-previewBlock_body {*/
+/*    height: 100vh;*/
+/*}*/
+
+/*.sbdocs.sbdocs-content {*/
+/*    max-width: 1024px;*/
+/*    width: 100%;*/
+/*}*/
+
+/*div.github-doc {*/
+/*    display: none;*/
+/*}*/
+
+/*h1.sbdocs-h1 {*/
+/*    margin: 0 0 24px;*/
+/*    color: var(--color-light-text-primary);*/
+/*    font-size: 34px;*/
+/*    line-height: 40px;*/
+/*    font-weight: 500;*/
+/*    font-family: var(--font-family-styrene);*/
+/*}*/
+
+/*h2.sbdocs-h2,*/
+/*h2.sbdocs-h2:first-of-type {*/
+/*    position: relative !important;*/
+/*    margin: 24px -16px 0;*/
+/*    padding: 0 16px;*/
+/*    color: var(--color-light-text-primary);*/
+
+/*    font-size: 20px;*/
+/*    line-height: 28px;*/
+/*    font-weight: 500;*/
+/*    border: 0;*/
+/*}*/
+
+/*h3.sbdocs-h3,*/
+/*h3.sbdocs-h3:first-of-type {*/
+/*    margin: 32px 0 16px;*/
+/*    color: var(--color-light-text-primary);*/
+/*    font-size: 20px;*/
+/*    line-height: 1.2;*/
+/*    font-weight: 700;*/
+/*    font-family: var(--font-family);*/
+/*}*/
+
+/*h4.sbdocs-h4 {*/
+/*    margin: 0 0 16px;*/
+/*    color: var(--color-light-text-primary);*/
+/*    font-size: 16px;*/
+/*    line-height: 1.4;*/
+/*    font-weight: 700;*/
+/*    font-family: var(--font-family);*/
+/*}*/
+
+/*p.sbdocs-p {*/
+/*    margin: 12px 0 0;*/
+/*    color: var(--color-light-text-primary);*/
+/*    font-size: 16px;*/
+/*    line-height: 24px;*/
+/*    font-family: var(--font-family);*/
+/*}*/
+
+/*li.sbdocs-li {*/
+/*    margin: 0 0 8px;*/
+/*    color: var(--color-light-text-primary);*/
+/*    font-size: 16px;*/
+/*    line-height: 1.5;*/
+/*    font-family: var(--font-family);*/
+/*}*/
+
+/*a.sbdocs-a {*/
+/*    color: #0f62fe;*/
+/*    font-size: 16px;*/
+/*    line-height: 1.5;*/
+/*}*/
+
+/*ol {*/
+/*    margin: 4px 0;*/
+/*    padding-inline-start: 18px;*/
+/*}*/
+
+/*.sbdocs p code,*/
+/*.sbdocs li code,*/
+/*.sbdocs td code {*/
+/*    display: inline-block;*/
+/*    margin: 0;*/
+/*    padding: 0 4px;*/
+/*    color: var(--color-light-text-primary);*/
+/*    font-size: 14px;*/
+/*    line-height: 1.5;*/
+/*    font-family: Consolas, Liberation Mono, Menlo, monospace;*/
+/*    background-color: rgba(11, 31, 53, 0.05);*/
+/*    border-radius: var(--border-radius-s);*/
+/*    white-space: pre-wrap;*/
+/*}*/
+
+/* Шрифт кода в плагине storybook-addon-live-examples */
+
+/*.sbdocs div[code] {*/
+/*    font-family: Menlo, Monaco, 'Courier New', monospace !important;*/
+/*}*/
+
+/* Иначе дропдауны перекрываются следующим блоком */
+
+/*div.sbdocs-content > *:not([class*='component']) {*/
+/*    position: static;*/
+/*}*/
+
+/*button.tabbutton-active {*/
+/*    color: var(--color-light-text-accent);*/
+/*    border-bottom-color: #ef3124;*/
+/*}*/
+
+/*div.sbdocs table.docblock-argstable {*/
+/*    margin: 40px 0;*/
+/*}*/
+
+/*.sbdocs > table {*/
+/*    margin: 24px 0;*/
+/*}*/
+
+/*.sbdocs > table th,*/
+/*.sbdocs > table td {*/
+/*    padding: 8px 12px;*/
+/*}*/
+
+/*.sbdocs > table tr > th,*/
+/*.sbdocs > table tr > td,*/
+/*.sbdocs > table a {*/
+/*    font-size: 14px;*/
+/*    line-height: 20px;*/
+/*}*/
+
+/*img.sbdocs-img {*/
+/*    margin: 0 0 16px;*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*    border: 1px solid rgba(11, 31, 53, 0.1);*/
+/*    border-radius: var(--border-radius-s);*/
+/*}*/
+
+/*.docblock-argstable .docblock-argstable-body code {*/
+/*    white-space: normal;*/
+/*}*/
+
+/*!* *!*/
+/*.sidebar-item#components,*/
+/*#components--screenshots,*/
+/*#components--screenshots-sprite,*/
+/*#mobileframe--docs {*/
+/*    display: none;*/
+/*}*/
+
+/*table.docblock-argstable thead.docblock-argstable-head th {*/
+/*    color: var(--text-secondary);*/
+/*}*/
+
+/*table.docblock-argstable tbody.docblock-argstable-body {*/
+/*    border-radius: 4px;*/
+/*    filter: none;*/
+/*    box-shadow: 0 0 1px var(--color-light-border-underline-inverted);*/
+/*}*/
+
+/*table.docblock-argstable tbody.docblock-argstable-body tr:not(:first-child) {*/
+/*    border-top-color: var(--color-light-border-secondary);*/
+/*}*/
+
+/*table.docblock-argstable tbody.docblock-argstable-body td {*/
+/*    background: var(--bg-primary);*/
+/*}*/
+
+/*table.docblock-argstable.docblock-argstable {*/
+/*    color: var(--color-light-text-primary);*/
+/*}*/
+
+/*!* баджи типов пропсов *!*/
+/*table.docblock-argstable tbody.docblock-argstable-body td div:nth-child(2) span,*/
+/*table.docblock-argstable tbody.docblock-argstable-body td div:only-child span {*/
+/*    color: var(--text-secondary);*/
+/*    border-color: var(--color-light-border-secondary);*/
+/*    background: var(--text-secondary);*/
+/*}*/
+
+/*table.docblock-argstable td {*/
+/*    border: none !important;*/
+/*}*/
+
+
+/*.sbdocs div[data-role='wrapper'] {*/
+/*    margin: 24px 0;*/
+/*}*/
+
+/*@media (max-width: 599px) {*/
+/*    .sbdocs div[data-role='wrapper'] {*/
+/*        margin: 24px -16px;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 768px) {*/
+/*    h1.sbdocs-h1 {*/
+/*        font-size: 48px;*/
+/*        line-height: 64px;*/
+/*    }*/
+
+/*    h2.sbdocs-h2,*/
+/*    h2.sbdocs-h2:first-of-type {*/
+/*        margin-top: 32px;*/
+/*        font-size: 24px;*/
+/*        line-height: 32px;*/
+/*    }*/
+
+/*    .sbdocs div[data-role='wrapper'] + h2,*/
+/*    .sbdocs div[data-role='wrapper'] + h3 {*/
+/*        margin-top: calc(24px + 32px);*/
+/*    }*/
+/*}*/

@@ -14,15 +14,10 @@ export default {
   component: Button,
 };
 
-const canvasStyle = {
-  padding: 16,
-  backgroundColor: '#CCCCCC'
-}
-
 export const Default = () => {
 
   return (
-    <div style={canvasStyle}>
+    <div>
       <Button size='l' leftIcon={<SampleIcon/>} onClick={action('clicked')}/>
 
       <Button type='ghost' size='l' onClick={action('clicked')}>Ghost Dark</Button>

@@ -83,7 +83,7 @@ export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref)
         )}/>}
       </span>
 
-      <span className={clsx(cls.content, classes?.content)}>{label}</span>
+      <span className={clsx(cls.content, classes?.content, {[cls.disabled]: disabled})}>{label}</span>
     </label>
   );
 })

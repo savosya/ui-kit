@@ -9,7 +9,6 @@ export default {
 const canvasStyles = {
   display: 'flex',
   gap: '64px',
-  height: 300,
   padding: 16,
 }
 

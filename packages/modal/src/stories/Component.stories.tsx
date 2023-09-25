@@ -2,6 +2,8 @@ import * as React from 'react';
 import {useState} from "react";
 import {Modal} from '../Component';
 
+import {Button} from '../../../button/src/Component'
+
 export default {
   title: 'Components/Modal',
   component: Modal,
@@ -13,7 +15,7 @@ export const Default = () => {
 
   return (
     <div>
-      <button onClick={toggle}>Открыть</button>
+      <Button onClick={toggle}>Открыть</Button>
       <Modal
         title={'IM MIGHTY TITLEIM MIGHTY TITLEIM MIGHTY TITLEIM MIGHTY TITLEIM'}
         // footer={'fooooooter'}
