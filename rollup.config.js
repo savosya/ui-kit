@@ -12,13 +12,11 @@ import autoprefixer from 'autoprefixer'
 import discardComments from 'postcss-discard-comments'
 import discardEmpty from 'postcss-discard-empty'
 import copy from 'rollup-plugin-copy'
-// import css from "rollup-plugin-import-css";
-// import postcssPresetEnv from 'postcss-preset-env'
 
 /** tools */
 import {purgecssAfterBuildPlugin} from "./tools/rollup/purgecss-after-build.js";
-import addCssImports from "./tools/css/add-css-imports.js";
-import resolvePackageJsonImports from "./tools/rollup/resolve-packagejson-import.js";
+import {addCssImports} from "./tools/css/add-css-imports.js";
+import {overridePackageJson} from "./tools/rollup/override-package-json.js";
 
 /** vars */
 const KIT_NAME = '@savosya/savosya-myuikit-'
@@ -105,7 +103,7 @@ const cjs = {
              * */
             plugins: [
                 addCssImports({isEsm: false}),
-                resolvePackageJsonImports({module: 'esm/index.js', main: 'cjs/index.js'})
+                overridePackageJson({module: 'esm/index.js', main: 'cjs/index.js'})
             ]
         },
     ],

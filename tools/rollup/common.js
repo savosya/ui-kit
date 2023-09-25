@@ -13,7 +13,3 @@ export async function checkOrCreateDir(dir) {
         await mkDir(dir, { recursive: true });
     }
 }
-
-export const requireRegExp = new RegExp(
-    /(\b(?:require\(|import |from )['"])@savosya\/savosya-myuikit-(.*?)(['"])/,
-);

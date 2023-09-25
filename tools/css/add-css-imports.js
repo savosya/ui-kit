@@ -11,7 +11,7 @@ import path from 'path';
  *  TODO: добавить кастомизацию плагина через options
  * */
 
-const addCssImports = (options = {}) => {
+export const addCssImports = (options = {}) => {
     const {isEsm} = options;
 
     return {
@@ -41,5 +41,3 @@ const addCssImports = (options = {}) => {
         },
     };
 }
-
-export default addCssImports

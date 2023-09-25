@@ -4,7 +4,10 @@
 
 chmod +x \
   bin/copy-folder.sh \
-  bin/root-symlinks-resolver.sh \
+  bin/publish.sh \
   bin/build.sh
+
+chmod +x \
+  cli/create-package.sh
 
 echo 'Successfully prepared.'
