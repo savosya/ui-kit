@@ -5,9 +5,9 @@ import fs, {readFileSync} from 'fs';
  *  принимает Partial<PackageJson> и модифицирует package.json
  * */
 
-const resolvePackageJsonImports = (newPackageJsonPartial = {}) => {
+export const overridePackageJson = (newPackageJsonPartial = {}) => {
     return {
-        name: 'resolve-packagejson-imports',
+        name: 'override-package-json',
         sequential: true,
         order: 'post',
         writeBundle() {
@@ -24,5 +24,3 @@ const resolvePackageJsonImports = (newPackageJsonPartial = {}) => {
         }
     };
 }
-
-export default resolvePackageJsonImports
