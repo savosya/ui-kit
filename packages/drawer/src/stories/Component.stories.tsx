@@ -1,6 +1,8 @@
 import * as React from 'react';
-import {Drawer, DrawerProps} from '../Component';
 import {useState} from "react";
+import {Drawer} from '../index';
+
+import {Button} from '../../../button/src/Component'
 
 export default {
   title: 'Components/Drawer',
@@ -13,7 +15,7 @@ export const Default = () => {
 
   return (
     <div>
-      <button style={{color: open ? 'green' : 'red'}} onClick={toggle}>drawer</button>
+      <Button type={open ? 'primary' : 'outline'} onClick={toggle}>Drawer</Button>
 
       <Drawer
         open={open}

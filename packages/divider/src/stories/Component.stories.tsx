@@ -7,11 +7,9 @@ export default {
 };
 
 const canvasStyles = {
-  display: 'flex',
-  backgroundColor: '#CCCCCC',
-  height: 300,
+  backgroundColor: '#FFF',
   padding: 16,
-  gap: 16
+  // gap: 16
 }
 
 export const Default = () => {

@@ -1,7 +1,4 @@
-/*
- * Dirty magic here
- * Don't mess with Voodoo
- */
+/* DEPRECATED */
 
 :root {
     /*  brand  */
@@ -58,28 +55,31 @@
 }
 
 
-/* stylelint-disable */
-/*@font-face {*/
-/*    font-family: 'Styrene UI';*/
-/*    src: url('./fonts/styrene-ui_regular.woff2') format('woff2');*/
-/*    font-weight: 400;*/
-/*    font-style: normal;*/
-/*}*/
-/*@font-face {*/
-/*    font-family: 'Styrene UI';*/
-/*    src: url('./fonts/styrene-ui_medium.woff2') format('woff2');*/
-/*    font-weight: 500;*/
-/*    font-style: normal;*/
-/*}*/
-/*@font-face {*/
-/*    font-family: 'Styrene UI';*/
-/*    src: url('./fonts/styrene-ui_bold.woff2') format('woff2');*/
-/*    font-weight: 700;*/
-/*    font-style: normal;*/
-/*}*/
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 
 html {
     height: 100%;
+}
+
+* {
+    font-family: 'Fuggles', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 html body {
@@ -100,6 +100,7 @@ body.sb-show-main.sb-main-padded {
     padding: 0;
     overflow-x: hidden;
     box-sizing: border-box;
+    border: 1px solid red !important;
 }
 
 

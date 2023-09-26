@@ -4,17 +4,19 @@ import * as fs from 'fs';
 
 const config: StorybookConfig = {
   stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-actions'
-    // '@storybook/addon-styling',
+  addons: [
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("@storybook/addon-mdx-gfm")
   ],
   staticDirs: ['./public'],
   core: {},
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath("@storybook/react-vite"),
     options: {}
   },
   docs: {
-    autodocs: 'tag'
+    docsMode: false,
+    autodocs: true
   },
   viteFinal: async (config, {
     configType
@@ -48,3 +50,7 @@ const config: StorybookConfig = {
   }
 };
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return path.dirname(require.resolve(path.join(value, "package.json")));
+}

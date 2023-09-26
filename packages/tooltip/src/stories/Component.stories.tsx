@@ -16,15 +16,15 @@ export const Default = () => (
   //@ts-ignore
   <div style={canvasStyle}>
     <Tooltip title={'TITLE'} clickable opacity={1} placement={'right-end'}>
-      <button>I am a button</button>
+      Clickable tooltip.
     </Tooltip>
 
     <Tooltip content={'only content. not clickable'}>
-      <button>I am a button</button>
+      Not clickable tooltip.
     </Tooltip>
 
-    <Tooltip title={'TITLE'} content={<div>Im function stool tip! long long long <div><button>понятно</button></div></div>} clickable>
-      <button>I am a button</button>
+    <Tooltip title={'TITLE'} content={<div>Im function stool tip! long long long <div><button>понятно</button></div></div>} clickable opacity={1}>
+      Im tooltip with actions
     </Tooltip>
   </div>
 );

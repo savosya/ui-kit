@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {Dropdown} from '../Component';
 
+import {Button} from '../../../button/src/Component'
+
 export default {
   title: 'Components/Dropdown',
   component: Dropdown,
@@ -8,10 +10,7 @@ export default {
 
 const canvasStyles = {
   display: 'flex',
-  backgroundColor: '#CCCCCC',
-  height: 300,
   padding: 16,
-  gap: 16
 }
 
 export const Default = () => {
@@ -50,7 +49,7 @@ export const Default = () => {
   return (
     <div style={canvasStyles}>
       <Dropdown
-        matchMaxTriggerWidth={false}
+        matchMaxTriggerWidth
         options={options}
         onSelect={handleSelect}
         onVisibleChange={handleVisibleChange}
@@ -61,17 +60,7 @@ export const Default = () => {
         }}
         // hideAction={['click']}
       >
-        <button style={{width: 300}}>HOVER ME</button>
-        {/*<div style={{*/}
-        {/*  width: 400,*/}
-        {/*  height: 200,*/}
-        {/*  border: '1px solid black',*/}
-        {/*  display: "flex",*/}
-        {/*  justifyContent: 'center',*/}
-        {/*  alignItems: 'center'*/}
-        {/*}}>*/}
-        {/*  plat*/}
-        {/*</div>*/}
+        <Button style={{width: 300}} type={'outline'} size={'s'}>HOVER ME</Button>
       </Dropdown>
     </div>
   )
