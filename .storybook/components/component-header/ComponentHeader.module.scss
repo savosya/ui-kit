@@ -62,16 +62,3 @@
     padding-right: 8px;
 }
 
-.design {
-    //background-image: url(https://static.figma.com/app/icon/1/favicon.svg);
-}
-
-.github:hover,
-.design:hover {
-    background-color: var(--color-light-bg-primary-inverted-alpha-7);
-}
-
-.github:active,
-.design:active {
-    background-color: var(--color-light-bg-primary-inverted-alpha-15);
-}

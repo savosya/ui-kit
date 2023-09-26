@@ -1,0 +1,7 @@
+.cssVars {
+    margin: 40px 0;
+
+    & > div {
+        margin: 0;
+    }
+}

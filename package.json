@@ -34,7 +34,6 @@
   "devDependencies": {
     "@oat-sa/rollup-plugin-wildcard-external": "^1.0.0",
     "@rollup/plugin-terser": "^0.4.3",
-    "@storybook/addon-docs": "^7.4.5",
     "@storybook/addon-essentials": "7.4.5",
     "@storybook/addon-interactions": "^7.4.5",
     "@storybook/addon-knobs": "^7.0.2",
