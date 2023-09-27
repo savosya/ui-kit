@@ -5,3 +5,17 @@
         margin: 0;
     }
 }
+
+.pre {
+    background-color: #0B1F35 !important;
+    padding: 24px 40px !important;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid red !important;
+}
+
+.code {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #333;
+}

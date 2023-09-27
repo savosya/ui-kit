@@ -1,0 +1,28 @@
+import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
+import {RadioGroup} from '../Component';
+import packageJson from '../../package.json';
+import Description from './description.mdx';
+import * as RadioGroupStories from './Component.stories'
+import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+
+<Meta title='Components/RadioGroup' component={RadioGroup} id='RadioGroup'/>
+
+<ComponentHeader
+    name='RadioGroup'
+    version={packageJson.version}
+    package='@savosya/savosya-myuikit-radio-group'
+>
+    Компонент объединяющий радиобатоны в группу
+</ComponentHeader>
+
+```jsx
+import { RadioGroup } from '@savosya/savosya-myuikit-root';
+import { RadioGroup } from '@savosya/savosya-myuikit-radio-group';
+```
+
+<Canvas of={RadioGroupStories.Sandbox} meta={RadioGroupStories}/>
+
+<Tabs
+    docs={<Description/>}
+    props={<ArgsTable of={RadioGroup}/>}
+/>

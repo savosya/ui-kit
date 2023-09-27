@@ -27,9 +27,9 @@ export interface SelectProps {
 
   /** styles */
   optionsSettings?: {
-    ellipsisOptions?: boolean
-    wrapOptions?: boolean
-    showDivider?: boolean
+    ellipsis?: boolean
+    wrap?: boolean
+    divider?: boolean
   }
   withAnimation?: boolean
 

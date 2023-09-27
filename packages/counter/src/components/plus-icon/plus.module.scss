@@ -13,4 +13,9 @@
     color: #FFF;
     background-color: #50A33B;
   }
+
+  &.disabled {
+    color: #848D98;
+    pointer-events: none;
+  }
 }

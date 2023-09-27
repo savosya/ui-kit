@@ -1,15 +1,15 @@
 import * as React from "react";
 
 export interface DrawerProps {
+  open: boolean
+  onClose: (e: React.MouseEvent | React.KeyboardEvent) => void;
   children?: React.ReactNode
   className?: string
   width?: string | number
-  open?: boolean
   placement?: 'left' | 'right'
   closeOnBackdrop?: boolean
   closeOnEsc?: boolean
   blurredMask?: boolean
-  onClose?: (e: React.MouseEvent | React.KeyboardEvent) => void;
   onMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
   onMouseOver?: React.MouseEventHandler<HTMLDivElement>;
   onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;

@@ -18,7 +18,7 @@ export const Divider = (
       ...style,
       height: height ? `${height}px` : undefined,
       margin: margin ? margin : undefined,
-      color: color ? color : undefined,
+      backgroundColor: color ? color : undefined,
     }}
   />
 );

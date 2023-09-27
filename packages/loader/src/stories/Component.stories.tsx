@@ -1,20 +1,35 @@
 import * as React from 'react';
 import {Loader} from '../Component';
+import {Meta, StoryObj} from "@storybook/react";
 
-export default {
+const meta: Meta<typeof Loader> = {
   title: 'Components/Loader',
-  component: Loader,
+  component: Loader
 };
 
-export const Default = () => {
+type Story = StoryObj<typeof Loader>;
+export default meta;
 
-  return (
-    <div>
-      <Loader size={48} fill={false}/>
 
-      <div>
-        <Loader/>
+export const Sandbox: Story = {
+  args: {
+    fill: false
+  }
+};
+
+
+
+const styles: React.CSSProperties = {
+  border: '2px solid #21272E',
+  height: '400px',
+  borderRadius: '10px',
+}
+export const NotFilled: Story = {
+  render: () => {
+    return (
+      <div style={styles}>
+        <Loader size={32}/>
       </div>
-    </div>
-  )
+    )
+  }
 };

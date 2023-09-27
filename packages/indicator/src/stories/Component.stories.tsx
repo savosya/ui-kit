@@ -1,20 +1,27 @@
 import * as React from 'react';
 import {Indicator} from '../Component';
+import {Meta, StoryObj} from "@storybook/react";
 
-export default {
+const meta: Meta<typeof Indicator> = {
   title: 'Components/Indicator',
-  component: Indicator,
+  component: Indicator
 };
 
-export const Default = () => {
+type Story = StoryObj<typeof Indicator>;
+export default meta;
 
-  return (
-    <div style={{display: 'flex', gap: '24px'}}>
-      <div><Indicator /></div>
-      <div><Indicator size={'s'} number={1} /></div>
-      <div><Indicator number={2} /></div>
-      <div><Indicator size={'l'} number={3} /></div>
-    </div>
-  )
+
+const style: React.CSSProperties = {display: 'flex', gap: '24px'}
+export const Sandbox: Story = {
+  render: () => {
+    return (
+      <div style={style}>
+        <Indicator />
+        <Indicator size='s' number={1} />
+        <Indicator size='m' number={2} />
+        <Indicator size='l' number={3} />
+      </div>
+    )
+  }
 };
 

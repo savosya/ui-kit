@@ -9,7 +9,7 @@ export const storybookTheme =  create({
   colorSecondary: '#1D3F88',
   appContentBg: '#fff',
   appBorderColor: 'rgba(11, 31, 53, 0.1)',
-  fontBase: 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, sans-serif',
+  fontBase: 'Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, sans-serif',
   // fontCode: 'Monaco, Menlo, monospace',
   textColor: '#29313A',
   barTextColor: '#6D7986',

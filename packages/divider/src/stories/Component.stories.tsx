@@ -1,23 +1,18 @@
 import * as React from 'react';
 import {Divider} from '../Component';
+import {Meta, StoryObj} from "@storybook/react";
 
-export default {
+const meta: Meta<typeof Divider> = {
   title: 'Components/Divider',
-  component: Divider,
+  component: Divider
 };
 
-const canvasStyles = {
-  backgroundColor: '#FFF',
-  padding: 16,
-  // gap: 16
-}
+type Story = StoryObj<typeof Divider>;
+export default meta;
 
-export const Default = () => {
-
-  return (
-    <div style={canvasStyles}>
-      <Divider  />
-    </div>
-  )
+export const Sandbox: Story = {
+  args: {
+    color: '#21272E',
+  }
 };
 

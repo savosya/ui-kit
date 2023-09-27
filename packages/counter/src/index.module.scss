@@ -15,6 +15,15 @@
   border-radius: 10px;
 }
 
+.inputWrapper {
+  width: fit-content;
+  height: fit-content;
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
 .input {
   padding: 10px 16px;
   appearance: none;
@@ -34,6 +43,16 @@
     -webkit-appearance: none;
     margin: 0;
   }
+
+  &.readOnly {
+    pointer-events: none;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    color: #848D98;
+  }
+
 
   -moz-appearance: textfield;
 }

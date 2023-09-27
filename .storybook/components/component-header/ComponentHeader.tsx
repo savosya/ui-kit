@@ -1,43 +1,31 @@
-import React, { ReactNode } from 'react';
-import clsx from 'clsx';
+import React, {ReactNode} from 'react';
 
-
-import styles from './ComponentHeader.module.scss';
+import cls from './ComponentHeader.module.scss';
 
 type ComponentHeaderProps = {
     name: string;
     version?: string;
-    design?: string;
     children?: ReactNode;
 };
 
-export const ComponentHeader: React.FC<ComponentHeaderProps> = ({ name, design, children }) => {
-
-    // const packageName = name
-    //     .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-    //     .replace(/([A-Z])([A-Z])(?=[a-z])/g, '$1-$2')
-    //     .toLowerCase();
-    //
-    // const githubLink = `https://github.com/core-ds/core-components/tree/master/packages/${packageName}`;
-
+export const ComponentHeader = ({ name, children, version }: ComponentHeaderProps) => {
 
     return (
-        <div className={clsx(styles.component)}>
-            <h1 >
+        <div className={cls.component}>
+            <div className={cls.title}>
+              <h1 className={cls.name}>
                 {name}
-            </h1>
-            {children && (
-                <p
-                    className={clsx(styles.text)}
-                >
-                    {children}
-                </p>
-            )}
+              </h1>
 
-
-            <div className={styles.info} style={{display: 'flex', alignItems: 'center'}}>
-
+              {version && <span className={cls.version}>{version}</span>}
             </div>
+
+
+          {children && (
+            <div className={cls.description}>
+              {children}
+            </div>
+          )}
         </div>
     );
 };

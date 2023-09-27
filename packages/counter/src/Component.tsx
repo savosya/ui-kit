@@ -17,57 +17,76 @@ export const Counter = React.forwardRef<HTMLInputElement, CounterProps>((
     onChange,
     width = 100,
     classes,
+    readOnly,
+    disabled,
     className
   }, ref) => {
   const isControlled = value !== undefined
   const [internalState, setState] = useState<string>(value ? String(value) : '0')
 
-  const handleAdd = useCallback(() => {
-    setState(prev => {
-      const newValue = Number(prev) + 1;
+  const handleAdd = () => {
+    if (isControlled) {
+      const newValue = value + 1 > max ? value : value + 1
       onAdd?.(newValue)
-      return isControlled ? prev : newValue > max ? prev : String(newValue)
-    })
-  }, [onAdd, max, isControlled])
+    } else {
+      setState(prev => {
+        const newValue = Number(prev) + 1;
+        const finalValue = newValue > max ? prev : String(newValue)
+        onAdd?.(Number(finalValue))
+        return finalValue
+      })
+    }
+  }
 
-  const handleSub = useCallback(() => {
-    setState(prev => {
-      const newValue = Number(prev) - 1
-      onSub?.(newValue)
-      return isControlled ? prev : newValue < min ? prev : String(newValue)
-    })
-  }, [onSub, min, isControlled])
+  const handleSub = () => {
+    if (isControlled) {
+      const newValue = value - 1 < min ? value : value - 1
+      onAdd?.(newValue)
+    } else {
+      setState(prev => {
+        const newValue = Number(prev) - 1
+        const finalValue = newValue < min ? prev : String(newValue)
+        onSub?.(Number(finalValue))
+        return finalValue
+      })
+    }
+  }
 
   const handleChange = (event: any) => {
     const inputValue = event.target.value;
     const regex = /^\d*\.?\d*$/;
-    const numberValue = Number(inputValue)
 
-    if (regex.test(inputValue) && numberValue > min && numberValue < max) {
+    if (regex.test(inputValue)) {
       if (inputValue === '00' && internalState === '0') {
         return
       } else {
         const numericValue = Number(inputValue)
-        onChange?.(inputValue === '' ? 0 : numericValue)
-        setState(isControlled ? internalState : inputValue === '' ? '0' : String(numericValue));
+
+        if (isControlled) {
+          onChange?.(inputValue === '' ? 0 : numericValue)
+        } else {
+          setState(inputValue === '' ? '0' : String(numericValue));
+        }
       }
     }
   };
 
   return (
     <div className={clsx(cls.root, className, classes?.root)}>
-      <MinusIcon onClick={handleSub} className={classes?.minus}/>
+      <MinusIcon onClick={handleSub} className={classes?.minus} disabled={disabled}/>
 
-      <input
-        type='number'
-        className={clsx(cls.input, classes?.input)}
-        value={internalState}
-        onChange={handleChange}
-        ref={ref}
-        style={{width: width}}
-      />
+      <div className={clsx(cls.inputWrapper, {[cls.disabled]: disabled})}>
+        <input
+          type='number'
+          className={clsx(cls.input, classes?.input, {[cls.readOnly]: readOnly, [cls.disabled]: disabled})}
+          value={isControlled ? String(Number(value)) : String(Number(internalState))}
+          onChange={handleChange}
+          ref={ref}
+          style={{width: width}}
+        />
+      </div>
 
-      <PlusIcon onClick={handleAdd} className={classes?.plus}/>
+      <PlusIcon onClick={handleAdd} className={classes?.plus} disabled={disabled}/>
     </div>
   );
 })

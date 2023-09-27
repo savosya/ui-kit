@@ -1,0 +1,10 @@
+import {Canvas} from "@storybook/blocks";
+import * as CounterStories from './Component.stories'
+
+
+
+### Controlled Counter
+Если каунтер контролируется, то обработчик onChange будет игнорировать min и max значения.
+
+Обработчики onAdd и onSub будут возвращать максимальные и минимальные значения.
+<Canvas of={CounterStories.Controlled} meta={CounterStories} />

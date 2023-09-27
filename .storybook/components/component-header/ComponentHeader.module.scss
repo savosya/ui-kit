@@ -3,62 +3,27 @@
     margin: 0;
 }
 
-.component h1 {
-    display: inline-block;
-}
-
-.text {
-    margin: 24px 0;
-}
-
-.textMobile {
-    margin-top: 12px;
-}
-
-.info {
-    display: flex;
+.description {
+    display: flex !important;
+    align-items: center;
     margin-top: 8px;
 }
 
-.commonLink {
-    opacity: 0.8;
+.title {
+    display: flex;
+    gap: 12px;
+
+
+    & .name {
+        font-weight: 700;
+        font-size: 42px;
+    }
+    & .version {
+        color: #848D98;
+    }
 }
 
-.links {
-    display: flex;
+.description > p {
+    margin: 0;
     font-size: 16px;
-    line-height: 24px;
 }
-
-.links a {
-    display: block;
-    padding: 4px 8px 4px 32px;
-    margin-right: 8px;
-    text-decoration: none;
-    border: 1px solid lightblue;
-    border-radius: 6px;
-    color: var(--text-primary);
-    background-position: 10% 50%;
-    background-repeat: no-repeat;
-}
-
-.usageLink * {
-    border-bottom: 0;
-}
-
-.links {
-    position: relative;
-}
-
-.links > .github {
-    display: flex;
-    align-items: center;
-    padding-left: 8px;
-}
-
-.github > svg {
-    width: 16px;
-    height: 16px;
-    padding-right: 8px;
-}
-

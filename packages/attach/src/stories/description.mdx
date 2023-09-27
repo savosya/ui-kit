@@ -18,7 +18,7 @@ render(() => {
             formData.append(`file${i}`, file);
         });
 
-        fetch('https://httpbin.org/post', {
+        fetch('https://example.ru/post', {
             method: 'POST',
             body: formData,
         })
@@ -38,11 +38,6 @@ render(() => {
             <Button size='xs' type='button' onClick={handleSubmit}>
                 Отправить
             </Button>
-
-            {response &&
-                Object.entries(response.files).map(([fileName, base64]) => (
-                    <img src={base64} key={fileName} width={100} />
-                ))}
         </div>
     );
 });

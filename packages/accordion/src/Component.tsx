@@ -17,6 +17,7 @@ export const Accordion = (
     disabled,
     onVisibleChange,
     chevroneIcon,
+    style,
     classes
   }: AccordionProps) => {
   const isControlled = typeof open === 'boolean'
@@ -29,10 +30,13 @@ export const Accordion = (
   const [internalOpen, setOpen] = useState(open || defaultOpen)
   const toggleOpen = useCallback(() => {
     setOpen(prev => {
-      onVisibleChange?.(!prev)
       return isControlled ? prev : !prev
     })
   }, [onVisibleChange])
+
+  useEffect(() => {
+    onVisibleChange?.(!internalOpen)
+  }, [internalOpen, open])
 
 
   useEffect(() => {
@@ -42,7 +46,7 @@ export const Accordion = (
 
   const isOpen = isControlled ? open : internalOpen
   return (
-    <div className={clsx(cls.root, classes?.root, {[cls.disabled]: disabled})}>
+    <div className={clsx(cls.root, classes?.root, {[cls.disabled]: disabled})} style={style}>
       <div className={clsx(cls.header, classes?.header, {[cls.disabled]: disabled})} onClick={toggleOpen}>
         <div>
           <div className={clsx(cls.title, classes?.title)}>{title}</div>

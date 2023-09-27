@@ -1,4 +1,4 @@
-import React, {useCallback, useLayoutEffect, useRef, useState} from 'react';
+import React, {useCallback, useLayoutEffect, useMemo, useRef, useState} from 'react';
 import {clsx} from 'clsx';
 
 import {allTabs, TabType} from "./utils";
@@ -9,9 +9,14 @@ type Props = {
   docs: React.ReactNode
   props: React.ReactNode
   css: React.ReactNode
+
+  canvas: React.ReactNode
 }
-export const Tabs = (props: Props) => {
-  const [tab, setTab] = useState<TabType>('docs')
+export const Tabs = (
+  {
+    ...restTabs
+  }: Props) => {
+  const [tab, setTab] = useState<TabType>(Object.keys(restTabs)[0] as TabType)
   const trackerRef = useRef<HTMLDivElement | null>(null)
   const startingRef = useRef<HTMLDivElement | null>(null)
 
@@ -46,24 +51,27 @@ export const Tabs = (props: Props) => {
     trackerRef.current.style.width = `${elementWidth + 16}px`
   }, [])
 
-
   return (
     <>
       <div className={cls.categoryList} ref={startingRef}>
-        {allTabs.map(({value, label}) => (
-          <div
-            className={clsx(cls.categoryItem, {[cls.activeItem]: value === tab})}
-            data-category-value={value}
-            onClick={handleCategoryClick}
-          >
-            {label}
-          </div>
-        ))}
+        {allTabs.map(({value, label}) => {
+          const isTab = Boolean(restTabs[value])
+          return isTab && (
+            <div
+              key={value}
+              className={clsx(cls.categoryItem, {[cls.activeItem]: value === tab})}
+              data-category-value={value}
+              onClick={handleCategoryClick}
+            >
+              {label}
+            </div>
+          )
+        })}
         <div ref={trackerRef} className={cls.categoryTracker}/>
       </div>
 
       <div className={cls.content}>
-        {props[tab]}
+        {restTabs[tab]}
       </div>
     </>
   )

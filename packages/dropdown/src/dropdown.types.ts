@@ -19,9 +19,9 @@ export interface DropdownProps {
   alignPoint?: boolean
 
   optionsSettings?: {
-    ellipsisOptions?: boolean
-    wrapOptions?: boolean
-    showDivider?: boolean
+    ellipsis?: boolean
+    wrap?: boolean
+    divider?: boolean
   }
   withAnimation?: boolean
 
@@ -32,4 +32,5 @@ export interface DropdownProps {
     open?: string // open state applies to a child element
     wrapper?: string
   }
+  style?: React.CSSProperties
 }

@@ -1,0 +1,30 @@
+import {Meta, ArgsTable, Canvas,} from '@storybook/blocks';
+import {Textarea} from '../Component';
+import packageJson from '../../package.json';
+import CSS from './css.mdx';
+import Description from './description.mdx';
+import * as TextareaStories from './Component.stories'
+import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+
+<Meta title='Components/Textarea' component={Textarea} id='Textarea'/>
+
+<ComponentHeader
+    name='Textarea'
+    version={packageJson.version}
+    package='@savosya/savosya-myuikit-textarea'
+>
+    Компонент текстового поля ввода
+</ComponentHeader>
+
+```jsx
+import { Textarea } from '@savosya/savosya-myuikit-root';
+import { Textarea } from '@savosya/savosya-myuikit-textarea';
+```
+
+<Canvas of={TextareaStories.Sandbox} meta={TextareaStories}/>
+
+<Tabs
+    docs={<Description/>}
+    props={<ArgsTable of={Textarea}/>}
+    css={<CSS/>}
+/>

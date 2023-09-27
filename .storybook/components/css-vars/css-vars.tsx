@@ -1,68 +1,64 @@
-import React, { FC, useEffect, useState } from 'react';
-import cn from 'clsx';
-import { Example } from 'storybook-addon-live-examples';
+import React, {FC, useEffect, useState} from 'react';
 
-import styles from './css-vars.module.scss';
+import cls from './css-vars.module.scss';
 
 type Props = {
-    css: string;
-    title?: string;
-    expandable?: boolean;
-    type?: 'vars' | 'mixins';
+  css: string;
+  title?: string;
+  expandable?: boolean;
 };
 
-const rootBlockRegexp = /:root {([^}]*)}/g;
-const mixinRegexp = /(?:@define-mixin)(.*{[^}]*})/g;
+const regexp = /:root {([^}]*)}/g;
 
-export const CssVars: FC<Props> = ({ css, title, expandable, type = 'vars' }) => {
-    const [vars, setVars] = useState('');
-    const [open, setOpen] = useState(!expandable);
-    const isVars = type === 'vars';
-    const regexp = isVars ? rootBlockRegexp : mixinRegexp;
+export const CssVars: FC<Props> = ({css, title, expandable}) => {
+  const [vars, setVars] = useState('');
+  const [open, setOpen] = useState(!expandable);
 
-    useEffect(() => {
-        let rootBlockMatch = regexp.exec(css);
+  useEffect(() => {
+    let rootBlockMatch = regexp.exec(css);
 
-        const rootBlocks = [];
+    const rootBlocks = [];
 
-        while (rootBlockMatch) {
-            rootBlocks.push(rootBlockMatch[1]);
-            rootBlockMatch = regexp.exec(css);
-        }
+    while (rootBlockMatch) {
+      rootBlocks.push(rootBlockMatch[1]);
+      rootBlockMatch = regexp.exec(css);
+    }
 
-        let result = rootBlocks.reduce(
-            (acc, item, index) => {
-                const isLast = index === rootBlocks.length - 1;
-                const divider = isLast ? '' : '\n';
+    let result = rootBlocks.reduce(
+      (acc, item, index) => {
+        const isLast = index === rootBlocks.length - 1;
+        const divider = isLast ? '' : '\n';
 
-                return `${acc}${item}${divider}`;
-            },
-            isVars ? ':root {' : '',
-        );
-
-        if (isVars) {
-            result += '}';
-        }
-
-        setVars(result);
-    }, []);
-
-    return (
-        <div className={styles.cssVars}>
-            {title && <h2>{title}</h2>}
-            {vars && (
-                <>
-                    {expandable && (
-                        <div onClick={() => setOpen(!open)} >
-                            {open ? 'Скрыть' : 'Показать'}
-                        </div>
-                        // <Link view='default' onClick={() => setOpen(!open)} pseudo>
-                        //     {open ? 'Скрыть' : 'Показать'}
-                        // </Link>
-                    )}
-                    {open && <Example language='css' code={vars} live={false} />}
-                </>
-            )}
-        </div>
+        return `${acc}${item}${divider}`;
+      },
+      ':root {',
     );
+
+    result += '}';
+
+    setVars(result);
+  }, []);
+
+  return (
+    <div className={cls.cssVars}>
+      {title && <h2>{title}</h2>}
+      {vars && (
+        <>
+          {expandable && (
+            <div onClick={() => setOpen(!open)}>
+              {open ? 'Скрыть' : 'Показать'}
+            </div>
+          )}
+          {open && (
+            <pre className={cls.pre}>
+              <code className={cls.code}>
+                {vars}
+              </code>
+            </pre>
+          )}
+
+        </>
+      )}
+    </div>
+  );
 };
