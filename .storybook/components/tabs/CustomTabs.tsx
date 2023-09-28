@@ -6,38 +6,43 @@ import cls from './styles.module.scss'
 
 
 type Props = {
-  docs: React.ReactNode
-  props: React.ReactNode
-  css: React.ReactNode
-
-  canvas: React.ReactNode
+  custom?: { component: React.ReactNode, value: string, label: string }[]
 }
-export const Tabs = (
+export const CustomTabs = (
   {
+    custom,
     ...restTabs
   }: Props) => {
-  const [tab, setTab] = useState<TabType>(Object.keys(restTabs)[0] as TabType)
   const trackerRef = useRef<HTMLDivElement | null>(null)
   const startingRef = useRef<HTMLDivElement | null>(null)
+
+  const [customTab, setCustomTab] = useState<string>(custom[0].value)
+  const customMap = useMemo(() => {
+    let map: any = {}
+    custom.forEach(c => {
+      map[c.value] = c.component
+    })
+    return map
+  }, [])
 
 
   useLayoutEffect(() => {
     document.querySelectorAll('[data-category-value]').forEach(node => {
       const nodeValue = node.getAttribute('data-category-value')
 
-      if (nodeValue === tab && trackerRef?.current) {
+      if (nodeValue === customTab && trackerRef?.current) {
         moveTracker(node)
       }
     })
   }, [])
 
-  const handleCategoryClick = useCallback((event: any) => {
+  const handleCustomClick = useCallback((event: any) => {
     const target = event.target as HTMLDivElement
     const newValue = target.getAttribute('data-category-value')
 
     if (newValue) {
       moveTracker(target)
-      setTab(newValue as TabType)
+      setCustomTab(newValue as TabType)
     }
   }, [])
 
@@ -56,14 +61,13 @@ export const Tabs = (
   return (
     <>
       <div className={cls.categoryList} ref={startingRef}>
-        {allTabs.map(({value, label}) => {
-          const isTab = Boolean(restTabs[value])
-          return isTab && (
+        {custom.map(({value, label}) => {
+          return (
             <div
               key={value}
-              className={clsx(cls.categoryItem, {[cls.activeItem]: value === tab})}
+              className={clsx(cls.categoryItem, {[cls.activeItem]: value === customTab})}
               data-category-value={value}
-              onClick={handleCategoryClick}
+              onClick={handleCustomClick}
             >
               {label}
             </div>
@@ -74,7 +78,7 @@ export const Tabs = (
       </div>
 
       <div className={cls.content}>
-        {restTabs[tab]}
+        {customMap[customTab]}
       </div>
     </>
   )

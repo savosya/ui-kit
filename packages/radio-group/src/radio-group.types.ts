@@ -14,4 +14,5 @@ export interface RadioGroupProps {
     name?: string | undefined
   }) => void
   value?: string
+  style?: React.CSSProperties
 }

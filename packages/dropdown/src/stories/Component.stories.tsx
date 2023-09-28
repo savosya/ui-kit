@@ -144,7 +144,7 @@ export const Placements: Story = {
 
         <div style={placementRowStyle}>
           <Dropdown options={options} trigger='hover' placement='bottomLeft'>
-            <Button type='outline' size='s'>Bottom Right</Button>
+            <Button type='outline' size='s'>Bottom Left</Button>
           </Dropdown>
 
           <Dropdown options={options} trigger='hover' placement='bottom'>

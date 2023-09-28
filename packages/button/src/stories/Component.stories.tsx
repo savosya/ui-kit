@@ -38,8 +38,6 @@ export const Primary: Story = {
       <div>
         <div style={RowStyles}>
           <Button type='primary' mode='light' leftIcon={<SampleIcon/>} loading />
-          <Button type='primary' mode='light' leftIcon={<SampleIcon/>} loading />
-          <Button type='primary' mode='light' leftIcon={<SampleIcon/>} loading />
           <Button type='primary' mode='light' leftIcon={<SampleIcon/>} />
           <Button type='primary' mode='light' leftIcon={<SampleIcon/>} disabled>Кнопка</Button>
           <Button type='primary' mode='light' size='s' leftIcon={<SampleIcon/>}>Кнопка</Button>

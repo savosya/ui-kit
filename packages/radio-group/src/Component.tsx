@@ -14,7 +14,8 @@ export const RadioGroup = (props: RadioGroupProps) => {
     onChange,
     value,
     radioProps,
-    direction = 'horizontal'
+    direction = 'horizontal',
+    style
   } = props
 
   const handleChange = React.useCallback((
@@ -26,7 +27,7 @@ export const RadioGroup = (props: RadioGroupProps) => {
   }, [])
 
   return (
-    <div className={clsx(cls.group, className, {[cls.vertical]: direction === 'vertical'})}>
+    <div className={clsx(cls.group, className, {[cls.vertical]: direction === 'vertical'})} style={style}>
       {options?.map(option =>
         <Radio
           key={option.value}

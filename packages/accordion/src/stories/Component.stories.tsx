@@ -8,7 +8,7 @@ import {Loader} from "../../../loader/src";
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',
   component: Accordion,
-  // includeStories: ['Default']
+  // includeStories: ['Sandbox']
 };
 
 type Story = StoryObj<typeof Accordion>;
