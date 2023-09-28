@@ -1,28 +1,21 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Divider} from '../Component';
-import packageJson from '../../package.json';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Divider } from '../Component'
+import packageJson from '../../package.json'
 import CSS from './css.mdx'
 import * as DividerStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Divider' component={Divider} id='Divider'/>
+<Meta title="Components/Divider" component={Divider} id="Divider" />
 
-<ComponentHeader
-    name='Divider'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-divider'
->
-    Разделитель
+<ComponentHeader name="Divider" version={packageJson.version} package="@savosya/savosya-myuikit-divider">
+  Разделитель
 </ComponentHeader>
 
 ```jsx
-import { Divider } from '@savosya/savosya-myuikit-root';
-import { Divider } from '@savosya/savosya-myuikit-divider';
+import { Divider } from '@savosya/savosya-myuikit-root'
+import { Divider } from '@savosya/savosya-myuikit-divider'
 ```
 
-<Canvas of={DividerStories.Sandbox} meta={DividerStories}/>
+<Canvas of={DividerStories.Sandbox} meta={DividerStories} />
 
-<Tabs
-    props={<ArgsTable of={Divider}/>}
-    css={<CSS/>}
-/>
+<Tabs props={<ArgsTable of={Divider} />} css={<CSS />} />

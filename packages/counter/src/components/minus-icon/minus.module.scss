@@ -2,20 +2,20 @@
   cursor: pointer;
   transition: 0.15s;
   border-radius: 5px;
-  color: #D44040;
+  color: #d44040;
   flex: 0 0 fit-content;
 
   &:hover {
-    background-color: #E9D1D4;
+    background-color: #e9d1d4;
   }
 
   &:active {
-    color: #FFF;
-    background-color: #D44040;
+    color: #fff;
+    background-color: #d44040;
   }
 
   &.disabled {
-    color: #848D98;
+    color: #848d98;
     pointer-events: none;
   }
 }

@@ -1,67 +1,74 @@
 :root {
-    --bg-primary: #F4F6F8;
-    --text-primary: #29313A;
-    --bg-canvas: #F4F6F8;
+  --bg-primary: #f4f6f8;
+  --text-primary: #29313a;
+  --bg-canvas: #f4f6f8;
 }
 
-
 @font-face {
-    font-family: 'Inter';
-    src: url('./fonts/Inter-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Inter';
-    src: url('./fonts/Inter-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Inter';
-    src: url('./fonts/Inter-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;
-    height: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: var(--text-primary);
-    padding-left: calc(100vw - 100%);
+html,
+body {
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Helvetica,
+    sans-serif;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  padding-left: calc(100vw - 100%);
 }
-
 
 .sb-show-main.sb-main-padded {
-    padding: 0;
-    background-color: var(--bg-primary);
+  padding: 0;
+  background-color: var(--bg-primary);
 }
 
 #storybook-docs > .sbdocs-wrapper {
-    padding: 48px 20px;
+  padding: 48px 20px;
 }
 
 .docs-story {
-    background-color: var(--bg-canvas);
-    padding: 16px;
+  background-color: var(--bg-canvas);
+  padding: 16px;
 }
 .docs-story > div:first-child {
-    margin: 0;
-    padding: 0 !important;
-    overflow-y: hidden;
+  margin: 0;
+  padding: 0 !important;
+  overflow-y: hidden;
 }
 
 .innerZoomElementWrapper {
-    border: 0;
+  border: 0;
 }
 
 /* FOR STORIES */
 .darker .docs-story {
-    background-color: #B8BEC6 !important;
+  background-color: #b8bec6 !important;
 }

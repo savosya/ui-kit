@@ -1,4 +1,4 @@
-import type {HTMLProps, ReactNode} from "react";
+import type { HTMLProps, ReactNode } from 'react'
 
 export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'type' | 'size'> {
   className?: string

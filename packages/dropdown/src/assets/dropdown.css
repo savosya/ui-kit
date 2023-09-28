@@ -26,7 +26,7 @@
   padding: 0;
 }
 .eub-dropdown .eub-dropdown-menu:before {
-  content: "";
+  content: '';
   position: absolute;
   top: -4px;
   left: 0;
@@ -59,7 +59,7 @@
   position: absolute;
   top: 6px;
   right: 16px;
-  color: #3CB8F0;
+  color: #3cb8f0;
 }
 .eub-dropdown .eub-dropdown-menu > .eub-dropdown .eub-dropdown-menu-item-disabled {
   color: #ccc;

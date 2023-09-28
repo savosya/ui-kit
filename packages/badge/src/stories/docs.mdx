@@ -1,30 +1,22 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Badge} from '../Component';
-import packageJson from '../../package.json';
-import Description from './description.mdx';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Badge } from '../Component'
+import packageJson from '../../package.json'
+import Description from './description.mdx'
 import CSS from './css.mdx'
 import * as BadgeStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Badge' component={Badge} id='Badge'/>
+<Meta title="Components/Badge" component={Badge} id="Badge" />
 
-<ComponentHeader
-    name='Badge'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-badge'
->
-    Компонент бейджа
+<ComponentHeader name="Badge" version={packageJson.version} package="@savosya/savosya-myuikit-badge">
+  Компонент бейджа
 </ComponentHeader>
 
 ```jsx
-import { Badge } from '@savosya/savosya-myuikit-root';
-import { Badge } from '@savosya/savosya-myuikit-badge';
+import { Badge } from '@savosya/savosya-myuikit-root'
+import { Badge } from '@savosya/savosya-myuikit-badge'
 ```
 
-<Canvas of={BadgeStories.Sandbox} meta={BadgeStories}/>
+<Canvas of={BadgeStories.Sandbox} meta={BadgeStories} />
 
-<Tabs
-    docs={<Description/>}
-    props={<ArgsTable of={Badge}/>}
-    css={<CSS/>}
-/>
+<Tabs docs={<Description />} props={<ArgsTable of={Badge} />} css={<CSS />} />

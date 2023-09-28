@@ -1,17 +1,16 @@
 import * as React from 'react'
-import {useCallback, useMemo, useRef, useState} from "react"
-import RCSelect, {Option as RCOption} from 'rc-select';
+import { useCallback, useMemo, useRef, useState } from 'react'
+import RCSelect, { Option as RCOption } from 'rc-select'
 import clsx from 'clsx'
 
-import {Input} from '@savosya/savosya-myuikit-input'
-import {Loader} from '@savosya/savosya-myuikit-loader'
+import { Input } from '@savosya/savosya-myuikit-input'
+import { Loader } from '@savosya/savosya-myuikit-loader'
 
-import {ChevronIcon, CheckIcon, CrossIcon} from "./components"
-import {getFilteredOptions, getInputValue, getOptionsMap, showCleanIcon} from "./select.utils";
-import type {InternalSelectState, PassedOption, SelectProps} from "./select.types";
+import { ChevronIcon, CheckIcon, CrossIcon } from './components'
+import { getFilteredOptions, getInputValue, getOptionsMap, showCleanIcon } from './select.utils'
+import type { InternalSelectState, PassedOption, SelectProps } from './select.types'
 import cls from './index.module.scss'
-import './assets/select.css';
-
+import './assets/select.css'
 
 export const Select = (props: SelectProps) => {
   const {
@@ -40,17 +39,12 @@ export const Select = (props: SelectProps) => {
 
     withAnimation = true,
     optionsSettings = {},
-    classes = {},
+    classes = {}
   } = props
 
-  const {
-    ellipsis = true,
-    wrap = undefined,
-    divider = false
-  } = optionsSettings
+  const { ellipsis = true, wrap = undefined, divider = false } = optionsSettings
 
-  const {input, option, label: labelCls, dropdown, input_wrapper, root} = classes
-
+  const { input, option, label: labelCls, dropdown, input_wrapper, root } = classes
 
   /** values */
   const isControlledInput = typeof value !== 'undefined'
@@ -70,7 +64,7 @@ export const Select = (props: SelectProps) => {
   /** handlers */
   const handleOpen = () => {
     if (onOpen) onOpen()
-    if(disabled || loading) return
+    if (disabled || loading) return
     setInternalState(prev => ({
       ...prev,
       open: isControlledOpen ? prev.open : true,
@@ -79,7 +73,7 @@ export const Select = (props: SelectProps) => {
   }
   const handleClose = () => {
     if (onClose) onClose()
-    if(disabled || loading) return
+    if (disabled || loading) return
     setInternalState(prev => ({
       ...prev,
       open: isControlledOpen ? prev.open : false,
@@ -90,7 +84,7 @@ export const Select = (props: SelectProps) => {
   }
   const handleSearch = (e: any) => {
     const value = e.target.value || ''
-    setInternalState(prev => ({...prev, search: value, options: getFilteredOptions(value, options)}))
+    setInternalState(prev => ({ ...prev, search: value, options: getFilteredOptions(value, options) }))
   }
 
   const handleChange = (newValue: string | string[], option: PassedOption | PassedOption[]) => {
@@ -106,11 +100,11 @@ export const Select = (props: SelectProps) => {
 
   const handleClean = () => {
     if (onClean) onClean()
-    setInternalState(prev => ({...prev, value: multiple ? [] : null}))
+    setInternalState(prev => ({ ...prev, value: multiple ? [] : null }))
   }
 
   const onChevroneClick = () => {
-    if(loading || disabled) return;
+    if (loading || disabled) return
 
     if (!internalState.open) {
       handleOpen()
@@ -120,25 +114,22 @@ export const Select = (props: SelectProps) => {
     }
   }
 
-
   /** render */
   const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean
   const isOpen = isControlledOpen ? open : internalState.open
   return (
     <div
       className={clsx(cls.root, root)}
-      onMouseEnter={() => setInternalState(prev => ({...prev, entered: true}))}
-      onMouseLeave={() => setInternalState(prev => ({...prev, entered: false}))}
+      onMouseEnter={() => setInternalState(prev => ({ ...prev, entered: true }))}
+      onMouseLeave={() => setInternalState(prev => ({ ...prev, entered: false }))}
     >
-
       <RCSelect
-        prefixCls='eub-select'
+        prefixCls="eub-select"
         mode={multiple ? 'multiple' : undefined}
         dropdownClassName={clsx(cls.menu, dropdown)}
         animation={withAnimation ? 'slide-up' : undefined}
-        menuItemSelectedIcon={<CheckIcon/>}
-        style={{width: '100%'}}
-
+        menuItemSelectedIcon={<CheckIcon />}
+        style={{ width: '100%' }}
         open={isOpen}
         onSelect={onSelect}
         onDeselect={onDeselect}
@@ -146,21 +137,20 @@ export const Select = (props: SelectProps) => {
         onChange={handleChange}
         notFoundContent={null}
         listHeight={listHeight}
-
-        getRawInputElement={() =>
+        getRawInputElement={() => (
           <Input
             label={label}
             passedRef={inputRef}
             block={block}
             addonsRight={
-              <div className={clsx(cls.right_addon, {[cls.close]: showCloseIcon})}>
-                {loading
-                  ? <Loader size={16}/>
-                  : showCloseIcon
-                    ? <CrossIcon className={cls.chevrone} onClick={handleClean}/>
-                    : <ChevronIcon className={clsx(cls.chevrone, {[cls.chevrone_open]: internalState.open})}
-                                   onClick={onChevroneClick}/>
-                }
+              <div className={clsx(cls.right_addon, { [cls.close]: showCloseIcon })}>
+                {loading ? (
+                  <Loader size={16} />
+                ) : showCloseIcon ? (
+                  <CrossIcon className={cls.chevrone} onClick={handleClean} />
+                ) : (
+                  <ChevronIcon className={clsx(cls.chevrone, { [cls.chevrone_open]: internalState.open })} onClick={onChevroneClick} />
+                )}
               </div>
             }
             hint={hint}
@@ -169,9 +159,7 @@ export const Select = (props: SelectProps) => {
             cleanable={false}
             onFocus={handleOpen}
             onBlur={handleClose}
-            value={internalState.mode === 'search'
-              ? internalState.search
-              : getInputValue(isControlledInput ? value : internalState.value, ValuesMap)}
+            value={internalState.mode === 'search' ? internalState.search : getInputValue(isControlledInput ? value : internalState.value, ValuesMap)}
             onChange={showSearch ? handleSearch : undefined}
             placeholder={internalState.mode === 'search' ? 'Поиск' : placeholder}
             disabled={disabled}
@@ -179,16 +167,21 @@ export const Select = (props: SelectProps) => {
             classes={{
               root: input_wrapper,
               input: input,
-              label: labelCls,
+              label: labelCls
             }}
-          />}
+          />
+        )}
       >
         {internalState.options?.map(o => (
           <RCOption
             className={clsx(cls.menuItem, option, {
               [cls.selected]: isControlledInput
-                ? multiple ? value?.includes(o.value) : o.value === value
-                : multiple ? internalState.value?.includes(o.value) : o.value === internalState.value,
+                ? multiple
+                  ? value?.includes(o.value)
+                  : o.value === value
+                : multiple
+                ? internalState.value?.includes(o.value)
+                : o.value === internalState.value,
               [cls.ellipsis]: ellipsis,
               [cls.wrap]: wrap,
               [cls.border]: divider,
@@ -202,7 +195,6 @@ export const Select = (props: SelectProps) => {
           </RCOption>
         ))}
       </RCSelect>
-
     </div>
-  );
+  )
 }

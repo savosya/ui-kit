@@ -1,24 +1,24 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "moduleResolution": "node",
-        "allowJs": true,
-        "noEmit": true,
-        "strict": false,
-        "isolatedModules": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "outDir": "build",
-        "module": "commonjs",
-        "skipLibCheck": true,
-        "sourceMap": true,
-        "jsx": "react",
-        "rootDirs": ["packages"],
-        "baseUrl": "./",
-        "preserveSymlinks": true,
-        "paths": {
-            "@savosya/savosya-myuikit-*": ["packages/*/src"]
-        }
-    },
-    "exclude": ["node_modules", "build", "coverage"]
+  "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": false,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": "build",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "rootDirs": ["packages"],
+    "baseUrl": "./",
+    "preserveSymlinks": true,
+    "paths": {
+      "@savosya/savosya-myuikit-*": ["packages/*/src"]
+    }
+  },
+  "exclude": ["node_modules", "build", "coverage"]
 }

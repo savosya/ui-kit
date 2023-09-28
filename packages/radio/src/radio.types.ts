@@ -1,4 +1,4 @@
-import {ChangeEvent, InputHTMLAttributes, ReactNode} from "react";
+import { ChangeEvent, InputHTMLAttributes, ReactNode } from 'react'
 
 type NativeProps = InputHTMLAttributes<HTMLInputElement>
 
@@ -12,10 +12,10 @@ export interface RadioProps extends Omit<NativeProps, 'size' | 'onChange' | 'typ
   onChange?: (
     event: ChangeEvent<HTMLInputElement>,
     payload: {
-      checked: boolean;
-      name?: string;
-    },
-  ) => void;
+      checked: boolean
+      name?: string
+    }
+  ) => void
 
   classes?: {
     root?: string

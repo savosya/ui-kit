@@ -1,8 +1,8 @@
-import * as React from "react";
-import {ReactNode} from "react";
+import * as React from 'react'
+import { ReactNode } from 'react'
 
 export type TooltipPlacement =
-  'top'
+  | 'top'
   | 'top-start'
   | 'top-end'
   | 'right'
@@ -29,7 +29,7 @@ export interface TooltipProps {
   closeOnResize?: boolean
   style?: React.CSSProperties
   open?: boolean
-  position?: { x: number, y: number }
+  position?: { x: number; y: number }
   onShow?: () => void
   onHide?: () => void
   opacity?: React.CSSProperties['opacity']

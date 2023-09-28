@@ -1,5 +1,5 @@
 /*@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');*/
 /*npm install @fontsource-variable/inter*/
 :root {
-    --eub-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+  --eub-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;
 }

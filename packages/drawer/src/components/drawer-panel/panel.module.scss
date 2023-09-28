@@ -1,14 +1,13 @@
-
 .container {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #FFF;
+  background-color: #fff;
 
   &.gray {
-    background-color: #F4F6F8;
+    background-color: #f4f6f8;
   }
 }
 
@@ -42,7 +41,8 @@
   opacity: 0.4;
   transition: 0.2s;
 
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     opacity: 1;
     text-decoration: none;
   }

@@ -1,19 +1,18 @@
-import * as React from 'react';
-import {useState} from "react";
-import {Meta, StoryObj} from "@storybook/react";
-import {Modal} from '../Component';
+import * as React from 'react'
+import { useState } from 'react'
+import { Meta, StoryObj } from '@storybook/react'
+import { Modal } from '../Component'
 
-import {Button} from '../../../button/src/Component'
-import {Checkbox} from '../../../checkbox/src/Component'
+import { Button } from '../../../button/src/Component'
+import { Checkbox } from '../../../checkbox/src/Component'
 
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal
-};
+}
 
-type Story = StoryObj<typeof Modal>;
-export default meta;
-
+type Story = StoryObj<typeof Modal>
+export default meta
 
 export const Sandbox: Story = {
   render: () => {
@@ -25,7 +24,11 @@ export const Sandbox: Story = {
         <Button onClick={toggle}>Открыть</Button>
         <Modal
           title={'Modal Title'}
-          footer={<Button size='s' type='ghost' onClick={toggle}>Ок</Button>}
+          footer={
+            <Button size="s" type="ghost" onClick={toggle}>
+              Ок
+            </Button>
+          }
           open={open}
           onClose={toggle}
         >
@@ -34,7 +37,7 @@ export const Sandbox: Story = {
       </div>
     )
   }
-};
+}
 
 export const Example = () => {
   const [open, setOpen] = useState(false)
@@ -43,32 +46,30 @@ export const Example = () => {
   const [closeOnBackdrop, setCloseOnBackdrop] = useState(true)
   const toggle = () => setOpen(prev => !prev)
 
-  const isActive = (place: 'center' | 'bottom' | 'top') => place === position ? 'primary' : 'outline'
+  const isActive = (place: 'center' | 'bottom' | 'top') => (place === position ? 'primary' : 'outline')
 
   return (
-    <div style={{display: 'flex', gap: 12, flexDirection: 'column', flex: '0 0 auto'}}>
-      <div style={{display: 'flex', gap: 12}}>
-        <Button type={isActive('top')} onClick={() => setPlacement('top')} size='s'>top</Button>
-        <Button type={isActive('center')} onClick={() => setPlacement('center')} size='s'>center</Button>
-        <Button type={isActive('bottom')} onClick={() => setPlacement('bottom')} size='s'>bottom</Button>
+    <div style={{ display: 'flex', gap: 12, flexDirection: 'column', flex: '0 0 auto' }}>
+      <div style={{ display: 'flex', gap: 12 }}>
+        <Button type={isActive('top')} onClick={() => setPlacement('top')} size="s">
+          top
+        </Button>
+        <Button type={isActive('center')} onClick={() => setPlacement('center')} size="s">
+          center
+        </Button>
+        <Button type={isActive('bottom')} onClick={() => setPlacement('bottom')} size="s">
+          bottom
+        </Button>
 
-        <Checkbox label='Closable' checked={closable} onChange={(_, {checked}) => setClosable(checked)}/>
-        <Checkbox label='Close On Backdrop' checked={closeOnBackdrop} onChange={(_, {checked}) => setCloseOnBackdrop(checked)}/>
+        <Checkbox label="Closable" checked={closable} onChange={(_, { checked }) => setClosable(checked)} />
+        <Checkbox label="Close On Backdrop" checked={closeOnBackdrop} onChange={(_, { checked }) => setCloseOnBackdrop(checked)} />
       </div>
 
       <div>
         <Button onClick={toggle}>Открыть</Button>
       </div>
 
-
-      <Modal
-        title={'Example Title'}
-        position={position}
-        open={open}
-        onClose={toggle}
-        closable={closable}
-        closeOnBackdrop={closeOnBackdrop}
-      >
+      <Modal title={'Example Title'} position={position} open={open} onClose={toggle} closable={closable} closeOnBackdrop={closeOnBackdrop}>
         <div>some contents...</div>
         <div>some contents...</div>
         <div>some contents...</div>
@@ -80,5 +81,4 @@ export const Example = () => {
       </Modal>
     </div>
   )
-};
-
+}

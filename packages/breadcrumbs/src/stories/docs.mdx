@@ -1,30 +1,22 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Breadcrumbs} from '../Component';
-import packageJson from '../../package.json';
-import Description from './description.mdx';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Breadcrumbs } from '../Component'
+import packageJson from '../../package.json'
+import Description from './description.mdx'
 import CSS from './css.mdx'
 import * as BreadcrumbsStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Breadcrumbs' component={Breadcrumbs} id='Breadcrumbs'/>
+<Meta title="Components/Breadcrumbs" component={Breadcrumbs} id="Breadcrumbs" />
 
-<ComponentHeader
-    name='Breadcrumbs'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-breadcrumbs'
->
-    Компонент хлебных крошек для навигации
+<ComponentHeader name="Breadcrumbs" version={packageJson.version} package="@savosya/savosya-myuikit-breadcrumbs">
+  Компонент хлебных крошек для навигации
 </ComponentHeader>
 
 ```jsx
-import { Breadcrumbs } from '@savosya/savosya-myuikit-root';
-import { Breadcrumbs } from '@savosya/savosya-myuikit-badge';
+import { Breadcrumbs } from '@savosya/savosya-myuikit-root'
+import { Breadcrumbs } from '@savosya/savosya-myuikit-badge'
 ```
 
-<Canvas of={BreadcrumbsStories.Sandbox} meta={BreadcrumbsStories}/>
+<Canvas of={BreadcrumbsStories.Sandbox} meta={BreadcrumbsStories} />
 
-<Tabs
-    docs={<Description/>}
-    props={<ArgsTable of={Breadcrumbs}/>}
-    css={<CSS/>}
-/>
+<Tabs docs={<Description />} props={<ArgsTable of={Breadcrumbs} />} css={<CSS />} />

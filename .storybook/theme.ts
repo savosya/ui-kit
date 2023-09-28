@@ -1,9 +1,8 @@
-import {create} from "@storybook/theming/create";
-import packageJson from "../packages/root/package.json";
-
+import { create } from '@storybook/theming/create'
+import packageJson from '../packages/root/package.json'
 
 // preview bg color: #f1f1f1
-export const storybookTheme =  create({
+export const storybookTheme = create({
   base: 'light',
   colorPrimary: '#29313A',
   colorSecondary: '#1D3F88',
@@ -18,5 +17,5 @@ export const storybookTheme =  create({
   inputBorder: '#DBDEE1',
   inputTextColor: '#29313A',
   brandTitle: `eub-kit@${packageJson.version}`,
-  brandImage: './images/eub-logo-full.svg',
-});
+  brandImage: './images/eub-logo-full.svg'
+})

@@ -4,7 +4,7 @@
   --accordion-divider-color: var(--bg-primary);
   --accordion-color_extra: #414141;
 
-  --accrodion-bg: #FFF;
+  --accrodion-bg: #fff;
   --accrodion-bg_disabled: var(--bg-info);
 }
 
@@ -19,7 +19,7 @@
   transition: 0.3s;
 
   &:hover {
-    box-shadow: -1px 3px 8px 0px rgba(67, 69, 72, 0.20);
+    box-shadow: -1px 3px 8px 0px rgba(67, 69, 72, 0.2);
   }
 
   &.disabled {

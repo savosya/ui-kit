@@ -1,28 +1,21 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Modal} from '../Component';
-import packageJson from '../../package.json';
-import Description from './description.mdx';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Modal } from '../Component'
+import packageJson from '../../package.json'
+import Description from './description.mdx'
 import * as ModalStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Modal' component={Modal} id='Modal'/>
+<Meta title="Components/Modal" component={Modal} id="Modal" />
 
-<ComponentHeader
-    name='Modal'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-modal'
->
-    Модальное окно
+<ComponentHeader name="Modal" version={packageJson.version} package="@savosya/savosya-myuikit-modal">
+  Модальное окно
 </ComponentHeader>
 
 ```jsx
-import { Modal } from '@savosya/savosya-myuikit-root';
-import { Modal } from '@savosya/savosya-myuikit-modal';
+import { Modal } from '@savosya/savosya-myuikit-root'
+import { Modal } from '@savosya/savosya-myuikit-modal'
 ```
 
-<Canvas of={ModalStories.Sandbox} meta={ModalStories}/>
+<Canvas of={ModalStories.Sandbox} meta={ModalStories} />
 
-<Tabs
-    docs={<Description/>}
-    props={<ArgsTable of={Modal}/>}
-/>
+<Tabs docs={<Description />} props={<ArgsTable of={Modal} />} />

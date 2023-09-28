@@ -1,23 +1,22 @@
-import React from 'react';
-import type {DrawerProps as RCDrawerProps} from 'rc-drawer';
+import React from 'react'
+import type { DrawerProps as RCDrawerProps } from 'rc-drawer'
 import clsx from 'clsx'
-import {CloseIcon} from "../close-icon";
+import { CloseIcon } from '../close-icon'
 import cls from './panel.module.scss'
 
-
 export interface DrawerPanelProps {
-  title?: React.ReactNode;
-  footer?: React.ReactNode;
-  closable?: boolean;
-  closeIcon?: React.ReactNode;
-  onClose?: RCDrawerProps['onClose'];
+  title?: React.ReactNode
+  footer?: React.ReactNode
+  closable?: boolean
+  closeIcon?: React.ReactNode
+  onClose?: RCDrawerProps['onClose']
   background?: 'white' | 'gray'
 
-  drawerStyle?: React.CSSProperties;
-  headerStyle?: React.CSSProperties;
-  bodyStyle?: React.CSSProperties;
-  footerStyle?: React.CSSProperties;
-  children?: React.ReactNode;
+  drawerStyle?: React.CSSProperties
+  headerStyle?: React.CSSProperties
+  bodyStyle?: React.CSSProperties
+  footerStyle?: React.CSSProperties
+  children?: React.ReactNode
   classes?: {
     root?: string
     header?: string
@@ -28,25 +27,22 @@ export interface DrawerPanelProps {
   }
 }
 
-export const DrawerPanel = (
-  {
-    title,
-    footer,
-    background = 'white',
-    closeIcon = <CloseIcon/>,
-    closable = true,
-    onClose,
-    headerStyle,
-    drawerStyle,
-    bodyStyle,
-    footerStyle,
-    children,
-    classes
-  }: DrawerPanelProps) => {
-
-
+export const DrawerPanel = ({
+  title,
+  footer,
+  background = 'white',
+  closeIcon = <CloseIcon />,
+  closable = true,
+  onClose,
+  headerStyle,
+  drawerStyle,
+  bodyStyle,
+  footerStyle,
+  children,
+  classes
+}: DrawerPanelProps) => {
   return (
-    <div className={clsx(cls.container, classes?.root, {[cls.gray]: background === 'gray'})} style={drawerStyle}>
+    <div className={clsx(cls.container, classes?.root, { [cls.gray]: background === 'gray' })} style={drawerStyle}>
       {(title || closable) && (
         <div className={clsx(cls.header, classes?.header)} style={headerStyle}>
           <div className={clsx(cls.title, classes?.title)}>{title}</div>
@@ -69,5 +65,5 @@ export const DrawerPanel = (
         </div>
       )}
     </div>
-  );
-};
+  )
+}

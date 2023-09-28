@@ -19,12 +19,10 @@
   max-width: calc(100% - 28px);
 }
 
-
-
 /** ANIMATIONS */
 .eub-select-dropdown-slide-up-enter,
 .eub-select-dropdown-slide-up-appear {
-  animation-duration: .2s;
+  animation-duration: 0.2s;
   animation-fill-mode: both;
   transform-origin: 0 0;
   opacity: 0;
@@ -32,7 +30,7 @@
   animation-play-state: paused;
 }
 .eub-select-dropdown-slide-up-leave {
-  animation-duration: .13s;
+  animation-duration: 0.13s;
   animation-fill-mode: both;
   transform-origin: 0 0;
   opacity: 1;
