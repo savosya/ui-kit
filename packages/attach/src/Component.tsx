@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
+import * as React from 'react'
+import { useEffect, useRef, useState } from 'react'
+import clsx from 'clsx'
 
-import { Loader } from '@savosya/savosya-myuikit-loader';
-import { mergeRefs } from '@savosya/savosya-myuikit-utils';
-import { useFocus } from '@savosya/savosya-myuikit-hooks';
+import { Loader } from '@savosya/savosya-myuikit-loader'
+import { mergeRefs } from '@savosya/savosya-myuikit-utils'
+import { useFocus } from '@savosya/savosya-myuikit-hooks'
 
-import { RightChevroneIcon, FileIcon, CloseIcon } from './components';
-import { AttachProps } from './attach.types';
-import cls from './index.module.scss';
+import { RightChevroneIcon, FileIcon, CloseIcon } from './components'
+import { AttachProps } from './attach.types'
+import cls from './index.module.scss'
 
 export const Attach = React.forwardRef<HTMLInputElement, AttachProps>(
   (
@@ -34,54 +34,54 @@ export const Attach = React.forwardRef<HTMLInputElement, AttachProps>(
     },
     ref
   ) => {
-    const uncontrolled = value === undefined;
+    const uncontrolled = value === undefined
 
-    const inputRef = useRef<HTMLInputElement>(null);
-    const labelRef = useRef<HTMLLabelElement>(null);
-    const [focused] = useFocus(labelRef, 'keyboard');
+    const inputRef = useRef<HTMLInputElement>(null)
+    const labelRef = useRef<HTMLLabelElement>(null)
+    const [focused] = useFocus(labelRef, 'keyboard')
 
-    const [fileState, setFile] = useState(value || null);
-    let descriptionText = changeDescriptionForFilename ? fileState?.name || description : description;
+    const [fileState, setFile] = useState(value || null)
+    let descriptionText = changeDescriptionForFilename ? fileState?.name || description : description
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const file = event.target.files?.[0] ? event.target.files[0] : null;
+      const file = event.target.files?.[0] ? event.target.files[0] : null
 
       if (onChange) {
-        onChange(event, file);
+        onChange(event, file)
       }
 
       if (uncontrolled) {
-        setFile(file);
+        setFile(file)
       }
 
       if (inputRef.current) {
-        inputRef.current.value = '';
+        inputRef.current.value = ''
       }
-    };
+    }
 
     const handleClearClick = (e: React.MouseEvent<HTMLElement>) => {
-      e.stopPropagation();
+      e.stopPropagation()
       if (uncontrolled) {
-        setFile(null);
+        setFile(null)
       }
 
       if (onClear) {
-        onClear(e);
+        onClear(e)
       }
-    };
+    }
 
     const handleOpenClick = () => {
-      if (loading || disabled) return;
+      if (loading || disabled) return
       if (labelRef.current) {
-        labelRef.current.click();
+        labelRef.current.click()
       }
-    };
+    }
 
     useEffect(() => {
       if (!uncontrolled) {
-        setFile(value || null);
+        setFile(value || null)
       }
-    }, [uncontrolled, value]);
+    }, [uncontrolled, value])
 
     return (
       <div
@@ -128,6 +128,6 @@ export const Attach = React.forwardRef<HTMLInputElement, AttachProps>(
           {loading ? <Loader size={24} /> : fileState ? <CloseIcon onClick={handleClearClick} /> : <RightChevroneIcon />}
         </div>
       </div>
-    );
+    )
   }
-);
+)

@@ -1,2 +1,2 @@
-export * from './generateRandomHash';
-export * from './mergeRefs';
+export * from './generateRandomHash'
+export * from './mergeRefs'

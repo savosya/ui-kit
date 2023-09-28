@@ -1,2 +1,2 @@
-export { Loader } from './Component';
-export type { LoaderProps } from './loader.types';
+export { Loader } from './Component'
+export type { LoaderProps } from './loader.types'

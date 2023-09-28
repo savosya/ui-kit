@@ -1,20 +1,20 @@
-import * as React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import { Radio } from '../Component';
+import * as React from 'react'
+import { Meta, StoryObj } from '@storybook/react'
+import { Radio } from '../Component'
 
 const meta: Meta<typeof Radio> = {
   title: 'Components/Radio',
   component: Radio
-};
+}
 
-type Story = StoryObj<typeof Radio>;
-export default meta;
+type Story = StoryObj<typeof Radio>
+export default meta
 
 export const Sandbox: Story = {
   args: {
     label: 'Example'
   }
-};
+}
 
 export const States: Story = {
   render: () => {
@@ -26,6 +26,6 @@ export const States: Story = {
         <Radio name="fruit" label="Арбуз" value="watermelon" checked />
         <Radio name="fruit" label="Арбуз" value="watermelon" markType="check" checked />
       </div>
-    );
+    )
   }
-};
+}

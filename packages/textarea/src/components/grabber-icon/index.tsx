@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  className?: string;
-};
+  className?: string
+}
 
 export const GrabberIcon = ({ className }: Props) => {
   return (
@@ -10,5 +10,5 @@ export const GrabberIcon = ({ className }: Props) => {
       <line x1="11.3534" y1="5.45414" x2="5.69658" y2="11.111" stroke="#848D98" />
       <line x1="10.3534" y1="0.454139" x2="0.453936" y2="10.3536" stroke="#848D98" />
     </svg>
-  );
-};
+  )
+}

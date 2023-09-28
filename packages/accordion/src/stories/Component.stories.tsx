@@ -1,17 +1,17 @@
-import * as React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react'
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Accordion } from '../Component';
-import { Button } from '../../../button/src';
-import { Loader } from '../../../loader/src';
+import { Accordion } from '../Component'
+import { Button } from '../../../button/src'
+import { Loader } from '../../../loader/src'
 
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',
   component: Accordion
-};
+}
 
-type Story = StoryObj<typeof Accordion>;
-export default meta;
+type Story = StoryObj<typeof Accordion>
+export default meta
 
 /** description */
 export const Sandbox: Story = {
@@ -27,11 +27,11 @@ export const Sandbox: Story = {
       </div>
     )
   }
-};
+}
 
 export const Controlled: Story = {
   render: () => {
-    const [expanded, setExpanded] = React.useState(false);
+    const [expanded, setExpanded] = React.useState(false)
 
     return (
       <div style={{ display: 'flex', gap: 12, alignItems: 'start' }}>
@@ -42,9 +42,9 @@ export const Controlled: Story = {
           Федерации
         </Accordion>
       </div>
-    );
+    )
   }
-};
+}
 
 export const Dynamic: Story = {
   render: () => {
@@ -54,24 +54,24 @@ export const Dynamic: Story = {
         <div>Content...</div>
         <div>Content...</div>
       </div>
-    );
+    )
 
-    const [expanded, setExpanded] = React.useState(false);
-    const [loaded, setLoaded] = React.useState(false);
+    const [expanded, setExpanded] = React.useState(false)
+    const [loaded, setLoaded] = React.useState(false)
 
     const handleToggle = () => {
       if (!expanded) {
-        setTimeout(() => setLoaded(true), 2000);
+        setTimeout(() => setLoaded(true), 2000)
       }
 
-      setExpanded(!expanded);
-    };
+      setExpanded(!expanded)
+    }
 
     const handleTransitionEnd = visible => {
       if (visible) {
-        setTimeout(() => setLoaded(false), 500);
+        setTimeout(() => setLoaded(false), 500)
       }
-    };
+    }
 
     return (
       <div style={{ display: 'flex', gap: 12, alignItems: 'start' }}>
@@ -81,6 +81,6 @@ export const Dynamic: Story = {
           <div>{loaded ? <Content /> : <Loader />}</div>
         </Accordion>
       </div>
-    );
+    )
   }
-};
+}

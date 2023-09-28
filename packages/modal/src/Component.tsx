@@ -1,12 +1,12 @@
-import * as React from 'react';
-import RcDialog from 'rc-dialog';
+import * as React from 'react'
+import RcDialog from 'rc-dialog'
 
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import { CloseIcon } from './components';
-import { ModalProps } from './modal.types';
-import cls from './index.module.scss';
-import './assets/modal.css';
+import { CloseIcon } from './components'
+import { ModalProps } from './modal.types'
+import cls from './index.module.scss'
+import './assets/modal.css'
 
 export const Modal = ({
   children,
@@ -70,5 +70,5 @@ export const Modal = ({
     >
       {children}
     </RcDialog>
-  );
-};
+  )
+}

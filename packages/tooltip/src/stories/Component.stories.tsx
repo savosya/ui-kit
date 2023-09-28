@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { Tooltip } from '../Component';
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react'
+import { Tooltip } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from '../../../button/src/Component';
+import { Button } from '../../../button/src/Component'
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Components/Tooltip',
   component: Tooltip
-};
+}
 
-type Story = StoryObj<typeof Tooltip>;
-export default meta;
+type Story = StoryObj<typeof Tooltip>
+export default meta
 
 export const Sandbox: Story = {
   args: {
@@ -19,13 +19,13 @@ export const Sandbox: Story = {
     children: 'Tooltip Content',
     placement: 'right'
   }
-};
+}
 
 const canvasStyle: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: '24px'
-};
+}
 
 export const Examples = () => (
   <div style={canvasStyle}>
@@ -51,4 +51,4 @@ export const Examples = () => (
       Im tooltip with actions
     </Tooltip>
   </div>
-);
+)

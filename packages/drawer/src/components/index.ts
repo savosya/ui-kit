@@ -1,2 +1,2 @@
-export * from './close-icon';
-export * from './drawer-panel';
+export * from './close-icon'
+export * from './drawer-panel'

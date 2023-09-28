@@ -1,10 +1,10 @@
-import React from 'react';
-import cls from './close.module.scss';
+import React from 'react'
+import cls from './close.module.scss'
 
 type Props = {
-  size?: number;
-  onClick?: () => void;
-};
+  size?: number
+  onClick?: () => void
+}
 
 export const CloseIcon = ({ size = 20, onClick }: Props) => {
   return (
@@ -14,5 +14,5 @@ export const CloseIcon = ({ size = 20, onClick }: Props) => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}

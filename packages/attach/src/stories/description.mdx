@@ -4,27 +4,27 @@
 
 ```jsx live
 render(() => {
-  const [response, setResponse] = React.useState(null);
-  const [files, setFiles] = React.useState([]);
+  const [response, setResponse] = React.useState(null)
+  const [files, setFiles] = React.useState([])
 
   const handleChange = (event, payload) => {
-    setFiles([...files, ...payload.files]);
-  };
+    setFiles([...files, ...payload.files])
+  }
 
   const handleSubmit = () => {
-    const formData = new FormData();
+    const formData = new FormData()
 
     files.forEach((file, i) => {
-      formData.append(`file${i}`, file);
-    });
+      formData.append(`file${i}`, file)
+    })
 
     fetch('https://example.ru/post', {
       method: 'POST',
       body: formData
     })
       .then(r => r.json())
-      .then(r => setResponse(r));
-  };
+      .then(r => setResponse(r))
+  }
 
   return (
     <div>
@@ -33,6 +33,6 @@ render(() => {
         Отправить
       </Button>
     </div>
-  );
-});
+  )
+})
 ```

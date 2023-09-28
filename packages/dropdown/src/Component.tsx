@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { useMemo } from 'react';
-import RcDropdown from 'rc-dropdown';
+import * as React from 'react'
+import { useMemo } from 'react'
+import RcDropdown from 'rc-dropdown'
 
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import type { DropdownProps } from './dropdown.types';
-import cls from './index.module.scss';
-import './assets/dropdown.css';
+import type { DropdownProps } from './dropdown.types'
+import cls from './index.module.scss'
+import './assets/dropdown.css'
 
 export const Dropdown = ({
   children,
@@ -26,9 +26,9 @@ export const Dropdown = ({
   classes = {},
   style
 }: DropdownProps) => {
-  const { ellipsis = true, wrap = false, divider = false } = optionsSettings;
+  const { ellipsis = true, wrap = false, divider = false } = optionsSettings
 
-  const { overlay, open: openCls, option: optionCls, menu: menuCls, wrapper } = classes;
+  const { overlay, open: openCls, option: optionCls, menu: menuCls, wrapper } = classes
 
   const menu = useMemo(
     () => (
@@ -50,7 +50,7 @@ export const Dropdown = ({
       </div>
     ),
     [options, onSelect, menuCls, optionCls]
-  );
+  )
 
   return (
     <RcDropdown
@@ -72,5 +72,5 @@ export const Dropdown = ({
     >
       <span className={clsx(cls.childWrapper, wrapper)}>{children}</span>
     </RcDropdown>
-  );
-};
+  )
+}

@@ -1,12 +1,12 @@
-import React from 'react';
-import cls from './minus.module.scss';
-import clsx from 'clsx';
+import React from 'react'
+import cls from './minus.module.scss'
+import clsx from 'clsx'
 
 type Props = {
-  onClick?: () => void;
-  className?: string;
-  disabled?: boolean;
-};
+  onClick?: () => void
+  className?: string
+  disabled?: boolean
+}
 export const MinusIcon = ({ onClick, className, disabled }: Props) => {
   return (
     <svg
@@ -20,5 +20,5 @@ export const MinusIcon = ({ onClick, className, disabled }: Props) => {
     >
       <rect x="9" y="14.832" width="14" height="2.33333" rx="1.16667" fill="currentColor" />
     </svg>
-  );
-};
+  )
+}

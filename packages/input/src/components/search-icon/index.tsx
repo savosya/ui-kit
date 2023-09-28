@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  size?: number;
-  className?: string;
-};
+  size?: number
+  className?: string
+}
 // 848D98
 export const SearchIcon = ({ className, size = 20 }: Props) => {
   return (
@@ -11,5 +11,5 @@ export const SearchIcon = ({ className, size = 20 }: Props) => {
       <circle cx="10.225" cy="10.1" r="7.1" stroke="currentColor" strokeWidth="2.02857" />
       <path d="M15.2964 15.1714L20.875 20.75" stroke="currentColor" strokeWidth="2.02857" strokeLinecap="round" />
     </svg>
-  );
-};
+  )
+}

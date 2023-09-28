@@ -1,19 +1,19 @@
-import * as React from 'react';
-import { useRef } from 'react';
-import clsx from 'clsx';
+import * as React from 'react'
+import { useRef } from 'react'
+import clsx from 'clsx'
 
-import { useFocus } from '@savosya/savosya-myuikit-hooks';
-import { mergeRefs } from '@savosya/savosya-myuikit-utils';
+import { useFocus } from '@savosya/savosya-myuikit-hooks'
+import { mergeRefs } from '@savosya/savosya-myuikit-utils'
 
-import { GrabberIcon } from './components';
-import { TextareaProps } from './textarea.types';
-import cls from './index.module.scss';
+import { GrabberIcon } from './components'
+import { TextareaProps } from './textarea.types'
+import cls from './index.module.scss'
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
-  const { className, label, disabled, error, errorMsg, hint, classes, resizable, ...rest } = props;
+  const { className, label, disabled, error, errorMsg, hint, classes, resizable, ...rest } = props
 
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [focus] = useFocus(textareaRef, 'keyboard');
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const [focus] = useFocus(textareaRef, 'keyboard')
 
   return (
     <div className={clsx(cls.wrapper, classes?.wrapper)}>
@@ -56,5 +56,5 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
         </div>
       )}
     </div>
-  );
-});
+  )
+})

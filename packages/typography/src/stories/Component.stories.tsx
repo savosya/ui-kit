@@ -1,23 +1,23 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { Typography, TextProps } from '../index';
+import * as React from 'react'
+import { useState } from 'react'
+import { Typography, TextProps } from '../index'
 
-import { RadioGroup } from '../../../radio-group/src';
+import { RadioGroup } from '../../../radio-group/src'
 
 export default {
   title: 'Components/Typography',
   component: Typography
-};
+}
 
 const canvasStyles = {
   display: 'flex',
   gap: '64px',
   padding: 16
-};
+}
 
 export const Sandbox = {
   render: () => {
-    const [weight, setWeight] = useState<TextProps['weight']>('regular');
+    const [weight, setWeight] = useState<TextProps['weight']>('regular')
 
     return (
       <>
@@ -94,6 +94,6 @@ export const Sandbox = {
           </div>
         </div>
       </>
-    );
+    )
   }
-};
+}

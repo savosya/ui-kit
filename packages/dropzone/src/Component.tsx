@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { useCallback, useRef, useState } from 'react';
+import * as React from 'react'
+import { useCallback, useRef, useState } from 'react'
 
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import { Overlay as DefaultOverlay } from './components';
-import { DropzoneProps } from './dropzone.types';
-import { preventAndStopEvent } from './dropzone.utils';
-import cls from './index.module.scss';
+import { Overlay as DefaultOverlay } from './components'
+import { DropzoneProps } from './dropzone.types'
+import { preventAndStopEvent } from './dropzone.utils'
+import cls from './index.module.scss'
 
 export const Dropzone = ({
   className,
@@ -21,82 +21,82 @@ export const Dropzone = ({
   block = false,
   disabled
 }: DropzoneProps) => {
-  const [dragOver, setDragOver] = useState(false);
+  const [dragOver, setDragOver] = useState(false)
 
   /**
    * При ховере дочерних элементов срабатывает dragLeave, из-за чего пропадает оверлей
    * https://stackoverflow.com/a/21002544
    */
-  const dragCounter = useRef(0);
+  const dragCounter = useRef(0)
 
   const handleDragOver = useCallback(
     (event: React.DragEvent<HTMLElement>) => {
-      preventAndStopEvent(event);
+      preventAndStopEvent(event)
 
-      if (disabled) return;
+      if (disabled) return
 
       if (onDragOver) {
-        onDragOver(event);
+        onDragOver(event)
       }
     },
     [onDragOver, disabled]
-  );
+  )
 
   const handleDragEnter = useCallback(
     (event: React.DragEvent<HTMLElement>) => {
-      preventAndStopEvent(event);
+      preventAndStopEvent(event)
 
-      if (disabled) return;
+      if (disabled) return
 
-      dragCounter.current += 1;
+      dragCounter.current += 1
 
-      setDragOver(true);
+      setDragOver(true)
 
       if (onDragEnter) {
-        onDragEnter(event);
+        onDragEnter(event)
       }
     },
     [disabled, onDragEnter]
-  );
+  )
 
   const handleDragLeave = useCallback(
     (event: React.DragEvent<HTMLElement>) => {
-      preventAndStopEvent(event);
+      preventAndStopEvent(event)
 
-      if (disabled) return;
+      if (disabled) return
 
-      dragCounter.current -= 1;
+      dragCounter.current -= 1
 
-      if (dragCounter.current > 0) return;
+      if (dragCounter.current > 0) return
 
-      setDragOver(false);
+      setDragOver(false)
 
       if (onDragLeave) {
-        onDragLeave(event);
+        onDragLeave(event)
       }
     },
     [disabled, onDragLeave]
-  );
+  )
 
   const handleDrop = useCallback(
     (event: React.DragEvent<HTMLElement>) => {
-      preventAndStopEvent(event);
+      preventAndStopEvent(event)
 
-      if (disabled) return;
+      if (disabled) return
 
-      setDragOver(false);
-      dragCounter.current = 0;
+      setDragOver(false)
+      dragCounter.current = 0
 
       if (event.dataTransfer.files && event.dataTransfer.files.length > 0) {
         if (onDrop) {
-          onDrop(event.dataTransfer.files);
+          onDrop(event.dataTransfer.files)
         }
 
-        event.dataTransfer.clearData();
+        event.dataTransfer.clearData()
       }
     },
     [disabled, onDrop]
-  );
+  )
 
   return (
     <div
@@ -114,5 +114,5 @@ export const Dropzone = ({
       {children}
       {Overlay && <Overlay text={text} visible={Boolean(dragOver)} />}
     </div>
-  );
-};
+  )
+}

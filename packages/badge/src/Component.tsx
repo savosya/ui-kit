@@ -1,8 +1,8 @@
-import * as React from 'react';
-import clsx from 'clsx';
-import { Indicator } from '@savosya/savosya-myuikit-indicator';
-import { BadgeProps } from './badge.types';
-import cls from './index.module.scss';
+import * as React from 'react'
+import clsx from 'clsx'
+import { Indicator } from '@savosya/savosya-myuikit-indicator'
+import { BadgeProps } from './badge.types'
+import cls from './index.module.scss'
 
 export function Badge({ color, type = 'primary', size = 'm', number, children, classes = {}, className, ...rest }: BadgeProps) {
   return (
@@ -11,5 +11,5 @@ export function Badge({ color, type = 'primary', size = 'm', number, children, c
 
       <span className={classes.text}>{children}</span>
     </div>
-  );
+  )
 }

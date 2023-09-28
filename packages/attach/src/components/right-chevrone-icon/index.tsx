@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export const RightChevroneIcon = () => {
   return (
@@ -8,5 +8,5 @@ export const RightChevroneIcon = () => {
         fill="#B8BEC6"
       />
     </svg>
-  );
-};
+  )
+}

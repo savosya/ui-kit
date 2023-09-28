@@ -1,7 +1,7 @@
-import * as React from 'react';
-import clsx from 'clsx';
-import cls from './index.module.scss';
-import { DividerProps } from './divider.types';
+import * as React from 'react'
+import clsx from 'clsx'
+import cls from './index.module.scss'
+import { DividerProps } from './divider.types'
 
 export const Divider = ({ className, noGap, height, margin, style, color }: DividerProps) => (
   <div
@@ -13,4 +13,4 @@ export const Divider = ({ className, noGap, height, margin, style, color }: Divi
       backgroundColor: color ? color : undefined
     }}
   />
-);
+)

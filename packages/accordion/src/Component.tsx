@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import clsx from 'clsx';
+import * as React from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import clsx from 'clsx'
 
-import { LockIcon, ChevroneIcon as DefaultChevroneIcon } from './components';
-import { AccordionProps } from './accordion.types';
-import cls from './index.module.scss';
+import { LockIcon, ChevroneIcon as DefaultChevroneIcon } from './components'
+import { AccordionProps } from './accordion.types'
+import cls from './index.module.scss'
 
 export const Accordion = ({
   children,
@@ -19,29 +19,29 @@ export const Accordion = ({
   style,
   classes
 }: AccordionProps) => {
-  const isControlled = typeof open === 'boolean';
+  const isControlled = typeof open === 'boolean'
 
-  const HeaderIcon = useMemo(() => (disabled ? <LockIcon /> : chevroneIcon ? chevroneIcon : <DefaultChevroneIcon />), [disabled, chevroneIcon]);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number | null>(null);
+  const HeaderIcon = useMemo(() => (disabled ? <LockIcon /> : chevroneIcon ? chevroneIcon : <DefaultChevroneIcon />), [disabled, chevroneIcon])
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState<number | null>(null)
 
-  const [internalOpen, setOpen] = useState(open || defaultOpen);
+  const [internalOpen, setOpen] = useState(open || defaultOpen)
   const toggleOpen = useCallback(() => {
     setOpen(prev => {
-      return isControlled ? prev : !prev;
-    });
-  }, [onVisibleChange]);
+      return isControlled ? prev : !prev
+    })
+  }, [onVisibleChange])
 
   useEffect(() => {
-    onVisibleChange?.(!internalOpen);
-  }, [internalOpen, open]);
+    onVisibleChange?.(!internalOpen)
+  }, [internalOpen, open])
 
   useEffect(() => {
-    const contentHeight = contentRef.current?.offsetHeight || null;
-    setHeight(contentHeight);
-  }, []);
+    const contentHeight = contentRef.current?.offsetHeight || null
+    setHeight(contentHeight)
+  }, [])
 
-  const isOpen = isControlled ? open : internalOpen;
+  const isOpen = isControlled ? open : internalOpen
   return (
     <div className={clsx(cls.root, classes?.root, { [cls.disabled]: disabled })} style={style}>
       <div className={clsx(cls.header, classes?.header, { [cls.disabled]: disabled })} onClick={toggleOpen}>
@@ -66,5 +66,5 @@ export const Accordion = ({
         {children}
       </div>
     </div>
-  );
-};
+  )
+}

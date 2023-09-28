@@ -1,1 +1,1 @@
-export * from './grabber-icon';
+export * from './grabber-icon'

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  size?: number;
-  className?: string;
-};
+  size?: number
+  className?: string
+}
 
 export const CrossIcon = ({ className, size = 18 }: Props) => {
   return (
@@ -13,5 +13,5 @@ export const CrossIcon = ({ className, size = 18 }: Props) => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}

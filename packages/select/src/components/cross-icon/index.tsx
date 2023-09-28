@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  size?: number;
-  className?: string;
-  onClick?: () => void;
-};
+  size?: number
+  className?: string
+  onClick?: () => void
+}
 
 export const CrossIcon = ({ className, size = 18, onClick }: Props) => {
   return (
@@ -14,5 +14,5 @@ export const CrossIcon = ({ className, size = 18, onClick }: Props) => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}

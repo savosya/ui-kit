@@ -1,21 +1,21 @@
-import * as React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import { Dropdown } from '../Component';
+import * as React from 'react'
+import { Meta, StoryObj } from '@storybook/react'
+import { Dropdown } from '../Component'
 
-import { Button } from '../../../button/src/Component';
+import { Button } from '../../../button/src/Component'
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
   component: Dropdown
-};
+}
 
-type Story = StoryObj<typeof Dropdown>;
-export default meta;
+type Story = StoryObj<typeof Dropdown>
+export default meta
 
 const canvasStyles: React.CSSProperties = {
   display: 'flex',
   gap: 12
-};
+}
 
 const options = [
   {
@@ -35,7 +35,7 @@ const options = [
     key: 'option 4',
     label: 'Option 4'
   }
-];
+]
 
 export const Sandbox: Story = {
   render: () => {
@@ -57,7 +57,7 @@ export const Sandbox: Story = {
         key: 'option 4',
         label: 'Option 4'
       }
-    ];
+    ]
 
     return (
       <div style={canvasStyles}>
@@ -65,14 +65,14 @@ export const Sandbox: Story = {
           <Button>Menu</Button>
         </Dropdown>
       </div>
-    );
+    )
   }
-};
+}
 
 export const Examples: Story = {
   render: () => {
     function handleSelect(key: string, option: any) {
-      alert(`${key} selected\n${JSON.stringify(option, null, 2)}`);
+      alert(`${key} selected\n${JSON.stringify(option, null, 2)}`)
     }
 
     return (
@@ -112,20 +112,20 @@ export const Examples: Story = {
           </Button>
         </Dropdown>
       </div>
-    );
+    )
   }
-};
+}
 
 const placementStyle: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: 12
-};
+}
 const placementRowStyle: React.CSSProperties = {
   display: 'flex',
   gap: 12,
   justifyContent: 'space-evenly'
-};
+}
 export const Placements: Story = {
   render: () => {
     // "topLeft" | "top" | "topRight" | "bottomLeft" | "bottom" | "bottomRight"
@@ -171,9 +171,9 @@ export const Placements: Story = {
           </Dropdown>
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
 const ContextMenuStyle: React.CSSProperties = {
   height: '100px',
@@ -182,13 +182,13 @@ const ContextMenuStyle: React.CSSProperties = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
-};
+}
 export const ContextMenu: Story = {
   render: () => {
     return (
       <Dropdown options={options} trigger="contextMenu" alignPoint>
         <div style={ContextMenuStyle}>Right Click Me</div>
       </Dropdown>
-    );
+    )
   }
-};
+}

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from 'react'
 
 type Props = {
-  className?: string;
-  size?: number;
-  onClick?: () => void;
-};
+  className?: string
+  size?: number
+  onClick?: () => void
+}
 // 848D98
 export const ChevronIcon = ({ className, size = 24, onClick }: Props) => {
   return (
@@ -14,5 +14,5 @@ export const ChevronIcon = ({ className, size = 24, onClick }: Props) => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}

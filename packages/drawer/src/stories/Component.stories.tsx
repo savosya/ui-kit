@@ -1,23 +1,23 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import { Drawer } from '../Component';
+import * as React from 'react'
+import { useState } from 'react'
+import { Meta, StoryObj } from '@storybook/react'
+import { Drawer } from '../Component'
 
-import { Button } from '../../../button/src/Component';
-import { Accordion } from '../../../accordion/src/Component';
+import { Button } from '../../../button/src/Component'
+import { Accordion } from '../../../accordion/src/Component'
 
 const meta: Meta<typeof Drawer> = {
   title: 'Components/Drawer',
   component: Drawer
-};
+}
 
-type Story = StoryObj<typeof Drawer>;
-export default meta;
+type Story = StoryObj<typeof Drawer>
+export default meta
 
 export const Sandbox: Story = {
   render: () => {
-    const [open, setOpen] = useState(false);
-    const toggle = () => setOpen(prev => !prev);
+    const [open, setOpen] = useState(false)
+    const toggle = () => setOpen(prev => !prev)
 
     return (
       <div>
@@ -29,14 +29,14 @@ export const Sandbox: Story = {
           Drawer content
         </Drawer>
       </div>
-    );
+    )
   }
-};
+}
 
 export const Custom: Story = {
   render: () => {
-    const [open, setOpen] = useState(false);
-    const toggle = () => setOpen(prev => !prev);
+    const [open, setOpen] = useState(false)
+    const toggle = () => setOpen(prev => !prev)
 
     return (
       <div>
@@ -70,6 +70,6 @@ export const Custom: Story = {
           </Accordion>
         </Drawer>
       </div>
-    );
+    )
   }
-};
+}

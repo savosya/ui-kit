@@ -1,14 +1,14 @@
-import * as React from 'react';
-import RcDrawer from 'rc-drawer';
+import * as React from 'react'
+import RcDrawer from 'rc-drawer'
 
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import { DrawerPanel } from './components';
-import { DrawerProps } from './drawer.types';
-import cls from './index.module.scss';
-import './assets/drawer.css';
-import motionProps from './assets/motion';
-import { useState } from 'react';
+import { DrawerPanel } from './components'
+import { DrawerProps } from './drawer.types'
+import cls from './index.module.scss'
+import './assets/drawer.css'
+import motionProps from './assets/motion'
+import { useState } from 'react'
 
 export const Drawer = ({
   children,
@@ -68,5 +68,5 @@ export const Drawer = ({
         {children}
       </DrawerPanel>
     </RcDrawer>
-  );
-};
+  )
+}

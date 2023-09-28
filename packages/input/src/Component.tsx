@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { useRef } from 'react';
+import * as React from 'react'
+import { useRef } from 'react'
 
-import clsx from 'clsx';
+import clsx from 'clsx'
 
-import { Tooltip } from '@savosya/savosya-myuikit-tooltip';
-import { useFocus } from '@savosya/savosya-myuikit-hooks';
-import { mergeRefs } from '@savosya/savosya-myuikit-utils';
+import { Tooltip } from '@savosya/savosya-myuikit-tooltip'
+import { useFocus } from '@savosya/savosya-myuikit-hooks'
+import { mergeRefs } from '@savosya/savosya-myuikit-utils'
 
-import { ExclamationMarkIcon, CrossIcon, SearchIcon, PasswordIcon } from './components';
-import { InputProps } from './input.types';
-import cls from './index.module.scss';
+import { ExclamationMarkIcon, CrossIcon, SearchIcon, PasswordIcon } from './components'
+import { InputProps } from './input.types'
+import cls from './index.module.scss'
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
@@ -38,23 +38,23 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 
     /** input rest */
     ...rest
-  } = props;
+  } = props
 
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [keyboardFocus] = useFocus(inputRef, 'keyboard');
-  const [mouseFocus] = useFocus(inputRef, 'mouse');
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [keyboardFocus] = useFocus(inputRef, 'keyboard')
+  const [mouseFocus] = useFocus(inputRef, 'mouse')
 
   const handleClean = React.useCallback(() => {
-    if (onClean) onClean();
+    if (onClean) onClean()
 
     if (inputRef.current && !rest.value) {
-      inputRef.current.value = '';
+      inputRef.current.value = ''
     }
-  }, [inputRef.current, ref]);
+  }, [inputRef.current, ref])
 
   const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    if (onChange) onChange(event);
-  }, []);
+    if (onChange) onChange(event)
+  }, [])
 
   return (
     <div className={clsx(cls.root, classes?.root, { [cls.block]: block })}>
@@ -149,5 +149,5 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         </div>
       )}
     </div>
-  );
-});
+  )
+})

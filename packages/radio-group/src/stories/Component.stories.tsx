@@ -1,27 +1,27 @@
-import * as React from 'react';
-import { RadioGroup } from '../Component';
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react'
+import { RadioGroup } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'Components/RadioGroup',
   component: RadioGroup
-};
+}
 
-type Story = StoryObj<typeof RadioGroup>;
-export default meta;
+type Story = StoryObj<typeof RadioGroup>
+export default meta
 
 export const Sandbox: Story = {
   render: () => {
-    const [value, setValue] = React.useState('watermelon');
-    const [value2, setValue2] = React.useState('apple');
+    const [value, setValue] = React.useState('watermelon')
+    const [value2, setValue2] = React.useState('apple')
 
     const onChange = (newValue: string) => {
-      setValue(newValue);
-    };
+      setValue(newValue)
+    }
 
     const onChange_2 = (newValue: string) => {
-      setValue2(newValue);
-    };
+      setValue2(newValue)
+    }
 
     return (
       <RadioGroup
@@ -34,22 +34,22 @@ export const Sandbox: Story = {
           { label: 'Груша', value: 'pear' }
         ]}
       />
-    );
+    )
   }
-};
+}
 
 export const Examples: Story = {
   render: () => {
-    const [value, setValue] = React.useState('watermelon');
-    const [value2, setValue2] = React.useState('apple');
+    const [value, setValue] = React.useState('watermelon')
+    const [value2, setValue2] = React.useState('apple')
 
     const onChange = (newValue: string) => {
-      setValue(newValue);
-    };
+      setValue(newValue)
+    }
 
     const onChange_2 = (newValue: string) => {
-      setValue2(newValue);
-    };
+      setValue2(newValue)
+    }
 
     return (
       <div>
@@ -81,6 +81,6 @@ export const Examples: Story = {
           />
         </div>
       </div>
-    );
+    )
   }
-};
+}

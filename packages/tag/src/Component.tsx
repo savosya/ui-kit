@@ -1,11 +1,11 @@
-import * as React from 'react';
-import clsx from 'clsx';
+import * as React from 'react'
+import clsx from 'clsx'
 
-import { TagProps } from './tag.types';
-import cls from './index.module.scss';
+import { TagProps } from './tag.types'
+import cls from './index.module.scss'
 
 export const Tag = (props: TagProps) => {
-  const { className, children, size = 'm', disabled, transparent, ...rest } = props;
+  const { className, children, size = 'm', disabled, transparent, ...rest } = props
 
   return (
     <span
@@ -22,5 +22,5 @@ export const Tag = (props: TagProps) => {
     >
       {children}
     </span>
-  );
-};
+  )
+}

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { useCallback, useState } from 'react';
-import { Tooltip as ReactTooltip } from 'react-tooltip';
-import clsx from 'clsx';
+import * as React from 'react'
+import { useCallback, useState } from 'react'
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+import clsx from 'clsx'
 
-import { generateRandomHash } from '@savosya/savosya-myuikit-utils';
+import { generateRandomHash } from '@savosya/savosya-myuikit-utils'
 
-import { TooltipProps } from './tooltip.types';
-import cls from './index.module.scss';
+import { TooltipProps } from './tooltip.types'
+import cls from './index.module.scss'
 
 export const Tooltip = (props: TooltipProps) => {
   const {
@@ -30,15 +30,15 @@ export const Tooltip = (props: TooltipProps) => {
     trigger = 'hover',
     className,
     classes
-  } = props;
+  } = props
 
-  const [id] = useState(`tooltip_${generateRandomHash()}`);
-  const isClickTrigger = trigger === 'click';
-  const [innerOpen, setOpen] = useState(false);
+  const [id] = useState(`tooltip_${generateRandomHash()}`)
+  const isClickTrigger = trigger === 'click'
+  const [innerOpen, setOpen] = useState(false)
   const handleToggle = useCallback(() => {
-    if (!isClickTrigger) return;
-    setOpen(prev => !prev);
-  }, [trigger]);
+    if (!isClickTrigger) return
+    setOpen(prev => !prev)
+  }, [trigger])
 
   return (
     <React.Fragment>
@@ -84,5 +84,5 @@ export const Tooltip = (props: TooltipProps) => {
         </ReactTooltip>
       ) : null}
     </React.Fragment>
-  );
-};
+  )
+}

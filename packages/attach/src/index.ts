@@ -1,2 +1,2 @@
-export { Attach } from './Component';
-export type { AttachProps } from './attach.types';
+export { Attach } from './Component'
+export type { AttachProps } from './attach.types'

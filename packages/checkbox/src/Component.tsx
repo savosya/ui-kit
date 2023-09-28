@@ -1,13 +1,13 @@
-import * as React from 'react';
-import { useRef, useState } from 'react';
-import clsx from 'clsx';
+import * as React from 'react'
+import { useRef, useState } from 'react'
+import clsx from 'clsx'
 
-import { useFocus } from '@savosya/savosya-myuikit-hooks';
-import { mergeRefs } from '@savosya/savosya-myuikit-utils';
+import { useFocus } from '@savosya/savosya-myuikit-hooks'
+import { mergeRefs } from '@savosya/savosya-myuikit-utils'
 
-import { CheckIcon } from './components';
-import { CheckboxProps } from './checkbox.types';
-import cls from './index.module.scss';
+import { CheckIcon } from './components'
+import { CheckboxProps } from './checkbox.types'
+import cls from './index.module.scss'
 
 export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
   const {
@@ -22,25 +22,25 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
     classes,
     disabled,
     ...rest
-  } = props;
-  const isControlled = typeof checked === 'boolean';
+  } = props
+  const isControlled = typeof checked === 'boolean'
 
-  const labelRef = useRef<HTMLLabelElement>(null);
-  const [focused] = useFocus(labelRef, 'keyboard');
+  const labelRef = useRef<HTMLLabelElement>(null)
+  const [focused] = useFocus(labelRef, 'keyboard')
 
-  const [innerChecked, setChecked] = useState<boolean | undefined>(checked || false);
+  const [innerChecked, setChecked] = useState<boolean | undefined>(checked || false)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (disabled) return;
+    if (disabled) return
 
     if (onChange) {
-      onChange(event, { checked: event.target.checked, name: event.target.name });
+      onChange(event, { checked: event.target.checked, name: event.target.name })
     }
 
     if (typeof checked === 'undefined') {
-      setChecked(prev => !prev);
+      setChecked(prev => !prev)
     }
-  };
+  }
 
   return (
     <label
@@ -80,5 +80,5 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
 
       <span className={clsx(cls.content, classes?.content)}>{label}</span>
     </label>
-  );
-});
+  )
+})

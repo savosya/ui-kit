@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { useCallback, useMemo, useRef, useState } from 'react';
-import RCSelect, { Option as RCOption } from 'rc-select';
-import clsx from 'clsx';
+import * as React from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
+import RCSelect, { Option as RCOption } from 'rc-select'
+import clsx from 'clsx'
 
-import { Input } from '@savosya/savosya-myuikit-input';
-import { Loader } from '@savosya/savosya-myuikit-loader';
+import { Input } from '@savosya/savosya-myuikit-input'
+import { Loader } from '@savosya/savosya-myuikit-loader'
 
-import { ChevronIcon, CheckIcon, CrossIcon } from './components';
-import { getFilteredOptions, getInputValue, getOptionsMap, showCleanIcon } from './select.utils';
-import type { InternalSelectState, PassedOption, SelectProps } from './select.types';
-import cls from './index.module.scss';
-import './assets/select.css';
+import { ChevronIcon, CheckIcon, CrossIcon } from './components'
+import { getFilteredOptions, getInputValue, getOptionsMap, showCleanIcon } from './select.utils'
+import type { InternalSelectState, PassedOption, SelectProps } from './select.types'
+import cls from './index.module.scss'
+import './assets/select.css'
 
 export const Select = (props: SelectProps) => {
   const {
@@ -40,17 +40,17 @@ export const Select = (props: SelectProps) => {
     withAnimation = true,
     optionsSettings = {},
     classes = {}
-  } = props;
+  } = props
 
-  const { ellipsis = true, wrap = undefined, divider = false } = optionsSettings;
+  const { ellipsis = true, wrap = undefined, divider = false } = optionsSettings
 
-  const { input, option, label: labelCls, dropdown, input_wrapper, root } = classes;
+  const { input, option, label: labelCls, dropdown, input_wrapper, root } = classes
 
   /** values */
-  const isControlledInput = typeof value !== 'undefined';
-  const isControlledOpen = typeof open === 'boolean';
-  const ValuesMap = useMemo(() => getOptionsMap(options), [options]);
-  const inputRef = useRef<any>(null);
+  const isControlledInput = typeof value !== 'undefined'
+  const isControlledOpen = typeof open === 'boolean'
+  const ValuesMap = useMemo(() => getOptionsMap(options), [options])
+  const inputRef = useRef<any>(null)
 
   const [internalState, setInternalState] = useState<InternalSelectState>({
     open: Boolean(open),
@@ -59,64 +59,64 @@ export const Select = (props: SelectProps) => {
     mode: 'value',
     options: options,
     search: ''
-  });
+  })
 
   /** handlers */
   const handleOpen = () => {
-    if (onOpen) onOpen();
-    if (disabled || loading) return;
+    if (onOpen) onOpen()
+    if (disabled || loading) return
     setInternalState(prev => ({
       ...prev,
       open: isControlledOpen ? prev.open : true,
       mode: showSearch ? 'search' : 'value'
-    }));
-  };
+    }))
+  }
   const handleClose = () => {
-    if (onClose) onClose();
-    if (disabled || loading) return;
+    if (onClose) onClose()
+    if (disabled || loading) return
     setInternalState(prev => ({
       ...prev,
       open: isControlledOpen ? prev.open : false,
       mode: 'value',
       search: '',
       options
-    }));
-  };
+    }))
+  }
   const handleSearch = (e: any) => {
-    const value = e.target.value || '';
-    setInternalState(prev => ({ ...prev, search: value, options: getFilteredOptions(value, options) }));
-  };
+    const value = e.target.value || ''
+    setInternalState(prev => ({ ...prev, search: value, options: getFilteredOptions(value, options) }))
+  }
 
   const handleChange = (newValue: string | string[], option: PassedOption | PassedOption[]) => {
-    if (onChange) onChange(newValue, option);
+    if (onChange) onChange(newValue, option)
     setInternalState(prev => ({
       ...prev,
       value: newValue,
       open: multiple || isControlledOpen ? prev.open : false,
       mode: showSearch && multiple ? 'search' : 'value'
-    }));
-    if (!multiple) inputRef?.current?.blur();
-  };
+    }))
+    if (!multiple) inputRef?.current?.blur()
+  }
 
   const handleClean = () => {
-    if (onClean) onClean();
-    setInternalState(prev => ({ ...prev, value: multiple ? [] : null }));
-  };
+    if (onClean) onClean()
+    setInternalState(prev => ({ ...prev, value: multiple ? [] : null }))
+  }
 
   const onChevroneClick = () => {
-    if (loading || disabled) return;
+    if (loading || disabled) return
 
     if (!internalState.open) {
-      handleOpen();
+      handleOpen()
     } else {
-      handleClose();
-      inputRef.current?.blur();
+      handleClose()
+      inputRef.current?.blur()
     }
-  };
+  }
 
   /** render */
-  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean;
-  const isOpen = isControlledOpen ? open : internalState.open;
+  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean
+  const isOpen = isControlledOpen ? open : internalState.open
   return (
     <div
       className={clsx(cls.root, root)}
@@ -196,5 +196,5 @@ export const Select = (props: SelectProps) => {
         ))}
       </RCSelect>
     </div>
-  );
-};
+  )
+}

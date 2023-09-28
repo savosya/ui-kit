@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export const FileIcon = () => {
   return (
@@ -12,5 +12,5 @@ export const FileIcon = () => {
         fill="#51819C"
       />
     </svg>
-  );
-};
+  )
+}

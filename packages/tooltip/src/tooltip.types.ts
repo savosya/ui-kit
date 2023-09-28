@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { ReactNode } from 'react';
+import * as React from 'react'
+import { ReactNode } from 'react'
 
 export type TooltipPlacement =
   | 'top'
@@ -13,35 +13,35 @@ export type TooltipPlacement =
   | 'bottom-end'
   | 'left'
   | 'left-start'
-  | 'left-end';
+  | 'left-end'
 
 export interface TooltipProps {
-  title?: ReactNode;
-  content?: ReactNode;
-  mode?: 'light' | 'dark';
-  children: ReactNode;
-  offset?: number;
-  hideDelay?: number;
-  openDelay?: number;
-  hideArrow?: boolean;
-  clickable?: boolean;
-  closeOnScroll?: boolean;
-  closeOnResize?: boolean;
-  style?: React.CSSProperties;
-  open?: boolean;
-  position?: { x: number; y: number };
-  onShow?: () => void;
-  onHide?: () => void;
-  opacity?: React.CSSProperties['opacity'];
-  float?: boolean;
-  placement?: TooltipPlacement;
-  trigger?: 'hover' | 'click';
+  title?: ReactNode
+  content?: ReactNode
+  mode?: 'light' | 'dark'
+  children: ReactNode
+  offset?: number
+  hideDelay?: number
+  openDelay?: number
+  hideArrow?: boolean
+  clickable?: boolean
+  closeOnScroll?: boolean
+  closeOnResize?: boolean
+  style?: React.CSSProperties
+  open?: boolean
+  position?: { x: number; y: number }
+  onShow?: () => void
+  onHide?: () => void
+  opacity?: React.CSSProperties['opacity']
+  float?: boolean
+  placement?: TooltipPlacement
+  trigger?: 'hover' | 'click'
   classes?: {
-    anchor?: string;
-    root?: string;
-    arrow?: string;
-    title?: string;
-    content?: string;
-  };
-  className?: string;
+    anchor?: string
+    root?: string
+    arrow?: string
+    title?: string
+    content?: string
+  }
+  className?: string
 }

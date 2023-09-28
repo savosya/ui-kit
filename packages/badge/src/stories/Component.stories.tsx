@@ -1,31 +1,31 @@
-import * as React from 'react';
-import { Badge } from '../Component';
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react'
+import { Badge } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Badge> = {
   title: 'Components/Badge',
   component: Badge
-};
+}
 
-type Story = StoryObj<typeof Badge>;
-export default meta;
+type Story = StoryObj<typeof Badge>
+export default meta
 
 export const Sandbox: Story = {
   args: {
     children: 'Бейджик',
     number: '13'
   }
-};
+}
 
 const ColStyle: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: '12px'
-};
+}
 const RowStyle: React.CSSProperties = {
   display: 'flex',
   gap: '12px'
-};
+}
 export const Examples: Story = {
   render: () => {
     return (
@@ -73,6 +73,6 @@ export const Examples: Story = {
           </Badge>
         </div>
       </div>
-    );
+    )
   }
-};
+}

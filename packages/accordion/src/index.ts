@@ -1,2 +1,2 @@
-export { Accordion } from './Component';
-export type { AccordionProps } from './accordion.types';
+export { Accordion } from './Component'
+export type { AccordionProps } from './accordion.types'

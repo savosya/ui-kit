@@ -1,20 +1,20 @@
-import * as React from 'react';
-import { Checkbox } from '../Component';
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react'
+import { Checkbox } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/Checkbox',
   component: Checkbox
-};
+}
 
-type Story = StoryObj<typeof Checkbox>;
-export default meta;
+type Story = StoryObj<typeof Checkbox>
+export default meta
 
 export const Sandbox: Story = {
   args: {
     label: 'Подтвердить согласие'
   }
-};
+}
 
 export const Sizes: Story = {
   render: () => {
@@ -32,9 +32,9 @@ export const Sizes: Story = {
           <Checkbox size="l" label={'Size L'} />
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
 // export const Hint = () => (
 //   <div>
@@ -48,6 +48,6 @@ export const Intermediate: Story = {
       <div>
         <Checkbox indeterminate label="Давай?" />
       </div>
-    );
+    )
   }
-};
+}

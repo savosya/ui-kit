@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Button } from '../Component';
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react'
+import { Button } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
 const SampleIcon = () => {
   return (
@@ -10,27 +10,27 @@ const SampleIcon = () => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button
-};
+}
 
-type Story = StoryObj<typeof Button>;
-export default meta;
+type Story = StoryObj<typeof Button>
+export default meta
 
 export const Sandbox: Story = {
   args: {
     children: 'Кнопка'
   }
-};
+}
 
 const RowStyles: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   gap: 8
-};
+}
 
 export const Primary: Story = {
   render: () => {
@@ -70,9 +70,9 @@ export const Primary: Story = {
           </Button>
         </div>
       </div>
-    );
+    )
   }
-};
+}
 export const Outline: Story = {
   render: () => {
     return (
@@ -111,9 +111,9 @@ export const Outline: Story = {
           </Button>
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
 export const Ghost: Story = {
   render: () => {
@@ -153,9 +153,9 @@ export const Ghost: Story = {
           </Button>
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
 export const Link: Story = {
   render: () => {
@@ -178,6 +178,6 @@ export const Link: Story = {
           </Button>
         </div>
       </div>
-    );
+    )
   }
-};
+}

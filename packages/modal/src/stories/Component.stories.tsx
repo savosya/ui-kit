@@ -1,23 +1,23 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import { Modal } from '../Component';
+import * as React from 'react'
+import { useState } from 'react'
+import { Meta, StoryObj } from '@storybook/react'
+import { Modal } from '../Component'
 
-import { Button } from '../../../button/src/Component';
-import { Checkbox } from '../../../checkbox/src/Component';
+import { Button } from '../../../button/src/Component'
+import { Checkbox } from '../../../checkbox/src/Component'
 
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   component: Modal
-};
+}
 
-type Story = StoryObj<typeof Modal>;
-export default meta;
+type Story = StoryObj<typeof Modal>
+export default meta
 
 export const Sandbox: Story = {
   render: () => {
-    const [open, setOpen] = useState(false);
-    const toggle = () => setOpen(prev => !prev);
+    const [open, setOpen] = useState(false)
+    const toggle = () => setOpen(prev => !prev)
 
     return (
       <div>
@@ -35,18 +35,18 @@ export const Sandbox: Story = {
           <div>Modal Content</div>
         </Modal>
       </div>
-    );
+    )
   }
-};
+}
 
 export const Example = () => {
-  const [open, setOpen] = useState(false);
-  const [position, setPlacement] = useState<'center' | 'bottom' | 'top'>('center');
-  const [closable, setClosable] = useState(true);
-  const [closeOnBackdrop, setCloseOnBackdrop] = useState(true);
-  const toggle = () => setOpen(prev => !prev);
+  const [open, setOpen] = useState(false)
+  const [position, setPlacement] = useState<'center' | 'bottom' | 'top'>('center')
+  const [closable, setClosable] = useState(true)
+  const [closeOnBackdrop, setCloseOnBackdrop] = useState(true)
+  const toggle = () => setOpen(prev => !prev)
 
-  const isActive = (place: 'center' | 'bottom' | 'top') => (place === position ? 'primary' : 'outline');
+  const isActive = (place: 'center' | 'bottom' | 'top') => (place === position ? 'primary' : 'outline')
 
   return (
     <div style={{ display: 'flex', gap: 12, flexDirection: 'column', flex: '0 0 auto' }}>
@@ -80,5 +80,5 @@ export const Example = () => {
         <div>some contents...</div>
       </Modal>
     </div>
-  );
-};
+  )
+}

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  size?: number;
-  className?: string;
-};
+  size?: number
+  className?: string
+}
 // 4683C8
 export const PasswordIcon = ({ className, size = 22 }: Props) => {
   return (
@@ -17,5 +17,5 @@ export const PasswordIcon = ({ className, size = 22 }: Props) => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}

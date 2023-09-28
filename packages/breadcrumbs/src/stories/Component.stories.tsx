@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { Breadcrumbs } from '../Component';
-import { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react'
+import { Breadcrumbs } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Breadcrumbs> = {
   title: 'Components/Breadcrumbs',
   component: Breadcrumbs
-};
+}
 
-type Story = StoryObj<typeof Breadcrumbs>;
-export default meta;
+type Story = StoryObj<typeof Breadcrumbs>
+export default meta
 
 export const Sandbox: Story = {
   args: {
@@ -22,14 +22,14 @@ export const Sandbox: Story = {
       { route: '/crumb_6', label: 'Crumb 6' }
     ]
   }
-};
+}
 
 export const Example: Story = {
   render: () => {
     const home = {
       route: '/',
       label: '/'
-    };
+    }
 
     const routes = [
       {
@@ -45,13 +45,13 @@ export const Example: Story = {
         route: '/1',
         label: 'Product 1'
       }
-    ];
+    ]
 
     const onClick = (route: string) => {
-      alert(`[route]: ${route}`);
-      console.log('route', route);
-    };
+      alert(`[route]: ${route}`)
+      console.log('route', route)
+    }
 
-    return <Breadcrumbs home={home} crumbs={routes} onCrumbClick={onClick} />;
+    return <Breadcrumbs home={home} crumbs={routes} onCrumbClick={onClick} />
   }
-};
+}

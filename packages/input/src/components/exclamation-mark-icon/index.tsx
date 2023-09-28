@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  className?: string;
-  error?: boolean;
-};
+  className?: string
+  error?: boolean
+}
 
-const DEFAULT_COLOR = '#848D98';
-const ERROR_COLOR = '#D44040';
+const DEFAULT_COLOR = '#848D98'
+const ERROR_COLOR = '#D44040'
 
 export const ExclamationMarkIcon = ({ className, error }: Props) => {
   return (
@@ -15,5 +15,5 @@ export const ExclamationMarkIcon = ({ className, error }: Props) => {
       <path d="M12 17.375L12 11.125" stroke="white" strokeWidth="2" strokeLinecap="round" />
       <path d="M12 6.875L12 6.76389" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
     </svg>
-  );
-};
+  )
+}
