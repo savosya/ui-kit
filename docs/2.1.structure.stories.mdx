@@ -32,17 +32,26 @@ import {Meta} from '@storybook/blocks';
 
 
 ### Скрипты
-UI Kit поставляется с предопределенными скриптами, которые можно выполнить с помощью CLI. Эти скрипты выполняют различные задачи, такие как сборка UI Kit, запуск тестов, генерация документации и многое другое. Вы можете настроить эти скрипты в файле `package.json`, чтобы они соответствовали вашим конкретным требованиям.
+UI Kit поставляется с предопределенными скриптами, которые можно выполнить с помощью CLI. Эти скрипты выполняют различные задачи, такие как сборка UI Kit, создание нового копонента и  другое.
 ```bash
 "scripts": {
-    "new": "cli/create-package.sh",  - для создания нового компонента
-    "prepareSh": "chmod +x bin/prepare.sh && bin/prepare.sh", - дает пермишены всем самописным скриптам.
-    "sb": "storybook dev -p 6006",
-    "preview:sb": "http-server storybook-static -p 9009", - запускаем сторибук с билда
-    "build:sb": "yarn build && storybook build", - билдим сторибук
-    "build": "bin/build.sh", - билдим все пакеты
-    "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}", - чистим все пакеты и сторибук сборку
-    "pub:root": "./bin/publish.sh" - публикуем кит
+    "new": "cli/create-package.sh",
+    "prepareSh": "chmod +x bin/prepare.sh && bin/prepare.sh",
+    "dev": "storybook dev -p 6006",
+    "preview:sb": "http-server storybook-static -p 9009",
+    "build:sb": "yarn build && storybook build",
+    "build": "bin/build.sh",
+    "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
+    "pub:root": "./bin/publish.sh"
 },
 ```
+
+#### ```yarn new``` - запускает скрипт `cli/create-package.sh` который создает шаблон нового компонента в packages.
+#### ```prepareSh``` - раздает пермишены на все самописыне скрипты.
+#### ```dev``` - запускает storybook локально.
+#### ```build:sb``` - билдит сторибук.
+#### ```preview:sb``` - запускает билд сторибука локально (localhost:9009).
+#### ```build``` - запускает `bin/build.sh` скрипт, который билдит все пакеты.
+#### ```clean``` - чистит билды сторибука и всех пакетов.
+#### ```pub:root``` - билдит и публикует все пакеты.
 

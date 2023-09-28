@@ -11,7 +11,7 @@
   "scripts": {
     "new": "cli/create-package.sh",
     "prepareSh": "chmod +x bin/prepare.sh && bin/prepare.sh",
-    "sb": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006",
     "preview:sb": "http-server storybook-static -p 9009",
     "build:sb": "yarn build && storybook build",
     "build": "bin/build.sh",
