@@ -1,18 +1,18 @@
-import * as React from 'react'
-import { useRef } from 'react'
-import clsx from 'clsx'
+import * as React from 'react';
+import { useRef } from 'react';
+import clsx from 'clsx';
 
-import { useFocus } from '@savosya/savosya-myuikit-hooks'
-import { mergeRefs } from '@savosya/savosya-myuikit-utils'
-import { Loader } from '@savosya/savosya-myuikit-loader'
-import cls from './index.module.scss'
-import { ButtonProps } from './button.types'
+import { useFocus } from '@savosya/savosya-myuikit-hooks';
+import { mergeRefs } from '@savosya/savosya-myuikit-utils';
+import { Loader } from '@savosya/savosya-myuikit-loader';
+import cls from './index.module.scss';
+import { ButtonProps } from './button.types';
 
 const loaderSizeConfig = {
   s: 15,
   m: 17,
   l: 19
-}
+};
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
@@ -31,24 +31,22 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     onClick,
     classes = {},
     ...rest
-  } = props
+  } = props;
 
-  const buttonRef = useRef<HTMLButtonElement>(null)
-  const [focus] = useFocus(buttonRef, 'keyboard')
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [focus] = useFocus(buttonRef, 'keyboard');
 
-  const isOnlyIcon = !children
+  const isOnlyIcon = !children;
 
-  const handleClick = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent> & React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent> & React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (rest.disabled || loading) {
-      e.preventDefault()
-      e.stopPropagation()
+      e.preventDefault();
+      e.stopPropagation();
 
-      return
+      return;
     }
-    onClick?.(e)
-  }
+    onClick?.(e);
+  };
 
   return (
     <button
@@ -76,5 +74,5 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
       {children}
       {rightIcon}
     </button>
-  )
-})
+  );
+});

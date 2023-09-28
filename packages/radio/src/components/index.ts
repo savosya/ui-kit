@@ -1,1 +1,1 @@
-export * from './check-icon'
+export * from './check-icon';

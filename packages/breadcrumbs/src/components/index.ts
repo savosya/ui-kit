@@ -1,1 +1,1 @@
-export * from './chevrone-left'
+export * from './chevrone-left';

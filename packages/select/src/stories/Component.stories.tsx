@@ -1,15 +1,15 @@
-import * as React from 'react'
-import { Select } from '../Component'
-import { useState } from 'react'
-import { Meta, StoryObj } from '@storybook/react'
+import * as React from 'react';
+import { Select } from '../Component';
+import { useState } from 'react';
+import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Select> = {
   title: 'Components/Select',
   component: Select
-}
+};
 
-type Story = StoryObj<typeof Select>
-export default meta
+type Story = StoryObj<typeof Select>;
+export default meta;
 
 const options = [
   { label: 'Long White Long White Long White Long White Long White', value: 'white' },
@@ -19,17 +19,17 @@ const options = [
   { label: 'Red', value: 'red' },
   { label: 'Blue', value: 'blue' },
   { label: 'Purple', value: 'purple' }
-]
+];
 
 export const Sandbox: Story = {
   args: {
     options
   }
-}
+};
 
 export const Controlled = () => {
-  const [open, setOpen] = useState(false)
-  const [value, setValue] = useState<string | null>(null)
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState<string | null>(null);
 
   return (
     <Select
@@ -43,11 +43,11 @@ export const Controlled = () => {
       placeholder={'pick color'}
       options={options}
     />
-  )
-}
+  );
+};
 
 export const Multiple = () => {
-  const [value, setValue] = useState<string[]>([])
+  const [value, setValue] = useState<string[]>([]);
 
   return (
     <Select
@@ -60,8 +60,8 @@ export const Multiple = () => {
       onClean={() => setValue([])}
       options={options}
     />
-  )
-}
+  );
+};
 
 export const States = () => {
   return (
@@ -70,5 +70,5 @@ export const States = () => {
       <Select multiple loading label="Colors" placeholder={'pick color'} options={options} />
       <Select error errorMsg="Ошибка" multiple label="Colors" placeholder={'pick color'} options={options} />
     </div>
-  )
-}
+  );
+};

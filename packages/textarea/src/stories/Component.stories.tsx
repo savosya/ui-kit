@@ -1,17 +1,17 @@
-import * as React from 'react'
-import { useState } from 'react'
-import { Textarea } from '../Component'
-import { Meta, StoryObj } from '@storybook/react'
+import * as React from 'react';
+import { useState } from 'react';
+import { Textarea } from '../Component';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Checkbox } from '../../../checkbox/src/Component'
+import { Checkbox } from '../../../checkbox/src/Component';
 
 const meta: Meta<typeof Textarea> = {
   title: 'Components/Textarea',
   component: Textarea
-}
+};
 
-type Story = StoryObj<typeof Textarea>
-export default meta
+type Story = StoryObj<typeof Textarea>;
+export default meta;
 
 export const Sandbox: Story = {
   args: {
@@ -22,13 +22,13 @@ export const Sandbox: Story = {
     rows: 6,
     resizable: 'both'
   }
-}
+};
 
 export const Controlled: Story = {
   render: () => {
-    const [error, setError] = useState(false)
-    const [disabled, setDisabled] = useState(false)
-    const [value, setValue] = useState('')
+    const [error, setError] = useState(false);
+    const [disabled, setDisabled] = useState(false);
+    const [value, setValue] = useState('');
 
     return (
       <div>
@@ -49,6 +49,6 @@ export const Controlled: Story = {
           rows={4}
         />
       </div>
-    )
+    );
   }
-}
+};

@@ -1,30 +1,30 @@
-import React from 'react'
-import type { DrawerProps as RCDrawerProps } from 'rc-drawer'
-import clsx from 'clsx'
-import { CloseIcon } from '../close-icon'
-import cls from './panel.module.scss'
+import React from 'react';
+import type { DrawerProps as RCDrawerProps } from 'rc-drawer';
+import clsx from 'clsx';
+import { CloseIcon } from '../close-icon';
+import cls from './panel.module.scss';
 
 export interface DrawerPanelProps {
-  title?: React.ReactNode
-  footer?: React.ReactNode
-  closable?: boolean
-  closeIcon?: React.ReactNode
-  onClose?: RCDrawerProps['onClose']
-  background?: 'white' | 'gray'
+  title?: React.ReactNode;
+  footer?: React.ReactNode;
+  closable?: boolean;
+  closeIcon?: React.ReactNode;
+  onClose?: RCDrawerProps['onClose'];
+  background?: 'white' | 'gray';
 
-  drawerStyle?: React.CSSProperties
-  headerStyle?: React.CSSProperties
-  bodyStyle?: React.CSSProperties
-  footerStyle?: React.CSSProperties
-  children?: React.ReactNode
+  drawerStyle?: React.CSSProperties;
+  headerStyle?: React.CSSProperties;
+  bodyStyle?: React.CSSProperties;
+  footerStyle?: React.CSSProperties;
+  children?: React.ReactNode;
   classes?: {
-    root?: string
-    header?: string
-    title?: string
-    close?: string
-    body?: string
-    footer?: string
-  }
+    root?: string;
+    header?: string;
+    title?: string;
+    close?: string;
+    body?: string;
+    footer?: string;
+  };
 }
 
 export const DrawerPanel = ({
@@ -65,5 +65,5 @@ export const DrawerPanel = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};

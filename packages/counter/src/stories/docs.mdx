@@ -1,9 +1,9 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Counter } from '../Component'
-import packageJson from '../../package.json'
-import Description from './description.mdx'
-import * as CounterStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks';
+import { Counter } from '../Component';
+import packageJson from '../../package.json';
+import Description from './description.mdx';
+import * as CounterStories from './Component.stories';
+import { ComponentHeader, Tabs } from '../../../../.storybook/components';
 
 <Meta title="Components/Counter" component={Counter} id="Counter" />
 
@@ -12,8 +12,8 @@ import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 </ComponentHeader>
 
 ```jsx
-import { Counter } from '@savosya/savosya-myuikit-root'
-import { Counter } from '@savosya/savosya-myuikit-counter'
+import { Counter } from '@savosya/savosya-myuikit-root';
+import { Counter } from '@savosya/savosya-myuikit-counter';
 ```
 
 <Canvas of={CounterStories.Sandbox} meta={CounterStories} />

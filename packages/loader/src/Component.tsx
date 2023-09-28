@@ -1,21 +1,12 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import clsx from 'clsx'
+import clsx from 'clsx';
 
-import { LoaderProps } from './loader.types'
-import cls from './index.module.scss'
+import { LoaderProps } from './loader.types';
+import cls from './index.module.scss';
 
 export const Loader = (props: LoaderProps) => {
-  const {
-    size = 24,
-    color = 'currentColor',
-    secondaryColor = '#B7B9BD',
-    className,
-    fill = true,
-    spinner,
-    classes = {},
-    ...rest
-  } = props
+  const { size = 24, color = 'currentColor', secondaryColor = '#B7B9BD', className, fill = true, spinner, classes = {}, ...rest } = props;
 
   const loader = React.useMemo(
     () => (
@@ -40,11 +31,11 @@ export const Loader = (props: LoaderProps) => {
       </svg>
     ),
     [props]
-  )
+  );
 
   if (fill) {
-    return <div className={clsx(cls.wrapper, className, classes?.wrapper)}>{loader}</div>
+    return <div className={clsx(cls.wrapper, className, classes?.wrapper)}>{loader}</div>;
   }
 
-  return loader
-}
+  return loader;
+};

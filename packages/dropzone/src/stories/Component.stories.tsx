@@ -1,14 +1,14 @@
-import * as React from 'react'
-import { Dropzone } from '../Component'
-import { Meta, StoryObj } from '@storybook/react'
+import * as React from 'react';
+import { Dropzone } from '../Component';
+import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Dropzone> = {
   title: 'Components/Dropzone',
   component: Dropzone
-}
+};
 
-type Story = StoryObj<typeof Dropzone>
-export default meta
+type Story = StoryObj<typeof Dropzone>;
+export default meta;
 
 const styles: React.CSSProperties = {
   width: 400,
@@ -16,18 +16,18 @@ const styles: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
-}
+};
 
 export const Sandbox: Story = {
   render: () => {
-    const [filesList, setFilesList] = React.useState([])
+    const [filesList, setFilesList] = React.useState([]);
     const handleDrop = files => {
       setFilesList(
         Array.from(files)
           .map((file: any) => file.name)
           .filter(Boolean)
-      )
-    }
+      );
+    };
     return (
       <Dropzone onDrop={handleDrop}>
         <div style={styles}>
@@ -42,6 +42,6 @@ export const Sandbox: Story = {
           )}
         </div>
       </Dropzone>
-    )
+    );
   }
-}
+};

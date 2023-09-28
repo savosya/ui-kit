@@ -1,20 +1,20 @@
-import * as React from 'react'
-import { Input } from '../Component'
-import { Meta, StoryObj } from '@storybook/react'
+import * as React from 'react';
+import { Input } from '../Component';
+import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input
-}
+};
 
-type Story = StoryObj<typeof Input>
-export default meta
+type Story = StoryObj<typeof Input>;
+export default meta;
 
 const canvasStyles: React.CSSProperties = {
   display: 'flex',
   justifyContent: 'space-around',
   gap: 16
-}
+};
 
 export const Sandbox: Story = {
   args: {
@@ -22,7 +22,7 @@ export const Sandbox: Story = {
     placeholder: '...',
     type: 'text'
   }
-}
+};
 
 export const Types: Story = {
   render: () => {
@@ -32,9 +32,9 @@ export const Types: Story = {
         <Input type="search" label="Search Type" cleanable placeholder="..." />
         <Input type="password" label="Password Type" cleanable placeholder="..." />
       </div>
-    )
+    );
   }
-}
+};
 
 export const Examples: Story = {
   render: () => {
@@ -44,44 +44,30 @@ export const Examples: Story = {
         <Input placeholder={'No Label'} />
         <Input label="Disabled" disabled />
       </div>
-    )
+    );
   }
-}
+};
 
 export const Tooltip: Story = {
   render: () => {
     return (
       <div style={canvasStyles}>
         <Input label="ФИО" placeholder="..." showTooltip tooltipProps={{ title: 'Введите ФИО', placement: 'top' }} />
-        <Input
-          label="ФИО"
-          placeholder="..."
-          showTooltip
-          tooltipProps={{ title: 'Снизу', placement: 'bottom' }}
-          disabled
-        />
+        <Input label="ФИО" placeholder="..." showTooltip tooltipProps={{ title: 'Снизу', placement: 'bottom' }} disabled />
       </div>
-    )
+    );
   }
-}
+};
 
 export const Error: Story = {
   render: () => {
     return (
       <div style={canvasStyles}>
-        <Input
-          label="ФИО"
-          placeholder=""
-          error
-          errorMsg="Ошибка поля ввода."
-          showTooltip
-          tooltipProps={{ content: 'Ошибка' }}
-          cleanable
-        />
+        <Input label="ФИО" placeholder="" error errorMsg="Ошибка поля ввода." showTooltip tooltipProps={{ content: 'Ошибка' }} cleanable />
       </div>
-    )
+    );
   }
-}
+};
 
 export const Hint: Story = {
   render: () => {
@@ -89,9 +75,9 @@ export const Hint: Story = {
       <div style={canvasStyles}>
         <Input label="ФИО" placeholder="..." hint="подсказка" cleanable />
       </div>
-    )
+    );
   }
-}
+};
 
 const SampleIcon = () => {
   return (
@@ -101,8 +87,8 @@ const SampleIcon = () => {
         fill="currentColor"
       />
     </svg>
-  )
-}
+  );
+};
 export const Addons: Story = {
   render: () => {
     return (
@@ -129,6 +115,6 @@ export const Addons: Story = {
           cleanable
         />
       </div>
-    )
+    );
   }
-}
+};

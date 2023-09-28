@@ -1,6 +1,6 @@
-import React from 'react'
-import { Preview } from '@storybook/react'
-import { storybookTheme } from './theme'
+import React from 'react';
+import { Preview } from '@storybook/react';
+import { storybookTheme } from './theme';
 
 const StoryWrapperStyles: React.CSSProperties = {
   boxSizing: 'border-box',
@@ -8,7 +8,7 @@ const StoryWrapperStyles: React.CSSProperties = {
   width: '100%',
   padding: 16,
   margin: 0
-}
+};
 
 const preview: Preview = {
   parameters: {
@@ -40,6 +40,6 @@ const preview: Preview = {
       </div>
     )
   ]
-}
+};
 
-export default preview
+export default preview;

@@ -1,12 +1,12 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 
-import cls from './ComponentHeader.module.scss'
+import cls from './ComponentHeader.module.scss';
 
 type ComponentHeaderProps = {
-  name: string
-  version?: string
-  children?: ReactNode
-}
+  name: string;
+  version?: string;
+  children?: ReactNode;
+};
 
 export const ComponentHeader = ({ name, children, version }: ComponentHeaderProps) => {
   return (
@@ -19,5 +19,5 @@ export const ComponentHeader = ({ name, children, version }: ComponentHeaderProp
 
       {children && <div className={cls.description}>{children}</div>}
     </div>
-  )
-}
+  );
+};

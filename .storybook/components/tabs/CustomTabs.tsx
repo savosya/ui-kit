@@ -1,55 +1,55 @@
-import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { clsx } from 'clsx'
+import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { clsx } from 'clsx';
 
-import { allTabs, TabType } from './utils'
-import cls from './styles.module.scss'
+import { allTabs, TabType } from './utils';
+import cls from './styles.module.scss';
 
 type Props = {
-  custom?: { component: React.ReactNode; value: string; label: string }[]
-}
+  custom?: { component: React.ReactNode; value: string; label: string }[];
+};
 export const CustomTabs = ({ custom, ...restTabs }: Props) => {
-  const trackerRef = useRef<HTMLDivElement | null>(null)
-  const startingRef = useRef<HTMLDivElement | null>(null)
+  const trackerRef = useRef<HTMLDivElement | null>(null);
+  const startingRef = useRef<HTMLDivElement | null>(null);
 
-  const [customTab, setCustomTab] = useState<string>(custom[0].value)
+  const [customTab, setCustomTab] = useState<string>(custom[0].value);
   const customMap = useMemo(() => {
-    let map: any = {}
+    let map: any = {};
     custom.forEach(c => {
-      map[c.value] = c.component
-    })
-    return map
-  }, [])
+      map[c.value] = c.component;
+    });
+    return map;
+  }, []);
 
   useLayoutEffect(() => {
     document.querySelectorAll('[data-category-value]').forEach(node => {
-      const nodeValue = node.getAttribute('data-category-value')
+      const nodeValue = node.getAttribute('data-category-value');
 
       if (nodeValue === customTab && trackerRef?.current) {
-        moveTracker(node)
+        moveTracker(node);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const handleCustomClick = useCallback((event: any) => {
-    const target = event.target as HTMLDivElement
-    const newValue = target.getAttribute('data-category-value')
+    const target = event.target as HTMLDivElement;
+    const newValue = target.getAttribute('data-category-value');
 
     if (newValue) {
-      moveTracker(target)
-      setCustomTab(newValue as TabType)
+      moveTracker(target);
+      setCustomTab(newValue as TabType);
     }
-  }, [])
+  }, []);
 
   const moveTracker = useCallback((node: Element) => {
-    if (!trackerRef?.current || !startingRef?.current) return
+    if (!trackerRef?.current || !startingRef?.current) return;
 
-    const startingRect = startingRef?.current.getBoundingClientRect()
-    const rect = node.getBoundingClientRect()
-    const elementWidth = rect.right - rect.left
+    const startingRect = startingRef?.current.getBoundingClientRect();
+    const rect = node.getBoundingClientRect();
+    const elementWidth = rect.right - rect.left;
 
-    trackerRef.current.style.transform = `translateX(${rect.x - startingRect.x - 8}px)`
-    trackerRef.current.style.width = `${elementWidth + 16}px`
-  }, [])
+    trackerRef.current.style.transform = `translateX(${rect.x - startingRect.x - 8}px)`;
+    trackerRef.current.style.width = `${elementWidth + 16}px`;
+  }, []);
 
   return (
     <>
@@ -64,12 +64,12 @@ export const CustomTabs = ({ custom, ...restTabs }: Props) => {
             >
               {label}
             </div>
-          )
+          );
         })}
         <div ref={trackerRef} className={cls.categoryTracker} />
       </div>
 
       <div className={cls.content}>{customMap[customTab]}</div>
     </>
-  )
-}
+  );
+};

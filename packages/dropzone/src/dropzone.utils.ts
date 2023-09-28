@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 export const preventAndStopEvent = (event: React.SyntheticEvent) => {
-  event.preventDefault()
-  event.stopPropagation()
-}
+  event.preventDefault();
+  event.stopPropagation();
+};
