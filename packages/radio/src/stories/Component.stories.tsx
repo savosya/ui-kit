@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Radio } from '../Component'
 
 const meta: Meta<typeof Radio> = {
-  title: 'Components/Radio',
+  title: 'Radio',
   component: Radio
 }
 

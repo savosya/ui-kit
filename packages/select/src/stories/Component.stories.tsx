@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Select> = {
-  title: 'Components/Select',
+  title: 'Select',
   component: Select
 }
 
@@ -23,7 +23,9 @@ const options = [
 
 export const Sandbox: Story = {
   args: {
-    options
+    options,
+    label: 'Цвет',
+    placeholder: '...'
   },
   argTypes: {
     value: { control: 'text' },

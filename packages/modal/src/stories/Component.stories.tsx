@@ -3,11 +3,11 @@ import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Modal } from '../Component'
 
-import { Button } from '../../../button/src/Component'
-import { Checkbox } from '../../../checkbox/src/Component'
+import { Button } from '../../../button/src'
+import { Checkbox } from '../../../checkbox/src'
 
 const meta: Meta<typeof Modal> = {
-  title: 'Components/Modal',
+  title: 'Modal',
   component: Modal
 }
 

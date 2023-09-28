@@ -6,7 +6,7 @@ import { Button } from '../../../button/src'
 import { Loader } from '../../../loader/src'
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Components/Accordion',
+  title: 'Accordion',
   component: Accordion,
   argTypes: {
     chevroneIcon: {

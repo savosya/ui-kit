@@ -7,7 +7,7 @@ import { Button } from '../../../button/src'
 import { Accordion } from '../../../accordion/src'
 
 const meta: Meta<typeof Drawer> = {
-  title: 'Components/Drawer',
+  title: 'Drawer',
   component: Drawer
 }
 

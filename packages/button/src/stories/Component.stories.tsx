@@ -13,7 +13,7 @@ const SampleIcon = () => {
   )
 }
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: 'Button',
   component: Button
 }
 

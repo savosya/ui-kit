@@ -1,7 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import * as path from 'path'
 import * as fs from 'fs'
-import { __disposeResources } from 'tslib'
 
 const config: StorybookConfig = {
   stories: [

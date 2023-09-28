@@ -6,7 +6,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from '../../../checkbox/src'
 
 const meta: Meta<typeof Textarea> = {
-  title: 'Components/Textarea',
+  title: 'Textarea',
   component: Textarea
 }
 
