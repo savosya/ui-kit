@@ -1,2 +1,2 @@
 export {Select} from './Component'
-export {SelectMenuOption, SelectProps, PassedOption} from "./select.types";
+export type {SelectMenuOption, SelectProps, PassedOption} from "./select.types";

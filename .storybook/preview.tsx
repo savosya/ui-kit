@@ -17,7 +17,9 @@ const preview: Preview = {
     backgrounds: {disable: true},
     grid: {disable: true},
     options: {
-      method: 'alphabetical',
+      storySort: {
+        order: ['General', 'Components'],
+      },
     },
     docs: {
       theme: storybookTheme,
