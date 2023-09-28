@@ -11,13 +11,6 @@ const meta: Meta<typeof Accordion> = {
   argTypes: {
     chevroneIcon: {
       control: 'text'
-      // options: ['Normal', 'Bold', 'Italic'],
-      // description: 'hey',
-      // mapping: {
-      //   Normal: <span>Normal</span>,
-      //   Bold: <b>Bold</b>,
-      //   Italic: <i>Italic</i>,
-      // },
     }
   }
 }
@@ -35,6 +28,13 @@ export const Sandbox: Story = {
         late EMPEROR PALPATINE. GENERAL LEIA ORGANA dispatches secret agents to gather intelligence, while REY, the last
         hope of the Jedi, trains for battle against the diabolical FIRST ORDER. Meanwhile, Supreme Leader KYLO REN rages
         in search of the phantom Emperor, determined to destroy any threat to his power....`
+  },
+  argTypes: {
+    title: { control: 'text' },
+    description: { control: 'text' },
+    extra: { control: 'text' },
+    children: { control: 'text' },
+    classes: { control: { disable: true } }
   }
 }
 

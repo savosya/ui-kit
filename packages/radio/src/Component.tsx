@@ -13,7 +13,6 @@ export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref)
   const {
     className,
     label,
-    hint,
     size = 'm',
     checked,
     markType = 'default',

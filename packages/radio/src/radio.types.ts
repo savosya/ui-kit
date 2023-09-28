@@ -5,7 +5,7 @@ type NativeProps = InputHTMLAttributes<HTMLInputElement>
 export interface RadioProps extends Omit<NativeProps, 'size' | 'onChange' | 'type'> {
   className?: string
   label?: ReactNode
-  hint?: ReactNode
+  // hint?: ReactNode
   size?: 's' | 'm' | 'l'
   checked?: boolean
   markType?: 'default' | 'check'

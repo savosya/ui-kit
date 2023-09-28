@@ -1,4 +1,4 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
 import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
 import { Dropzone } from '../Component'
@@ -18,4 +18,4 @@ import { Dropzone } from '@savosya/savosya-myuikit-dropzone'
 
 <Canvas of={DropzoneStories.Sandbox} meta={DropzoneStories} {...stickyCanvasObj} />
 
-<Tabs props={<ArgsTable of={Dropzone} />} css={<CSS />} />
+<Tabs props={<Controls of={DropzoneStories.Sandbox} />} css={<CSS />} />

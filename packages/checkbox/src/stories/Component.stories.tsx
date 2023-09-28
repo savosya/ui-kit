@@ -13,6 +13,9 @@ export default meta
 export const Sandbox: Story = {
   args: {
     label: 'Подтвердить согласие'
+  },
+  argTypes: {
+    classes: { control: { disable: true } }
   }
 }
 

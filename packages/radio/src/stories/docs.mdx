@@ -1,10 +1,10 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
 import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
 import { Radio } from '../Component'
 import Description from './description.mdx'
-import * as RadioStories from './Component.stories'
 import CSS from './css.mdx'
+import * as RadioStories from './Component.stories'
 
 <Meta title="Components/Radio" component={Radio} id="Radio" />
 
@@ -17,4 +17,4 @@ import { Radio } from '@savosya/savosya-myuikit-modal'
 
 <Canvas of={RadioStories.Sandbox} meta={RadioStories} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Radio} />} css={<CSS />} />
+<Tabs docs={<Description />} props={<Controls of={RadioStories.Sandbox} />} css={<CSS />} />

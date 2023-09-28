@@ -13,5 +13,8 @@ export default meta
 export const Sandbox: Story = {
   args: {
     color: '#21272E'
+  },
+  argTypes: {
+    margin: { control: 'text' }
   }
 }

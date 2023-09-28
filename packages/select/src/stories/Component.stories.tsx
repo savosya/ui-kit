@@ -24,6 +24,12 @@ const options = [
 export const Sandbox: Story = {
   args: {
     options
+  },
+  argTypes: {
+    value: { control: 'text' },
+    multiple: { control: { disable: true } },
+    optionsSettings: { control: { disable: true } },
+    classes: { control: { disable: true } }
   }
 }
 

@@ -21,6 +21,10 @@ export const Sandbox: Story = {
       { route: '/crumb_5', label: 'Crumb 5' },
       { route: '/crumb_6', label: 'Crumb 6' }
     ]
+  },
+  argTypes: {
+    separator: { control: 'text' },
+    classes: { control: { disable: true } }
   }
 }
 

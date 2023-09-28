@@ -1,4 +1,4 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
 import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
 import { Drawer } from '../Component'
@@ -18,4 +18,4 @@ import { Drawer } from '@savosya/savosya-myuikit-drawer'
 
 <Canvas of={DrawerStories.Sandbox} meta={DrawerStories} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Drawer} />} />
+<Tabs docs={<Description />} props={<Controls of={DrawerStories.Sandbox} />} />

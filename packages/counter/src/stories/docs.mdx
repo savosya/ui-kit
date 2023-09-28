@@ -1,4 +1,4 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
 import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
 import { Counter } from '../Component'
@@ -18,4 +18,4 @@ import { Counter } from '@savosya/savosya-myuikit-counter'
 
 <Canvas of={CounterStories.Sandbox} meta={CounterStories} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Counter} />} />
+<Tabs docs={<Description />} props={<Controls of={CounterStories.Sandbox} />} />

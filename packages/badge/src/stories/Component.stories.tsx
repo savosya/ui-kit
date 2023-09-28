@@ -14,6 +14,10 @@ export const Sandbox: Story = {
   args: {
     children: 'Бейджик',
     number: '13'
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
+    number: { control: 'number' }
   }
 }
 

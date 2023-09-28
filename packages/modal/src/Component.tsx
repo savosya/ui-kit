@@ -29,7 +29,8 @@ export const Modal = ({
   classes = {},
   style,
   bodyStyle,
-  width
+  width,
+  background
 }: ModalProps) => {
   return (
     <RcDialog
@@ -61,9 +62,9 @@ export const Modal = ({
           [cls.bottom]: position === 'bottom'
         }),
         mask: clsx(cls.backdrop, classes?.backdrop),
-        header: clsx(cls.header, classes?.header, { [cls.closePadding]: closable }),
-        body: clsx(cls.body, classes?.body, { [cls.closePadding]: !title }),
-        footer: clsx(cls.footer, classes?.footer)
+        header: clsx(cls.header, classes?.header, { [cls.closePadding]: closable, [cls.gray]: background === 'gray' }),
+        body: clsx(cls.body, classes?.body, { [cls.closePadding]: !title, [cls.gray]: background === 'gray' }),
+        footer: clsx(cls.footer, classes?.footer, { [cls.gray]: background === 'gray' })
       }}
       style={{ ...style, width: width }}
       bodyStyle={{ ...bodyStyle }}

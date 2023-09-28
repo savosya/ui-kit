@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Drawer } from '../Component'
 
-import { Button } from '../../../button/src/Component'
-import { Accordion } from '../../../accordion/src/Component'
+import { Button } from '../../../button/src'
+import { Accordion } from '../../../accordion/src'
 
 const meta: Meta<typeof Drawer> = {
   title: 'Components/Drawer',
@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Drawer>
 export default meta
 
 export const Sandbox: Story = {
-  render: () => {
+  render: args => {
     const [open, setOpen] = useState(false)
     const toggle = () => setOpen(prev => !prev)
 
@@ -25,11 +25,27 @@ export const Sandbox: Story = {
           Drawer
         </Button>
 
-        <Drawer open={open} onClose={toggle}>
+        <Drawer open={open} onClose={toggle} {...args}>
           Drawer content
         </Drawer>
       </div>
     )
+  },
+  argTypes: {
+    open: { control: { disable: true } },
+    onMouseEnter: { control: { disable: true } },
+    onMouseOver: { control: { disable: true } },
+    onMouseLeave: { control: { disable: true } },
+    onClose: { control: { disable: true } },
+    onClick: { control: { disable: true } },
+    onKeyDown: { control: { disable: true } },
+    onKeyUp: { control: { disable: true } },
+    classes: { control: { disable: true } },
+    title: { control: 'text' },
+    footer: { control: 'text' },
+    closeIcon: { control: 'text' },
+    width: { control: 'text' },
+    placement: { control: 'select', options: ['left', 'right'] }
   }
 }
 

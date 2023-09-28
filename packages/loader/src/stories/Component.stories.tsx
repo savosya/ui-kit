@@ -13,6 +13,9 @@ export default meta
 export const Sandbox: Story = {
   args: {
     fill: false
+  },
+  argTypes: {
+    classes: { controls: { disable: true } }
   }
 }
 

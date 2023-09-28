@@ -21,6 +21,17 @@ export const Sandbox: Story = {
     label: 'Текстовое поле',
     placeholder: '...',
     type: 'text'
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
+    passedRef: { control: { disable: true } },
+    tooltipProps: { control: { disable: true } },
+    hint: { control: 'text' },
+    errorMsg: { control: 'text' },
+    addonsLeft: { control: 'text' },
+    addonsRight: { control: 'text' },
+    tooltipIcon: { control: 'text' },
+    cleanIcon: { control: 'text' }
   }
 }
 

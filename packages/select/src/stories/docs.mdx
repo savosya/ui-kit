@@ -1,4 +1,4 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
 import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
 import { Select } from '../Component'
@@ -21,4 +21,4 @@ import { Select } from '@savosya/savosya-myuikit-select'
 
 <Canvas of={SelectStories.Sandbox} meta={SelectStories} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Select} />} css={<CSS />} />
+<Tabs docs={<Description />} props={<Controls of={SelectStories.Sandbox} />} css={<CSS />} />

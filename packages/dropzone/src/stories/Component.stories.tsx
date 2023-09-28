@@ -19,7 +19,7 @@ const styles: React.CSSProperties = {
 }
 
 export const Sandbox: Story = {
-  render: () => {
+  render: args => {
     const [filesList, setFilesList] = React.useState([])
     const handleDrop = files => {
       setFilesList(
@@ -29,7 +29,7 @@ export const Sandbox: Story = {
       )
     }
     return (
-      <Dropzone onDrop={handleDrop}>
+      <Dropzone onDrop={handleDrop} {...args}>
         <div style={styles}>
           {filesList.length > 0 ? (
             <ul>
@@ -43,5 +43,6 @@ export const Sandbox: Story = {
         </div>
       </Dropzone>
     )
-  }
+  },
+  argTypes: {}
 }

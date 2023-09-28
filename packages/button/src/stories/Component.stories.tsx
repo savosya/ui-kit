@@ -23,6 +23,11 @@ export default meta
 export const Sandbox: Story = {
   args: {
     children: 'Кнопка'
+  },
+  argTypes: {
+    leftIcon: { control: 'text' },
+    rightIcon: { control: 'text' },
+    classes: { control: { disable: true } }
   }
 }
 

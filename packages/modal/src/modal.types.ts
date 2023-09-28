@@ -21,5 +21,5 @@ export interface ModalProps {
   style?: React.CSSProperties
   bodyStyle?: React.CSSProperties
   width?: React.CSSProperties['width']
-  backgroundColor?: string
+  background?: 'white' | 'gray'
 }
