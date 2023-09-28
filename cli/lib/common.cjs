@@ -1,15 +1,15 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs')
+const path = require('path')
 
 /**
  * folderName: string
  * targetPath: string
  * */
 function createPathFolder(folderName, targetPath) {
-  const currentResolvePath = path.resolve(targetPath, folderName);
+  const currentResolvePath = path.resolve(targetPath, folderName)
   if (!fs.existsSync(currentResolvePath)) {
     // проверка - существует такая директория или нет?
-    fs.mkdirSync(currentResolvePath); // если нет, то создаем новую
+    fs.mkdirSync(currentResolvePath) // если нет, то создаем новую
   }
 }
 
@@ -18,28 +18,28 @@ function createPathFolder(folderName, targetPath) {
  * packagesDir: string
  * */
 function checkPackageExistence(packageName, packagesDir) {
-  return fs.existsSync(`${packagesDir}/${packageName}`);
+  return fs.existsSync(`${packagesDir}/${packageName}`)
 }
 
 /**
  * name: string
  * */
 function camelToSnake(name) {
-  const snake = String(name).replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
-  if (snake.startsWith("-")) {
-    return snake.replace("-", "");
+  const snake = String(name).replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)
+  if (snake.startsWith('-')) {
+    return snake.replace('-', '')
   }
-  return snake;
+  return snake
 }
 
 function snakeToCamel(name) {
   return name
-    .split("-")
+    .split('-')
     .map(part => {
-      const capitalized = part.charAt(0).toUpperCase() + part.slice(1);
-      return capitalized;
+      const capitalized = part.charAt(0).toUpperCase() + part.slice(1)
+      return capitalized
     })
-    .join("");
+    .join('')
 }
 
 module.exports = {
@@ -47,4 +47,4 @@ module.exports = {
   checkPackageExistence,
   camelToSnake,
   snakeToCamel
-};
+}

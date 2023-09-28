@@ -1,29 +1,29 @@
-const fs = require("fs");
-const path = require("path");
-const { createPathFolder, snakeToCamel } = require("./common.cjs");
+const fs = require('fs')
+const path = require('path')
+const { createPathFolder, snakeToCamel } = require('./common.cjs')
 
 /**
  * packageName: string
  * packageFolder: string
  * */
 function createPackageTemplate(cmpSnakeName, packagesPath) {
-  const cmpCamelName = snakeToCamel(cmpSnakeName);
+  const cmpCamelName = snakeToCamel(cmpSnakeName)
   // создаем папки
-  const packageRootPath = `${packagesPath}/${cmpSnakeName}`;
-  createPathFolder(cmpSnakeName, packagesPath);
+  const packageRootPath = `${packagesPath}/${cmpSnakeName}`
+  createPathFolder(cmpSnakeName, packagesPath)
 
-  const packageSrcPath = `${packageRootPath}/src`;
-  createPathFolder("src", packageRootPath);
+  const packageSrcPath = `${packageRootPath}/src`
+  createPathFolder('src', packageRootPath)
 
   // создаем темплейты
-  createPackageJSON(cmpSnakeName, cmpCamelName, packageRootPath);
-  createTsConfigJSON(packageRootPath);
-  createREADME(cmpSnakeName, packageRootPath);
-  createComponent(cmpSnakeName, cmpCamelName, packageSrcPath);
-  createTypings(cmpSnakeName, cmpCamelName, packageSrcPath);
-  createSCSS(packageSrcPath);
-  createIndex(cmpSnakeName, cmpCamelName, packageSrcPath);
-  createIndexStories(cmpCamelName, packageSrcPath);
+  createPackageJSON(cmpSnakeName, cmpCamelName, packageRootPath)
+  createTsConfigJSON(packageRootPath)
+  createREADME(cmpSnakeName, packageRootPath)
+  createComponent(cmpSnakeName, cmpCamelName, packageSrcPath)
+  createTypings(cmpSnakeName, cmpCamelName, packageSrcPath)
+  createSCSS(packageSrcPath)
+  createIndex(cmpSnakeName, cmpCamelName, packageSrcPath)
+  createIndexStories(cmpCamelName, packageSrcPath)
 }
 
 /** TEMPLATES */
@@ -54,9 +54,9 @@ const createPackageJSON = (snakeName, camelName, packageRootPath) => {
     "@savosya/savosya-myuikit-utils": "*"
   }
 }
-`;
-  fs.writeFileSync(path.resolve(packageRootPath, "package.json"), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageRootPath, 'package.json'), code)
+}
 
 const createTsConfigJSON = packageRootPath => {
   const code = `{
@@ -87,9 +87,9 @@ const createTsConfigJSON = packageRootPath => {
     }
   ]
 }
-`;
-  fs.writeFileSync(path.resolve(packageRootPath, "tsconfig.json"), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageRootPath, 'tsconfig.json'), code)
+}
 
 const createREADME = (cmpName, packageRootPath) => {
   const code = `# \`${cmpName}\`
@@ -101,9 +101,9 @@ const index = require('${cmpName}');
 
 // DEMONSTRATE API
 \`\`\`
-`;
-  fs.writeFileSync(path.resolve(packageRootPath, "README.md"), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageRootPath, 'README.md'), code)
+}
 
 const createComponent = (snakeName, camelName, packageSrcPath) => {
   const code = `import * as React from 'react'
@@ -121,17 +121,17 @@ export const ${camelName} = ({}: ${camelName}Props) => {
     </div>
   );
 }
-`;
-  fs.writeFileSync(path.resolve(packageSrcPath, "Component.tsx"), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageSrcPath, 'Component.tsx'), code)
+}
 
 const createTypings = (snakeName, camelName, packageSrcPath) => {
   const code = `export interface ${camelName}Props {
 
 };
-`;
-  fs.writeFileSync(path.resolve(packageSrcPath, `${snakeName}.types.ts`), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageSrcPath, `${snakeName}.types.ts`), code)
+}
 
 const createSCSS = packageSrcPath => {
   const code = `@import '../../variables/src/index.css';
@@ -143,20 +143,20 @@ const createSCSS = packageSrcPath => {
 .root {
 
 }
-`;
-  fs.writeFileSync(path.resolve(packageSrcPath, "index.module.scss"), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageSrcPath, 'index.module.scss'), code)
+}
 
 const createIndex = (snakeName, camelName, packageSrcPath) => {
   const code = `export {${camelName}} from './Component'
 export type {${camelName}Props} from './${snakeName}.types'
-`;
-  fs.writeFileSync(path.resolve(packageSrcPath, "index.ts"), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageSrcPath, 'index.ts'), code)
+}
 
 const createIndexStories = (camelName, packageSrcPath) => {
-  const packageStoriesPath = `${packageSrcPath}/stories`;
-  createPathFolder("stories", packageSrcPath);
+  const packageStoriesPath = `${packageSrcPath}/stories`
+  createPathFolder('stories', packageSrcPath)
 
   const code = `import * as React from 'react';
 import {${camelName}} from '../Component';
@@ -169,10 +169,10 @@ export default {
 export const Default = () => (
     <${camelName}  />
 );
-`;
-  fs.writeFileSync(path.resolve(packageStoriesPath, "Component.stories.tsx"), code);
-};
+`
+  fs.writeFileSync(path.resolve(packageStoriesPath, 'Component.stories.tsx'), code)
+}
 
 module.exports = {
   createPackageTemplate
-};
+}
