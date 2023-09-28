@@ -12,7 +12,12 @@ export default meta
 
 export const Sandbox: Story = {
   args: {
-    label: 'Example'
+    label: 'Radio'
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
+    // hint: {control: 'text' },
+    label: { control: 'text' }
   }
 }
 

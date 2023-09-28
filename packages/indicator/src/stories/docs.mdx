@@ -1,9 +1,9 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Indicator } from '../Component'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Indicator } from '../Component'
 import CSS from './css.mdx'
-import * as DropdownStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
+import * as IndicatorStories from './Component.stories'
 
 <Meta title="Components/Indicator" component={Indicator} id="Indicator" />
 
@@ -16,6 +16,6 @@ import { Indicator } from '@savosya/savosya-myuikit-root'
 import { Indicator } from '@savosya/savosya-myuikit-indicator'
 ```
 
-<Canvas of={DropdownStories.Sandbox} meta={DropdownStories} />
+<Canvas of={IndicatorStories.Sandbox} meta={IndicatorStories} {...stickyCanvasObj} />
 
-<Tabs props={<ArgsTable of={Indicator} />} css={<CSS />} />
+<Tabs props={<Controls of={IndicatorStories.Sandbox} />} css={<CSS />} />

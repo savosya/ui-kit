@@ -12,5 +12,10 @@ export default meta
 
 /** description */
 export const Sandbox: Story = {
-  args: {}
+  args: {},
+  argTypes: {
+    maxWidth: { control: 'text' },
+    value: { control: { disable: true } },
+    classes: { control: { disable: true } }
+  }
 }

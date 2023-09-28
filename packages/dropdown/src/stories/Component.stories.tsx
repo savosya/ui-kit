@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 import { Dropdown } from '../Component'
 
-import { Button } from '../../../button/src/Component'
+import { Button } from '../../../button/src'
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
@@ -38,7 +38,7 @@ const options = [
 ]
 
 export const Sandbox: Story = {
-  render: () => {
+  render: args => {
     const options = [
       {
         key: 'option 1',
@@ -61,11 +61,16 @@ export const Sandbox: Story = {
 
     return (
       <div style={canvasStyles}>
-        <Dropdown options={options}>
+        <Dropdown options={options} {...args}>
           <Button>Menu</Button>
         </Dropdown>
       </div>
     )
+  },
+  argTypes: {
+    trigger: { control: 'select', options: ['click', 'hover', 'contextMenu'] },
+    showAction: { control: 'object', options: ['click', 'hover', 'contextMenu'] },
+    classes: { control: { disable: true } }
   }
 }
 

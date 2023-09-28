@@ -18,6 +18,12 @@ export const Sandbox: Story = {
     opacity: 1,
     children: 'Tooltip Content',
     placement: 'right'
+  },
+  argTypes: {
+    title: { control: 'text' },
+    content: { control: 'text' },
+    position: { control: { disable: true } },
+    classes: { control: { disable: true } }
   }
 }
 
@@ -29,7 +35,7 @@ const canvasStyle: React.CSSProperties = {
 
 export const Examples = () => (
   <div style={canvasStyle}>
-    <Tooltip title={'С возможностью клика внутри тултипа'} clickable opacity={1} placement={'right-end'}>
+    <Tooltip title={'С возможностью клика внутри тултипа'} clickable opacity={1} placement="right-end">
       Clickable tooltip.
     </Tooltip>
 

@@ -1,10 +1,10 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Checkbox } from '../Component'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Checkbox } from '../Component'
 import Description from './description.mdx'
 import CSS from './css.mdx'
 import * as CheckboxStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Checkbox" component={Checkbox} id="Checkbox" />
 
@@ -17,6 +17,6 @@ import { Checkbox } from '@savosya/savosya-myuikit-root'
 import { Checkbox } from '@savosya/savosya-myuikit-checkbox'
 ```
 
-<Canvas of={CheckboxStories.Sandbox} meta={CheckboxStories} />
+<Canvas of={CheckboxStories.Sandbox} meta={CheckboxStories} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Checkbox} />} css={<CSS />} />
+<Tabs docs={<Description />} props={<Controls of={CheckboxStories.Sandbox} />} css={<CSS />} />

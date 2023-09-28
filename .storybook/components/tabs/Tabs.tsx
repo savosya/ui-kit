@@ -1,8 +1,9 @@
-import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { clsx } from 'clsx'
 
 import { allTabs, TabType } from './utils'
 import cls from './styles.module.scss'
+import { stickCanvas, STICKY_CANVAS_CLASS, unstickCanvas } from './stickyCanvas'
 
 type Props = {
   docs: React.ReactNode
@@ -26,9 +27,15 @@ export const Tabs = ({ ...restTabs }: Props) => {
     })
   }, [])
 
-  const handleCategoryClick = useCallback((event: any) => {
+  const handleTabClick = useCallback((event: any) => {
     const target = event.target as HTMLDivElement
     const newValue = target.getAttribute('data-category-value')
+
+    if (newValue === 'props') {
+      stickCanvas()
+    } else {
+      unstickCanvas()
+    }
 
     if (newValue) {
       moveTracker(target)
@@ -58,7 +65,7 @@ export const Tabs = ({ ...restTabs }: Props) => {
                 key={value}
                 className={clsx(cls.categoryItem, { [cls.activeItem]: value === tab })}
                 data-category-value={value}
-                onClick={handleCategoryClick}
+                onClick={handleTabClick}
               >
                 {label}
               </div>

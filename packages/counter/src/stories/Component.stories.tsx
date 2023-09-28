@@ -13,7 +13,10 @@ type Story = StoryObj<typeof Counter>
 export default meta
 
 export const Sandbox: Story = {
-  args: {}
+  args: {},
+  argTypes: {
+    classes: { control: { disable: true } }
+  }
 }
 
 export const Controlled: Story = {

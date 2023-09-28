@@ -1,10 +1,10 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Badge } from '../Component'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Badge } from '../Component'
 import Description from './description.mdx'
 import CSS from './css.mdx'
 import * as BadgeStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Badge" component={Badge} id="Badge" />
 
@@ -17,6 +17,6 @@ import { Badge } from '@savosya/savosya-myuikit-root'
 import { Badge } from '@savosya/savosya-myuikit-badge'
 ```
 
-<Canvas of={BadgeStories.Sandbox} meta={BadgeStories} />
+<Canvas of={BadgeStories.Sandbox} meta={BadgeStories} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Badge} />} css={<CSS />} />
+<Tabs docs={<Description />} props={<Controls of={BadgeStories.Sandbox} />} css={<CSS />} />

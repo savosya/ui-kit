@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Textarea } from '../Component'
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Checkbox } from '../../../checkbox/src/Component'
+import { Checkbox } from '../../../checkbox/src'
 
 const meta: Meta<typeof Textarea> = {
   title: 'Components/Textarea',
@@ -21,6 +21,11 @@ export const Sandbox: Story = {
     cols: 40,
     rows: 6,
     resizable: 'both'
+  },
+  argTypes: {
+    hint: { control: 'text' },
+    errorMsg: { control: 'text' },
+    classes: { control: { disable: true } }
   }
 }
 

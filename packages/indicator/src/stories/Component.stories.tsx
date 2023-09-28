@@ -12,14 +12,18 @@ export default meta
 
 const style: React.CSSProperties = { display: 'flex', gap: '24px' }
 export const Sandbox: Story = {
-  render: () => {
+  render: args => {
     return (
       <div style={style}>
-        <Indicator />
+        <Indicator {...args} />
         <Indicator size="s" number={1} />
         <Indicator size="m" number={2} />
         <Indicator size="l" number={3} />
       </div>
     )
+  },
+  argTypes: {
+    size: { control: { disable: true } },
+    number: { control: 'text' }
   }
 }

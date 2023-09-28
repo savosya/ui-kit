@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Modal>
 export default meta
 
 export const Sandbox: Story = {
-  render: () => {
+  render: args => {
     const [open, setOpen] = useState(false)
     const toggle = () => setOpen(prev => !prev)
 
@@ -23,6 +23,7 @@ export const Sandbox: Story = {
       <div>
         <Button onClick={toggle}>Открыть</Button>
         <Modal
+          {...args}
           title={'Modal Title'}
           footer={
             <Button size="s" type="ghost" onClick={toggle}>
@@ -36,6 +37,13 @@ export const Sandbox: Story = {
         </Modal>
       </div>
     )
+  },
+  argTypes: {
+    classes: { control: { disable: true } },
+    title: { control: 'text' },
+    footer: { control: 'text' },
+    closeIcon: { control: 'text' },
+    width: { control: 'text' }
   }
 }
 

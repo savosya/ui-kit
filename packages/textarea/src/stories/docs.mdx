@@ -1,10 +1,10 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Meta, Controls, Canvas } from '@storybook/blocks'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import { Textarea } from '../Component'
 import packageJson from '../../package.json'
 import CSS from './css.mdx'
 import Description from './description.mdx'
 import * as TextareaStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Textarea" component={Textarea} id="Textarea" />
 
@@ -17,6 +17,6 @@ import { Textarea } from '@savosya/savosya-myuikit-root'
 import { Textarea } from '@savosya/savosya-myuikit-textarea'
 ```
 
-<Canvas of={TextareaStories.Sandbox} meta={TextareaStories} />
+<Canvas of={TextareaStories.Sandbox} meta={TextareaStories} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Textarea} />} css={<CSS />} />
+<Tabs docs={<Description />} props={<Controls of={TextareaStories.Sandbox} />} css={<CSS />} />

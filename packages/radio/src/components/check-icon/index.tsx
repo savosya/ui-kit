@@ -11,8 +11,8 @@ const sizeConfig = {
     height: '10'
   },
   m: {
-    width: '12',
-    height: '12'
+    width: '11',
+    height: '11'
   },
   l: {
     width: '12',

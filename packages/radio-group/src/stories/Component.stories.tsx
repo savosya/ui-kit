@@ -11,16 +11,11 @@ type Story = StoryObj<typeof RadioGroup>
 export default meta
 
 export const Sandbox: Story = {
-  render: () => {
+  render: args => {
     const [value, setValue] = React.useState('watermelon')
-    const [value2, setValue2] = React.useState('apple')
 
     const onChange = (newValue: string) => {
       setValue(newValue)
-    }
-
-    const onChange_2 = (newValue: string) => {
-      setValue2(newValue)
     }
 
     return (
@@ -33,8 +28,13 @@ export const Sandbox: Story = {
           { label: 'Арбуз', value: 'watermelon' },
           { label: 'Груша', value: 'pear' }
         ]}
+        {...args}
       />
     )
+  },
+  argTypes: {
+    options: { control: { disable: true } },
+    radioProps: { control: { disable: true } }
   }
 }
 

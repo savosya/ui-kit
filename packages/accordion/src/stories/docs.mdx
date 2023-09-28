@@ -1,5 +1,5 @@
-import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
+import { ComponentHeader, Tabs, stickyCanvasObj } from '.storybook/components'
 import packageJson from '../../package.json'
 import { Accordion } from '../Component'
 import Description from './description.mdx'
@@ -7,8 +7,6 @@ import CSS from './css.mdx'
 import * as AccordionStories from './Component.stories'
 
 <Meta title="Components/Accordion" component={Accordion} id="Components/Accordion" />
-
-[//]: # '<Meta of={AccordionStories}/>'
 
 <ComponentHeader name="Accordion" version={packageJson.version} package="@savosya/savosya-myuikit-accordion">
   Компонент Accordion позволяет спрятать/показать часть контента.
@@ -19,6 +17,6 @@ import { Accordion } from '@savosya/savosya-myuikit-root'
 import { Accordion } from '@savosya/savosya-myuikit-accordion'
 ```
 
-<Canvas of={AccordionStories.Sandbox} />
+<Canvas of={AccordionStories.Sandbox} {...stickyCanvasObj} />
 
-<Tabs docs={<Description />} props={<ArgsTable of={Accordion} />} css={<CSS />} />
+<Tabs docs={<Description />} props={<Controls of={AccordionStories.Sandbox} />} css={<CSS />} />

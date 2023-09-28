@@ -372,3 +372,71 @@ div.sidebar-subheading > button > span:first-of-type {
 [data-item-id='components-tooltip--examples'] {
   display: none !important;
 }
+
+/* sandboxes */
+[data-item-id='components-accordion--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-attach--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-badge--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-breadcrumbs--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-button--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-checkbox--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-counter--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-divider--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-drawer--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-dropdown--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-dropzone--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-indicator--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-input--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-loader--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-modal--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-radiogroup--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-radio--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-select--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-tag--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-textarea--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-tooltip--sandbox'] {
+  display: none !important;
+}
+[data-item-id='components-typography--sandbox'] {
+  display: none !important;
+}

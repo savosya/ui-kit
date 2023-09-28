@@ -63,6 +63,10 @@
   &.closePadding {
     padding: 16px 42px 8px 16px;
   }
+
+  &.gray {
+    background-color: #f4f6f8;
+  }
 }
 .body {
   font-size: 14px;
@@ -71,10 +75,18 @@
   &.closePadding {
     padding: 38px 16px 16px 16px;
   }
+
+  &.gray {
+    background-color: #f4f6f8;
+  }
 }
 .footer {
   font-size: 14px;
   padding: 0 16px 16px;
   text-align: right;
   border-radius: 0 0 10px 10px;
+
+  &.gray {
+    background-color: #f4f6f8;
+  }
 }

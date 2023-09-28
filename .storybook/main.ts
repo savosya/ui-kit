@@ -1,6 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import * as path from 'path'
 import * as fs from 'fs'
+import { __disposeResources } from 'tslib'
 
 const config: StorybookConfig = {
   stories: [
@@ -17,7 +18,7 @@ const config: StorybookConfig = {
   },
   docs: {
     docsMode: false,
-    autodocs: false,
+    autodocs: true,
     defaultName: 'Docs'
   },
   viteFinal: async (config, { configType }) => {
@@ -46,6 +47,10 @@ const config: StorybookConfig = {
           [`@savosya/savosya-myuikit-${cmp}`]: path.resolve(__dirname, `../packages/${cmp}/src`)
         })
       )
+
+      Object.assign(config.resolve.alias, {
+        '.storybook': path.resolve(__dirname)
+      })
     })
     config.resolve.mainFields = ['module', 'main']
     return config

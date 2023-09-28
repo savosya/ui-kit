@@ -2,14 +2,6 @@ import React from 'react'
 import { Preview } from '@storybook/react'
 import { storybookTheme } from './theme'
 
-const StoryWrapperStyles: React.CSSProperties = {
-  boxSizing: 'border-box',
-  height: '100%',
-  width: '100%',
-  padding: 16,
-  margin: 0
-}
-
 const preview: Preview = {
   parameters: {
     viewMode: 'docs',
@@ -28,14 +20,17 @@ const preview: Preview = {
         sourceState: 'hidden'
       },
       argTypes: {
-        sort: 'requiredFirst'
+        sort: 'requiredFirst',
+        exclude: ['style']
+      },
+      controls: {
+        exclude: ['style']
       }
     }
   },
   decorators: [
     Story => (
-      <div style={StoryWrapperStyles}>
-        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+      <div>
         <Story />
       </div>
     )

@@ -72,3 +72,33 @@ body {
 .darker .docs-story {
   background-color: #b8bec6 !important;
 }
+
+/* FOR ARGS TABLE */
+table.docblock-argstable tbody.docblock-argstable-body {
+  border-radius: 4px;
+  filter: none;
+  box-shadow: 0 0 1px #6d7986;
+}
+
+table.docblock-argstable tbody.docblock-argstable-body td {
+  /*бэкграунд таблицы*/
+  /*background: var(--bg-primary);*/
+}
+
+table.docblock-argstable.docblock-argstable {
+  color: var(--color-light-text-primary);
+}
+
+/* баджи типов пропсов */
+table.docblock-argstable tbody.docblock-argstable-body td div:only-child > span {
+  color: #546272;
+  border-color: #e7e9eb;
+  background: #f3f4f5;
+  white-space: pre-wrap;
+  tab-size: 2;
+}
+
+table.docblock-argstable tbody.docblock-argstable-body td div:only-child > label {
+  color: #546272;
+  background: transparent !important;
+}
