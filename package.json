@@ -27,8 +27,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md,mdx}": [
-      "prettier --write",
-      "git add"
+      "npx prettier --write ."
     ]
   },
   "peerDependencies": {
