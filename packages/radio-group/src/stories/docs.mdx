@@ -1,9 +1,9 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { RadioGroup } from '../Component'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { RadioGroup } from '../Component'
 import Description from './description.mdx'
 import * as RadioGroupStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/RadioGroup" component={RadioGroup} id="RadioGroup" />
 
@@ -16,6 +16,6 @@ import { RadioGroup } from '@savosya/savosya-myuikit-root'
 import { RadioGroup } from '@savosya/savosya-myuikit-radio-group'
 ```
 
-<Canvas of={RadioGroupStories.Sandbox} meta={RadioGroupStories} />
+<Canvas of={RadioGroupStories.Sandbox} meta={RadioGroupStories} {...stickyCanvasObj} />
 
 <Tabs docs={<Description />} props={<ArgsTable of={RadioGroup} />} />

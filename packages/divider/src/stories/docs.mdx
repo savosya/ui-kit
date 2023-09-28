@@ -1,9 +1,9 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Divider } from '../Component'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Divider } from '../Component'
 import CSS from './css.mdx'
 import * as DividerStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Divider" component={Divider} id="Divider" />
 
@@ -16,6 +16,6 @@ import { Divider } from '@savosya/savosya-myuikit-root'
 import { Divider } from '@savosya/savosya-myuikit-divider'
 ```
 
-<Canvas of={DividerStories.Sandbox} meta={DividerStories} />
+<Canvas of={DividerStories.Sandbox} meta={DividerStories} {...stickyCanvasObj} />
 
 <Tabs props={<ArgsTable of={Divider} />} css={<CSS />} />

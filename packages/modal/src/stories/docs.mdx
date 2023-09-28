@@ -1,9 +1,9 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Modal } from '../Component'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
-import Description from './description.mdx'
+import { Modal } from '../Component'
 import * as ModalStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
+import Description from './description.mdx'
 
 <Meta title="Components/Modal" component={Modal} id="Modal" />
 
@@ -16,6 +16,6 @@ import { Modal } from '@savosya/savosya-myuikit-root'
 import { Modal } from '@savosya/savosya-myuikit-modal'
 ```
 
-<Canvas of={ModalStories.Sandbox} meta={ModalStories} />
+<Canvas of={ModalStories.Sandbox} meta={ModalStories} {...stickyCanvasObj} />
 
 <Tabs docs={<Description />} props={<ArgsTable of={Modal} />} />

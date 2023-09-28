@@ -1,10 +1,10 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Breadcrumbs } from '../Component'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Breadcrumbs } from '../Component'
 import Description from './description.mdx'
 import CSS from './css.mdx'
 import * as BreadcrumbsStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Breadcrumbs" component={Breadcrumbs} id="Breadcrumbs" />
 
@@ -17,6 +17,6 @@ import { Breadcrumbs } from '@savosya/savosya-myuikit-root'
 import { Breadcrumbs } from '@savosya/savosya-myuikit-badge'
 ```
 
-<Canvas of={BreadcrumbsStories.Sandbox} meta={BreadcrumbsStories} />
+<Canvas of={BreadcrumbsStories.Sandbox} meta={BreadcrumbsStories} {...stickyCanvasObj} />
 
 <Tabs docs={<Description />} props={<ArgsTable of={Breadcrumbs} />} css={<CSS />} />

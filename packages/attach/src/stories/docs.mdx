@@ -1,9 +1,9 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Attach } from '../Component'
+import { ComponentHeader, Tabs, stickyCanvasObj } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Attach } from '../Component'
 import Description from './description.mdx'
 import * as AttachStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Attach" component={Attach} id="Attach" />
 
@@ -16,6 +16,6 @@ import { Attach } from '@savosya/savosya-myuikit-root'
 import { Attach } from '@savosya/savosya-myuikit-attach'
 ```
 
-<Canvas of={AttachStories.Sandbox} meta={AttachStories} story="inline" />
+<Canvas of={AttachStories.Sandbox} meta={AttachStories} {...stickyCanvasObj} />
 
 <Tabs docs={<Description />} props={<ArgsTable of={Attach} />} />

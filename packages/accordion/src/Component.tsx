@@ -55,7 +55,9 @@ export const Accordion = ({
 
         <div className={cls.right}>
           <div className={clsx(cls.extra, classes?.extra)}>{extra}</div>
-          <div className={clsx(cls.chevroneIcon, { [cls.close]: !isOpen }, classes?.icon)}>{HeaderIcon}</div>
+          <div className={clsx(cls.chevroneIcon, { [cls.close]: !isOpen && !disabled }, classes?.icon)}>
+            {HeaderIcon}
+          </div>
         </div>
       </div>
 

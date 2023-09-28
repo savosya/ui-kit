@@ -1,9 +1,9 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Tag } from '../Component'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Tag } from '../Component'
 import CSS from './css.mdx'
 import * as TagStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Tag" component={Tag} id="Tag" />
 
@@ -16,6 +16,6 @@ import { Tag } from '@savosya/savosya-myuikit-root'
 import { Tag } from '@savosya/savosya-myuikit-tag'
 ```
 
-<Canvas of={TagStories.Sandbox} meta={TagStories} />
+<Canvas of={TagStories.Sandbox} meta={TagStories} {...stickyCanvasObj} />
 
 <Tabs props={<ArgsTable of={Tag} />} css={<CSS />} />

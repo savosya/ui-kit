@@ -3,11 +3,11 @@ import { Preview } from '@storybook/react'
 import { storybookTheme } from './theme'
 
 const StoryWrapperStyles: React.CSSProperties = {
-  boxSizing: 'border-box',
-  height: '100%',
-  width: '100%',
-  padding: 16,
-  margin: 0
+  // boxSizing: 'border-box',
+  // height: '100%',
+  // width: '100%',
+  // paddingBottom: 4,
+  // margin: 0
 }
 
 const preview: Preview = {
@@ -28,7 +28,11 @@ const preview: Preview = {
         sourceState: 'hidden'
       },
       argTypes: {
-        sort: 'requiredFirst'
+        sort: 'requiredFirst',
+        exclude: ['style']
+      },
+      controls: {
+        exclude: ['style']
       }
     }
   },

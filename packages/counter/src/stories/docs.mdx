@@ -1,9 +1,9 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
-import { Counter } from '../Component'
+import { ComponentHeader, stickyCanvasObj, Tabs } from '.storybook/components'
 import packageJson from '../../package.json'
+import { Counter } from '../Component'
 import Description from './description.mdx'
 import * as CounterStories from './Component.stories'
-import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
 <Meta title="Components/Counter" component={Counter} id="Counter" />
 
@@ -16,6 +16,6 @@ import { Counter } from '@savosya/savosya-myuikit-root'
 import { Counter } from '@savosya/savosya-myuikit-counter'
 ```
 
-<Canvas of={CounterStories.Sandbox} meta={CounterStories} />
+<Canvas of={CounterStories.Sandbox} meta={CounterStories} {...stickyCanvasObj} />
 
 <Tabs docs={<Description />} props={<ArgsTable of={Counter} />} />
