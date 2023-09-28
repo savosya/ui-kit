@@ -20,4 +20,5 @@ export interface AccordionProps {
     divider?: string
     content?: string
   }
+  style?: React.CSSProperties
 }

@@ -1,81 +1,16 @@
-Компонент «подката» позволяет спрятать кусок текста за ссылку «Еще...».
+import {Canvas} from '@storybook/blocks'
+import * as AccordionStories from './Component.stories'
 
-### Стандартный Collapse
 
-```jsx live
-<Collapse collapsedLabel='Подробнее' expandedLabel='Скрыть'>
-    Банк, основанный в 1990 году, является универсальным банком, осуществляющим все основные
-    виды банковских операций, представленных на рынке финансовых услуг, включая обслуживание частных
-    и корпоративных клиентов, инвестиционный банковский бизнес, торговое финансирование и т.д.
-</Collapse>
-```
+### Стандартный Accordion
+<Canvas of={AccordionStories.Sandbox} />
 
-### Collapse с кастомным контролом
 
-Управлять состоянием компонента можно снаружи используя любой контрол (например кнопку) и передавать
-текущее значение состояния через проп expanded
+### Controlled Accordion
+Управлять состоянием компонента можно явно передавая props open.
+<Canvas of={AccordionStories.Controlled} />
 
-```jsx live
-render(() => {
-    const [expanded, setExpanded] = React.useState(false);
 
-    return (
-        <>
-            <Button onClick={() => setExpanded(!expanded)}>
-                {expanded ? 'Свернуть' : 'Развернуть'}
-            </Button>
+### Accordion с динамическим контентом
+<Canvas of={AccordionStories.Dynamic} />
 
-            <Collapse expanded={expanded}>
-                Банк, основанный в 1990 году, является универсальным банком, осуществляющим
-                все основные виды банковских операций, представленных на рынке финансовых услуг,
-                включая обслуживание частных и корпоративных клиентов, инвестиционный банковский
-                бизнес, торговое финансирование и т.д.
-            </Collapse>
-        </>
-    );
-});
-```
-
-### Collapse динамическим контентом
-
-```jsx live
-const Content = () => (
-    <div>
-        Банк, основанный в 1990 году, является универсальным банком, осуществляющим все
-        основные виды банковских операций, представленных на рынке финансовых услуг, включая
-        обслуживание частных и корпоративных клиентов, инвестиционный банковский бизнес, торговое
-        финансирование и т.д.
-    </div>
-);
-
-render(() => {
-    const [expanded, setExpanded] = React.useState(false);
-    const [loaded, setLoaded] = React.useState(false);
-
-    const handleToggle = () => {
-        if (!expanded) {
-            setTimeout(() => setLoaded(true), 2000);
-        }
-
-        setExpanded(!expanded);
-    };
-
-    const handleTransitionEnd = () => {
-        if (!expanded) {
-            setLoaded(false);
-        }
-    };
-
-    return (
-        <>
-            <Button onClick={handleToggle}>{expanded ? 'Свернуть' : 'Развернуть'}</Button>
-
-            <Collapse expanded={expanded} onTransitionEnd={handleTransitionEnd}>
-                <div style={{ display: 'flex', width: 320 }}>
-                    {loaded ? <Content /> : <Spinner size='m' visible={true} />}
-                </div>
-            </Collapse>
-        </>
-    );
-});
-```

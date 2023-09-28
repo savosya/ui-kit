@@ -14,7 +14,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
   const {
     className,
     label,
-    hint,
+    // hint,
     size = 'm',
     checked,
     indeterminate,
@@ -24,6 +24,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
     disabled,
     ...rest
   } = props
+  const isControlled = typeof checked === 'boolean'
 
   const labelRef = useRef<HTMLLabelElement>(null);
   const [focused] = useFocus(labelRef, 'keyboard');
@@ -49,7 +50,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
         cls[size],
         {
           [cls.indeterminate]: indeterminate,
-          [cls.checked]: checked || innerChecked,
+          [cls.checked]: isControlled ? checked : innerChecked,
           [cls.disabled]: disabled,
         },
         className,
@@ -61,7 +62,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
         type='checkbox'
         name={name}
         onChange={handleChange}
-        checked={checked || innerChecked}
+        checked={isControlled ? checked : innerChecked}
         disabled={disabled}
         {...rest}
       />
@@ -71,12 +72,12 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
         cls[size],
         {
           [cls.indeterminate]: indeterminate,
-          [cls.checked]: checked || innerChecked,
+          [cls.checked]: isControlled ? checked : innerChecked,
           [cls.disabled]: disabled,
           [cls.focus]: focused
         }
       )}>
-        {(checked || innerChecked) && <CheckIcon size={size}/>}
+        {(isControlled ? checked : innerChecked) && <CheckIcon size={size}/>}
 
         {(!checked && !innerChecked) && indeterminate && <span className={clsx(
           cls.indeterminateBox,

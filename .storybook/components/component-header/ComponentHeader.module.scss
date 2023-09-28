@@ -1,0 +1,29 @@
+.component {
+    position: relative;
+    margin: 0;
+}
+
+.description {
+    display: flex !important;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.title {
+    display: flex;
+    gap: 12px;
+
+
+    & .name {
+        font-weight: 700;
+        font-size: 42px;
+    }
+    & .version {
+        color: #848D98;
+    }
+}
+
+.description > p {
+    margin: 0;
+    font-size: 16px;
+}

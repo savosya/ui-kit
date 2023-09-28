@@ -1,23 +1,32 @@
 import * as React from 'react';
 import {Tag} from '../Component';
+import {Meta, StoryObj} from "@storybook/react";
 
-export default {
+const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
-  component: Tag,
+  component: Tag
 };
-const canvasStyles = {
+
+type Story = StoryObj<typeof Tag>;
+export default meta;
+
+
+const canvasStyles: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   gap: 16
 }
-export const Default = () => {
-
-  return (
-    <div style={canvasStyles}>
-      <Tag size='s'>Пример тэга S</Tag>
-      <Tag>Пример тэга M</Tag>
-      <Tag size='l'>Пример тэга L</Tag>
-    </div>
-  )
+export const Sandbox: Story = {
+  render: () => {
+    return (
+      <div style={canvasStyles}>
+        <Tag disabled>Disabled</Tag>
+        <Tag transparent>Transparent</Tag>
+        <Tag size='s'>Пример тэга S</Tag>
+        <Tag>Пример тэга M</Tag>
+        <Tag size='l'>Пример тэга L</Tag>
+      </div>
+    )
+  }
 };
 

@@ -6,6 +6,11 @@ export interface CounterProps {
   min?: number
   max?: number
   width?: number
+  /**
+   * Отключает таргетирование инпута, но кнопки +/- работают
+   * */
+  readOnly?: boolean
+  disabled?: boolean
 
   className?: string
   classes?: {

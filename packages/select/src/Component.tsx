@@ -44,9 +44,9 @@ export const Select = (props: SelectProps) => {
   } = props
 
   const {
-    ellipsisOptions = true,
-    wrapOptions = undefined,
-    showDivider = false
+    ellipsis = true,
+    wrap = undefined,
+    divider = false
   } = optionsSettings
 
   const {input, option, label: labelCls, dropdown, input_wrapper, root} = classes
@@ -68,16 +68,18 @@ export const Select = (props: SelectProps) => {
   })
 
   /** handlers */
-  const handleOpen = useCallback(() => {
+  const handleOpen = () => {
     if (onOpen) onOpen()
+    if(disabled || loading) return
     setInternalState(prev => ({
       ...prev,
       open: isControlledOpen ? prev.open : true,
       mode: showSearch ? 'search' : 'value'
     }))
-  }, [onOpen])
-  const handleClose = useCallback(() => {
+  }
+  const handleClose = () => {
     if (onClose) onClose()
+    if(disabled || loading) return
     setInternalState(prev => ({
       ...prev,
       open: isControlledOpen ? prev.open : false,
@@ -85,12 +87,13 @@ export const Select = (props: SelectProps) => {
       search: '',
       options
     }))
-  }, [onClose])
+  }
   const handleSearch = (e: any) => {
     const value = e.target.value || ''
     setInternalState(prev => ({...prev, search: value, options: getFilteredOptions(value, options)}))
   }
-  const handleChange = useCallback((newValue: string | string[], option: PassedOption | PassedOption[]) => {
+
+  const handleChange = (newValue: string | string[], option: PassedOption | PassedOption[]) => {
     if (onChange) onChange(newValue, option)
     setInternalState(prev => ({
       ...prev,
@@ -99,13 +102,16 @@ export const Select = (props: SelectProps) => {
       mode: showSearch && multiple ? 'search' : 'value'
     }))
     if (!multiple) inputRef?.current?.blur()
-  }, [onChange, multiple])
-  const handleClean = useCallback(() => {
+  }
+
+  const handleClean = () => {
     if (onClean) onClean()
     setInternalState(prev => ({...prev, value: multiple ? [] : null}))
-  }, [onClean])
+  }
 
   const onChevroneClick = () => {
+    if(loading || disabled) return;
+
     if (!internalState.open) {
       handleOpen()
     } else {
@@ -117,6 +123,7 @@ export const Select = (props: SelectProps) => {
 
   /** render */
   const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean
+  const isOpen = isControlledOpen ? open : internalState.open
   return (
     <div
       className={clsx(cls.root, root)}
@@ -132,7 +139,7 @@ export const Select = (props: SelectProps) => {
         menuItemSelectedIcon={<CheckIcon/>}
         style={{width: '100%'}}
 
-        open={internalState.open}
+        open={isOpen}
         onSelect={onSelect}
         onDeselect={onDeselect}
         value={isControlledInput ? value : internalState.value}
@@ -182,9 +189,9 @@ export const Select = (props: SelectProps) => {
               [cls.selected]: isControlledInput
                 ? multiple ? value?.includes(o.value) : o.value === value
                 : multiple ? internalState.value?.includes(o.value) : o.value === internalState.value,
-              [cls.ellipsis]: ellipsisOptions,
-              [cls.wrap]: wrapOptions,
-              [cls.border]: showDivider,
+              [cls.ellipsis]: ellipsis,
+              [cls.wrap]: wrap,
+              [cls.border]: divider,
               [cls.disabled]: o.disabled
             })}
             key={o.value}

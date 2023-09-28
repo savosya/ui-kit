@@ -1,0 +1,30 @@
+import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
+import {Dropdown} from '../Component';
+import packageJson from '../../package.json';
+import Description from './description.mdx';
+import CSS from './css.mdx'
+import * as DropdownStories from './Component.stories'
+import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+
+<Meta title='Components/Dropdown' component={Dropdown} id='Dropdown'/>
+
+<ComponentHeader
+    name='Dropdown'
+    version={packageJson.version}
+    package='@savosya/savosya-myuikit-dropdown'
+>
+    Выпадающее меню
+</ComponentHeader>
+
+```jsx
+import { Dropdown } from '@savosya/savosya-myuikit-root';
+import { Dropdown } from '@savosya/savosya-myuikit-dropdown';
+```
+
+<Canvas of={DropdownStories.Sandbox} meta={DropdownStories}/>
+
+<Tabs
+    docs={<Description/>}
+    props={<ArgsTable of={Dropdown}/>}
+    css={<CSS/>}
+/>

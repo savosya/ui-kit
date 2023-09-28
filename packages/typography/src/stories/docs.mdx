@@ -1,0 +1,29 @@
+import {Meta, ArgsTable, Canvas,} from '@storybook/blocks';
+import {Typography} from '../Component';
+import packageJson from '../../package.json';
+import * as TooltipStories from './Component.stories'
+import {ComponentHeader, CustomTabs} from "../../../../.storybook/components";
+
+<Meta title='Components/Typography' component={Typography} id='Typography'/>
+
+<ComponentHeader
+    name='Typography'
+    version={packageJson.version}
+    package='@savosya/savosya-myuikit-typography'
+>
+    Типографика
+</ComponentHeader>
+
+```jsx
+import { Typography } from '@savosya/savosya-myuikit-root';
+import { Typography } from '@savosya/savosya-myuikit-typography';
+```
+
+<Canvas of={TooltipStories.Sandbox} meta={TooltipStories}/>
+
+<CustomTabs
+    custom={[
+        {label: 'Title', value: 'title', component: <ArgsTable of={Typography.Title}/>},
+        {label: 'Text', value: 'text', component: <ArgsTable of={Typography.Text}/>},
+    ]}
+/>

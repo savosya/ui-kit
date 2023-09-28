@@ -1,0 +1,78 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta
+  title='General/Типографика'
+  parameters={{ previewTabs: { canvas: { hidden: true } } }}
+  id='General/typography'
+/>
+
+# Типографика
+
+#### Используемый шрифт ``Inter``
+
+`--eub-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;`
+
+##### Чтобы подключить шрифт скачайте его и подключите:
+
+```css
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+```
+
+или
+
+```css
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500&display=swap');
+```
+
+В случае если у вас используется другой шрифт, есть возможность заменить шрифт в ките через `css` переменную `--eub-font-family`. Следует определить ее как можно выше.
+
+## Компонент Typography
+
+#### Компонент предоставляет набор пресетов с определенным набором стилей для заголовком и текста.
+
+##### Использование:
+
+```jsx
+import { Typography } from '@savosya/savosya-myuikit-root';
+// или
+import { Typography } from '@savosya/savosya-myuikit-typography';
+
+const { Title, Text } = Typography;
+```
+
+### Title [400]:
+
+<Typeset
+    fontSizes={['16px', '24px', '32px', '36px', '48px', '64px', '72px']}
+    fontWeight={400}
+    sampleText={'This is sample text of typeset.'}
+    fontFamily={'Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, sans-serif'}
+/>
+
+### Text [400]:
+
+<Typeset
+    fontSizes={['10px', '12px', '14px', '16px', '18px', '20px', '22px', '24px', '26px', '28px', '30px']}
+    fontWeight={400}
+    sampleText={'This is sample text of typeset.'}
+    fontFamily={'Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, sans-serif'}
+/>

@@ -1,65 +1,93 @@
 import * as React from 'react';
 import {Select} from '../Component';
 import {useState} from "react";
+import {Meta, StoryObj} from "@storybook/react";
 
-export default {
+const meta: Meta<typeof Select> = {
   title: 'Components/Select',
-  component: Select,
+  component: Select
 };
 
-const canvasStyles = {
-  // width: 320,
-  padding: 16,
-  display: 'flex',
-  flexWrap: 'wrap',
-  gap: 16
+type Story = StoryObj<typeof Select>;
+export default meta;
+
+const options = [
+  {label: 'Long White Long White Long White Long White Long White', value: 'white'},
+  {label: 'Black', value: 'black', disabled: true},
+  {label: 'Yellow', value: 'yellow'},
+  {label: 'Green', value: 'green', disabled: true},
+  {label: 'Red', value: 'red'},
+  {label: 'Blue', value: 'blue'},
+  {label: 'Purple', value: 'purple'},
+]
+
+export const Sandbox: Story = {
+  args: {
+    options
+  }
 }
 
-export const Default = () => {
-  const [value, setValue] = useState<string[] | null>(['apple', 'pear'])
+export const Controlled = () => {
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState<string | null>(null)
 
 
   return (
-    //@ts-ignore
-    <div style={canvasStyles}>
+    <Select
+      value={value}
+      onOpen={() => setOpen(true)}
+      onClose={() => setOpen(false)}
+      onClean={() => setValue(null)}
+      onChange={(value) => setValue(value as string)}
+      open={open}
+      label='Colors'
+      placeholder={'pick color'}
+      options={options}
+    />
+  )
+};
+
+export const Multiple = () => {
+  const [value, setValue] = useState<string[]>([])
+
+  return (
+    <Select
+      value={value}
+      onChange={(value) => setValue(value as string[])}
+      multiple
+      label='Colors'
+      placeholder={'pick color'}
+      showSearch
+      onClean={() => setValue([])}
+      options={options}
+    />
+  )
+};
+
+export const States = () => {
+  return (
+    <div style={{display: 'flex', gap: 12}}>
       <Select
-        // value={value}
-        // loading
-        // open
-        label='Фрукты'
-        placeholder={'Выберите'}
-        // showSearch
-        // multiple
-        block
-        // showClean={false}
-        // error
-        errorMsg={'FFFFF'}
-        optionsSettings={{
-          showDivider: true,
-          // ellipsisOptions: false,
-          wrapOptions: true
-        }}
-        options={[
-          {label: 'ЯблокоЯблокоЯблоко ЯблокоЯблок оЯблокоЯб локоЯблок оЯблоко', value: 'apple'},
-          {label: 'Арбуз', value: 'watermelon', disabled: true},
-          {label: 'Груша', value: 'pear'},
-          {label: 'Агуша', value: 'agusha', disabled: true},
-          {label: 'Цветы', value: 'flowers'},
-          {label: 'Ботинки', value: 'boots'},
-          {label: 'Шляпа', value: 'hat'},
-          {label: 'Дудка', value: 'dudka'},
-          {label: 'Кошка', value: 'cat'},
-          {label: 'Игра', value: 'game'},
-          {label: 'Игрушка', value: 'toy'},
-          {label: 'Грушка', value: 'grushka'},
-          {label: 'Крушка', value: 'cup'},
-          {label: 'Вошка', value: 'bug'},
-          {label: 'Мошка', value: 'little-bug'},
-          {label: 'Ложка', value: 'spoon'},
-          {label: 'Тошка', value: 'Anton'},
-          {label: 'Марожка', value: 'ice-cream'},
-          {label: 'Якорь', value: 'anchor'},
-        ]}
+        multiple
+        disabled
+        label='Colors'
+        placeholder={'pick color'}
+        options={options}
+      />
+      <Select
+        multiple
+        loading
+        label='Colors'
+        placeholder={'pick color'}
+        options={options}
+      />
+      <Select
+        error
+        errorMsg='Ошибка'
+        multiple
+        label='Colors'
+        placeholder={'pick color'}
+        options={options}
       />
     </div>
   )

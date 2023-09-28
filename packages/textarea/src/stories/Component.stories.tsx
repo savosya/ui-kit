@@ -1,26 +1,57 @@
 import * as React from 'react';
+import {useState} from "react";
 import {Textarea} from '../Component';
+import {Meta, StoryObj} from "@storybook/react";
 
-export default {
+import {Checkbox} from '../../../checkbox/src/Component'
+
+const meta: Meta<typeof Textarea> = {
   title: 'Components/Textarea',
-  component: Textarea,
+  component: Textarea
 };
 
-export const Default = () => {
+type Story = StoryObj<typeof Textarea>;
+export default meta;
 
-  return (
-    <div>
-      <Textarea
-        label='Заголовок'
-        placeholder={'i\'m placing holder'}
-        error
-        hint='Подсказка'
-        errorMsg='ОШИБКА'
-        cols={40}
-        rows={6}
-        resizable={'both'}
-      />
-    </div>
-  )
+
+export const Sandbox: Story = {
+  args: {
+    label: 'Заголовок',
+    placeholder: 'Начните вводить текст',
+    hint: 'Подсказка',
+    cols: 40,
+    rows: 6,
+    resizable: 'both',
+  }
+}
+
+export const Controlled: Story = {
+  render: () => {
+    const [error, setError] = useState(false);
+    const [disabled, setDisabled] = useState(false);
+    const [value, setValue] = useState('');
+
+
+    return (
+      <div>
+        <div style={{display: 'flex', gap: 12, marginBottom: 12}}>
+          <Checkbox label='Ошибка' checked={error} onChange={(_, {checked}) => setError(checked)}/>
+          <Checkbox label='Disabled' checked={disabled} onChange={(_, {checked}) => setDisabled(checked)}/>
+        </div>
+
+        <Textarea
+          label='Заголовок'
+          value={value}
+          disabled={disabled}
+          onChange={(e) => setValue(e.currentTarget.value)}
+          error={error}
+          hint='Подсказка'
+          errorMsg={error ? 'ОШИБКА' : undefined}
+          cols={40}
+          rows={4}
+        />
+      </div>
+    )
+  }
 };
 

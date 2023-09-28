@@ -3,7 +3,11 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 const config: StorybookConfig = {
-  stories: ['../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: [
+    '../docs/**/*.stories.@(ts|md)x',
+    '../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../packages/**/docs.mdx'
+  ],
   addons: [
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-mdx-gfm")
@@ -16,7 +20,8 @@ const config: StorybookConfig = {
   },
   docs: {
     docsMode: false,
-    autodocs: true
+    autodocs: false,
+    defaultName: 'Docs'
   },
   viteFinal: async (config, {
     configType

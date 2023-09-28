@@ -4,6 +4,7 @@ import type {RadioProps} from "@savosya/savosya-myuikit-radio";
 
 export type RadioOption = { label: ReactNode, value: string, disabled?: boolean }
 export interface RadioGroupProps {
+  direction?: 'vertical' | 'horizontal'
   className?: string
   name?: string
   options?: RadioOption[]
@@ -13,4 +14,5 @@ export interface RadioGroupProps {
     name?: string | undefined
   }) => void
   value?: string
+  style?: React.CSSProperties
 }

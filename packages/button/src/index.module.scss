@@ -134,6 +134,7 @@
   gap: 10px;
   letter-spacing: -0.2px;
   outline-color: var(--default-outline-color);
+  height: fit-content;
 
   &.primary.dark {
     background-color: var(--button-primary-dark-bg_default);

@@ -1,5 +1,44 @@
-Компонент прикрепления файлов.
+## Controlled Attach
+
+К сожалению, можно только эмулировать [контролируемое поведение](https://ru.reactjs.org/docs/uncontrolled-components.html#the-file-input-tag).
 
 ```jsx live
-<Attach />
+render(() => {
+    const [response, setResponse] = React.useState(null);
+    const [files, setFiles] = React.useState([]);
+
+    const handleChange = (event, payload) => {
+        setFiles([...files, ...payload.files]);
+    };
+
+    const handleSubmit = () => {
+        const formData = new FormData();
+
+        files.forEach((file, i) => {
+            formData.append(`file${i}`, file);
+        });
+
+        fetch('https://example.ru/post', {
+            method: 'POST',
+            body: formData,
+        })
+            .then((r) => r.json())
+            .then((r) => setResponse(r));
+    };
+
+    return (
+        <div>
+            <Attach
+                value={files}
+                onChange={handleChange}
+                multiple={true}
+                name='file'
+                onClear={() => setFiles([])}
+            />
+            <Button size='xs' type='button' onClick={handleSubmit}>
+                Отправить
+            </Button>
+        </div>
+    );
+});
 ```

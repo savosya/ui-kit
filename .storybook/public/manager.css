@@ -1,4 +1,5 @@
 :root {
+    --brand-rubin: #E1056D;
     --brand-blue: #1D3F88;
     /*--bg-primary: #F4F6F8;*/
     --bg-primary: #f3f4f5;
@@ -55,6 +56,11 @@ div.sidebar-header img {
 
 div.sidebar-header button {
     transform: scale(1.2);
+}
+
+div.sidebar-header button::before {
+    border: 0;
+    background-color: var(--brand-rubin);
 }
 
 .search-field.search-field {
@@ -262,3 +268,38 @@ div.sidebar-subheading > button > span:first-of-type {
 .sidebar-container .sidebar-item[data-selected='true'] .sidebar-icon {
     color: var(--color-light-text-primary);
 }
+
+
+/* remove components from sidebar TODO: придумать другое решение */
+[data-item-id="components-accordion--controlled"] {display: none !important;}
+[data-item-id="components-accordion--dynamic"] {display: none !important;}
+[data-item-id="components-badge--examples"] {display: none !important;}
+[data-item-id="components-breadcrumbs--example"] {display: none !important;}
+[data-item-id="components-button--primary"] {display: none !important;}
+[data-item-id="components-button--outline"] {display: none !important;}
+[data-item-id="components-button--ghost"] {display: none !important;}
+[data-item-id="components-button--link"] {display: none !important;}
+[data-item-id="components-checkbox--sizes"] {display: none !important;}
+[data-item-id="components-checkbox--hint"] {display: none !important;}
+[data-item-id="components-checkbox--intermediate"] {display: none !important;}
+[data-item-id="components-counter--controlled"] {display: none !important;}
+[data-item-id="components-drawer--custom"] {display: none !important;}
+[data-item-id="components-dropdown--examples"] {display: none !important;}
+[data-item-id="components-dropdown--placements"] {display: none !important;}
+[data-item-id="components-dropdown--context-menu"] {display: none !important;}
+[data-item-id="components-input--types"] {display: none !important;}
+[data-item-id="components-input--examples"] {display: none !important;}
+[data-item-id="components-input--tooltip"] {display: none !important;}
+[data-item-id="components-input--error"] {display: none !important;}
+[data-item-id="components-input--hint"] {display: none !important;}
+[data-item-id="components-input--addons"] {display: none !important;}
+[data-item-id="components-loader--not-filled"] {display: none !important;}
+[data-item-id="components-modal--example"] {display: none !important;}
+[data-item-id="components-radio--states"] {display: none !important;}
+[data-item-id="components-radiogroup--examples"] {display: none !important;}
+[data-item-id="components-select--controlled"] {display: none !important;}
+[data-item-id="components-select--multiple"] {display: none !important;}
+[data-item-id="components-select--states"] {display: none !important;}
+[data-item-id="components-textarea--controlled"] {display: none !important;}
+[data-item-id="components-tooltip--examples"] {display: none !important;}
+

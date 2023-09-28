@@ -26,27 +26,28 @@ export const Dropdown = (
     optionsSettings = {},
     withAnimation = true,
     classes = {},
+    style
   }: DropdownProps) => {
 
   const {
-    ellipsisOptions = true,
-    wrapOptions = true,
-    showDivider = false,
+    ellipsis = true,
+    wrap= false,
+    divider = false,
   } = optionsSettings
 
   const {overlay, open: openCls, option: optionCls, menu: menuCls, wrapper} = classes
 
 
   const menu = useMemo(() => (
-    <div className={clsx(cls.menu, menuCls)}>
+    <div className={clsx(cls.menu, menuCls)} style={style}>
       {
         options?.map(o =>
           <div
             key={o.key}
             className={clsx(cls.menuItem, optionCls, {
-              [cls.ellipsis]: ellipsisOptions,
-              [cls.wrap]: wrapOptions,
-              [cls.border]: showDivider,
+              [cls.ellipsis]: ellipsis,
+              [cls.wrap]: wrap && !ellipsis,
+              [cls.border]: divider,
               [cls.disabled]: o.disabled
             })}
             onClick={onSelect ? () => onSelect(o.key, o) : undefined}

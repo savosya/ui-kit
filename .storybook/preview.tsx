@@ -1,66 +1,41 @@
 import React from 'react';
 import {Preview} from '@storybook/react';
-import cn from 'clsx'
 import {storybookTheme} from "./theme";
+
+const StoryWrapperStyles: React.CSSProperties = {
+  boxSizing: "border-box",
+  height: '100%',
+  width: '100%',
+  padding: 16,
+  margin: 0
+}
 
 
 const preview: Preview = {
   parameters: {
     viewMode: 'docs',
-    backgrounds: { disable: true },
+    backgrounds: {disable: true},
     grid: {disable: true},
+    options: {
+      storySort: {
+        order: ['General', 'Components'],
+      },
+    },
     docs: {
       theme: storybookTheme,
-      // page: () => (
-      //   <>
-      //     123
-      //   </>
-      // ),
-
-      // components: {
-      //   h1: ({ children, ...restProps }) => (
-      //     <h1 {...restProps} className={cn(restProps.className, 'sbdocs-h1')}>
-      //       H1 {children}
-      //     </h1>
-      //   ),
-      //   h2: ({ children, ...restProps }) => (
-      //     <h2 {...restProps} className={cn(restProps.className, 'sbdocs-h2')}>
-      //       H2 {children}
-      //     </h2>
-      //   ),
-      //   h3: ({ children, ...restProps }) => (
-      //     <h2 {...restProps} className={cn(restProps.className, 'sbdocs-h3')}>
-      //       H3 {children}
-      //     </h2>
-      //   ),
-      //   h4: ({ children, ...restProps }) => (
-      //     <h4 {...restProps} className={cn(restProps.className, 'sbdocs-h4')}>
-      //       H4 {children}
-      //     </h4>
-      //   ),
-      //   p: ({ children, ...restProps }) => (
-      //     <p {...restProps} className={cn(restProps.className, 'sbdocs-p')}>
-      //       PPP {children}
-      //     </p>
-      //   ),
-      //   li: ({ children, ...restProps }) => (
-      //     <li {...restProps} className={cn(restProps.className, 'sbdocs-li')}>
-      //       LI {children}
-      //     </li>
-      //   ),
-      // },
+      canvas: {
+        layout: 'padded',
+        withToolbar: true,
+        sourceState: 'hidden'
+      },
+      argTypes: {
+        sort: 'requiredFirst'
+      }
     }
   },
-
   decorators: [
     (Story) => (
-      <div style={{
-        boxSizing: "border-box",
-        height: '100%',
-        width: '100%',
-        padding: 16,
-        margin: 0
-      }}>
+      <div style={StoryWrapperStyles}>
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
         <Story/>
       </div>

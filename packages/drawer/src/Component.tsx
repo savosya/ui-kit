@@ -8,6 +8,7 @@ import {DrawerProps} from "./drawer.types";
 import cls from './index.module.scss'
 import './assets/drawer.css'
 import motionProps from './assets/motion';
+import {useState} from "react";
 
 
 export const Drawer = (
@@ -30,7 +31,6 @@ export const Drawer = (
     onKeyUp,
     ...panelProps
   }: DrawerProps) => {
-
   return (
     <RcDrawer
       prefixCls='eub-drawer'

@@ -7,7 +7,7 @@ type Props = {
   onClick?: () => void
 }
 
-export const CloseIcon = ({size = 16, onClick}: Props) => {
+export const CloseIcon = ({size = 22, onClick}: Props) => {
   return (
     <svg
       onClick={onClick}

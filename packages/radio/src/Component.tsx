@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import clsx from 'clsx'
 
 import {useFocus} from "@savosya/savosya-myuikit-hooks"
@@ -25,25 +25,35 @@ export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref)
     ...rest
   } = props
 
+  const isControlled = typeof checked === 'boolean'
+
+  const [internalChecked, setChecked] = useState(false)
+
   const labelRef = useRef<HTMLLabelElement>(null);
   const [focused] = useFocus(labelRef, 'keyboard');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
 
+    if(!isControlled) {
+      setChecked(true)
+    }
+
     if (onChange) {
       onChange(event, {checked: event.target.checked, name: event.target.name});
     }
   };
 
+
+  const isChecked = isControlled ? checked : internalChecked
   return (
     <label
       className={clsx(
         cls.root,
         cls[size],
         {
-          [cls.indeterminate]: checked && markType === 'default',
-          [cls.checked]: checked && markType === 'check',
+          [cls.indeterminate]: isChecked && markType === 'default',
+          [cls.checked]: isChecked && markType === 'check',
           [cls.disabled]: disabled,
         },
         className,
@@ -55,7 +65,7 @@ export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref)
         type='radio'
         name={name}
         onChange={handleChange}
-        checked={checked}
+        checked={isChecked}
         disabled={disabled}
         {...rest}
       />
@@ -65,16 +75,16 @@ export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref)
           cls.box,
           cls[size],
           {
-            [cls.indeterminate]: checked && markType === 'default',
-            [cls.checked]: checked && markType === 'check',
+            [cls.indeterminate]: isChecked && markType === 'default',
+            [cls.checked]: isChecked && markType === 'check',
             [cls.disabled]: disabled,
             [cls.focus]: focused
           }
         )}
       >
-        {checked && markType === 'check' && <CheckIcon size={size}/>}
+        {isChecked && markType === 'check' && <CheckIcon size={size}/>}
 
-        {checked && markType === 'default' && <span className={clsx(
+        {isChecked && markType === 'default' && <span className={clsx(
           cls.indeterminateBox,
           cls[size],
           {

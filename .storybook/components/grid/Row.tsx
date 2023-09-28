@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import cn from 'classnames';
+import cn from 'clsx';
 
 import styles from './Row.module.scss';
 

@@ -4,7 +4,7 @@ type NativeProps = InputHTMLAttributes<HTMLInputElement>
 export interface CheckboxProps extends Omit<NativeProps, 'size' | 'onChange'> {
   className?: string
   label?: ReactNode
-  hint?: ReactNode
+  // hint?: ReactNode
   size?: 's' | 'm' | 'l'
   checked?: boolean
   indeterminate?: boolean
