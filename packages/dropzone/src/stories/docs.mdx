@@ -1,28 +1,21 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Dropzone} from '../Component';
-import packageJson from '../../package.json';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Dropzone } from '../Component'
+import packageJson from '../../package.json'
 import CSS from './css.mdx'
 import * as DropzoneStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Dropzone' component={Dropzone} id='Dropzone'/>
+<Meta title="Components/Dropzone" component={Dropzone} id="Dropzone" />
 
-<ComponentHeader
-    name='Dropzone'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-dropzone'
->
-    Дропзона для загрузки файлов
+<ComponentHeader name="Dropzone" version={packageJson.version} package="@savosya/savosya-myuikit-dropzone">
+  Дропзона для загрузки файлов
 </ComponentHeader>
 
 ```jsx
-import { Dropzone } from '@savosya/savosya-myuikit-root';
-import { Dropzone } from '@savosya/savosya-myuikit-dropzone';
+import { Dropzone } from '@savosya/savosya-myuikit-root'
+import { Dropzone } from '@savosya/savosya-myuikit-dropzone'
 ```
 
-<Canvas of={DropzoneStories.Sandbox} meta={DropzoneStories}/>
+<Canvas of={DropzoneStories.Sandbox} meta={DropzoneStories} />
 
-<Tabs
-    props={<ArgsTable of={Dropzone}/>}
-    css={<CSS/>}
-/>
+<Tabs props={<ArgsTable of={Dropzone} />} css={<CSS />} />

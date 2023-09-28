@@ -1,5 +1,5 @@
-import {addons} from '@storybook/manager-api'
-import {storybookTheme} from "./theme";
+import { addons } from '@storybook/manager-api'
+import { storybookTheme } from './theme'
 
 addons.setConfig({
   theme: storybookTheme,
@@ -13,13 +13,13 @@ addons.setConfig({
   initialActive: 'sidebar',
   sidebar: {
     showRoots: true,
-    collapsedRoots: ['other'],
+    collapsedRoots: ['other']
   },
   toolbar: {
     title: { hidden: false },
     zoom: { hidden: false },
     eject: { hidden: true },
     copy: { hidden: true },
-    fullscreen: { hidden: false },
-  },
+    fullscreen: { hidden: false }
+  }
 })

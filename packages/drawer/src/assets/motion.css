@@ -20,7 +20,7 @@
 .eub-drawer-panel-motion-left-enter-start,
 .eub-drawer-panel-motion-left-appear-start,
 .eub-drawer-panel-motion-left-leave-start {
-  transition: none!important;
+  transition: none !important;
 }
 .eub-drawer-panel-motion-left-enter-active,
 .eub-drawer-panel-motion-left-appear-active,
@@ -44,7 +44,7 @@
 .eub-drawer-panel-motion-right-enter-start,
 .eub-drawer-panel-motion-right-appear-start,
 .eub-drawer-panel-motion-right-leave-start {
-  transition: none!important;
+  transition: none !important;
 }
 .eub-drawer-panel-motion-right-enter-active,
 .eub-drawer-panel-motion-right-appear-active,

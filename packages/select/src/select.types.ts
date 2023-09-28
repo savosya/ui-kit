@@ -1,4 +1,4 @@
-export type SelectMenuOption = { label: string, value: string, disabled?: boolean }
+export type SelectMenuOption = { label: string; value: string; disabled?: boolean }
 
 export interface SelectProps {
   open?: boolean

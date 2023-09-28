@@ -1,6 +1,6 @@
-import {HTMLProps, ReactNode} from "react";
+import { HTMLProps, ReactNode } from 'react'
 
-export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, "size"> {
+export interface BadgeProps extends Omit<HTMLProps<HTMLDivElement>, 'size'> {
   type?: 'primary' | 'error' | 'success' | 'warn'
   color?: string
   size?: 'm' | 's'

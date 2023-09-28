@@ -1,28 +1,21 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Indicator} from '../Component';
-import packageJson from '../../package.json';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Indicator } from '../Component'
+import packageJson from '../../package.json'
 import CSS from './css.mdx'
 import * as DropdownStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Indicator' component={Indicator} id='Indicator'/>
+<Meta title="Components/Indicator" component={Indicator} id="Indicator" />
 
-<ComponentHeader
-    name='Indicator'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-indicator'
->
-    Индикатор
+<ComponentHeader name="Indicator" version={packageJson.version} package="@savosya/savosya-myuikit-indicator">
+  Индикатор
 </ComponentHeader>
 
 ```jsx
-import { Indicator } from '@savosya/savosya-myuikit-root';
-import { Indicator } from '@savosya/savosya-myuikit-indicator';
+import { Indicator } from '@savosya/savosya-myuikit-root'
+import { Indicator } from '@savosya/savosya-myuikit-indicator'
 ```
 
-<Canvas of={DropdownStories.Sandbox} meta={DropdownStories}/>
+<Canvas of={DropdownStories.Sandbox} meta={DropdownStories} />
 
-<Tabs
-    props={<ArgsTable of={Indicator}/>}
-    css={<CSS/>}
-/>
+<Tabs props={<ArgsTable of={Indicator} />} css={<CSS />} />

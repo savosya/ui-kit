@@ -1,12 +1,12 @@
 @import '../../variables/src/index.css';
 
 :root {
-  --checkbox-default: #B8BEC6;
-  --checkbox-label-default: #29313A;
-  --checkbox-hover: #1C2229;
-  --checkbox-focused: #191D23;
-  --checkbox-active: #29313A;
-  --checkbox-disabled: #E5E8ED;
+  --checkbox-default: #b8bec6;
+  --checkbox-label-default: #29313a;
+  --checkbox-hover: #1c2229;
+  --checkbox-focused: #191d23;
+  --checkbox-active: #29313a;
+  --checkbox-disabled: #e5e8ed;
 }
 
 .root {
@@ -30,7 +30,8 @@
     color: var(--checkbox-focused);
   }
 
-  &.checked, &.indeterminate {
+  &.checked,
+  &.indeterminate {
     color: var(--checkbox-active);
   }
 
@@ -39,7 +40,7 @@
     cursor: not-allowed;
   }
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     appearance: none;
     opacity: 0;
     position: absolute;

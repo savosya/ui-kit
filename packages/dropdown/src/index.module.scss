@@ -1,14 +1,13 @@
 @import '../../variables/src/index.css';
 
 :root {
-  --dropdown-item-bg_default: #FFF;
+  --dropdown-item-bg_default: #fff;
   --dropdown-item-color_default: var(--text-primary);
   --dropdown-item-bg_hover: rgba(236, 236, 236, 0.7);
-  --dropdown-item-border_default: #EFF1F4;
+  --dropdown-item-border_default: #eff1f4;
 }
 
 .root {
-
 }
 
 .childWrapper {
@@ -29,7 +28,7 @@
   background-color: #fff;
   padding: 8px;
   width: 100%;
-  box-shadow: -1px 3px 8px 0px rgba(67, 69, 72, 0.20);
+  box-shadow: -1px 3px 8px 0px rgba(67, 69, 72, 0.2);
 }
 
 .menuItem {
@@ -51,12 +50,14 @@
   border-radius: 6px;
   user-select: none;
   height: fit-content;
-  transition: color, background-color 0.2s;
+  transition:
+    color,
+    background-color 0.2s;
   width: 100%;
 
   &:not(:last-child) {
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -68,7 +69,7 @@
     }
   }
 
-  &.ellipsis  {
+  &.ellipsis {
     display: -webkit-box;
     max-width: 100%;
     -webkit-line-clamp: 1;
@@ -82,7 +83,7 @@
 
   &.border:not(:last-child) {
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 50%;

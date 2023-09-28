@@ -1,7 +1,7 @@
 @import '../../variables/src/index.css';
 
 :root {
-  --input-active-blue: #4683C8;
+  --input-active-blue: #4683c8;
 }
 
 .root {
@@ -50,9 +50,8 @@
 
   &.disabled {
     pointer-events: none;
-    color: #848D98;
+    color: #848d98;
   }
-
 
   -moz-appearance: textfield;
 }

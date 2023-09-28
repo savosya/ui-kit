@@ -1,6 +1,6 @@
-import * as React from "react";
-import {HTMLProps, ReactNode} from "react";
-import {TooltipProps} from "@savosya/savosya-myuikit-tooltip";
+import * as React from 'react'
+import { HTMLProps, ReactNode } from 'react'
+import { TooltipProps } from '@savosya/savosya-myuikit-tooltip'
 
 export interface InputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
   type?: 'text' | 'password' | 'search'

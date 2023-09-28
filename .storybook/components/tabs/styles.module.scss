@@ -1,48 +1,48 @@
-$gray: #B8BEC6;
-$blue: #1D3F88;
+$gray: #b8bec6;
+$blue: #1d3f88;
 
 .categoryList {
-   display: flex;
-   position: relative;
-   gap: 48px;
-   padding: 0 16px;
-   border-bottom: 2px solid $gray;
+  display: flex;
+  position: relative;
+  gap: 48px;
+  padding: 0 16px;
+  border-bottom: 2px solid $gray;
 }
 
 .categoryItem {
-   cursor: pointer;
-   font-size: 16px;
-   padding-bottom: 12px;
-   font-weight: 600;
-   user-select: none;
-   transition: all 0.2s;
-   opacity: 0.7;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 12px;
+  font-weight: 600;
+  user-select: none;
+  transition: all 0.2s;
+  opacity: 0.7;
 
-   &:hover {
-      opacity: 0.9;
-   }
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .activeItem {
-   color: $blue;
-   opacity: 1;
+  color: $blue;
+  opacity: 1;
 
-   &:hover {
-      opacity: 1;
-   }
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .categoryTracker {
-   position: absolute;
-   background-color: $blue;
-   width: 0;
-   bottom: -2px;
-   left: 0;
-   height: 3px;
-   border-radius: 2px;
-   transition: 0.3s;
+  position: absolute;
+  background-color: $blue;
+  width: 0;
+  bottom: -2px;
+  left: 0;
+  height: 3px;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 .content {
-   margin-top: 40px !important;
+  margin-top: 40px !important;
 }

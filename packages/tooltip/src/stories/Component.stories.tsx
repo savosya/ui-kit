@@ -1,16 +1,16 @@
-import * as React from 'react';
-import {Tooltip} from '../Component';
-import {Meta, StoryObj} from "@storybook/react";
+import * as React from 'react'
+import { Tooltip } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
-import {Button} from '../../../button/src/Component'
+import { Button } from '../../../button/src/Component'
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Components/Tooltip',
   component: Tooltip
-};
+}
 
-type Story = StoryObj<typeof Tooltip>;
-export default meta;
+type Story = StoryObj<typeof Tooltip>
+export default meta
 
 export const Sandbox: Story = {
   args: {
@@ -33,16 +33,16 @@ export const Examples = () => (
       Clickable tooltip.
     </Tooltip>
 
-    <Tooltip content={'Only content. Not clickable'}>
-      Без возможности клика внутри тултипа
-    </Tooltip>
+    <Tooltip content={'Only content. Not clickable'}>Без возможности клика внутри тултипа</Tooltip>
 
     <Tooltip
-      title='TITLE'
+      title="TITLE"
       content={
         <div>
           <div>Im function stool tip! long long long</div>
-          <Button type='ghost' mode='light' size='s'>понятно</Button>
+          <Button type="ghost" mode="light" size="s">
+            понятно
+          </Button>
         </div>
       }
       clickable
@@ -51,5 +51,4 @@ export const Examples = () => (
       Im tooltip with actions
     </Tooltip>
   </div>
-);
-
+)

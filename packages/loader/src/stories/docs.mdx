@@ -1,28 +1,21 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Loader} from '../Component';
-import packageJson from '../../package.json';
-import Description from './description.mdx';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Loader } from '../Component'
+import packageJson from '../../package.json'
+import Description from './description.mdx'
 import * as LoaderStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Loader' component={Loader} id='Loader'/>
+<Meta title="Components/Loader" component={Loader} id="Loader" />
 
-<ComponentHeader
-    name='Loader'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-loader'
->
-    Индикатор загрузки
+<ComponentHeader name="Loader" version={packageJson.version} package="@savosya/savosya-myuikit-loader">
+  Индикатор загрузки
 </ComponentHeader>
 
 ```jsx
-import { Loader } from '@savosya/savosya-myuikit-root';
-import { Loader } from '@savosya/savosya-myuikit-loader';
+import { Loader } from '@savosya/savosya-myuikit-root'
+import { Loader } from '@savosya/savosya-myuikit-loader'
 ```
 
-<Canvas of={LoaderStories.Sandbox} meta={LoaderStories}/>
+<Canvas of={LoaderStories.Sandbox} meta={LoaderStories} />
 
-<Tabs
-    docs={<Description/>}
-    props={<ArgsTable of={Loader}/>}
-/>
+<Tabs docs={<Description />} props={<ArgsTable of={Loader} />} />

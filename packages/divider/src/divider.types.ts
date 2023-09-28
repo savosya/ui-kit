@@ -1,6 +1,6 @@
-import {CSSProperties} from "react";
+import { CSSProperties } from 'react'
 export interface DividerProps {
-  className?: string;
+  className?: string
   noGap?: boolean
   height?: number
   margin?: CSSProperties['margin']

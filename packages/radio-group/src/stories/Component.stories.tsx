@@ -1,14 +1,14 @@
-import * as React from 'react';
-import {RadioGroup} from '../Component';
-import {Meta, StoryObj} from "@storybook/react";
+import * as React from 'react'
+import { RadioGroup } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'Components/RadioGroup',
   component: RadioGroup
-};
+}
 
-type Story = StoryObj<typeof RadioGroup>;
-export default meta;
+type Story = StoryObj<typeof RadioGroup>
+export default meta
 
 export const Sandbox: Story = {
   render: () => {
@@ -25,18 +25,18 @@ export const Sandbox: Story = {
 
     return (
       <RadioGroup
-        name='fruit'
+        name="fruit"
         onChange={onChange}
         value={value}
         options={[
-          {label: 'Яблоко', value: 'apple'},
-          {label: 'Арбуз', value: 'watermelon'},
-          {label: 'Груша', value: 'pear'},
+          { label: 'Яблоко', value: 'apple' },
+          { label: 'Арбуз', value: 'watermelon' },
+          { label: 'Груша', value: 'pear' }
         ]}
       />
     )
   }
-};
+}
 
 export const Examples: Story = {
   render: () => {
@@ -56,27 +56,27 @@ export const Examples: Story = {
         <div>
           <RadioGroup
             direction={'vertical'}
-            name='fruit'
+            name="fruit"
             onChange={onChange}
             value={value}
             options={[
-              {label: 'Яблоко', value: 'apple'},
-              {label: 'Арбуз', value: 'watermelon'},
-              {label: 'Груша', value: 'pear'},
+              { label: 'Яблоко', value: 'apple' },
+              { label: 'Арбуз', value: 'watermelon' },
+              { label: 'Груша', value: 'pear' }
             ]}
           />
         </div>
-        <br/>
+        <br />
         <div>
           <RadioGroup
-            name='fruit_2'
+            name="fruit_2"
             onChange={onChange_2}
             value={value2}
-            radioProps={{markType: 'check'}}
+            radioProps={{ markType: 'check' }}
             options={[
-              {label: 'Яблоко', value: 'apple'},
-              {label: 'Арбуз', value: 'watermelon'},
-              {label: 'Груша', value: 'pear'},
+              { label: 'Яблоко', value: 'apple' },
+              { label: 'Арбуз', value: 'watermelon' },
+              { label: 'Груша', value: 'pear' }
             ]}
           />
         </div>
@@ -84,4 +84,3 @@ export const Examples: Story = {
     )
   }
 }
-

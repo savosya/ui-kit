@@ -1,28 +1,21 @@
-import {Meta, ArgsTable, Canvas, } from '@storybook/blocks';
-import {Drawer} from '../Component';
-import packageJson from '../../package.json';
-import Description from './description.mdx';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { Drawer } from '../Component'
+import packageJson from '../../package.json'
+import Description from './description.mdx'
 import * as DrawerStories from './Component.stories'
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
 
-<Meta title='Components/Drawer' component={Drawer} id='Drawer'/>
+<Meta title="Components/Drawer" component={Drawer} id="Drawer" />
 
-<ComponentHeader
-    name='Drawer'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-drawer'
->
-    Выезжающая сайд-панель
+<ComponentHeader name="Drawer" version={packageJson.version} package="@savosya/savosya-myuikit-drawer">
+  Выезжающая сайд-панель
 </ComponentHeader>
 
 ```jsx
-import { Drawer } from '@savosya/savosya-myuikit-root';
-import { Drawer } from '@savosya/savosya-myuikit-drawer';
+import { Drawer } from '@savosya/savosya-myuikit-root'
+import { Drawer } from '@savosya/savosya-myuikit-drawer'
 ```
 
-<Canvas of={DrawerStories.Sandbox} meta={DrawerStories}/>
+<Canvas of={DrawerStories.Sandbox} meta={DrawerStories} />
 
-<Tabs
-    docs={<Description/>}
-    props={<ArgsTable of={Drawer}/>}
-/>
+<Tabs docs={<Description />} props={<ArgsTable of={Drawer} />} />

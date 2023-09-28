@@ -1,32 +1,24 @@
-import {Meta, ArgsTable, Canvas } from '@storybook/blocks';
-import {ComponentHeader, Tabs} from "../../../../.storybook/components";
-import packageJson from '../../package.json';
-import {Accordion} from '../Component';
-import Description from './description.mdx';
+import { Meta, ArgsTable, Canvas } from '@storybook/blocks'
+import { ComponentHeader, Tabs } from '../../../../.storybook/components'
+import packageJson from '../../package.json'
+import { Accordion } from '../Component'
+import Description from './description.mdx'
 import CSS from './css.mdx'
 import * as AccordionStories from './Component.stories'
 
-<Meta title='Components/Accordion' component={Accordion} id='Components/Accordion'/>
+<Meta title="Components/Accordion" component={Accordion} id="Components/Accordion" />
 
-[//]: # (<Meta of={AccordionStories}/>)
+[//]: # '<Meta of={AccordionStories}/>'
 
-<ComponentHeader
-    name='Accordion'
-    version={packageJson.version}
-    package='@savosya/savosya-myuikit-accordion'
->
-    Компонент Accordion позволяет спрятать/показать часть контента.
+<ComponentHeader name="Accordion" version={packageJson.version} package="@savosya/savosya-myuikit-accordion">
+  Компонент Accordion позволяет спрятать/показать часть контента.
 </ComponentHeader>
 
 ```jsx
-import { Accordion } from '@savosya/savosya-myuikit-root';
-import { Accordion } from '@savosya/savosya-myuikit-accordion';
+import { Accordion } from '@savosya/savosya-myuikit-root'
+import { Accordion } from '@savosya/savosya-myuikit-accordion'
 ```
 
-<Canvas of={AccordionStories.Sandbox}/>
+<Canvas of={AccordionStories.Sandbox} />
 
-<Tabs
-    docs={<Description/>}
-    props={<ArgsTable of={Accordion}/>}
-    css={<CSS/>}
-/>
+<Tabs docs={<Description />} props={<ArgsTable of={Accordion} />} css={<CSS />} />

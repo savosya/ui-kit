@@ -1,15 +1,14 @@
-import * as React from 'react';
-import {Tag} from '../Component';
-import {Meta, StoryObj} from "@storybook/react";
+import * as React from 'react'
+import { Tag } from '../Component'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Tag> = {
   title: 'Components/Tag',
   component: Tag
-};
+}
 
-type Story = StoryObj<typeof Tag>;
-export default meta;
-
+type Story = StoryObj<typeof Tag>
+export default meta
 
 const canvasStyles: React.CSSProperties = {
   display: 'flex',
@@ -22,11 +21,10 @@ export const Sandbox: Story = {
       <div style={canvasStyles}>
         <Tag disabled>Disabled</Tag>
         <Tag transparent>Transparent</Tag>
-        <Tag size='s'>Пример тэга S</Tag>
+        <Tag size="s">Пример тэга S</Tag>
         <Tag>Пример тэга M</Tag>
-        <Tag size='l'>Пример тэга L</Tag>
+        <Tag size="l">Пример тэга L</Tag>
       </div>
     )
   }
-};
-
+}

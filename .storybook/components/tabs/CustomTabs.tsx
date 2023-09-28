@@ -1,18 +1,13 @@
-import React, {useCallback, useLayoutEffect, useMemo, useRef, useState} from 'react';
-import {clsx} from 'clsx';
+import React, { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { clsx } from 'clsx'
 
-import {allTabs, TabType} from "./utils";
+import { allTabs, TabType } from './utils'
 import cls from './styles.module.scss'
 
-
 type Props = {
-  custom?: { component: React.ReactNode, value: string, label: string }[]
+  custom?: { component: React.ReactNode; value: string; label: string }[]
 }
-export const CustomTabs = (
-  {
-    custom,
-    ...restTabs
-  }: Props) => {
+export const CustomTabs = ({ custom, ...restTabs }: Props) => {
   const trackerRef = useRef<HTMLDivElement | null>(null)
   const startingRef = useRef<HTMLDivElement | null>(null)
 
@@ -24,7 +19,6 @@ export const CustomTabs = (
     })
     return map
   }, [])
-
 
   useLayoutEffect(() => {
     document.querySelectorAll('[data-category-value]').forEach(node => {
@@ -47,39 +41,35 @@ export const CustomTabs = (
   }, [])
 
   const moveTracker = useCallback((node: Element) => {
-    if (!trackerRef?.current || !startingRef?.current) return;
+    if (!trackerRef?.current || !startingRef?.current) return
 
     const startingRect = startingRef?.current.getBoundingClientRect()
     const rect = node.getBoundingClientRect()
-    const elementWidth = rect.right - rect.left;
+    const elementWidth = rect.right - rect.left
 
     trackerRef.current.style.transform = `translateX(${rect.x - startingRect.x - 8}px)`
     trackerRef.current.style.width = `${elementWidth + 16}px`
   }, [])
 
-
   return (
     <>
       <div className={cls.categoryList} ref={startingRef}>
-        {custom.map(({value, label}) => {
+        {custom.map(({ value, label }) => {
           return (
             <div
               key={value}
-              className={clsx(cls.categoryItem, {[cls.activeItem]: value === customTab})}
+              className={clsx(cls.categoryItem, { [cls.activeItem]: value === customTab })}
               data-category-value={value}
               onClick={handleCustomClick}
             >
               {label}
             </div>
           )
-        })
-        }
-        <div ref={trackerRef} className={cls.categoryTracker}/>
+        })}
+        <div ref={trackerRef} className={cls.categoryTracker} />
       </div>
 
-      <div className={cls.content}>
-        {customMap[customTab]}
-      </div>
+      <div className={cls.content}>{customMap[customTab]}</div>
     </>
   )
-};
+}

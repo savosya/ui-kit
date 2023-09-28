@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react'
 
 export interface DrawerProps {
   open: boolean
-  onClose: (e: React.MouseEvent | React.KeyboardEvent) => void;
+  onClose: (e: React.MouseEvent | React.KeyboardEvent) => void
   children?: React.ReactNode
   className?: string
   width?: string | number
@@ -10,12 +10,12 @@ export interface DrawerProps {
   closeOnBackdrop?: boolean
   closeOnEsc?: boolean
   blurredMask?: boolean
-  onMouseEnter?: React.MouseEventHandler<HTMLDivElement>;
-  onMouseOver?: React.MouseEventHandler<HTMLDivElement>;
-  onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
-  onKeyDown?: React.KeyboardEventHandler<HTMLDivElement>;
-  onKeyUp?: React.KeyboardEventHandler<HTMLDivElement>;
+  onMouseEnter?: React.MouseEventHandler<HTMLDivElement>
+  onMouseOver?: React.MouseEventHandler<HTMLDivElement>
+  onMouseLeave?: React.MouseEventHandler<HTMLDivElement>
+  onClick?: React.MouseEventHandler<HTMLDivElement>
+  onKeyDown?: React.KeyboardEventHandler<HTMLDivElement>
+  onKeyUp?: React.KeyboardEventHandler<HTMLDivElement>
   classes?: {
     mask?: string
     wrapper?: string
@@ -28,13 +28,13 @@ export interface DrawerProps {
   }
 
   /** Panel Props */
-  title?: React.ReactNode;
-  footer?: React.ReactNode;
-  closable?: boolean;
-  closeIcon?: React.ReactNode;
+  title?: React.ReactNode
+  footer?: React.ReactNode
+  closable?: boolean
+  closeIcon?: React.ReactNode
   background?: 'white' | 'gray'
-  drawerStyle?: React.CSSProperties;
-  headerStyle?: React.CSSProperties;
-  bodyStyle?: React.CSSProperties;
-  footerStyle?: React.CSSProperties;
+  drawerStyle?: React.CSSProperties
+  headerStyle?: React.CSSProperties
+  bodyStyle?: React.CSSProperties
+  footerStyle?: React.CSSProperties
 }

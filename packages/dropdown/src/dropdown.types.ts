@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react'
 
-export type DropdownActionType = 'hover' | 'focus' | 'click' | 'contextMenu';
-export type DropdownPlacement = "topLeft" | "top" | "topRight" | "bottomLeft" | "bottom" | "bottomRight" | undefined;
-export type DropdownOption = { key: string, label: string, disabled?: boolean }
+export type DropdownActionType = 'hover' | 'focus' | 'click' | 'contextMenu'
+export type DropdownPlacement = 'topLeft' | 'top' | 'topRight' | 'bottomLeft' | 'bottom' | 'bottomRight' | undefined
+export type DropdownOption = { key: string; label: string; disabled?: boolean }
 
 export interface DropdownProps {
   children: React.ReactNode
@@ -11,11 +11,11 @@ export interface DropdownProps {
   onOverlayClick?: (e: Event) => void
   onVisibleChange?: (visible: boolean) => void
   onSelect?: (key: string, option: DropdownOption) => void
-  trigger?: DropdownActionType | DropdownActionType[];
-  showAction?: DropdownActionType[];
-  hideAction?: DropdownActionType[];
+  trigger?: DropdownActionType | DropdownActionType[]
+  showAction?: DropdownActionType[]
+  hideAction?: DropdownActionType[]
   options?: DropdownOption[]
-  overlayStyle?: React.CSSProperties;
+  overlayStyle?: React.CSSProperties
   alignPoint?: boolean
 
   optionsSettings?: {

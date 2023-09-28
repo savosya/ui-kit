@@ -1,25 +1,24 @@
-import React from 'react';
-import {Preview} from '@storybook/react';
-import {storybookTheme} from "./theme";
+import React from 'react'
+import { Preview } from '@storybook/react'
+import { storybookTheme } from './theme'
 
 const StoryWrapperStyles: React.CSSProperties = {
-  boxSizing: "border-box",
+  boxSizing: 'border-box',
   height: '100%',
   width: '100%',
   padding: 16,
   margin: 0
 }
 
-
 const preview: Preview = {
   parameters: {
     viewMode: 'docs',
-    backgrounds: {disable: true},
-    grid: {disable: true},
+    backgrounds: { disable: true },
+    grid: { disable: true },
     options: {
       storySort: {
-        order: ['General', 'Components'],
-      },
+        order: ['General', 'Components']
+      }
     },
     docs: {
       theme: storybookTheme,
@@ -34,13 +33,13 @@ const preview: Preview = {
     }
   },
   decorators: [
-    (Story) => (
+    Story => (
       <div style={StoryWrapperStyles}>
         {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
-        <Story/>
+        <Story />
       </div>
-    ),
-  ],
-};
+    )
+  ]
+}
 
-export default preview;
+export default preview

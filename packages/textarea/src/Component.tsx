@@ -1,29 +1,19 @@
 import * as React from 'react'
-import {useRef} from "react"
+import { useRef } from 'react'
 import clsx from 'clsx'
 
-import {useFocus} from "@savosya/savosya-myuikit-hooks"
-import {mergeRefs} from "@savosya/savosya-myuikit-utils"
+import { useFocus } from '@savosya/savosya-myuikit-hooks'
+import { mergeRefs } from '@savosya/savosya-myuikit-utils'
 
-import {GrabberIcon} from "./components"
-import {TextareaProps} from "./textarea.types"
+import { GrabberIcon } from './components'
+import { TextareaProps } from './textarea.types'
 import cls from './index.module.scss'
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
-  const {
-    className,
-    label,
-    disabled,
-    error,
-    errorMsg,
-    hint,
-    classes,
-    resizable,
-    ...rest
-  } = props
+  const { className, label, disabled, error, errorMsg, hint, classes, resizable, ...rest } = props
 
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [focus] = useFocus(textareaRef, 'keyboard');
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const [focus] = useFocus(textareaRef, 'keyboard')
 
   return (
     <div className={clsx(cls.wrapper, classes?.wrapper)}>
@@ -39,30 +29,24 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
           classes?.root
         )}
       >
-      <textarea
-        className={clsx(
-          cls.area,
-          {
-            [cls.disabled]: disabled,
-            [cls.resizable]: resizable
-          },
-          classes?.textarea
-        )}
-        disabled={disabled}
-        ref={mergeRefs([ref, textareaRef])}
-        {...rest}
-        style={{...rest?.style, resize: resizable}}
-      />
+        <textarea
+          className={clsx(
+            cls.area,
+            {
+              [cls.disabled]: disabled,
+              [cls.resizable]: resizable
+            },
+            classes?.textarea
+          )}
+          disabled={disabled}
+          ref={mergeRefs([ref, textareaRef])}
+          {...rest}
+          style={{ ...rest?.style, resize: resizable }}
+        />
 
-        {
-          label && <label
-                className={clsx(cls.label, {[cls.error]: error}, classes?.label)}
-            >
-            {label}
-            </label>
-        }
+        {label && <label className={clsx(cls.label, { [cls.error]: error }, classes?.label)}>{label}</label>}
 
-        {Boolean(resizable) && <GrabberIcon className={cls.grabber}/>}
+        {Boolean(resizable) && <GrabberIcon className={cls.grabber} />}
       </div>
 
       {(hint || errorMsg) && (
@@ -72,6 +56,5 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
         </div>
       )}
     </div>
-  );
+  )
 })
-

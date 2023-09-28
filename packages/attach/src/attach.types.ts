@@ -1,9 +1,10 @@
-import * as React from "react";
+import * as React from 'react'
 
-export interface AttachProps extends Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'size' | 'type' | 'value' | 'defaultValue' | 'onChange' | 'multiple' | 'enterKeyHint'
-> {
+export interface AttachProps
+  extends Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    'size' | 'type' | 'value' | 'defaultValue' | 'onChange' | 'multiple' | 'enterKeyHint'
+  > {
   title?: string
   description?: string
   loading?: boolean
@@ -14,8 +15,8 @@ export interface AttachProps extends Omit<
   ellipsisTitle?: boolean
   ellipsisDescription?: boolean
 
-  value?: File | null;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>, file: File | null) => void;
+  value?: File | null
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>, file: File | null) => void
   onClear?: (e: React.MouseEvent<any>) => void
 
   className?: string

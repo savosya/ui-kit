@@ -10,15 +10,17 @@
   font-family: var(--eub-font-family);
   display: inline-block;
   position: relative;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
   overflow: hidden;
   border-radius: 4px;
-  text-align:center;
+  text-align: center;
 
   /** dashed */
   &:before {
     border: 5px dashed var(--dropzone-border-color);
-    content: "";
+    content: '';
     position: absolute;
     top: -3px;
     bottom: -3px;

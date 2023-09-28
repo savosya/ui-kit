@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 
 export interface AccordionProps {
   children?: React.ReactNode
@@ -8,7 +8,7 @@ export interface AccordionProps {
   open?: boolean
   defaultOpen?: boolean
   disabled?: boolean
-  onVisibleChange?: (visible: boolean) => void,
+  onVisibleChange?: (visible: boolean) => void
   chevroneIcon?: React.ReactNode
   classes?: {
     root?: string
