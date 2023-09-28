@@ -3,7 +3,7 @@ import { Loader } from '../Component'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Loader> = {
-  title: 'Components/Loader',
+  title: 'Loader',
   component: Loader
 }
 

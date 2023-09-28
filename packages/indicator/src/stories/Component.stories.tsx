@@ -3,7 +3,7 @@ import { Indicator } from '../Component'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Indicator> = {
-  title: 'Components/Indicator',
+  title: 'Indicator',
   component: Indicator
 }
 

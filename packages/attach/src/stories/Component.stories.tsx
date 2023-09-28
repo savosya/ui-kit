@@ -1,13 +1,13 @@
 import * as React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Attach as AttachCmp } from '../Component'
+import { Attach } from '../Component'
 
-const meta: Meta<typeof AttachCmp> = {
-  title: 'Components/Attach',
-  component: AttachCmp
+const meta: Meta<typeof Attach> = {
+  title: 'Attach',
+  component: Attach
 }
 
-type Story = StoryObj<typeof AttachCmp>
+type Story = StoryObj<typeof Attach>
 export default meta
 
 /** description */

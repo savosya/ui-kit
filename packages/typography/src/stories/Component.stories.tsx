@@ -5,7 +5,7 @@ import { Typography, TextProps } from '../index'
 import { RadioGroup } from '../../../radio-group/src'
 
 export default {
-  title: 'Components/Typography',
+  title: 'Typography',
   component: Typography
 }
 

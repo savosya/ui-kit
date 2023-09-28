@@ -3,7 +3,7 @@ import { Dropzone } from '../Component'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Dropzone> = {
-  title: 'Components/Dropzone',
+  title: 'Dropzone',
   component: Dropzone
 }
 

@@ -5,7 +5,7 @@ import { Checkbox } from '../../../checkbox/src'
 import { Counter } from '../Component'
 
 const meta: Meta<typeof Counter> = {
-  title: 'Components/Counter',
+  title: 'Counter',
   component: Counter
 }
 
