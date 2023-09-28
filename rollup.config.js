@@ -1,43 +1,43 @@
-import fs from 'fs';
-import * as path from 'path';
-import { readPackageUpSync } from 'read-pkg-up';
+import fs from 'fs'
+import * as path from 'path'
+import { readPackageUpSync } from 'read-pkg-up'
 
 /** plugins */
-import multiEntry from 'rollup-plugin-multi-input';
-import wildcardExternal from '@oat-sa/rollup-plugin-wildcard-external';
-import typescript from 'rollup-plugin-ts';
-import postcss from 'rollup-plugin-postcss';
-import postcssImport from 'postcss-import';
-import autoprefixer from 'autoprefixer';
-import discardComments from 'postcss-discard-comments';
-import discardEmpty from 'postcss-discard-empty';
-import copy from 'rollup-plugin-copy';
+import multiEntry from 'rollup-plugin-multi-input'
+import wildcardExternal from '@oat-sa/rollup-plugin-wildcard-external'
+import typescript from 'rollup-plugin-ts'
+import postcss from 'rollup-plugin-postcss'
+import postcssImport from 'postcss-import'
+import autoprefixer from 'autoprefixer'
+import discardComments from 'postcss-discard-comments'
+import discardEmpty from 'postcss-discard-empty'
+import copy from 'rollup-plugin-copy'
 
 /** tools */
-import { purgecssAfterBuildPlugin } from './tools/rollup/purgecss-after-build.js';
-import { addCssImports } from './tools/css/add-css-imports.js';
-import { overridePackageJson } from './tools/rollup/override-package-json.js';
+import { purgecssAfterBuildPlugin } from './tools/rollup/purgecss-after-build.js'
+import { addCssImports } from './tools/css/add-css-imports.js'
+import { overridePackageJson } from './tools/rollup/override-package-json.js'
 
 /** vars */
-const KIT_NAME = '@savosya/savosya-myuikit-';
+const KIT_NAME = '@savosya/savosya-myuikit-'
 
-const currentPackageDir = process.cwd();
-const pkgPath = fs.realpathSync(currentPackageDir);
-const { packageJson: pkg } = readPackageUpSync({ cwd: pkgPath });
-const currentComponentName = pkg.name.replace(KIT_NAME, '');
-const componentBuildDir = path.resolve(currentPackageDir, `../../build/${currentComponentName}`);
+const currentPackageDir = process.cwd()
+const pkgPath = fs.realpathSync(currentPackageDir)
+const { packageJson: pkg } = readPackageUpSync({ cwd: pkgPath })
+const currentComponentName = pkg.name.replace(KIT_NAME, '')
+const componentBuildDir = path.resolve(currentPackageDir, `../../build/${currentComponentName}`)
 
 /** configuration */
 const baseConfig = {
   input: ['src/**/*.{ts,tsx}', '!src/**/*.{test,stories}.{ts,tsx}', '!src/**/*.mdx', '!src/**/*.d.ts'],
   external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {}), 'react/jsx-transform']
-};
+}
 
 const defaultOutputOptions = {
   exports: 'named',
   sourcemap: true,
   preserveModules: true
-};
+}
 
 const postcssPluginSCSS = cssPath => {
   return postcss({
@@ -50,8 +50,8 @@ const postcssPluginSCSS = cssPath => {
     sourceMap: true,
     extract: path.resolve(cssPath),
     extensions: ['.scss']
-  });
-};
+  })
+}
 
 const postcssPluginCSS = cssPath => {
   return postcss({
@@ -62,8 +62,8 @@ const postcssPluginCSS = cssPath => {
     sourceMap: true,
     extract: path.resolve(cssPath),
     extensions: ['.css']
-  });
-};
+  })
+}
 
 const plugins = ({ isEsm }) => {
   /** ORDER MATTERS */
@@ -74,8 +74,8 @@ const plugins = ({ isEsm }) => {
     postcssPluginCSS(isEsm ? `build/esm/assets/${currentComponentName}.css` : `build/cjs/assets/${currentComponentName}.css`),
     purgecssAfterBuildPlugin({ pkgPath }),
     typescript({ tsconfig: `${currentPackageDir}/tsconfig.json` })
-  ];
-};
+  ]
+}
 
 /** Всего создается 2 версии пакетов. Commonjs и ESModules */
 const cjs = {
@@ -93,7 +93,7 @@ const cjs = {
     }
   ],
   plugins: [...plugins({ isEsm: false })]
-};
+}
 
 const esm = {
   ...baseConfig,
@@ -107,7 +107,7 @@ const esm = {
     }
   ],
   plugins: [...plugins({ isEsm: true })]
-};
+}
 
 /** DEPRECATED -- Создает Root Package в корне проекта -- DEPRECATED */
 const root = {
@@ -130,7 +130,7 @@ const root = {
       ]
     })
   ]
-};
+}
 
 // export default [cjs, esm, root].filter(Boolean);
-export default [cjs, esm].filter(Boolean);
+export default [cjs, esm].filter(Boolean)
