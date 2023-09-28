@@ -1,7 +1,10 @@
 import * as React from 'react'
 
 export interface AttachProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type' | 'value' | 'defaultValue' | 'onChange' | 'multiple' | 'enterKeyHint'> {
+  extends Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    'size' | 'type' | 'value' | 'defaultValue' | 'onChange' | 'multiple' | 'enterKeyHint'
+  > {
   title?: string
   description?: string
   loading?: boolean

@@ -62,14 +62,25 @@ export const Example = () => {
         </Button>
 
         <Checkbox label="Closable" checked={closable} onChange={(_, { checked }) => setClosable(checked)} />
-        <Checkbox label="Close On Backdrop" checked={closeOnBackdrop} onChange={(_, { checked }) => setCloseOnBackdrop(checked)} />
+        <Checkbox
+          label="Close On Backdrop"
+          checked={closeOnBackdrop}
+          onChange={(_, { checked }) => setCloseOnBackdrop(checked)}
+        />
       </div>
 
       <div>
         <Button onClick={toggle}>Открыть</Button>
       </div>
 
-      <Modal title={'Example Title'} position={position} open={open} onClose={toggle} closable={closable} closeOnBackdrop={closeOnBackdrop}>
+      <Modal
+        title={'Example Title'}
+        position={position}
+        open={open}
+        onClose={toggle}
+        closable={closable}
+        closeOnBackdrop={closeOnBackdrop}
+      >
         <div>some contents...</div>
         <div>some contents...</div>
         <div>some contents...</div>

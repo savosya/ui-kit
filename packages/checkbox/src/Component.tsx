@@ -57,7 +57,14 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>((props
       )}
       ref={mergeRefs([labelRef, ref])}
     >
-      <input type="checkbox" name={name} onChange={handleChange} checked={isControlled ? checked : innerChecked} disabled={disabled} {...rest} />
+      <input
+        type="checkbox"
+        name={name}
+        onChange={handleChange}
+        checked={isControlled ? checked : innerChecked}
+        disabled={disabled}
+        {...rest}
+      />
 
       <span
         className={clsx(cls.box, cls[size], {

@@ -38,7 +38,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
 
   const isOnlyIcon = !children
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent> & React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent> & React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     if (rest.disabled || loading) {
       e.preventDefault()
       e.stopPropagation()

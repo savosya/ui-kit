@@ -9,11 +9,14 @@ import cls from './index.module.scss'
 export const RadioGroup = (props: RadioGroupProps) => {
   const { options = [], className, name, onChange, value, radioProps, direction = 'horizontal', style } = props
 
-  const handleChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>, payload: { checked: boolean; name?: string | undefined }) => {
-    if (onChange) {
-      onChange(event.target.value, event, payload)
-    }
-  }, [])
+  const handleChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>, payload: { checked: boolean; name?: string | undefined }) => {
+      if (onChange) {
+        onChange(event.target.value, event, payload)
+      }
+    },
+    []
+  )
 
   return (
     <div className={clsx(cls.group, className, { [cls.vertical]: direction === 'vertical' })} style={style}>

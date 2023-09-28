@@ -3,7 +3,11 @@ import * as path from 'path'
 import * as fs from 'fs'
 
 const config: StorybookConfig = {
-  stories: ['../docs/**/*.stories.@(ts|md)x', '../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)', '../packages/**/docs.mdx'],
+  stories: [
+    '../docs/**/*.stories.@(ts|md)x',
+    '../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../packages/**/docs.mdx'
+  ],
   addons: [getAbsolutePath('@storybook/addon-essentials'), getAbsolutePath('@storybook/addon-mdx-gfm')],
   staticDirs: ['./public'],
   core: {},

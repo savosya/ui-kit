@@ -33,7 +33,16 @@ export const Controlled: Story = {
           <Checkbox label="Read Only" checked={readOnly} onChange={(_, { checked }) => setReadOnly(checked)} />
         </div>
 
-        <Counter value={value} onAdd={onSub} onSub={onAdd} onChange={onChange} max={45} min={41} readOnly={readOnly} disabled={disabled} />
+        <Counter
+          value={value}
+          onAdd={onSub}
+          onSub={onAdd}
+          onChange={onChange}
+          max={45}
+          min={41}
+          readOnly={readOnly}
+          disabled={disabled}
+        />
       </div>
     )
   }

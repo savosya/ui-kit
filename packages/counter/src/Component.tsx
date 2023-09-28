@@ -7,7 +7,22 @@ import { CounterProps } from './counter.types'
 import cls from './index.module.scss'
 
 export const Counter = React.forwardRef<HTMLInputElement, CounterProps>(
-  ({ value, onAdd, onSub, min = -Infinity, max = Infinity, onChange, width = 100, classes, readOnly, disabled, className }, ref) => {
+  (
+    {
+      value,
+      onAdd,
+      onSub,
+      min = -Infinity,
+      max = Infinity,
+      onChange,
+      width = 100,
+      classes,
+      readOnly,
+      disabled,
+      className
+    },
+    ref
+  ) => {
     const isControlled = value !== undefined
     const [internalState, setState] = useState<string>(value ? String(value) : '0')
 

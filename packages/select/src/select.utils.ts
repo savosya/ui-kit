@@ -7,7 +7,11 @@ export const getOptionsMap = (options: SelectMenuOption[]) => {
   }, initialValue)
 }
 
-export const getInputValue = (value: string | string[] | null, valueMap: ReturnType<typeof getOptionsMap>, separator = ', ') => {
+export const getInputValue = (
+  value: string | string[] | null,
+  valueMap: ReturnType<typeof getOptionsMap>,
+  separator = ', '
+) => {
   if (!value) return ''
 
   if (Array.isArray(value)) {

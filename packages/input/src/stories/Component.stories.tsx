@@ -53,7 +53,13 @@ export const Tooltip: Story = {
     return (
       <div style={canvasStyles}>
         <Input label="ФИО" placeholder="..." showTooltip tooltipProps={{ title: 'Введите ФИО', placement: 'top' }} />
-        <Input label="ФИО" placeholder="..." showTooltip tooltipProps={{ title: 'Снизу', placement: 'bottom' }} disabled />
+        <Input
+          label="ФИО"
+          placeholder="..."
+          showTooltip
+          tooltipProps={{ title: 'Снизу', placement: 'bottom' }}
+          disabled
+        />
       </div>
     )
   }
@@ -63,7 +69,15 @@ export const Error: Story = {
   render: () => {
     return (
       <div style={canvasStyles}>
-        <Input label="ФИО" placeholder="" error errorMsg="Ошибка поля ввода." showTooltip tooltipProps={{ content: 'Ошибка' }} cleanable />
+        <Input
+          label="ФИО"
+          placeholder=""
+          error
+          errorMsg="Ошибка поля ввода."
+          showTooltip
+          tooltipProps={{ content: 'Ошибка' }}
+          cleanable
+        />
       </div>
     )
   }

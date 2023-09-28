@@ -85,7 +85,11 @@ export const Attach = React.forwardRef<HTMLInputElement, AttachProps>(
 
     return (
       <div
-        className={clsx(cls.root, { [cls.loading]: loading, [cls.disabled]: disabled, [cls.focus]: focused }, className)}
+        className={clsx(
+          cls.root,
+          { [cls.loading]: loading, [cls.disabled]: disabled, [cls.focus]: focused },
+          className
+        )}
         onClick={handleOpenClick}
         style={{ ...style, maxWidth: maxWidth }}
       >
@@ -103,7 +107,10 @@ export const Attach = React.forwardRef<HTMLInputElement, AttachProps>(
           )}
 
           {descriptionText && (
-            <div className={clsx(cls.description, classes?.description, { [cls.ellipsis]: ellipsisDescription })} title={descriptionText}>
+            <div
+              className={clsx(cls.description, classes?.description, { [cls.ellipsis]: ellipsisDescription })}
+              title={descriptionText}
+            >
               {descriptionText}
             </div>
           )}
@@ -125,7 +132,13 @@ export const Attach = React.forwardRef<HTMLInputElement, AttachProps>(
         </label>
 
         <div className={clsx(cls.right, classes?.rightIcon)}>
-          {loading ? <Loader size={24} /> : fileState ? <CloseIcon onClick={handleClearClick} /> : <RightChevroneIcon />}
+          {loading ? (
+            <Loader size={24} />
+          ) : fileState ? (
+            <CloseIcon onClick={handleClearClick} />
+          ) : (
+            <RightChevroneIcon />
+          )}
         </div>
       </div>
     )

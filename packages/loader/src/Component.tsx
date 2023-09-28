@@ -6,7 +6,16 @@ import { LoaderProps } from './loader.types'
 import cls from './index.module.scss'
 
 export const Loader = (props: LoaderProps) => {
-  const { size = 24, color = 'currentColor', secondaryColor = '#B7B9BD', className, fill = true, spinner, classes = {}, ...rest } = props
+  const {
+    size = 24,
+    color = 'currentColor',
+    secondaryColor = '#B7B9BD',
+    className,
+    fill = true,
+    spinner,
+    classes = {},
+    ...rest
+  } = props
 
   const loader = React.useMemo(
     () => (

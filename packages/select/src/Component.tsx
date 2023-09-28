@@ -115,7 +115,8 @@ export const Select = (props: SelectProps) => {
   }
 
   /** render */
-  const showCloseIcon = showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean
+  const showCloseIcon =
+    showCleanIcon(multiple, isControlledInput ? value : internalState.value) && internalState.entered && showClean
   const isOpen = isControlledOpen ? open : internalState.open
   return (
     <div
@@ -149,7 +150,10 @@ export const Select = (props: SelectProps) => {
                 ) : showCloseIcon ? (
                   <CrossIcon className={cls.chevrone} onClick={handleClean} />
                 ) : (
-                  <ChevronIcon className={clsx(cls.chevrone, { [cls.chevrone_open]: internalState.open })} onClick={onChevroneClick} />
+                  <ChevronIcon
+                    className={clsx(cls.chevrone, { [cls.chevrone_open]: internalState.open })}
+                    onClick={onChevroneClick}
+                  />
                 )}
               </div>
             }
@@ -159,7 +163,11 @@ export const Select = (props: SelectProps) => {
             cleanable={false}
             onFocus={handleOpen}
             onBlur={handleClose}
-            value={internalState.mode === 'search' ? internalState.search : getInputValue(isControlledInput ? value : internalState.value, ValuesMap)}
+            value={
+              internalState.mode === 'search'
+                ? internalState.search
+                : getInputValue(isControlledInput ? value : internalState.value, ValuesMap)
+            }
             onChange={showSearch ? handleSearch : undefined}
             placeholder={internalState.mode === 'search' ? 'Поиск' : placeholder}
             disabled={disabled}

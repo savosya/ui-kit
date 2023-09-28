@@ -71,7 +71,9 @@ const plugins = ({ isEsm }) => {
     wildcardExternal(['@savosya/savosya-myuikit-*']),
     multiEntry.default(),
     postcssPluginSCSS(isEsm ? 'build/esm/styles.css' : 'build/cjs/styles.css'),
-    postcssPluginCSS(isEsm ? `build/esm/assets/${currentComponentName}.css` : `build/cjs/assets/${currentComponentName}.css`),
+    postcssPluginCSS(
+      isEsm ? `build/esm/assets/${currentComponentName}.css` : `build/cjs/assets/${currentComponentName}.css`
+    ),
     purgecssAfterBuildPlugin({ pkgPath }),
     typescript({ tsconfig: `${currentPackageDir}/tsconfig.json` })
   ]

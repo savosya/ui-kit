@@ -10,7 +10,19 @@ import { RadioProps } from './radio.types'
 import cls from './index.module.scss'
 
 export const Radio = React.forwardRef<HTMLLabelElement, RadioProps>((props, ref) => {
-  const { className, label, hint, size = 'm', checked, markType = 'default', name, onChange, classes, disabled, ...rest } = props
+  const {
+    className,
+    label,
+    hint,
+    size = 'm',
+    checked,
+    markType = 'default',
+    name,
+    onChange,
+    classes,
+    disabled,
+    ...rest
+  } = props
 
   const isControlled = typeof checked === 'boolean'
 

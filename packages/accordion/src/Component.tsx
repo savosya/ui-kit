@@ -21,7 +21,10 @@ export const Accordion = ({
 }: AccordionProps) => {
   const isControlled = typeof open === 'boolean'
 
-  const HeaderIcon = useMemo(() => (disabled ? <LockIcon /> : chevroneIcon ? chevroneIcon : <DefaultChevroneIcon />), [disabled, chevroneIcon])
+  const HeaderIcon = useMemo(
+    () => (disabled ? <LockIcon /> : chevroneIcon ? chevroneIcon : <DefaultChevroneIcon />),
+    [disabled, chevroneIcon]
+  )
   const contentRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState<number | null>(null)
 
