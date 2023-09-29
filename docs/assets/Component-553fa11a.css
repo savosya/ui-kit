@@ -1,0 +1,15 @@
+@keyframes _spin_2w71y_1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+._root_2w71y_6 {
+  animation: _spin_2w71y_1 0.8s infinite linear;
+}
+._wrapper_2w71y_10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

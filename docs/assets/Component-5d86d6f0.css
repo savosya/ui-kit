@@ -1,0 +1,177 @@
+:root {
+  --brand-rubin: #e1056d;
+  --brand-blue: #1d3f88;
+  --brand-gray: #8b8b8c;
+  --brand-black: #000;
+  --bg-primary: #f4f6f8;
+  --bg-secondary: #fff;
+  --bg-info: #e5e8ed;
+  --bg-header: #21272e;
+  --text-primary: #29313a;
+  --text-secondary: #67707c;
+  --text-tertiary: #848d98;
+  --text-placeholder: #848d98;
+  --text-white: #fff;
+  --text-gray: #b8bec6;
+  --text-error-primary: #d44040;
+  --text-error-secondary: #f96262;
+  --text-attention: #eda147;
+  --text-success-primary: #50a33b;
+  --text-link-default: #4693c8;
+  --text-link-hover: #6b9cd3;
+  --text-link-pressed: #90b5de;
+  --text-link-visited: #3869a0;
+  --text-link-default-alternative: #677007C;
+  --text-link-hover-alternative: #525a63;
+}
+:root {
+  --default-outline-color: #2764cd;
+}
+:root {
+  --border-radius-s: 10px;
+  --border-radius-m: 16px;
+}
+:root {
+  --eub-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+}
+:root {
+  --input-bg: #fff;
+  --input-bg_disabled: #e5e8ed;
+  --input-active-blue: #4683c8;
+  --input-color: var(--text-primary);
+  --input-color_disabled: var(--text-secondary);
+  --input-label-color: var(--text-tertiary);
+  --input-placeholder-color: var(--text-gray);
+  --input-hint-color: var(--text-secondary);
+  --input-error-color: var(--text-error-primary);
+}
+._root_7953h_14 {
+  display: inline-flex;
+  height: fit-content;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--eub-font-family);
+}
+._root_7953h_14._block_7953h_21 {
+  width: 100%;
+}
+._input_root_7953h_25 {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 16px;
+}
+._input_root_7953h_25._small_7953h_36 {
+  height: 36px;
+}
+._input_root_7953h_25._focus_7953h_39 {
+  outline: 2px solid var(--default-outline-color);
+  outline-offset: 2px;
+}
+._input_root_7953h_25._disabled_7953h_43 {
+  background-color: var(--input-bg_disabled);
+}
+._input_root_7953h_25._error_7953h_46 {
+  border: 1px solid var(--input-error-color);
+}
+._root_core_7953h_50 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+._label_7953h_57 {
+  order: 0;
+  display: inline-block;
+  height: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  color: var(--input-label-color);
+  vertical-align: center;
+}
+._input_7953h_25 {
+  order: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: 0 solid transparent;
+  caret-color: var(--input-active-blue);
+  display: inline-block;
+  height: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  margin-top: 2px;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+._input_7953h_25:focus ~ ._label_7953h_57 {
+  color: var(--input-active-blue);
+}
+._input_7953h_25:focus ~ ._label_7953h_57._error_7953h_46 {
+  color: var(--input-error-color);
+}
+._input_7953h_25::placeholder {
+  color: var(--input-placeholder-color);
+}
+._input_7953h_25:disabled {
+  color: var(--input-color_disabled);
+}
+._input_7953h_25::-webkit-search-cancel-button {
+  display: none;
+}
+._extra_7953h_102 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  color: var(--input-hint-color);
+  padding: 0 18px;
+}
+._extra_7953h_102 > span {
+  display: block;
+}
+._error_7953h_46 {
+  color: var(--input-error-color);
+}
+._addons_left_7953h_118 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  color: var(--input-label-color);
+}
+._addons_right_7953h_126 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  gap: 4px;
+  color: var(--input-label-color);
+}
+._clean_7953h_135 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #848d98;
+  transition: 0.15s;
+}
+._clean_7953h_135:hover {
+  color: var(--text-primary);
+}
+._addon_focused_7953h_147 {
+  color: var(--input-active-blue);
+}
+._addon_error_7953h_151 {
+  color: var(--input-error-color);
+}

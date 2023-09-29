@@ -15,7 +15,7 @@
     "new": "bash cli/create-package.sh",
     "dev": "storybook dev -p 3003",
     "preview:sb": "http-server storybook-static -p 3004",
-    "build:sb": "yarn build && storybook build",
+    "build:sb": "yarn build && storybook build -o docs",
     "build": "bash bin/build.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
     "pub:root": "bash bin/publish.sh",
