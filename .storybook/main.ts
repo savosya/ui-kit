@@ -4,7 +4,7 @@ import * as fs from 'fs'
 
 const config: StorybookConfig = {
   stories: [
-    '../docs/**/*.stories.@(ts|md)x',
+    '../_docs/**/*.stories.@(ts|md)x',
     '../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../packages/**/docs.mdx'
   ],
