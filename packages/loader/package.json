@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-loader",
-  "version": "0.0.16",
+  "version": "0.1.0",
   "description": "Loader",
   "license": "ISC",
   "main": "index.js",
