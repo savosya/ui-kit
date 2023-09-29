@@ -1,6 +1,6 @@
 {
   "name": "@savosya/savosya-myuikit-modal",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Modal",
   "license": "ISC",
   "main": "index.js",
