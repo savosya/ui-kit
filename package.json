@@ -9,15 +9,15 @@
   ],
   "repository": "https://github.com/savosya/lerna-storybook-uikit-starter.git",
   "scripts": {
-    "new": "cli/create-package.sh",
+    "new": "bash cli/create-package.sh",
     "dev": "storybook dev -p 6006",
     "preview:sb": "http-server storybook-static -p 9009",
     "build:sb": "yarn build && storybook build",
-    "build": "bin/build.sh",
+    "build": "bash bin/build.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
-    "pub:root": "./bin/publish.sh",
+    "pub:root": "bash bin/publish.sh",
     "format": "npx prettier --write .",
-    "prepareSh": "chmod +x bin/prepare.sh && bin/prepare.sh",
+    "prepareSh": "chmod +x bin/prepare.sh && bash bin/prepare.sh",
     "prepare": "husky install && yarn prepareSh"
   },
   "husky": {
