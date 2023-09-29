@@ -1,7 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 import * as path from 'path'
 import * as fs from 'fs'
-import { fileURLToPath } from 'node:url'
 
 const config: StorybookConfig = {
   stories: [

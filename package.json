@@ -10,8 +10,8 @@
   "repository": "https://github.com/savosya/lerna-storybook-uikit-starter.git",
   "scripts": {
     "new": "bash cli/create-package.sh",
-    "dev": "storybook dev -p 6006",
-    "preview:sb": "http-server storybook-static -p 9009",
+    "dev": "storybook dev -p 3003",
+    "preview:sb": "http-server storybook-static -p 3004",
     "build:sb": "yarn build && storybook build",
     "build": "bash bin/build.sh",
     "clean": "rm -rf packages/*/{tsconfig.tsbuildinfo,build} && rm -rf {build,storybook-static}",
