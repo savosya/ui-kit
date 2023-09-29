@@ -1,6 +1,9 @@
 import { addons } from '@storybook/manager-api'
 import { storybookTheme } from './theme'
 
+import './public/manager.css'
+import './public/preview.css'
+
 addons.setConfig({
   theme: storybookTheme,
   isFullscreen: false,
