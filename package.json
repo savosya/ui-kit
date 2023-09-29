@@ -7,7 +7,10 @@
   "workspaces": [
     "packages/*"
   ],
-  "repository": "https://github.com/savosya/lerna-storybook-uikit-starter.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savosya/lerna-storybook-uikit-starter.git"
+  },
   "scripts": {
     "new": "bash cli/create-package.sh",
     "dev": "storybook dev -p 3003",
@@ -18,7 +21,8 @@
     "pub:root": "bash bin/publish.sh",
     "format": "npx prettier --write .",
     "prepareSh": "chmod +x bin/prepare.sh && bash bin/prepare.sh",
-    "prepare": "husky install && yarn prepareSh"
+    "prepare": "husky install && yarn prepareSh",
+    "chromatic": "npx chromatic --project-token=chpt_f6be858236dd6fc --build-script-name build:sb"
   },
   "husky": {
     "hooks": {
@@ -56,6 +60,7 @@
     "@types/react": "^18.2.11",
     "@types/react-dom": "^18.2.4",
     "autoprefixer": "^10.4.14",
+    "chromatic": "^7.2.0",
     "cross-env": "^7.0.3",
     "globby": "^13.2.0",
     "http-server": "^14.1.1",
@@ -104,5 +109,11 @@
   },
   "resolutions": {
     "jackspeak": "2.1.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/savosya/lerna-storybook-uikit-starter/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://github.com/savosya/lerna-storybook-uikit-starter#readme",
+  "_id": "@savosya/savosya-myuikit@0.0.1"
 }

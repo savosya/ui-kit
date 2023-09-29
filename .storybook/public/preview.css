@@ -45,6 +45,39 @@ body {
   padding-left: calc(100vw - 100%);
 }
 
+/* LOADING */
+.sb-show-preparing-docs {
+  height: auto;
+  overflow: hidden;
+}
+
+.sb-show-preparing-docs .sb-wrapper {
+  padding: 0;
+}
+
+.sb-show-preparing-docs .sb-loader {
+  width: 28px;
+  height: 28px;
+}
+
+.sb-show-preparing-docs .sb-previewBlock_header,
+.sb-show-preparing-docs .sb-argstableBlock {
+  display: none;
+}
+
+.sb-show-preparing-docs .sb-previewBlock {
+  background: #fff;
+  border: none;
+  width: 100%;
+  box-shadow: none;
+  margin: 0 auto;
+}
+
+.sb-show-preparing-docs .sb-previewBlock_body {
+  height: 100vh;
+}
+
+/* DOCUMENT */
 .sb-show-main.sb-main-padded {
   padding: 0;
   background-color: var(--bg-primary);
