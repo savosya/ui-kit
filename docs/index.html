@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,61 +6,43 @@
     <title>@storybook/cli - Storybook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    
-    <link
-      rel="prefetch"
-      href="./sb-common-assets/nunito-sans-regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="prefetch"
-      href="./sb-common-assets/nunito-sans-bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+
+    <link rel="prefetch" href="./sb-common-assets/nunito-sans-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="prefetch" href="./sb-common-assets/nunito-sans-bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./sb-common-assets/fonts.css" />
 
     <link href="./sb-manager/runtime.js" rel="modulepreload" />
 
-    
     <link href="./sb-addons/essentials-controls-0/manager-bundle.js" rel="modulepreload" />
-    
+
     <link href="./sb-addons/essentials-actions-1/manager-bundle.js" rel="modulepreload" />
-    
+
     <link href="./sb-addons/essentials-backgrounds-2/manager-bundle.js" rel="modulepreload" />
-    
+
     <link href="./sb-addons/essentials-viewport-3/manager-bundle.js" rel="modulepreload" />
-    
+
     <link href="./sb-addons/essentials-toolbars-4/manager-bundle.js" rel="modulepreload" />
-    
+
     <link href="./sb-addons/essentials-measure-5/manager-bundle.js" rel="modulepreload" />
-    
+
     <link href="./sb-addons/essentials-outline-6/manager-bundle.js" rel="modulepreload" />
-    
+
     <link href="./sb-addons/storybook-7/manager-bundle.js" rel="modulepreload" />
-      <link rel="shortcut icon" href="/favicon.ico" />
-<link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="192x192" />
 
-<link rel="preload" href="/fonts/Inter-Regular.ttf" as="font" crossorigin type="font/ttf" />
-<link rel="preload" href="/fonts/Inter-Medium.ttf" as="font" crossorigin type="font/ttf" />
-<link rel="preload" href="/fonts/Inter-Bold.ttf" as="font" crossorigin type="font/ttf" />
+    <link rel="preload" href="/fonts/Inter-Regular.ttf" as="font" crossorigin type="font/ttf" />
+    <link rel="preload" href="/fonts/Inter-Medium.ttf" as="font" crossorigin type="font/ttf" />
+    <link rel="preload" href="/fonts/Inter-Bold.ttf" as="font" crossorigin type="font/ttf" />
 
-<link rel="stylesheet" href="/manager.css" />
- 
+    <link rel="stylesheet" href="/manager.css" />
 
     <style>
       #storybook-root[hidden] {
         display: none !important;
       }
     </style>
-
-    
-    <link href="./sb-addons/storybook-7/manager-bundle.css" rel="stylesheet" />
 
     <style>
       :root {
@@ -95,14 +77,14 @@
       html,
       body {
         font-family:
-                'Inter',
-                system-ui,
-                -apple-system,
-                'Segoe UI',
-                Roboto,
-                'Helvetica Neue',
-                Helvetica,
-                sans-serif;
+          'Inter',
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          Helvetica,
+          sans-serif;
         height: 100%;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -177,8 +159,8 @@
         line-height: 1.2;
         font-weight: 400;
         transition:
-                background 0.2s ease,
-                box-shadow 0.2s ease;
+          background 0.2s ease,
+          box-shadow 0.2s ease;
         border-radius: 10px;
       }
 
@@ -410,73 +392,53 @@
       [data-item-id='typography'] {
         display: none !important;
       }
-
     </style>
-    
+
+    <link href="./sb-addons/storybook-7/manager-bundle.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
 
-    
     <script>
-      
-        
-          window['FEATURES'] = {
-  "warnOnLegacyHierarchySeparator": true,
-  "buildStoriesJson": false,
-  "storyStoreV7": true,
-  "argTypeTargetsV7": true,
-  "legacyDecoratorFileOrder": false
-};
-        
-      
-        
-          window['REFS'] = {};
-        
-      
-        
-          window['LOGLEVEL'] = "info";
-        
-      
-        
-          window['DOCS_OPTIONS'] = {
-  "docsMode": false,
-  "defaultName": "Docs",
-  "autodocs": true
-};
-        
-      
-        
-          window['CONFIG_TYPE'] = "PRODUCTION";
-        
-      
-        
-      
-        
-      
+      window['FEATURES'] = {
+        warnOnLegacyHierarchySeparator: true,
+        buildStoriesJson: false,
+        storyStoreV7: true,
+        argTypeTargetsV7: true,
+        legacyDecoratorFileOrder: false
+      }
+
+      window['REFS'] = {}
+
+      window['LOGLEVEL'] = 'info'
+
+      window['DOCS_OPTIONS'] = {
+        docsMode: false,
+        defaultName: 'Docs',
+        autodocs: true
+      }
+
+      window['CONFIG_TYPE'] = 'PRODUCTION'
     </script>
-    
 
     <script type="module">
-      import './sb-manager/runtime.js';
+      import './sb-manager/runtime.js'
 
-      
-      import './sb-addons/essentials-controls-0/manager-bundle.js';
-      
-      import './sb-addons/essentials-actions-1/manager-bundle.js';
-      
-      import './sb-addons/essentials-backgrounds-2/manager-bundle.js';
-      
-      import './sb-addons/essentials-viewport-3/manager-bundle.js';
-      
-      import './sb-addons/essentials-toolbars-4/manager-bundle.js';
-      
-      import './sb-addons/essentials-measure-5/manager-bundle.js';
-      
-      import './sb-addons/essentials-outline-6/manager-bundle.js';
-      
-      import './sb-addons/storybook-7/manager-bundle.js';
-      
+      import './sb-addons/essentials-controls-0/manager-bundle.js'
+
+      import './sb-addons/essentials-actions-1/manager-bundle.js'
+
+      import './sb-addons/essentials-backgrounds-2/manager-bundle.js'
+
+      import './sb-addons/essentials-viewport-3/manager-bundle.js'
+
+      import './sb-addons/essentials-toolbars-4/manager-bundle.js'
+
+      import './sb-addons/essentials-measure-5/manager-bundle.js'
+
+      import './sb-addons/essentials-outline-6/manager-bundle.js'
+
+      import './sb-addons/storybook-7/manager-bundle.js'
     </script>
 
     <link href="./sb-preview/runtime.js" rel="prefetch" as="script" />
