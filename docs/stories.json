@@ -1,6 +1,43 @@
 {
   "v": 3,
   "stories": {
+    "general-start--docs": {
+      "id": "general-start--docs",
+      "title": "General/Начало работы",
+      "name": "Docs",
+      "importPath": "./_docs/1.1.start.stories.mdx",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": [],
+      "kind": "General/Начало работы",
+      "story": "Docs",
+      "parameters": { "__id": "general-start--docs", "docsOnly": true, "fileName": "./_docs/1.1.start.stories.mdx" }
+    },
+    "general-typography--docs": {
+      "id": "general-typography--docs",
+      "title": "General/Типографика",
+      "name": "Docs",
+      "importPath": "./_docs/1.2.fonts.stories.mdx",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": [],
+      "kind": "General/Типографика",
+      "story": "Docs",
+      "parameters": {
+        "__id": "general-typography--docs",
+        "docsOnly": true,
+        "fileName": "./_docs/1.2.fonts.stories.mdx"
+      }
+    },
+    "general-css--docs": {
+      "id": "general-css--docs",
+      "title": "General/CSS Переменные",
+      "name": "Docs",
+      "importPath": "./_docs/1.3.css-vars.stories.mdx",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": [],
+      "kind": "General/CSS Переменные",
+      "story": "Docs",
+      "parameters": { "__id": "general-css--docs", "docsOnly": true, "fileName": "./_docs/1.3.css-vars.stories.mdx" }
+    },
     "components-accordion--docs": {
       "id": "components-accordion--docs",
       "title": "Components/Accordion",
@@ -330,6 +367,17 @@
         "docsOnly": true,
         "fileName": "./packages/typography/src/stories/docs.mdx"
       }
+    },
+    "dev-start--docs": {
+      "id": "dev-start--docs",
+      "title": "Для разработчика/Общая информация",
+      "name": "Docs",
+      "importPath": "./_docs/2.1.structure.stories.mdx",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": [],
+      "kind": "Для разработчика/Общая информация",
+      "story": "Docs",
+      "parameters": { "__id": "dev-start--docs", "docsOnly": true, "fileName": "./_docs/2.1.structure.stories.mdx" }
     },
     "accordion--docs": {
       "id": "accordion--docs",

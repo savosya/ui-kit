@@ -46,11 +46,29 @@ const config: StorybookConfig = {
           [`@savosya/savosya-myuikit-${cmp}`]: path.resolve(__dirname, `../packages/${cmp}/src`)
         })
       )
-
       // Object.assign(config.resolve.alias, {
       //   '.storybook': path.resolve(__dirname)
       // })
     })
+
+    /** Названия всех компонентов в папке packages */
+    // const docsFolder = path.resolve(__dirname, '../_docs')
+    // fs.readdir(docsFolder, (err, files) => {
+    //   if (err) {
+    //     console.log(`Error reading directory: ${err}`)
+    //     return
+    //   }
+    //
+    //   const docNames = files.filter(file => {
+    //     return fs.statSync(`${packagesFolder}/${file}`).isDirectory()
+    //   })
+    //
+    // })
+
+    Object.assign(config.resolve.alias, {
+      ['docs']: path.resolve(__dirname, '../_docs')
+    })
+
     config.resolve.mainFields = ['module', 'main']
     return config
   }

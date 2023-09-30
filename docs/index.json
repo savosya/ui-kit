@@ -1,6 +1,33 @@
 {
   "v": 4,
   "entries": {
+    "general-start--docs": {
+      "id": "general-start--docs",
+      "title": "General/Начало работы",
+      "name": "Docs",
+      "importPath": "./_docs/1.1.start.stories.mdx",
+      "type": "docs",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": []
+    },
+    "general-typography--docs": {
+      "id": "general-typography--docs",
+      "title": "General/Типографика",
+      "name": "Docs",
+      "importPath": "./_docs/1.2.fonts.stories.mdx",
+      "type": "docs",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": []
+    },
+    "general-css--docs": {
+      "id": "general-css--docs",
+      "title": "General/CSS Переменные",
+      "name": "Docs",
+      "importPath": "./_docs/1.3.css-vars.stories.mdx",
+      "type": "docs",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": []
+    },
     "components-accordion--docs": {
       "id": "components-accordion--docs",
       "title": "Components/Accordion",
@@ -198,6 +225,15 @@
       "storiesImports": ["./packages/typography/src/stories/Component.stories.tsx"],
       "type": "docs",
       "tags": ["unattached-mdx", "docs"]
+    },
+    "dev-start--docs": {
+      "id": "dev-start--docs",
+      "title": "Для разработчика/Общая информация",
+      "name": "Docs",
+      "importPath": "./_docs/2.1.structure.stories.mdx",
+      "type": "docs",
+      "tags": ["stories-mdx", "stories-mdx-docsOnly", "docs"],
+      "storiesImports": []
     },
     "accordion--docs": {
       "id": "accordion--docs",

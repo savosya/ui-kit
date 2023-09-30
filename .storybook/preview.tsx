@@ -2,7 +2,7 @@ import React from 'react'
 import { Preview } from '@storybook/react'
 import { storybookTheme } from './theme'
 
-import './public/manager.css.css'
+import './public/manager.css'
 import './public/preview.css'
 
 const preview: Preview = {
